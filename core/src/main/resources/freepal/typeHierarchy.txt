@@ -1,0 +1,2944 @@
+ns:base.engineering.cutting	/base/engineering/topic,/projects/project_focus
+ns:music.group_member	/people/person
+ns:user.jschell.default_domain.field_of_study	
+ns:base.puzzles.puzzle_form	
+ns:user.robert.mobile_phones.mobile_broadband_technology	
+ns:user.robert.mobile_phones.mobile_phone_brand	
+ns:medicine.physician	/people/person
+ns:user.mr_kav.default_domain.birth_place	
+ns:music.guitarist	/people/person
+ns:user.kerksieck.default_domain.asterism	
+ns:distilled_spirits.distilled_spirit	
+ns:base.government2.legislator	/base/government2/topic
+ns:measurement_unit.charge_unit	/freebase/unit_profile,/type/unit
+ns:aviation.airliner_accident	/time/event,/event/disaster
+ns:base.engineering.mine	/base/engineering/topic,/location/location
+ns:base.fictionaluniverse.fictional_spacecraft_class_feature	/base/fictionaluniverse/topic
+ns:base.mystery.cryptid	/base/mystery/topic
+ns:user.dcarruth.default_domain.research_center	/business/employer,/location/location
+ns:base.column.column	/base/column/topic
+ns:base.charities.charity	/base/charities/topic,/organization/organization,/business/employer
+ns:location.postal_code	/location/location
+ns:common.resource	
+ns:influence.peer_relationship	
+ns:music.album_release_type	
+ns:base.americancomedy.double_act_straight_man	
+ns:user.robert.us_congress.us_senator	
+ns:base.folklore.mythical_person	
+ns:base.crime.police_department	/base/crime/law_enforcement_authority,/business/employer,/government/government_agency
+ns:user.narphorium.people.notable_siblings	/user/narphorium/people/topic
+ns:location.id_regency	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:travel.tour_operator	
+ns:base.textiles.textile_fiber	/base/textiles/topic
+ns:base.monster.fictional_deceased_character	/fictional_universe/fictional_character,/base/monster/topic
+ns:broadcast.tv_station	/broadcast/broadcast
+ns:user.tom000.default_domain.portable_media_player	
+ns:sports.sports_league_season	/time/event
+ns:base.crime.type_of_law_enforcement_agency	
+ns:base.triggers.fictional_universe_with_triggers	
+ns:soccer.football_player	/sports/pro_athlete,/people/person
+ns:exhibitions.exhibition	
+ns:fictional_universe.fictional_universe	
+ns:basketball.basketball_conference	/organization/organization,/business/employer,/sports/sports_league
+ns:measurement_unit.power_unit	/freebase/unit_profile,/type/unit
+ns:type.unit	
+ns:film.person_or_entity_appearing_in_film	
+ns:base.roses.roses	/biology/hybrid,/base/roses/topic,/base/biologydev/complex_organism,/biology/organism_classification,/base/horticulture/cultured_plant,/base/plants/plant
+ns:base.endofallthings.apocalypses_scientific	/base/endofallthings/topic
+ns:cricket.cricket_bowler	/sports/pro_athlete,/cricket/cricket_player,/people/person
+ns:base.mystery.cryptid_survey_location	
+ns:user.hds.default_domain.suburb	
+ns:location.cn_autonomous_county	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:user.jamie.default_domain.osm.node	
+ns:base.computerscience.cpu_design	/base/computerscience/topic
+ns:tv.tv_series_episode	
+ns:astronomy.plutoid	/astronomy/celestial_object,/astronomy/orbital_relationship,/astronomy/astronomical_discovery,/astronomy/dwarf_planet
+ns:base.morelaw.lawsuit	/time/event,/base/morelaw/topic,/base/morelaw/legal_case
+ns:base.adoption.adopted_person	/base/adoption/topic,/people/person
+ns:base.mystery.cryptid_alternative	/biology/organism_classification
+ns:base.argumentmaps.thinker	/base/argumentmaps/topic,/people/person
+ns:user.kdr35.default_domain.iso_standarts	
+ns:base.webvideo.internet_video_character	/base/webvideo/topic,/fictional_universe/fictional_character
+ns:education.honorary_degree_recipient	/people/person
+ns:physics.hadron	/physics/particle
+ns:base.animemanga.anime_studio	/base/animemanga/topic
+ns:base.popstra.company	/base/popstra/topic,/business/brand,/base/popstra/sww_base
+ns:user.sandos.research.research_project	
+ns:base.fictionaluniverse.fictional_murder_victim	/fictional_universe/fictional_character,/base/fictionaluniverse/deceased_fictional_character,/base/fictionaluniverse/topic
+ns:conferences.conference_sponsor	
+ns:base.yalebase.residential_college	/architecture/building,/base/yalebase/building,/architecture/structure,/base/yalebase/topic
+ns:base.surfing.surfer	/people/person,/base/surfing/topic
+ns:user.zeusi.default_domain.sports_competitor	
+ns:user.zenkat.default_domain.tarot_card	
+ns:common.topic	
+ns:computer.programming_language_developer	
+ns:base.phytochemical.flavonoid	/chemistry/chemical_compound
+ns:base.webvideo.internet_video	/base/webvideo/topic
+ns:base.argumentmaps.event_of_disputed_occurance	/base/argumentmaps/topic
+ns:user.yqbd.ideology.ideology	
+ns:base.folklore.mythical_creature_location	/location/location
+ns:skiing.ski_area_owner	
+ns:user.maximilianschich.CIDOC_CRM.e26_physical_feature	/user/maximilianschich/CIDOC_CRM/e18_physical_thing
+ns:education.student_radio_station	/broadcast/radio_station,/broadcast/broadcast
+ns:base.gender.gender_identity	/base/gender/topic
+ns:measurement_unit.conductance_unit	/freebase/unit_profile,/type/unit
+ns:base.sanfranciscoscene.san_francisco_scene_event	/base/sanfranciscoscene/topic
+ns:american_football.football_player	/sports/pro_athlete,/people/person
+ns:user.negativboy.default_domain.bearded_freak	
+ns:award.hall_of_fame_discipline	
+ns:base.x2010fifaworldcupsouthafrica.x2010_world_cup_spot_allocation	
+ns:user.jamie.oldwine.winery	
+ns:base.morelaw.canadian_judge	/base/morelaw/topic,/law/judge,/base/crime/topic,/base/crime/lawyer,/people/person
+ns:award.recurring_competition	/time/recurring_event
+ns:time.day_of_week	
+ns:comic_books.comic_book_fictional_universe	/fictional_universe/fictional_universe
+ns:astronomy.astronomical_discovery	
+ns:base.database.data_contributor	/base/database/topic
+ns:user.danm.fictional_settings_real_places.filming_location	/location/location
+ns:base.database.database_host	/base/database/topic
+ns:base.typefaces.typeface_family	
+ns:computer.processor_manufacturer	
+ns:opera.opera_character	/fictional_universe/fictional_character
+ns:sports.sports_championship_event	/time/event
+ns:base.argumentmaps.historical_argument	/base/argumentmaps/argument,/base/argumentmaps/topic,/base/argumentmaps/original_idea
+ns:base.politeuri.namespace_1	
+ns:comic_books.comic_book_colorist	
+ns:base.graphicnovels.graphic_novel_writer	/base/graphicnovels/topic
+ns:base.morelaw.law	/base/morelaw/topic
+ns:location.uk_council_area	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.crime.crime	/time/event,/base/crime/topic
+ns:base.aubreymaturin.real_person	/people/deceased_person,/people/person,/base/aubreymaturin/topic
+ns:organization.membership_organization	/organization/organization
+ns:user.cip22.default_domain.scientific_paradigm	
+ns:base.identifier.identifier	/base/identifier/topic
+ns:user.jamie.default_domain.boat	
+ns:user.pak21.default_domain.minor_league_sports_team	
+ns:user.skud.boats.sailing_rig_type	/user/skud/boats/topic
+ns:user.noktulo.default_domain.place_with_suburbs	
+ns:government.government_position_held	
+ns:government.political_party	/organization/organization,/business/employer
+ns:user.glondish.default_domain.wheel_of_time_character	/fictional_universe/fictional_character
+ns:base.database.database_financial_supporter	/base/database/topic
+ns:user.jschell.default_domain.fictional_character	
+ns:government.election_campaign	
+ns:base.thoroughbredracing.thoroughbred_racehorse_trainer	/people/person,/base/thoroughbredracing/topic
+ns:base.prison.prison	/base/prison/topic,/location/location
+ns:user.rca.default_domain.court	
+ns:base.disaster2.infectious_disease	/medicine/disease
+ns:base.yalebase.person	/base/yalebase/topic,/people/person
+ns:user.hargettp.default_domain.language_implementation	
+ns:event.disaster_victim	/people/deceased_person,/people/person
+ns:base.aareas.schema.earth.sovereign_domain	/base/aareas/schema/administrative_area,/base/aareas/schema/earth/sovereignty,/location/location
+ns:user.alexander.default_domain.atmospheric_gas	
+ns:user.skud.nuclear_weapons.nuclear_test_site	/location/location
+ns:music.synthesizer	
+ns:base.computerscience.formal_grammar	/base/computerscience/topic
+ns:user.jschell.default_domain.documentary	
+ns:user.mmcm.default_domain.professor	
+ns:base.metaschema.category	/base/metaschema/topic
+ns:location.es_province	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.bioventurist.biomolecule	
+ns:event.event_producer	
+ns:broadcast.tv_channel	/broadcast/broadcast
+ns:sports.sports_championship	/time/recurring_event
+ns:user.rlyeh.history.causal_node	
+ns:engineering.engine_designer	/projects/project_participant
+ns:user.synedra.didwho.substance_abuse	/user/synedra/didwho/connection
+ns:base.americancomedy.celebrity_impressionist	
+ns:computer.html_layout_engine	
+ns:user.fairestcat.bandom.musician	
+ns:base.peleton.road_bicycling_race	/base/peleton/topic,/time/recurring_event
+ns:base.bibkn.department	/base/bibkn/topic
+ns:base.mystery.hoax_location	/location/location
+ns:travel.guidebook	/book/book,/book/written_work
+ns:tv.tv_program_creator	
+ns:base.monster.city_in_fiction	
+ns:measurement_unit.illuminance_unit	/freebase/unit_profile,/type/unit
+ns:comic_strips.comic_strip_creator	
+ns:base.surfing.surf_film	/film/film,/base/surfing/topic
+ns:user.akatenev.weapons.weapon	
+ns:food.type_of_dish	
+ns:base.animemanga.manga_title	/base/animemanga/topic
+ns:spaceflight.rocket_engine_manufacturer	
+ns:user.jschell.default_domain.orator	
+ns:user.kurt.default_domain.thoughtranker	
+ns:base.eventparticipants.participated_event	
+ns:base.handball.handball_organization	/base/handball/topic
+ns:fictional_universe.fictional_universe_creator	
+ns:base.motorcycle.motorcycle_engine_generic_description	/base/motorcycle/topic
+ns:base.locations.countries	/base/locations/topic
+ns:law.inventor	/people/person
+ns:base.lawsandbox.legal_system	/base/lawsandbox/topic
+ns:user.ddammann.default_domain.student	/people/person
+ns:base.health20accelerator.member	/base/health20accelerator/topic
+ns:base.activism.political_party	/government/political_party
+ns:base.engineeringdraft.manufacturing_location	/business/business_location,/base/engineeringdraft/topic,/business/employer
+ns:base.fight.crime_type	/base/fight/topic
+ns:base.calendars.calendars_published	/base/calendars/topic
+ns:base.onlineadvertising.ad_type	/base/onlineadvertising/topic
+ns:base.architecture2.structure_damaging_event	/base/architecture2/topic,/time/event
+ns:spaceflight.rocket_engine	
+ns:automotive.body_style	
+ns:business.company_type	
+ns:user.robert3.default_domain.architect	
+ns:geography.geographical_feature_category	
+ns:base.hybrids.hybrid_fruit	/base/hybrids/topic
+ns:base.gossipgirl.actor	/tv/tv_actor,/people/person,/base/gossipgirl/topic
+ns:base.killers.spree_killer	/people/person,/base/killers/topic
+ns:book.book_edition_series	
+ns:base.conservationaction.program_coordinator	/people/person
+ns:base.architecture2.architectural_structure_owner	
+ns:user.tsegaran.business.trademark	
+ns:biology.hybrid	/biology/organism_classification
+ns:exhibitions.exhibit	
+ns:user.pvonstackelberg.Futures_Studies.event	
+ns:base.cdnpolitics.politician	/government/politician,/people/person,/base/cdnpolitics/topic
+ns:base.standardizedtesting.test_giving_organization	/base/standardizedtesting/topic
+ns:cvg.computer_game_distribution_system	
+ns:base.argumentmaps.theoretical_argument	/base/argumentmaps/argument,/base/argumentmaps/original_idea,/base/argumentmaps/topic,/base/argumentmaps/idea
+ns:user.miguelrochefort.default_domain.music_festival	
+ns:bicycles.bicycle_manufacturer	/business/business_operation,/organization/organization,/business/employer
+ns:base.breakfast.breakfast_cereal_brand	/base/breakfast/topic,/food/food
+ns:base.onlineadvertising.ad_delivery_channel	/base/onlineadvertising/topic
+ns:user.joehughes.default_domain.transit_service_area	
+ns:base.breakfast.breakfast_cereal_manufacturer	/business/business_operation,/base/breakfast/topic,/organization/organization,/business/employer
+ns:business.shareholder	
+ns:user.venkytv.default_domain.mythological_system	
+ns:architecture.architecture_firm	/business/business_operation,/organization/organization,/business/employer
+ns:base.biologydev.complex_organism	/base/biologydev/topic
+ns:business.customer	
+ns:tennis.tennis_tournament_champion	/people/person,/tennis/tennis_player
+ns:computer.computer_peripheral_class	
+ns:soccer.football_league_system	
+ns:base.cryptography.cipher	/base/cryptography/topic
+ns:base.activism.organization	/organization/organization,/business/employer
+ns:geography.lake	/geography/geographical_feature,/location/location,/geography/body_of_water
+ns:user.qili.sementic_web.people	
+ns:base.financialmeltdown.rogue_traders	/base/financialmeltdown/topic
+ns:user.uoa_it.uoa_it.uoa_technology	
+ns:interests.interest	
+ns:user.zanerokklyn.default_domain.plant	
+ns:award.award_judge	/people/person
+ns:base.contractbridge.bridge_tournament	/base/contractbridge/topic
+ns:user.olet.default_domain.cms	
+ns:user.jamie.food.herb	
+ns:royalty.kingdom	
+ns:base.usnationalparks.us_national_park	/base/usnationalparks/topic
+ns:base.nascar.nascar_venue	/base/nascar/topic
+ns:astronomy.extraterrestrial_location	
+ns:music.release	
+ns:visual_art.artwork	
+ns:law.court	
+ns:user.micahsaul.default_domain.music_festival	
+ns:user.sandos.toys.online_hobby_shop	/internet/website,/user/sandos/toys/topic
+ns:spaceflight.rocket_function	
+ns:base.horseracing.jockey	/base/horseracing/topic,/people/person
+ns:film.film_production_designer	/people/person
+ns:base.conservationaction.ornithology	/base/conservationaction/topic,/organization/organization,/business/employer
+ns:user.szaijan.fantasy_football.player	/american_football/football_player,/people/person
+ns:american_football.super_bowl	
+ns:user.movgp0.default_domain.base_unit	/type/unit
+ns:fashion.garment	
+ns:location.cn_autonomous_region	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.computerscience.formal_language	/base/computerscience/topic
+ns:comic_books.comic_book_story	/fictional_universe/work_of_fiction
+ns:astronomy.telescope_type	
+ns:visual_art.art_acquisition_method	
+ns:book.poem	/book/written_work,/book/published_work
+ns:spaceflight.spacecraft	
+ns:base.athletics.athletics_championships	/time/event,/base/athletics/topic,/sports/multi_event_tournament
+ns:base.sails.sailboat	/boats/ship_type
+ns:base.events.food_festival_subject	/food/dish,/base/events/topic
+ns:base.socialdance.dance_style	/base/socialdance/topic
+ns:base.americancomedy.comedy_writer	
+ns:base.schemastaging.sumo_wrestler	/martial_arts/martial_artist,/sports/pro_athlete,/people/measured_person,/people/person
+ns:user.trondarild.default_domain.medical_sign	
+ns:base.mystery.hoax	/base/mystery/topic
+ns:user.coco.voting.voting_stat_region	
+ns:user.cip22.default_domain.research_institute	/education/educational_institution,/business/employer
+ns:base.folklore.mythical_group	/base/folklore/topic
+ns:astronomy.dwarf_planet	/astronomy/celestial_object,/astronomy/orbital_relationship,/astronomy/astronomical_discovery
+ns:internet.protocol	
+ns:tv.tv_writer	/people/person
+ns:base.pinball.pinball_machine_basis	/base/pinball/topic
+ns:user.skud.sex.contraceptive_method	
+ns:book.periodical_format	
+ns:base.digitalcameras.digital_camera	/base/digitalcameras/topic
+ns:user.tsegaran.computer.algorithm	
+ns:user.fluteflute.default_domain.radio_program	
+ns:organization.organization_relationship	
+ns:user.dylanrocks.national_football_league.nfl_teams_that_have_moved_cities	
+ns:business.consumer_company	/business/business_operation,/organization/organization
+ns:user.radiusrs.default_domain.astrology	
+ns:physics.particle_family	
+ns:user.rictic.programming_languages.programming_language_version	
+ns:cvg.computer_game_engine_developer	
+ns:zoos.zoo_category	
+ns:base.disaster2.pandemic	/time/event,/event/disaster,/base/disaster2/topic
+ns:base.musicmanager.managed_artist	
+ns:comic_books.comic_book_series	
+ns:film.film_song_performer	
+ns:military.rank	
+ns:base.switzerland.ch_canton	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location,/base/switzerland/topic
+ns:film.director	/people/person
+ns:base.represent.type_of_agent	/base/represent/topic
+ns:government.governmental_body	
+ns:m.03yw5h3	/food/ingredient
+ns:base.change.process	/base/change/topic
+ns:base.scubadiving.province	/base/scubadiving/topic
+ns:internet.blog	
+ns:organization.club	/organization/organization
+ns:user.robert.Politics.politician	
+ns:user.robert.performance.performer	
+ns:user.mgvh.default_domain.historical_significance	
+ns:spaceflight.rocket	
+ns:base.conservationaction.coordinated_program	/base/conservationaction/topic,/base/conservationaction/participation_group
+ns:astronomy.astronomical_survey_project_organization	/organization/organization
+ns:base.mystery.ufo_sighting_location	/base/aliens/topic,/location/location
+ns:base.infection.biosafety_facility	
+ns:food.cheese	
+ns:user.kerksieck.default_domain.equation	
+ns:film.film_character	/fictional_universe/fictional_character
+ns:user.doconnor.pets.horse_breed	/base/horses/horse_breed
+ns:geography.body_of_water	/geography/geographical_feature,/location/location
+ns:base.worldwonders.ancient_wonder	/architecture/structure,/location/location
+ns:base.jewlib.parent_collection	/base/jewlib/topic
+ns:user.jamie.default_domain.yacht_racing.yacht_skipper	/people/person
+ns:base.pinball.pinball_machine_designer	/base/pinball/topic,/people/person
+ns:baseball.baseball_player	/sports/pro_athlete,/people/person
+ns:travel.accommodation	/location/location
+ns:tv.tv_genre	/media_common/media_genre
+ns:base.ikariam.ikariam_research	
+ns:tv.tv_theme_song	/music/composition
+ns:user.ptomblin.default_domain.waypoint	/location/location
+ns:base.localfood.food_producing_region	/base/localfood/topic,/location/location
+ns:base.centreforeresearch.fund_provider	/base/centreforeresearch/topic
+ns:biology.organism_part	
+ns:sports.pro_athlete	/people/measured_person,/people/person
+ns:base.scenicbyways.scenic_byway	
+ns:book.journal	/book/periodical
+ns:base.animalnames.gender_or_age_specific_animal_name	/base/animalnames/topic
+ns:base.collectives.collective	
+ns:base.americancomedy.comedy_genre	
+ns:tv.tv_subject	
+ns:user.venkytv.default_domain.mythological_figure	
+ns:base.bio2rdf.bm	/base/bio2rdf/topic
+ns:location.br_state	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.cgcollection.computer_game_platform_model	
+ns:military.military_unit_place_of_origin	
+ns:cvg.computer_game_expansion	/cvg/computer_videogame
+ns:user.robert.us_congress.us_representative	
+ns:user.atstcyr.default_domain.programmer	/business/job_title
+ns:tv.multipart_tv_episode	
+ns:award.award_nominee	
+ns:base.nationalbridgeinventory.nbibridge	/transportation/bridge,/architecture/structure,/base/nationalbridgeinventory/topic,/projects/project_focus,/location/location
+ns:location.offical_symbol_variety	
+ns:user.jamie.oldwine.varietal	
+ns:martial_arts.martial_arts_organization	
+ns:base.horseracing.horse_race_track	/architecture/structure,/sports/sports_facility,/base/horseracing/topic,/projects/project_focus,/location/location
+ns:base.morelaw.defendant	
+ns:music.music_video_director	/people/person
+ns:american_football.football_conference	/organization/organization,/business/employer,/sports/sports_league
+ns:base.litcentral.named_person	/base/litcentral/topic,/people/person
+ns:measurement_unit.potential_unit	/freebase/unit_profile,/type/unit
+ns:base.aareas.schema.administrative_area	/location/location
+ns:cricket.cricket_tournament	/sports/sports_championship
+ns:martial_arts.martial_art_category	
+ns:radio.radio_subject	
+ns:base.pethealth.diagnosis	/base/pethealth/topic
+ns:base.charities.charitable_field	/base/charities/topic
+ns:education.school_newspaper	/book/periodical,/book/newspaper
+ns:fictional_universe.fictional_substance	
+ns:base.fires.explosion_cause	
+ns:base.satelites.satellite_sensor	/base/landcover/lc,/base/satelites/topic
+ns:base.dancingwiththestars.contestant	/base/dancingwiththestars/topic
+ns:business.business_location	/business/employer
+ns:film.film_festival_sponsor	
+ns:base.fight.labour_dispute_type	
+ns:base.morelaw.legal_system	/base/morelaw/topic
+ns:rail.railway	/location/location
+ns:user.cip22.default_domain.think_tank	
+ns:people.ethnicity	
+ns:user.robert.mobile_phones.product	
+ns:user.joshuamclark.default_domain.bird_family	
+ns:base.tournaments.tournament_competitor	
+ns:base.politeuri.sparql_endpoint	/base/politeuri/life_science_database,/base/ontologies/sparql_endpoint,/base/ontologies/topic
+ns:user.jessewang.default_domain.philanthropist	
+ns:user.alecf.recreation.park_feature	
+ns:base.permaculture.permaculture_element_product	/base/permaculture/topic
+ns:user.mrmasterbastard.default_domain.electric_car	/automotive/model
+ns:measurement_unit.magnetic_flux_unit	/freebase/unit_profile,/type/unit
+ns:base.advertisingcharacters.advertising_character	/user/tsegaran/business/trademark,/fictional_universe/fictional_character
+ns:skiing.ski_lodge	/architecture/building,/architecture/structure,/projects/project_focus,/location/location
+ns:music.lyricist	
+ns:base.militaryinfiction.military_conflict_in_fiction	/base/militaryinfiction/topic,/base/militaryinfiction/event_in_fiction
+ns:base.dinosaur.dinosaur_location	/location/location
+ns:user.robert.mobile_phones.input_interface	
+ns:user.tsegaran.mathematics.number	
+ns:base.localfood.food_preservation_equipment	/base/localfood/topic
+ns:user.akatenev.weapons.military_vehicle	
+ns:interests.hobbyist	/people/person
+ns:biology.source_organism	/biology/organism_classification
+ns:computer.web_browser_extension	
+ns:base.peleton.cycling_team_staff	/base/peleton/topic
+ns:base.americancivilwar.battle	/time/event,/military/military_conflict,/base/americancivilwar/topic
+ns:base.tibetanbuddhism.lineage_member	
+ns:fictional_universe.fictional_character	
+ns:music.single	
+ns:base.nations.supranational_body	/base/nations/topic
+ns:location.australian_state	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:user.yge.default_domain.metadata_model	
+ns:user.alecf.default_domain.radio_show	
+ns:base.movietheatres.movie_theatre	/architecture/structure,/projects/project_focus
+ns:comic_books.comic_book_inker	/people/person
+ns:base.prison.prisoner	/people/person,/base/prison/topic
+ns:user.skud.boats.warship	/user/skud/boats/vessel,/user/skud/boats/topic
+ns:user.zanerokklyn.default_domain.plant_family	
+ns:base.cocktails.cocktail_garnish	/base/cocktails/topic
+ns:base.infrastructure.sewage_treatment_plant	/architecture/structure,/projects/project_focus,/location/location
+ns:base.mwfreeciv.player	/base/mwfreeciv/topic
+ns:base.folklore.mythical_group_member	/base/folklore/topic
+ns:wine.wine_region	/location/location
+ns:base.newsevents.photographed_event	/time/event,/base/newsevents/topic
+ns:base.centreforeresearch.software_technology	/base/centreforeresearch/topic
+ns:fictional_universe.medical_condition_in_fiction	
+ns:base.militaryinfiction.location_in_fiction	/fictional_universe/fictional_setting,/base/militaryinfiction/topic
+ns:theater.theater_genre	/media_common/media_genre
+ns:boats.ship_designer	
+ns:book.school_or_movement	
+ns:base.mullardspacesciencelaboratoryprojects.artificial_satellite_family	/base/mullardspacesciencelaboratoryprojects/topic
+ns:location.place_with_neighborhoods	/location/location
+ns:user.mcstrother.default_domain.human_pathogenic_microbe	/medicine/disease_cause
+ns:user.skud.default_domain.visa	
+ns:base.motorcycle.motorcycle_manufacturer	/base/motorcycle/topic,/business/business_operation,/organization/organization,/business/employer
+ns:medicine.drug	
+ns:base.concepts.concept	/base/concepts/topic
+ns:base.schemastaging.heya	/organization/organization
+ns:user.doconnor.pets.pet	/user/sandos/common_sense/pet,/biology/organism,/user/sandos/common_sense/common_sense_organism,/user/librarianavenger/default_domain/domestic_animals
+ns:base.architecture2.structure2	/base/architecture2/topic,/location/dated_location,/projects/project_focus,/location/location
+ns:user.juniorbonner.default_domain.capital_city	/location/citytown,/location/location
+ns:architecture.structure	/projects/project_focus,/location/location
+ns:base.webvideo.internet_video_broadcaster	/base/webvideo/topic
+ns:aviation.airport_operator	
+ns:award.ranking	
+ns:base.litcentral.person_name_honorary_title	/base/litcentral/topic
+ns:user.danm.fictional_settings_real_places.fictional_setting	/fictional_universe/fictional_setting
+ns:user.rcheramy.default_domain.mayor	
+ns:base.caveart.cave	
+ns:base.switzerland.ch_city	/location/statistical_region,/location/dated_location,/location/citytown,/location/location,/base/switzerland/topic
+ns:user.rcheramy.default_domain.product	
+ns:cvg.computer_game_content_descriptor	
+ns:base.ancientegypt.pyramid	/architecture/structure,/location/location
+ns:automotive.make	
+ns:user.hangy.default_domain.at_state	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:chemistry.element_discoverer	
+ns:user.bitwiseplatypus.default_domain.mobile_phone	/user/randy/default_domain/consumer_electronics
+ns:book.written_work	
+ns:base.unitednations.united_nations_agency	/organization/organization,/base/unitednations/topic
+ns:base.locations.states_and_provences	/base/locations/topic
+ns:government.us_president	/government/politician,/people/person
+ns:user.cheunger.sports_test.draft_team	
+ns:base.argumentmaps.motive	/base/argumentmaps/topic
+ns:book.book_subject	
+ns:fictional_universe.character_species	
+ns:base.infection.location_of_biosafety_facility	
+ns:user.thadguidry.default_domain.fictional_character_group	
+ns:biology.organism	/base/type_ontology/animate
+ns:user.agroschim.default_domain.literary_movement	
+ns:people.person	
+ns:travel.hotel_brand_owner	
+ns:soccer.football_team_manager	/people/person
+ns:boats.ship_type	
+ns:astronomy.constellation	
+ns:user.tsegaran.random.cocktail_ingredient	
+ns:location.australian_territory	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.crime.acquitted_person	
+ns:user.alexander.default_domain.human_sense_organ	
+ns:user.zeusi.default_domain.sports_series	/time/recurring_event
+ns:fictional_universe.fictional_object	
+ns:user.akatenev.weapons.armament	/user/akatenev/weapons/weapon
+ns:base.skateboarding.skateboarding_tricks	
+ns:cvg.computer_game_engine_family	
+ns:law.legal_party_role	/user/skud/legal/topic
+ns:user.micahsaul.advertising.creative_director	/m/04mny2g
+ns:base.patronage.patronage_product	/base/patronage/topic
+ns:base.americancomedy.comedian	/people/person
+ns:medicine.cancer_center_constituent	
+ns:base.productplacement.product_placing_media	/base/productplacement/topic
+ns:base.argumentmaps.moral_agent	/base/argumentmaps/topic
+ns:user.cip22.default_domain.quality_method	
+ns:spaceflight.rocket_engine_designer	
+ns:user.techgnostic.default_domain.newspaper	/user/techgnostic/default_domain/periodical
+ns:base.popstra.celebrity	/base/popstra/topic,/base/popstra/sww_base
+ns:base.events.type_of_performance	/base/events/topic
+ns:biology.gene	
+ns:biology.plant_disease	
+ns:base.crime.crime_victim	
+ns:user.jefft0.default_domain.dog_breed	
+ns:engineering.engine_category	/law/invention
+ns:automotive.company	/business/business_operation,/organization/organization,/business/employer
+ns:base.conservation.conservation_status_designation	/base/conservation/topic
+ns:business.product_line	
+ns:base.researchproject.research_project	/user/sandos/research/research_project
+ns:music.musical_scale	
+ns:base.forts.type_of_fort	/base/forts/topic
+ns:user.tommorris.default_domain.technology_movement	
+ns:computer.computer_emulator	/computer/software
+ns:user.johnmarshall.default_domain.major_league_baseball_team	/sports/sports_team,/baseball/baseball_team
+ns:people.cause_of_death	
+ns:user.randy.default_domain.consumer_electronics	
+ns:education.fraternity_sorority	/organization/organization,/business/employer
+ns:base.jewlib.original_owner	/base/jewlib/topic
+ns:tv.tv_crew_role	
+ns:base.aptamer.aptamer_target	/base/aptamer/chemical_compound,/base/aptamer/molecule,/chemistry/chemical_compound,/base/aptamer/topic
+ns:film.performance	
+ns:base.electromagneticspectrum.spectral_band	/base/electromagneticspectrum/frequency_band,/m/04snrnl
+ns:symbols.coat_of_arms	
+ns:user.anne8.spa.massage	
+ns:base.pethealth.symptom	/base/pethealth/topic
+ns:user.mt.default_domain.metabolite	/chemistry/chemical_compound
+ns:base.armoryshow1913.exhibited_artwork	/exhibitions/exhibit,/visual_art/artwork,/base/armoryshow1913/topic
+ns:base.petbreeds.city_with_dogs	/base/petbreeds/topic
+ns:base.grecoromanmythology.greek_hero	/base/grecoromanmythology/greek_mythology,/m/04lpl96,/base/grecoromanmythology/topic
+ns:base.motorcycle.motorcycle_model	/base/motorcycle/topic
+ns:base.weapons.gun	/base/weapons/topic,/base/weapons/weapon
+ns:royalty.noble_person	/people/person
+ns:aviation.accident_type	
+ns:celebrities.abused_substance	
+ns:organization.organization_partnership	
+ns:base.athletics.athletics_meeting	/base/athletics/topic,/base/athletics/athletics_series,/time/recurring_event
+ns:base.academyawards.oscar_winner_who_refused_award	/people/person,/base/academyawards/topic
+ns:base.gametheory.game_theory_game	/base/gametheory/topic,/base/argumentmaps/topic,/base/argumentmaps/original_idea
+ns:user.bobomisiu.default_domain.diplomatic_treaty	/book/written_work
+ns:base.petbreeds.dog_breed_group	/base/petbreeds/topic
+ns:base.skills.skill_equipment	/base/skills/topic
+ns:radio.radio_program_episode	
+ns:user.giladgoren.default_domain.telecom_equipment	
+ns:symbols.heraldry_granting_body	
+ns:base.parody.parodied_subject	
+ns:boxing.boxing_match	/time/event
+ns:user.yarnover.default_domain.handcrafted_object	
+ns:fictional_universe.fictional_object_destroyer	/fictional_universe/fictional_character
+ns:book.periodical	
+ns:base.ecology.type_of_ecosystem	
+ns:base.classificationsearch.classification_system	/base/classificationsearch/topic
+ns:base.technologyofdoing.knowledge_worker_practice_scope	
+ns:base.entertainmentutilities.nomination_page_metadata	/base/entertainmentutilities/topic
+ns:user.dsinclair.default_domain.expedition	
+ns:user.dylanrocks.national_football_league.nfl_suspending_party	
+ns:user.robert.x2008_presidential_election.candidate	/government/politician,/people/person
+ns:base.ontologies.ontology_class	/base/ontologies/topic
+ns:base.thesocialset.clique_type	
+ns:government.government_agency	/organization/organization
+ns:location.it_region	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.rivalries.rival	
+ns:base.schemastaging.contact_product	
+ns:transportation.bridge_type	
+ns:spaceflight.rocket_engine_fuel	
+ns:royalty.chivalric_rank	
+ns:people.american_indian_group	/people/ethnicity
+ns:user.ktrueman.default_domain.international_organization	
+ns:medicine.cancer_center	/organization/organization
+ns:base.database.spatial_database	/base/database/topic,/base/database/database
+ns:ice_hockey.hockey_conference	
+ns:base.endofallthings.apocalyptic_beliefs	/base/endofallthings/topic
+ns:user.chriseppstein.default_domain.relation	
+ns:base.umltools.modeling_language	
+ns:base.cgcollection.computer_game_network	/base/cgcollection/topic
+ns:base.technologyofdoing.proposal_agent	/people/person
+ns:internet.api	
+ns:event.disaster	/time/event
+ns:biology.animal_breed	/biology/animal
+ns:base.skateboarding.skateboarder	/base/skateboarding/topic,/business/sponsored_recipient,/people/person
+ns:architecture.ownership	
+ns:organization.non_profit_designation	
+ns:user.johm.carnegie_mellon_university.department	
+ns:user.robert.earthquakes.seismic_magnitude_scale	
+ns:base.events.festival_event	/time/event,/base/fight/crowd_event,/base/events/performance_event,/base/events/topic
+ns:location.ar_department	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:royalty.order_of_chivalry_category	
+ns:base.esports.e_sports_athlete	/base/esports/topic,/people/person
+ns:automotive.privately_owned_vehicle	
+ns:astronomy.star_system	/astronomy/celestial_object
+ns:user.digisynddillonm.default_domain.real_world_location	
+ns:user.mm_aa.default_domain.integrated_development_environment	/computer/software
+ns:base.feudalism.liege_lord	/base/feudalism/topic,/people/person
+ns:base.obamabase.cabinet_position	/base/obamabase/topic
+ns:film.film_location	
+ns:base.crime.criminal_defendant	/base/crime/topic
+ns:comic_books.comic_book_publisher	
+ns:base.textiles.textile	/base/textiles/topic
+ns:medicine.medical_specialty	
+ns:base.column.column_syndicate	/base/column/topic
+ns:base.vocabulary.ontology	/base/vocabulary/topic
+ns:base.monster.monster	/base/monster/topic
+ns:biology.owned_animal	/biology/organism
+ns:base.shapedcities.city_shape	/base/shapedcities/topic
+ns:user.robert.roman_empire.roman_emperor_title	
+ns:astronomy.type_of_planetographic_feature	
+ns:user.bjoernz.default_domain.podcaster	/people/person
+ns:fashion.fashion_designer	
+ns:base.startrek.agency	
+ns:base.ports.port_of_call_operator	
+ns:base.banking.central_bank	/base/banking/topic
+ns:base.dance.dance_company	/base/dance/topic
+ns:geography.river	/geography/geographical_feature,/location/location,/geography/body_of_water
+ns:chemistry.chemical_classification	
+ns:base.facetedbrowsing.software_domain	
+ns:base.schemastaging.organization_extra	/organization/organization
+ns:base.tallships.sail_training_organization	/organization/organization
+ns:base.vancouver.fundraiser	/base/vancouver/topic
+ns:user.alexander.default_domain.headphone_manufacturer	
+ns:martial_arts.martial_artist	/people/person
+ns:astronomy.trans_neptunian_region	
+ns:olympics.olympic_medal_demonstration	
+ns:projects.project	
+ns:baseball.baseball_division	/organization/organization,/business/employer,/sports/sports_league
+ns:architecture.type_of_museum	
+ns:base.writing.digraph	/base/writing/topic
+ns:opera.opera	/music/composition
+ns:base.community.local_currency_area	/base/community/topic
+ns:film.film_set_designer	/people/person
+ns:user.abombss.default_domain.internet_domain_name_usage	
+ns:base.eating.practicer_of_diet	/people/person
+ns:base.qualia.recreational_drug_user	
+ns:media_common.quotation_source	
+ns:user.jamie.default_domain.sailboat	/boats/ship
+ns:base.advertisingcharacters.character_portrayer	
+ns:base.sameas.consuming_api	/base/sameas/topic
+ns:sports.sports_facility	/architecture/structure,/projects/project_focus,/location/location,/architecture/venue
+ns:user.robertm.environmental_modelling.environmental_model	
+ns:spaceflight.rocket_fuel	
+ns:base.politicalconventions.convention_venue	/base/politicalconventions/topic,/location/location
+ns:user.techgnostic.default_domain.magazine_topic	
+ns:base.americancomedy.comedy_group	
+ns:film.actor	/people/person
+ns:fictional_universe.fictional_object_destruction_method	
+ns:base.popstra.substance	/base/popstra/topic,/base/popstra/sww_base
+ns:base.symbols.symbolized_concept	/base/symbols/topic
+ns:base.thebigpitch.product_promoted	
+ns:olympics.olympic_athlete_affiliation	
+ns:user.rcheramy.default_domain.hockey_division	
+ns:user.joehughes.default_domain.transit_application	/user/joehughes/default_domain/lifetime
+ns:base.endorsements.endorsing_newspaper	/book/periodical,/book/newspaper,/base/endorsements/topic
+ns:film.film_crewmember	/people/person
+ns:user.psych0fred.default_domain.discovered_by	
+ns:base.disaster2.injury_causing_event	/time/event,/base/disaster2/topic
+ns:user.paul_houle.default_domain.nuclear_reactor	
+ns:medicine.diagnostic_test	
+ns:base.schemastaging.recurring_event_extra	/base/schemastaging/topic,/time/recurring_event
+ns:base.schemastaging.person_extra	/people/person
+ns:user.skud.boats.naval_combatant	/military/military_combatant
+ns:law.judicial_title	/user/skud/legal/topic
+ns:visual_art.visual_art_medium	
+ns:automotive.manufacturing_plant	/architecture/structure,/projects/project_focus,/location/location
+ns:user.alexander.default_domain.robot	
+ns:base.writing.grapheme	/base/writing/topic
+ns:base.nascar.nascar_race	/base/nascar/topic
+ns:user.robert.roman_empire.roman_emperor	/user/robert/roman_empire/topic
+ns:computer.file_format	
+ns:base.animalnames.animal_group_name	/base/animalnames/topic
+ns:fictional_universe.person_in_fiction	
+ns:freebase.freebase_interest_group	
+ns:base.litcentral.focal_location	/base/litcentral/topic,/location/location
+ns:user.agroschim.default_domain.notable_author_of_a_lit_movement	/people/person
+ns:time.holiday_period	
+ns:user.blackhound.hornblower_universe.book	/book/book,/book/written_work
+ns:base.popstra.organization	/base/popstra/topic,/base/popstra/sww_base
+ns:user.thadguidry.default_domain.usoc_governing_body	/organization/organization,/business/employer,/organization/non_profit_organization
+ns:music.arrangement	/music/composition
+ns:base.bioventurist.bv_medical_condition	/medicine/disease
+ns:base.crime.executed_person	/base/crime/convicted_criminal,/base/crime/topic
+ns:base.crime.law_firm	/business/employer
+ns:base.events.festival_series	/base/events/topic,/time/recurring_event
+ns:user.danm.fictional_settings_real_places.work_of_fiction	/fictional_universe/work_of_fiction
+ns:media_common.dedicated_work	
+ns:base.athletics.athletics_area	/base/athletics/topic
+ns:medicine.notable_person_with_medical_condition	/people/person
+ns:user.herrmann.artificial_intelligence_planning.planning_system	/computer/software
+ns:user.jasso.default_domain.instant_messenger_network	
+ns:government.election	/time/event
+ns:film.production_company	
+ns:user.sbsummer.default_domain.x	
+ns:biology.organism_classification	
+ns:business.sponsor	
+ns:base.bigsky.landing_zone	/base/bigsky/topic
+ns:base.thoroughbredracing.thoroughbred_racehorse_sex	/base/thoroughbredracing/topic
+ns:base.newsevents.videotaped_event	/base/newsevents/topic
+ns:user.lindenb.default_domain.scientist	/people/person
+ns:base.fires.explosive_substance	
+ns:location.mailing_address	/location/location
+ns:base.engineering.building_element_category	/base/engineering/topic
+ns:user.kaplanmyrth.default_domain.legal_jurisdiction	
+ns:base.computerscience.cryptographer	/base/computerscience/topic
+ns:base.animalnames.animal_gender	/base/animalnames/topic
+ns:base.livemusic.concert	/base/livemusic/topic
+ns:amusement_parks.park	/travel/tourist_attraction,/location/location
+ns:user.alexander.default_domain.headphone	
+ns:base.nobelprizes.nobel_subject_area	
+ns:sports.sport_country	
+ns:base.educationalshortfilm.studios_and_companies	/base/educationalshortfilm/topic,/film/film_company
+ns:medicine.disease_stage	
+ns:engineering.channel_access_method	
+ns:user.jamie.default_domain.osm.way	
+ns:film.film_costumer_designer	/people/person
+ns:medicine.disease_cause	
+ns:base.ecology.food_web_member	
+ns:base.mladraft.library_system_tenure	
+ns:cvg.game_series	
+ns:user.mrmasterbastard.default_domain.region_in_finland	
+ns:food.tea_type	
+ns:base.politicalconventions.vice_presidential_nominee	/government/politician,/base/politicalconventions/topic,/people/person,/government/election_campaign
+ns:base.rally.rally	/time/event
+ns:architecture.building_occupant	
+ns:user.arielb.default_domain.dormitory	/architecture/building,/architecture/structure,/projects/project_focus
+ns:business.trade_union	/organization/organization,/business/employer
+ns:user.rca.default_domain.us_court_decision	
+ns:media_common.netflix_title	
+ns:religion.religious_leadership_role	
+ns:base.whamoworld.games_based_on_wham_o_products	/base/whamoworld/topic
+ns:base.marchmadness.ncaa_basketball_tournament	/time/event,/base/marchmadness/topic
+ns:user.rpasay.software_package.database_organization_model	
+ns:base.politeuri.provider	
+ns:travel.hotel_brand	
+ns:user.jamie.default_domain.yacht_racing.yacht_race	/time/recurring_event
+ns:exhibitions.exhibition_curator	
+ns:tv.tv_producer_type	
+ns:user.moonhouse.default_domain.library_classification_system	
+ns:user.alexander.toys.toy_line	
+ns:tv.tv_program	
+ns:user.robert.us_congress.congressional_district	
+ns:user.afraz.default_domain.school_of_thought	
+ns:base.popstra.rehab_facility	/base/popstra/topic,/base/popstra/sww_base
+ns:base.mapcentral.fgdc_identification	/base/mapcentral/fgdc_data_quality,/base/mapcentral/fgdc_entity_and_attribute,/base/mapcentral/fgdc_distribution,/base/mapcentral/fgdc_spatial_data_organization,/base/mapcentral/fgdc_identification,/base/mapcentral/topic,/base/mapcentral/fgdc_metadata,/base/mapcentral/fgdc_spatial_reference,/base/mapcentral/fgdc_metadata_reference
+ns:rail.locomotive_class	
+ns:measurement_unit.luminous_flux_unit	/freebase/unit_profile,/type/unit
+ns:education.school_mascot	
+ns:user.jamslevy.plopquiz.profile	
+ns:base.newsevents.photographer	/people/person
+ns:user.narphorium.people.wealthy_person	/people/person
+ns:biology.domesticated_animal	
+ns:music.guitar	
+ns:meteorology.tropical_cyclone	
+ns:base.schemastaging.entity_hint	
+ns:base.americancivilwar.ship	/boats/ship,/base/americancivilwar/topic
+ns:user.alexander.philosophy.school_of_thought	
+ns:sports.sports_league	/organization/organization,/business/employer
+ns:award.award_winner	/people/person
+ns:royalty.chivalric_office	
+ns:base.dinosaur.dinosaur	/biology/organism_classification,/base/litcentral/topic,/base/dinosaur/topic,/base/litcentral/extinct_taxon
+ns:base.cryptography.cryptographer	/base/cryptography/topic
+ns:user.alexander.philosophy.subject	
+ns:boats.ship_class	
+ns:religion.monastery	/architecture/building,/architecture/structure,/projects/project_focus,/location/location
+ns:fashion.fiber	
+ns:user.hailey2009.default_domain.elements	
+ns:user.patrick.default_domain.submarine_type	
+ns:base.exoplanetology.planetary_classification	/base/exoplanetology/topic
+ns:base.banned.banning_agency	/base/banned/topic
+ns:base.classificationsearch.knowledge_organization_system	/base/classificationsearch/topic
+ns:location.us_state	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:user.jefft0.default_domain.virus_classification	
+ns:user.cheunger.sports_test.sports_team	
+ns:user.tsegaran.random.taxonomy_subject	/user/tsegaran/random/topic
+ns:base.celeb.lived_with	/base/celeb/topic,/base/celeb/common
+ns:base.popstra.product	/base/popstra/topic,/base/popstra/sww_base
+ns:exhibitions.exhibition_venue	
+ns:broadcast.content	
+ns:food.nutrient	
+ns:user.zsi_editorial.editorial.editor	
+ns:base.argumentmaps.type_of_argument	/base/argumentmaps/topic
+ns:user.movgp0.default_domain.derived_unit	/m/02nz8n8
+ns:base.roses.type_of_rose	
+ns:measurement_unit.volume_unit	/freebase/unit_profile,/type/unit
+ns:award.award_presenting_organization	
+ns:base.motorsports.motorsport_racing_class	/base/motorsports/topic
+ns:base.sanfranciscoscene.san_francisco_draq_queen	/base/sanfranciscoscene/topic
+ns:time.event	
+ns:distilled_spirits.fermentation_base	
+ns:user.gregmarsh.default_domain.venture_capitalist	/people/person
+ns:user.richdice.ontario_microbrew_beers.beer	
+ns:music.voice	/music/performance_role
+ns:user.notreadbyhumans.default_domain.originator	
+ns:games.game_designer	
+ns:user.alexander.misc.object_of_parody	/user/alexander/misc/topic
+ns:user.skud.embassies_and_consulates.ambassador	/people/person
+ns:base.horseracing.recurring_horse_race	/time/recurring_event
+ns:base.thesocialset.clique	
+ns:base.bioventurist.technology_class	
+ns:base.formula1.formula_1_grand_prix	/base/formula1/topic
+ns:base.localfood.food_preservation_method	
+ns:base.argumentmaps.idea	/base/argumentmaps/topic
+ns:base.vanhomeless.government_agreements	/base/vanhomeless/topic
+ns:sports.tournament_event_competition	/time/event
+ns:base.plantstructure.plant	
+ns:business.issuer	
+ns:opera.opera_production	
+ns:fictional_universe.fictional_organization	
+ns:base.piercings.piercing	/base/piercings/topic
+ns:religion.religion	
+ns:business.shopping_center	/location/location
+ns:royalty.chivalric_order_officer	
+ns:base.politicalconventions.presidential_nominee	/government/politician,/base/politicalconventions/topic,/people/person
+ns:location.it_province	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.qualia.disabled_person	/base/qualia/topic
+ns:sports.sports_official	/people/person
+ns:user.alexander.default_domain.human_sense	
+ns:base.casinos.casino	/base/casinos/topic
+ns:music.musical_tribute_act	
+ns:user.evening.default_domain.animal_produc	
+ns:base.scubadiving.ecoregion	/base/scubadiving/topic,/location/location
+ns:user.cuvwolf.default_domain.noble_truths	
+ns:location.uk_non_metropolitan_county	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.engineering.water_reservoir_use	/base/engineering/topic
+ns:visual_art.visual_artist	/people/person
+ns:food.beer_container	
+ns:user.alexbl.congressional_voting_records.legislative_matter	
+ns:user.ianbetteridge.default_domain.magazine	
+ns:computer.operating_system	
+ns:base.patronage.patron	
+ns:base.crime.crime_suspect	
+ns:user.dylanrocks.national_football_league.nfl_stadium	/architecture/structure,/sports/sports_facility,/location/location
+ns:base.formula1.formula_1_season	/base/formula1/topic
+ns:cvg.cvg_designer	
+ns:base.yalebase.secret_society_member	/base/yalebase/person,/base/yalebase/topic
+ns:metropolitan_transit.transit_vehicle	
+ns:user.chaswarner.default_domain.computer_program	
+ns:freebase.unit_profile	/type/unit
+ns:base.thebigpitch.promoted_product	
+ns:base.computerscience.automaton	/base/computerscience/topic
+ns:food.candy_bar	
+ns:business.board_member	/people/person
+ns:royalty.noble_title	
+ns:base.rugby.rugby_player	/base/rugby/topic,/sports/pro_athlete,/people/person
+ns:user.bjoernz.default_domain.podcast	
+ns:soccer.fifa	
+ns:basketball.basketball_position	
+ns:base.centreforeresearch.staff	/base/centreforeresearch/topic
+ns:martial_arts.martial_arts_qualification	
+ns:base.proposedprojects.project_proposer	/base/proposedprojects/topic
+ns:boats.ship	
+ns:interests.collection_category	
+ns:base.schemastaging.sports_team_extra	/base/schemastaging/topic,/sports/sports_team
+ns:user.micahsaul.five_alarm_food.hot_sauce_base	
+ns:user.alexander.default_domain.argument	
+ns:user.margit.default_domain.research_project	
+ns:base.activism.activist_event	/time/event
+ns:protected_sites.iucn_category	
+ns:base.horseracing.racehorse	/base/horseracing/topic,/biology/organism
+ns:base.pirates.pirate	/base/pirates/topic,/people/person
+ns:base.puzzles.puzzle_constructor	/base/puzzles/topic,/people/person
+ns:base.fictionaluniverse.cloned_character	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:user.doconnor.industry_standards.standards_body	/organization/organization,/business/employer
+ns:american_football.football_team	/sports/sports_team
+ns:base.schemastaging.sports_coach	
+ns:travel.hotel_operator	/business/business_operation,/organization/organization,/business/employer
+ns:base.politeuri.sparql_technology	
+ns:user.jamie.military_awards.military_award_recipient	/user/jamie/military_awards/topic
+ns:base.minerals.mineral	/base/minerals/topic
+ns:measurement_unit.distance_unit	/freebase/unit_profile,/type/unit
+ns:base.argumentmaps.thing_of_disputed_value	/base/argumentmaps/topic
+ns:base.americancomedy.impersonated_celebrity	
+ns:medicine.type_of_infectious_agent	
+ns:base.horticulture.cultivar_parent	/base/horticulture/topic
+ns:user.sandos.toys.toy_category	
+ns:base.feudalism.vassal	/base/feudalism/topic,/people/person
+ns:base.bigsky.region	/base/bigsky/topic
+ns:user.stu.default_domain.star	
+ns:user.mdaconta.human_resources.employee	
+ns:base.coinsdaily.coin_type	
+ns:cvg.gameplay_mode	
+ns:base.motorcycle.motorcycle_section	/base/motorcycle/topic
+ns:base.computerscience.complexity_class	/base/computerscience/topic
+ns:government.governmental_jurisdiction	/location/location
+ns:base.schemastaging.tv_program_extra	/tv/tv_program
+ns:base.infection.computer_infection	/time/event,/base/infection/topic,/base/crime/crime,/base/crime/topic
+ns:base.sounds.sampled_audio_recording	/base/sounds/audio_recording,/base/sounds/topic
+ns:music.musical_instrument_company	/business/business_operation,/organization/organization
+ns:theater.theater_company	/organization/organization
+ns:base.crime.criminal_trial	/time/event
+ns:user.jsullivan.default_domain.historical_events	
+ns:time.time_zone	
+ns:media_common.netflix_genre	
+ns:measurement_unit.measurement_system	
+ns:user.skud.boats.vessel	/user/skud/boats/topic
+ns:base.engineering.dam_structure_category	/base/engineering/topic
+ns:automotive.engine	
+ns:user.alexander.default_domain.royal_realm	/location/location
+ns:base.dancegroups.dance_group	/base/dancegroups/topic
+ns:user.riedelcastro.default_domain.causalevent	/time/event
+ns:user.joshuamclark.default_domain.bird	
+ns:travel.transport_terminus	
+ns:games.game	
+ns:base.locations.counties_parishes_and_boroughs	/base/locations/topic
+ns:base.qualia.type_of_disability	
+ns:location.hud_foreclosure_area	/location/location
+ns:medicine.muscle	/medicine/anatomical_structure
+ns:user.alexander.misc.murdered_person	/people/deceased_person,/people/person
+ns:fashion.weave	
+ns:education.school_category	
+ns:base.jewlib.jewish_studies_periodical	/book/periodical,/base/jewlib/topic,/business/employer,/base/jewishpress/topic
+ns:base.mystery.hoaxter	/base/mystery/topic,/people/person
+ns:base.cdnpolitics.bill	/base/cdnpolitics/topic
+ns:base.disaster2.attacker	
+ns:fictional_universe.fictional_job_title	
+ns:type.object	
+ns:biology.deceased_organism	/biology/organism
+ns:base.conservation.conservation_list	/base/conservation/topic
+ns:computer.computer_manufacturer_brand	
+ns:base.pipesmoking.component_tobacco	/base/pipesmoking/topic
+ns:skiing.ski_lift_manufacturer	/business/business_operation,/organization/organization
+ns:broadcast.radio_format	
+ns:user.robert.military.military_power	
+ns:base.bikespeed.adventure	/base/bikespeed/topic
+ns:base.process.process_state	
+ns:user.narphorium.default_domain.profession	
+ns:base.motorcycle.engine_type	/base/motorcycle/topic
+ns:event.presented_work	/book/written_work
+ns:user.narphorium.default_domain.beer_style	/food/beer_style
+ns:user.tfmorris.default_domain.document	
+ns:base.yalebase.publication	/base/yalebase/topic
+ns:base.engineering.structure	/base/engineering/topic,/architecture/structure,/projects/project_focus,/location/location
+ns:broadcast.artist	
+ns:base.permaculture.permaculture_element_need	/base/permaculture/topic
+ns:base.calendars.calendar	/base/calendars/topic
+ns:base.engineering.canal	/base/engineering/topic,/projects/project_focus,/location/location,/geography/body_of_water
+ns:base.onephylogeny.type_of_thing	/base/onephylogeny/topic
+ns:user.arielb.israel.regional_council	/government/governmental_body
+ns:fictional_universe.type_of_fictional_setting	
+ns:base.motorcycle.motorcycle_series	/base/motorcycle/topic
+ns:base.ancientegypt.tomb_owner	
+ns:music.conductor	
+ns:education.dissertation	/book/scholarly_work,/book/written_work
+ns:base.argumentmaps.correlation	/base/argumentmaps/original_idea,/base/argumentmaps/topic,/base/argumentmaps/idea
+ns:library.public_library	
+ns:base.ghtech.gh_nonprofits	/base/ghtech/topic,/organization/organization
+ns:base.mladraft.mla_operator	/business/employer,/base/mladraft/topic
+ns:metropolitan_transit.transit_system	
+ns:user.giladgoren.default_domain.supertopic	
+ns:base.hauntedplaces.haunted_places	
+ns:sports.professional_sports_team	/sports/sports_team
+ns:aviation.aircraft_type	
+ns:base.usnris.nris_listing	/protected_sites/listed_site,/base/usnris/topic
+ns:architecture.landscape_project	/location/location
+ns:base.tallships.sail_training_vessel	
+ns:base.cinemainspector.person_sign	/base/cinemainspector/topic,/film/actor,/people/person
+ns:user.skud.boats.shipyard	/user/skud/boats/topic,/location/location
+ns:architecture.engineering_firm	/business/business_operation,/organization/organization,/business/employer
+ns:base.thesocialset.clique_leading_member	
+ns:astronomy.galactic_cluster	/astronomy/celestial_object
+ns:user.benstiglitz.default_domain.portable_media_player	
+ns:base.battlestargalactica.humanoid_cylon_model	/base/battlestargalactica/topic
+ns:base.climatechangeandmuseums.museum_programmes	/base/climatechangeandmuseums/topic
+ns:location.tw_province	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:user.alexander.default_domain.debate	
+ns:user.frakilk.default_domain.species	
+ns:geology.geological_formation	/geography/geographical_feature,/location/location
+ns:base.militaryinfiction.military_unit_in_fiction	/base/militaryinfiction/topic,/fictional_universe/fictional_organization
+ns:astronomy.meteoric_composition	
+ns:base.catalog.music_catalog_creator	/base/catalog/topic,/people/person
+ns:government.legislative_committee_title	
+ns:user.giladgoren.default_domain.telecom_equipment_type	
+ns:base.popstra.criminal_offense	/base/popstra/topic,/base/popstra/sww_base
+ns:base.fictionaluniverse.deceased_fictional_character	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:location.ru_republic	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:government.us_vice_president	/government/politician,/people/person
+ns:base.motorcycle.motorcycle_make	/base/motorcycle/topic
+ns:base.actsofparliament.parliaments	/base/actsofparliament/topic
+ns:user.sprocketonline.economics.legislative_body	/government/governmental_body,/user/sprocketonline/economics/topic
+ns:base.revisioncontrol.concurrency_model	/base/revisioncontrol/topic
+ns:base.endorsements.endorsing_person	/people/person,/base/endorsements/topic
+ns:base.datedlocationtest.dated_location_test	/location/dated_location,/base/datedlocationtest/topic,/location/location
+ns:tv.tv_personality	
+ns:chemistry.chemical_series	
+ns:user.micahsaul.five_alarm_food.hot_food_manufacturer	
+ns:metropolitan_transit.transit_service_type	
+ns:visual_art.visual_art_form	
+ns:book.poem_character	/fictional_universe/fictional_character
+ns:sports.boxing_weight_division	
+ns:user.detroiter313.default_domain.flagship_station	
+ns:base.icons.icon_genre	/base/icons/topic
+ns:base.juiced.banned_substance	
+ns:base.schemastaging.sumo_division	
+ns:tv.tv_song	/music/composition
+ns:book.translator	/people/person
+ns:base.usstatesymbols.gemstone	
+ns:base.disaster2.type_of_injury	
+ns:base.rivalries.rivalry	/base/rivalries/topic
+ns:base.athletics.athletics_country	/base/athletics/topic
+ns:influence.influence_node	
+ns:ice_hockey.hockey_division	
+ns:measurement_unit.mass_unit	/freebase/unit_profile,/type/unit
+ns:military.military_commander	/people/person
+ns:base.saints.saint	/base/saints/topic,/people/person
+ns:music.musical_group	/music/artist
+ns:base.filmcameras.viewfinder_type	/base/filmcameras/topic
+ns:business.industry	
+ns:user.jeff.stories_to_novels.adapted_story	/book/short_story,/fictional_universe/work_of_fiction,/book/written_work,/user/jeff/stories_to_novels/topic,/book/published_work
+ns:olympics.olympic_bidding_city	/location/citytown,/location/location
+ns:user.carmenmfenn1.default_domain.cityscape	/location/citytown,/location/location
+ns:cvg.cvg_publisher	/business/business_operation,/organization/organization,/business/employer
+ns:spaceflight.astronaut	/people/person
+ns:base.conservationaction.participation_group	
+ns:base.mladraft.institution	/base/mladraft/topic
+ns:base.argumentmaps.object_of_disputed_existence	/base/argumentmaps/topic
+ns:military.military_conflict	/time/event
+ns:base.sportssandbox.sports_recurring_event	/time/recurring_event,/base/sportssandbox/topic
+ns:base.mapcentral.geographic_coordinate_system	/base/mapcentral/topic
+ns:medicine.drug_ingredient	
+ns:spaceflight.space_mission	/time/event,/projects/project_focus
+ns:music.music_video	
+ns:base.mapcentral.reference_ellipsoid	
+ns:base.crime.crime_accuser	
+ns:type.property	
+ns:base.grecoromanmythology.greek_deity	/religion/deity,/base/grecoromanmythology/greek_mythology,/base/grecoromanmythology/topic,/m/04lpl8_
+ns:user.atstcyr.default_domain.framework	
+ns:base.argumentmaps.subject_of_curiousity	/base/argumentmaps/topic
+ns:education.academic_institution	
+ns:user.cheunger.sports_test.ranking_organization	
+ns:base.horticulture.cultivar_origin	/base/horticulture/topic,/location/location
+ns:amusement_parks.disney_ride_ticket	
+ns:base.petbreeds.dog_breed	/base/petbreeds/topic,/biology/animal_breed
+ns:education.athletics_brand	
+ns:book.newspaper_owner	
+ns:user.gorans.default_domain.car	
+ns:user.dminkley.biology.biological_organism	/user/dminkley/biology/biological_classification,/user/dminkley/biology/topic
+ns:fictional_universe.fictional_calendar_system	
+ns:olympics.olympic_venue	/architecture/structure,/sports/sports_facility,/projects/project_focus,/location/location
+ns:base.mathematics1.operation	/base/mathematics1/topic
+ns:user.redpointed.default_domain.climbing_route	
+ns:base.pethealth.cause	/base/pethealth/topic
+ns:biology.plant_disease_host	/biology/organism_classification
+ns:base.siswimsuitmodels.si_swimsuit_model	/base/fashionmodels/topic,/base/fashionmodels/fashion_model,/people/person,/base/siswimsuitmodels/topic
+ns:engineering.signal_modulation_mode	
+ns:base.hauntedplaces.ghost	
+ns:base.textiles.textile_production_method	/base/textiles/topic
+ns:base.litcentral.previous_organism_classification	/biology/organism_classification,/base/litcentral/topic
+ns:base.minerals.industrial_commodity	
+ns:music.artist	
+ns:base.webvideo.internet_video_creator	/base/webvideo/topic
+ns:base.musiteca.performer	/user/robert/performance/performer,/base/musiteca/topic
+ns:base.nationalbridgeinventory.bridged_location	/base/nationalbridgeinventory/topic,/location/location
+ns:base.phytochemical.flavonoid_subclass	
+ns:base.cerealgrains.cereal_grain	/base/cerealgrains/topic
+ns:celebrities.celebrity	
+ns:venture_capital.venture_investor	
+ns:user.cip22.default_domain.scientist	/people/person
+ns:base.americancivilwar.theater	/base/americancivilwar/topic
+ns:user.detroiter313.default_domain.licensee	
+ns:business.employer	
+ns:people.gender	
+ns:base.fictionaluniverse.fictional_impersonator	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:base.fight.protest	/base/fight/topic,/time/event,/base/argumentmaps/motivated_event
+ns:language.language_creator	/people/person
+ns:comic_books.comic_book_genre	/media_common/media_genre
+ns:base.startrek.starship_class	
+ns:user.gromul.my_comic_book_domain.media_franchise	
+ns:base.mystery.cryptid_area_of_occurrence	/location/location
+ns:user.duck1123.default_domain.primary_identity	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:film.film_song	/music/composition
+ns:user.jamslevy.plopquiz.proficiency_domain	
+ns:base.crime.type_of_criminal_organization	
+ns:education.school_magazine	/book/magazine,/book/periodical
+ns:distilled_spirits.spirit_bottler	/business/business_operation,/organization/organization,/business/employer
+ns:user.margit.default_domain.visualization_tool	/computer/software
+ns:meteorology.cloud	
+ns:food.beer_style	
+ns:measurement_unit.current_unit	/freebase/unit_profile,/type/unit
+ns:base.thesocialset.clique_hub_personality	
+ns:symbols.coat_of_arms_bearer	
+ns:measurement_unit.energy_unit	/freebase/unit_profile,/type/unit
+ns:location.hud_county_place	/location/hud_foreclosure_area,/location/location
+ns:fictional_universe.character_rank	
+ns:base.gambling.lottery_game	/base/gambling/topic
+ns:user.arielb.israel.israeli_settlement	/location/statistical_region,/location/dated_location,/location/citytown,/location/location
+ns:base.minerals.crystalline_material	
+ns:music.compositional_form	
+ns:american_football.football_coach_position	
+ns:base.cdnpolitics.legislative_assembly	/government/governmental_body,/base/cdnpolitics/topic
+ns:base.saturdaynightlive.snl_recurring_sketch	
+ns:government.electoral_college	
+ns:travel.hotel	/architecture/building,/architecture/structure,/travel/accommodation,/projects/project_focus,/location/location
+ns:award.award_ceremony	/time/event
+ns:symbols.flag_referent	
+ns:martial_arts.martial_art	
+ns:user.micahsaul.five_alarm_food.chili_species	
+ns:base.sails.sailing_ship_class	/base/sails/topic,/boats/ship_class
+ns:user.kwelle.default_domain.snooker_tournament	
+ns:food.tea	
+ns:computer.web_browser	/computer/software
+ns:base.environmentalism.environmental_issue_cause	
+ns:base.collectives.collective_focus	
+ns:astronomy.asteroid_group	
+ns:base.wrestling.professional_wrestling_manager	/tv/tv_personality,/people/person,/base/wrestling/topic
+ns:base.technologyofdoing.knowledge_worker_trait	
+ns:internet.top_level_domain	
+ns:book.literary_series	
+ns:base.morelaw.peace_treaty	/user/skud/legal/treaty,/base/morelaw/topic
+ns:cvg.computer_game_engine	
+ns:comic_books.comic_book_character	
+ns:base.sounds.audio_recording	
+ns:base.technologyofdoing.knowledge_worker_practice	
+ns:celebrities.rehab_facility	
+ns:base.oceanography.oceanographic_research_vessel	/boats/ship,/user/skud/boats/topic,/user/skud/boats/vessel,/base/oceanography/topic
+ns:base.horsefacts.coat_locus_effect	/base/horsefacts/topic
+ns:symbols.flag	
+ns:user.kake.iron_chef.iron_chef	/tv/tv_personality
+ns:theater.theater_designer_role	
+ns:user.sandos.software.rcs_type	
+ns:base.christmas.christmas_carol	/music/composition,/base/christmas/topic
+ns:olympics.olympic_mascot	/sports/mascot
+ns:cricket.cricket_administrative_body	/organization/organization,/business/employer
+ns:base.associationfootball.soccer_squad	/base/associationfootball/topic
+ns:base.mystery.cryptid_observation_location	/location/location
+ns:event.public_speaker	/people/person
+ns:user.ebel.default_domain.eurovision_song_contest	
+ns:base.anglican.church	/base/anglican/topic
+ns:organization.organization_type	
+ns:user.sandos.toys.toy	
+ns:base.represent.agency	/base/represent/topic
+ns:base.coinsdaily.design	
+ns:user.jfry.default_domain.pseudonym	
+ns:user.jeff.default_domain.football_tournament_participating_team	
+ns:base.satelites.orbited_body	/base/satelites/topic
+ns:user.maport.cocktail.cocktail_ingredient	
+ns:user.sandos.computation.software_framework	/computer/software
+ns:sports.tournament_event_competitor	/sports/pro_athlete,/people/person
+ns:base.whamoworld.wham_o_toy_product_homage	/base/whamoworld/topic
+ns:base.thoroughbredracing.thoroughbred_racehorse_origin	
+ns:time.holiday_category	
+ns:user.alexbl.congressional_voting_records.congressional_member	
+ns:theater.musical_soundtrack	/music/album
+ns:user.alfborge.default_domain.dance	
+ns:user.zeusi.default_domain.athletics_venue	/architecture/structure,/sports/sports_facility,/projects/project_focus
+ns:base.folklore.named_mythical_creature	
+ns:architecture.museum	/travel/tourist_attraction
+ns:base.nascar.nascar_racing_organization_owner	/base/nascar/topic
+ns:projects.project_participant	
+ns:user.digitalarchivist.default_domain.incunabulum	
+ns:award.hall_of_fame	
+ns:base.vgames.video_game	/cvg/computer_videogame,/base/vgames/topic
+ns:user.digisynddillonm.default_domain.fictional_setting	/fictional_universe/fictional_setting
+ns:olympics.olympic_participating_country	
+ns:user.duck1123.default_domain.adoptive_character	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:base.atitdatlas.region	/base/atitdatlas/topic
+ns:base.honouriam.honour	/base/honouriam/topic
+ns:user.evening.default_domain.business_group_member	
+ns:user.dsinclair.default_domain.colony	
+ns:base.yalebase.secret_society_founder	/base/yalebase/person,/base/yalebase/topic
+ns:freebase.apps.hosts.com.appspot.acre.topics.company	
+ns:base.backpacking1.trail	
+ns:base.snowboard.snowboarder	/business/sponsored_recipient,/award/competitor,/base/snowboard/topic,/people/person
+ns:base.schemastaging.sumo_rank	
+ns:base.architecture2.destroyed_structure	/base/architecture2/topic,/projects/project_focus,/base/architecture2/structure2,/location/location
+ns:law.us_patent	
+ns:base.schemastaging.golfer_extra	/base/schemastaging/topic,/sports/pro_athlete,/sports/golfer,/people/person
+ns:measurement_unit.resistance_unit	/freebase/unit_profile,/type/unit
+ns:base.skateboarding.skateboard_stance	/base/skateboarding/topic
+ns:transportation.highway_system	
+ns:biology.informal_biological_grouping	
+ns:base.nasagcmd.gcmd_keyword1	/base/litcentral/metadata_keyword1,/base/litcentral/topic,/base/nasagcmd/topic
+ns:base.crime.execution	/time/event,/base/crime/topic
+ns:digicams.camera_compressed_format	
+ns:media_common.literary_genre	/media_common/media_genre
+ns:user.robert.earthquakes.earthquake	
+ns:base.argumentmaps.theory	/base/argumentmaps/topic,/base/argumentmaps/original_idea,/base/argumentmaps/idea
+ns:base.animemanga.anime_title	/base/animemanga/topic
+ns:user.sai_rath.default_domain.freedom_fighter	/people/person
+ns:base.crime.law_enforcement_authority	/business/employer,/government/government_agency
+ns:base.computerscience.computer_architecture	/base/computerscience/topic
+ns:user.alexander.misc.parody	/user/alexander/misc/topic
+ns:architecture.building	/architecture/structure,/projects/project_focus,/location/location
+ns:user.alexander.default_domain.royal_house_member	/people/person
+ns:religion.religious_text	
+ns:base.nascar.nascar_racing_organization	/base/nascar/topic
+ns:interests.collectable_item	
+ns:base.ancientegypt.pharaoh	/people/deceased_person,/people/person
+ns:base.saturdaynightlive.snl_movie_spin_off	
+ns:comic_strips.comic_strip	
+ns:user.techgnostic.default_domain.tv_program	/tv/tv_program
+ns:base.handball.handball_team	/sports/sports_team,/base/handball/topic
+ns:visual_art.art_series	
+ns:user.yarnover.default_domain.handcraft_technique	
+ns:computer.programming_language	
+ns:user.duck1123.default_domain.derived_character	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:user.dfhuynh.default_domain.assassin	
+ns:user.subtext.default_domain.political_ideology	
+ns:base.tournaments.tournament_group	/time/event
+ns:base.mapcentral.fgdc_keyword	/base/litcentral/topic,/base/mapcentral/topic,/base/litcentral/metadata_keyword
+ns:user.dharmatech.default_domain.political_organization	
+ns:base.computerscience.cipher_structure	/base/computerscience/topic
+ns:base.bioventurist.bv_phase_of_development	/base/bioventurist/topic
+ns:base.argumentmaps.expression_of_disvalue	/base/argumentmaps/topic
+ns:base.icons.icon	/base/icons/topic
+ns:medicine.disease	
+ns:base.engineering.covering_material	
+ns:base.bigsky.launch	/base/bigsky/topic
+ns:medicine.transmission_route	
+ns:base.coffee.coffee	
+ns:language.language_writing_system	
+ns:medicine.contraindication	
+ns:rail.locomotive_owner	
+ns:book.publication	
+ns:user.daepark.default_domain.golf_club	
+ns:user.pak21.default_domain.hybrid	
+ns:base.saturdaynightlive.snl_cast_member	/base/saturdaynightlive/snl_actor
+ns:time.calendar	
+ns:user.lindajohnson.default_domain.contraindications	
+ns:base.disaster2.emergency_law	
+ns:base.schemastaging.caddie	/base/schemastaging/topic
+ns:base.sharing.sharable_thing	/base/sharing/topic
+ns:base.conservationaction.collaborator	/base/conservationaction/topic
+ns:base.skills.skill_output	/base/skills/topic
+ns:organization.organization	
+ns:basketball.basketball_coach	/people/person
+ns:food.culinary_measure	
+ns:base.skateboarding.skateboarding_location	/base/skateboarding/topic,/location/location
+ns:user.tsegaran.random.subject_taxonomy	/user/tsegaran/random/topic
+ns:astronomy.star	/astronomy/celestial_object,/astronomy/orbital_relationship
+ns:base.propositions.proposition	/base/propositions/topic
+ns:government.general_election	/time/event
+ns:base.motorsports.racing_circuit_designer	
+ns:symbols.name_source	
+ns:user.robert.us_congress.house_committee	
+ns:user.sandos.semantic_web.semantic_website	/internet/website
+ns:film.film_format	
+ns:games.game_genre	/media_common/media_genre
+ns:base.saturdaynightlive.snl_character	
+ns:food.diet	
+ns:base.schemastaging.sports_team_manager_position	
+ns:government.government_office_category	
+ns:base.recoveryact.recovery_act_sub_recipient	
+ns:people.professional_field	
+ns:transportation.road	/location/location
+ns:tv.non_character_role	
+ns:base.animemanga.manga_author	/base/animemanga/topic,/people/person
+ns:user.mt.default_domain.thinker	/people/person
+ns:base.x2010fifaworldcupsouthafrica.fifa_world_cup	/base/x2010fifaworldcupsouthafrica/topic
+ns:user.brendan.musician_products.brand	
+ns:user.ktrueman.default_domain.academic_journal	
+ns:user.patrick.default_domain.tag	
+ns:award.hall_of_fame_induction_category	
+ns:event.disaster_affected_structure	/architecture/structure,/projects/project_focus
+ns:user.dubble.default_domain.news_organization	
+ns:user.thadguidry.default_domain.motorsport_racing_class	
+ns:base.disaster2.object_used_as_weapon	
+ns:user.sandos.software.revision_control_software	
+ns:base.underwater.underwater_thing	/base/underwater/topic,/location/location
+ns:user.jsullivan.default_domain.event_actor	
+ns:book.book	/book/written_work
+ns:business.job_title	
+ns:base.observances.observance_founder	/base/observances/topic
+ns:base.architecture2.architectural_structure_tenant	
+ns:film.writer	/people/person
+ns:dining.cuisine	
+ns:astronomy.celestial_object_category	
+ns:base.musiteca.situation	/base/musiteca/topic
+ns:user.jamie.food.herb_complement	
+ns:user.ddammann.default_domain.teacher	/people/person
+ns:base.ancientegypt.pyramid_site	
+ns:sports.multi_event_tournament	/time/event
+ns:user.jerols.default_domain.historical_event	
+ns:base.piercings.piercing_jewelry	/base/piercings/topic
+ns:user.egyptianreggae.default_domain.judge	
+ns:base.argumentmaps.intention	/base/argumentmaps/topic
+ns:base.puzzles.puzzle	
+ns:travel.transport_operator	
+ns:base.engineering.dam	/base/engineering/topic,/architecture/structure,/projects/project_focus,/location/location
+ns:base.wrestling.championship_title	/base/wrestling/topic
+ns:olympics.olympic_games	/time/event
+ns:base.arthist.muveszek	
+ns:base.abcbirds.project_lead	/people/person,/base/abcbirds/topic
+ns:food.diet_follower	
+ns:base.mathematics1.mathematical_symbol	/base/mathematics1/topic
+ns:base.collectives.collective_member	/people/person
+ns:rail.locomotive	
+ns:base.database.database_topic	/base/database/topic
+ns:wine.grape_variety	
+ns:base.sharing.sharing_location	/base/sharing/topic
+ns:sports.sports_team	/organization/organization
+ns:user.jamie.default_domain.yacht_racing.racing_yacht	/boats/ship
+ns:base.mladraft.library_system	
+ns:base.events.subject_of_festival	/base/events/topic
+ns:award.award_category	
+ns:base.argumentmaps.moral_defence	/base/argumentmaps/topic
+ns:base.prison.prison_type	/base/prison/topic
+ns:government.legislative_session	
+ns:finance.stock_exchange	
+ns:base.newsevents.photographic_technique	
+ns:base.nascar.nascar_race_instance	/time/event
+ns:base.gadgets.connectivity_type	/base/gadgets/topic
+ns:olympics.olympic_sport	
+ns:library.public_library_system	
+ns:religion.belief	
+ns:location.es_comarca	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:theater.theatrical_composer	/people/person
+ns:physics.fundamental_interaction	
+ns:base.goldenbooks.golden_books_illustrator	
+ns:user.synedra.didwho.person	/user/synedra/didwho/connection
+ns:olympics.olympic_athlete	/sports/pro_athlete,/people/person
+ns:royalty.order_of_chivalry	
+ns:book.published_work	
+ns:base.schemastaging.food_extra	/food/food
+ns:base.breakfast.breakfast_cereal_theme	/base/breakfast/topic
+ns:astronomy.orbit_type	
+ns:base.yalebase.college_dean	/base/yalebase/topic
+ns:user.pjf.default_domain.chicken_breed	
+ns:metropolitan_transit.transit_agency	/organization/organization
+ns:user.uoa_it.uoa_it.uoa_technology_type	/user/uoa_it/uoa_it/topic
+ns:base.greatgardens.garden_tool	/base/greatgardens/topic
+ns:comic_books.comic_book_penciler	/people/person
+ns:location.metropolitan_area_anchor	/location/location
+ns:user.mcstrother.default_domain.artery	
+ns:base.fictionaluniverse.fictional_spacecraft_class	/base/fictionaluniverse/topic
+ns:spaceflight.space_program_sponsor	
+ns:astronomy.asteroid	/astronomy/celestial_object,/astronomy/orbital_relationship,/astronomy/astronomical_discovery
+ns:base.webvideo.internet_video_actor	/base/webvideo/topic,/people/person
+ns:sports.fight_song	/music/composition
+ns:base.exoplanetology.exoplanet	/base/exoplanetology/topic,/astronomy/astronomical_discovery
+ns:theater.theater_actor	/people/person
+ns:book.publishing_company	
+ns:user.sprocketonline.default_domain.season	
+ns:user.synedra.didwho.parent	/user/synedra/didwho/connection
+ns:base.yupgrade.user	/base/yupgrade/topic
+ns:royalty.monarch	/royalty/noble_person,/people/person
+ns:user.duck1123.default_domain.adopted_character	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:base.database.database	/base/database/topic
+ns:base.socialdance.dancer	/base/socialdance/topic
+ns:base.animalpathology.animal_disease_cause	/base/animalpathology/topic
+ns:metropolitan_transit.transit_line	
+ns:user.ptomblin.default_domain.communication_frequency_type	
+ns:base.pokemon.evolves_from	
+ns:architecture.landscape_architect	
+ns:user.brendan.default_domain.interest	
+ns:base.horsefacts.tack	/base/horsefacts/topic
+ns:user.robert.mobile_phones.mobile_phone_operating_system	
+ns:measurement_unit.pressure_unit	/freebase/unit_profile,/type/unit
+ns:business.product_category	
+ns:media_common.quotation_subject	
+ns:astronomy.asteroid_spectral_type	
+ns:aviation.airport	/location/location
+ns:base.edgarpoe.poes_family	/base/edgarpoe/topic,/people/person
+ns:protected_sites.natural_or_cultural_preservation_agency	
+ns:business.business_operation	/organization/organization
+ns:business.product_theme	
+ns:base.armoryshow1913.exhibited_artist	/visual_art/visual_artist,/people/person,/base/armoryshow1913/topic
+ns:user.jamie.default_domain.sailboat_class	
+ns:base.ontologies.ontology	/base/ontologies/topic
+ns:media_common.media_genre	
+ns:user.coco.science.concepts_theories	
+ns:base.meedan.arabic_language_media_source	/location/statistical_region,/location/dated_location,/location/country,/location/citytown,/user/masouras/rss/feed,/m/05hk5pv,/location/location
+ns:tv.special_tv_performance_type	
+ns:user.nzakmok.default_domain.restaurants	
+ns:base.newsevents.news_reported_event	/time/event,/base/newsevents/topic
+ns:base.farmfed.producer	/base/farmfed/topic,/business/business_operation,/base/farmfed/distributor,/organization/organization
+ns:base.engineering.engineering_person	/base/engineering/topic,/projects/project_participant,/influence/influence_node,/people/person
+ns:user.movgp0.default_domain.metric_system	/user/movgp0/default_domain/measurement_system
+ns:education.field_of_study	
+ns:business.asset_owner	
+ns:cvg.input_method	
+ns:theater.theater_designer	/people/person
+ns:base.pethealth.pet_disease_or_medical_condition	/base/pethealth/topic
+ns:base.dancegroups.dance_group_member	/base/dancegroups/topic,/people/person
+ns:biology.pedigreed_animal	/biology/organism
+ns:base.argumentmaps.intellectual_dispute	/base/argumentmaps/topic
+ns:user.jamie.default_domain.yacht_racing.yacht_racing_country	/location/location
+ns:base.argumentmaps.explanation	/base/argumentmaps/original_idea,/base/argumentmaps/topic,/base/argumentmaps/theory,/base/argumentmaps/idea
+ns:user.alexander.default_domain.subgame	/cvg/computer_videogame
+ns:astronomy.meteorite	
+ns:user.radiusrs.default_domain.astrological_sign	
+ns:geography.island_group	/geography/geographical_feature,/location/location
+ns:base.health20accelerator.task	/base/health20accelerator/topic
+ns:base.arthist.helynevek	
+ns:base.backpacking1.wilderness_area	/base/backpacking1/topic
+ns:base.schemastaging.protected_site_category	
+ns:user.rcheramy.default_domain.film_studio	
+ns:business.asset	
+ns:base.events.type_of_festival	/base/events/topic
+ns:architecture.architectural_contractor	
+ns:law.litigant	
+ns:user.alexbl.honorary_title.chivalric_order	
+ns:architecture.museum_director	/people/person
+ns:user.joehughes.default_domain.transit_agency	/metropolitan_transit/transit_system
+ns:user.osprey.default_domain.service_area	
+ns:astronomy.celestial_object	
+ns:user.egyptianreggae.default_domain.judicial_decision	
+ns:user.kconragan.graphic_design.graphic_designer	
+ns:base.opposites.opposite_relationship	
+ns:base.locations.place_in_the_world	/base/locations/topic
+ns:base.gamers.gamer	/base/gamers/topic
+ns:base.localfood.produce	/food/ingredient,/base/localfood/topic
+ns:base.environmentalism.environmental_issue	
+ns:base.catalog.cataloged_composition	/music/composition
+ns:user.vtalwar.default_domain.remake	/film/film
+ns:base.ancientegypt.dynasty	
+ns:user.sm.default_domain.algebraic_operator	
+ns:base.thesocialset.clique_member	
+ns:base.symbols.symbol	/base/symbols/topic
+ns:base.visleg.collaboration_topic	/base/visleg/topic
+ns:base.firsts.first_achievement_category	/base/firsts/topic
+ns:base.shapedcities.shaped_city	/location/statistical_region,/location/dated_location,/base/shapedcities/topic,/location/citytown,/location/location
+ns:sports.defunct_sports_team	
+ns:base.sanfranciscoscene.san_francisco_promoter	/base/sanfranciscoscene/topic,/people/person
+ns:common.image	
+ns:engineering.piston_engine	/engineering/engine,/projects/project_focus
+ns:user.dylanrocks.national_football_league.nfl_player_who_has_been_suspended	
+ns:comic_books.comic_book_issue	
+ns:astronomy.trans_neptunian_object	/astronomy/celestial_object,/astronomy/orbital_relationship
+ns:rail.rail_network	
+ns:cvg.computer_game_compilation	/cvg/computer_videogame
+ns:base.undergroundhumanthings.underground_object	/base/undergroundhumanthings/topic,/location/location
+ns:user.tsegaran.mathematics.mathematical_concept	
+ns:education.academic_post_title	
+ns:base.animemanga.anime_manga_franchise	/base/animemanga/topic
+ns:user.jamie.default_domain.naval_armament	
+ns:base.petbreeds.dog_coat_color	/base/petbreeds/topic
+ns:aviation.aircraft_manufacturer	/business/business_operation,/organization/organization
+ns:business.sponsored_recipient	
+ns:chemistry.chemical_compound	
+ns:user.tsegaran.computer.algorithm_family	
+ns:base.formula1.race_track	/base/formula1/topic
+ns:user.jamie.default_domain.yacht_racing.yacht_club	/organization/organization
+ns:user.agroschim.default_domain.significant_follower	/people/person
+ns:travel.tourist_attraction	/location/location
+ns:dining.restaurant	/business/business_location
+ns:user.antstamper.default_domain.regiment	
+ns:military.military_unit	/organization/organization
+ns:media_common.quotation	
+ns:base.mapcentral.map_projection	/base/mapcentral/topic
+ns:base.catalog.cataloged_composer	/music/composer,/base/catalog/topic
+ns:user.alexbl.honorary_title.title_presenter	/user/alexbl/honorary_title/titled_person,/people/person
+ns:astronomy.orbital_relationship	
+ns:film.film_festival_event	/time/event
+ns:user.robert.mobile_phones.mobile_phone_region	
+ns:base.motorcycle.vehicle_part	/base/motorcycle/topic
+ns:base.politicalconventions.primary_candidate	/base/politicalconventions/topic
+ns:organization.organization_sector	
+ns:digicams.camera_storage_type	
+ns:user.narphorium.default_domain.product	
+ns:user.sterops.accessibility.wheelchair_accessible_location	/metropolitan_transit/transit_stop,/location/location
+ns:user.alecf.recreation.park	/location/dated_location,/protected_sites/protected_site,/location/location
+ns:base.seafood.seafood	/base/seafood/topic,/food/food
+ns:boats.ship_owner	
+ns:base.bizmo.exhibit_53	/base/bizmo/topic
+ns:government.legislative_committee	
+ns:amusement_parks.roller_coaster	/amusement_parks/ride
+ns:film.film_distributor	
+ns:cvg.musical_game_song	
+ns:base.mullardspacesciencelaboratoryprojects.satellite	/base/mullardspacesciencelaboratoryprojects/topic
+ns:user.tim_mcnamara.default_domain.new_zealand_state_sector_organisation	/organization/organization,/business/employer,/government/government_agency
+ns:base.sails.sailing_handicap_system	/base/sails/topic
+ns:base.webvideo.internet_video_series	/base/webvideo/topic
+ns:base.skills.skilled_role	/base/skills/topic
+ns:user.synedra.didwho.marriage	/user/synedra/didwho/connection
+ns:sports.sports_team_roster	
+ns:base.hathayoga.yoga_posture	/base/hathayoga/topic
+ns:base.database.database_manager	/base/database/topic,/people/person
+ns:base.warriors.clan_cat	/book/book_character,/fictional_universe/fictional_character
+ns:base.nascar.nascar_driver	/base/nascar/topic
+ns:user.micahsaul.advertising.advertiser	/m/04mny2g
+ns:user.flyhighplato.default_domain.suburb	
+ns:user.miquael.default_domain.astrological_archetype	
+ns:base.thoroughbredracing.thoroughbred_racehorse_owner	/base/thoroughbredracing/topic
+ns:base.pinball.pinball_machine	/base/pinball/topic
+ns:measurement_unit.dimension	
+ns:base.tallships.tall_ship_event_instance	/time/event
+ns:base.vancouver.podcast	/broadcast/broadcast,/broadcast/podcast_feed
+ns:base.firsts.first	/base/firsts/topic
+ns:digicams.camera_format	
+ns:base.lookalikes.twins	/people/person,/base/lookalikes/topic
+ns:base.satelites.satellite_mission	/base/satelites/topic
+ns:zoos.zoo_animal	/biology/organism
+ns:base.terrorism.terrorist_attack	/time/event,/base/terrorism/topic
+ns:computer.software_license	
+ns:base.sportsrecords.sports_tournament	/time/event,/base/sportsrecords/topic
+ns:user.robert.cool_tools.manufacturer_brand	
+ns:distilled_spirits.spirit_blender	/business/business_operation,/organization/organization,/business/employer
+ns:user.blackhound.hornblower_universe.character	
+ns:astronomy.galaxy	/astronomy/celestial_object
+ns:measurement_unit.magnetic_flux_density_unit	/freebase/unit_profile,/type/unit
+ns:internet.website_owner	
+ns:user.alexander.misc.murderer	/people/person
+ns:biology.plant_disease_cause	
+ns:soccer.football_league	/time/recurring_event
+ns:food.dish	
+ns:user.collord.materials_science.materials_property	
+ns:user.alexander.philosophy.era	/time/event
+ns:user.skud.legal.treaty	
+ns:religion.deity	
+ns:base.animalpathology.animal_disease_host	/biology/organism_classification,/base/animalpathology/topic
+ns:base.computerscience.computational_problem	/base/computerscience/topic
+ns:base.rugby.rugby_coach	/base/rugby/topic,/people/person
+ns:base.advertisingcharacters.product	/user/micahsaul/advertising/advertised_thing
+ns:film.special_film_performance_type	
+ns:base.schemastaging.protected_site_extra	/location/dated_location,/protected_sites/protected_site,/location/location
+ns:distilled_spirits.blended_spirit_style	
+ns:user.jschell.default_domain.music_venue	
+ns:user.jamslevy.plopquiz.proficiency	
+ns:base.farmfed.food_product	/base/farmfed/topic
+ns:user.duck1123.default_domain.alternate_persona	/base/fictionaluniverse/topic
+ns:base.semanticnames.person_with_name	/base/semanticnames/topic,/people/person
+ns:base.philbsuniverse.media	/m/06vwzp1
+ns:book.translated_work	
+ns:base.tallships.film_with_tall_ships	/film/film
+ns:amusement_parks.amusement_park_area	
+ns:user.evening.default_domain.business_group	
+ns:rail.railway_terminus	
+ns:base.folklore.mythical_creature	/book/book_subject,/base/folklore/topic
+ns:baseball.baseball_manager	
+ns:base.fight.sports_official	/base/fight/topic,/people/person
+ns:base.unitednations.united_nations_member_state	/location/statistical_region,/location/dated_location,/location/country,/organization/organization_member,/base/unitednations/topic,/location/location
+ns:aviation.aircraft_model	
+ns:base.pokemon.pokemon_basis	
+ns:user.hthorisson.default_domain.intelligent_system	/computer/software
+ns:base.morelaw.ceasefire	/base/morelaw/topic
+ns:music.performance_role	
+ns:fashion.textile	
+ns:user.jfry.default_domain.state12	/location/location
+ns:base.warriors.clan	/fictional_universe/fictional_organization
+ns:theater.theater_choreographer	/people/person
+ns:base.politeuri.life_science_database	
+ns:event.disaster_type	
+ns:location.fr_department	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:user.alexander.toys.toy_type	
+ns:finance.currency	
+ns:organization.non_profit_organization	/organization/organization,/business/employer
+ns:tv.tv_producer	
+ns:base.americancomedy.comedy_venue	
+ns:user.robert.x2008_presidential_election.campaign	/government/election_campaign
+ns:user.jefft0.default_domain.dog_breed_association	
+ns:astronomy.telescope	
+ns:base.tallships.tall_ship	/boats/ship
+ns:base.folklore.location_in_mythology	
+ns:fictional_universe.character_occupation	
+ns:base.electromagneticspectrum.wireless_technology	/m/04snrnl
+ns:measurement_unit.radioactivity_unit	/freebase/unit_profile,/type/unit
+ns:base.wrestling.solo_wrestler_or_team	/base/wrestling/topic
+ns:music.engineer	
+ns:medicine.drug_legal_status	
+ns:base.webvideo.internet_video_director	/base/webvideo/topic
+ns:cvg.computer_game_rating_system	
+ns:user.tsegaran.random.cocktail	
+ns:basketball.basketball_player	/sports/pro_athlete,/people/person
+ns:food.candy_bar_manufacturer	/business/business_operation,/organization/organization
+ns:user.robert.earthquakes.seismic_fault	
+ns:base.famouspets.pet_owner	/people/person,/base/famouspets/topic
+ns:base.hybrids.hybrid_animal	/base/hybrids/topic
+ns:user.skud.nuclear_weapons.nuclear_power	/location/statistical_region,/location/dated_location,/location/country,/location/location
+ns:base.engineeringdraft.manufactured_component_category	/base/engineeringdraft/topic,/law/invention
+ns:travel.accommodation_type	
+ns:people.family_name	
+ns:book.periodical_publisher	
+ns:amusement_parks.roller_coaster_material	
+ns:music.composer	
+ns:cricket.cricket_tournament_event	/sports/sports_championship_event
+ns:award.competition	/time/event
+ns:base.graphicnovels.graphic_novel	/base/graphicnovels/topic
+ns:base.argumentmaps.position_in_debate	/base/argumentmaps/original_idea,/base/argumentmaps/topic,/base/argumentmaps/idea
+ns:base.jamesbond007.james_bond_villain	/base/jamesbond007/topic
+ns:base.visleg.collaborator	/base/visleg/topic
+ns:religion.religious_practice	
+ns:base.adventures.adventure_game	/base/adventures/topic
+ns:film.film_casting_director	/people/person
+ns:tennis.tennis_tournament	/time/recurring_event
+ns:geography.geographical_feature	/location/location
+ns:base.monetarydebase.debased_currency	
+ns:base.militaryinfiction.military_rank_in_fiction	/base/militaryinfiction/topic
+ns:location.uk_region	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.animemanga.anime_manga_character	/base/animemanga/topic
+ns:user.rcheramy.default_domain.manufacturer	
+ns:astronomy.celestial_object_with_coordinate_system	/astronomy/celestial_object
+ns:base.surfing.surf_break	/base/surfing/topic
+ns:aviation.airport_terminal	
+ns:olympics.olympic_event_competition	/time/event
+ns:location.jp_city_town	/location/statistical_region,/location/dated_location,/location/citytown,/location/location
+ns:geography.mountain_type	
+ns:user.skud.nuclear_weapons.nuclear_test_series	/time/event
+ns:user.robert.mobile_phones.mobile_phone	/user/robert/mobile_phones/product
+ns:food.food	
+ns:base.associationfootball.soccer_match	/time/event,/base/associationfootball/topic,/soccer/football_match,/user/cheunger/sports_test/sports_event
+ns:base.disaster2.state_of_emergency	/time/event,/base/disaster2/topic
+ns:base.animemanga.manga_illustrator	/base/animemanga/topic,/people/person
+ns:film.film_company	/business/business_operation,/organization/organization,/business/employer
+ns:government.national_anthem	/music/composition
+ns:computer.programming_language_designer	
+ns:royalty.chivalric_order_founder	/people/person
+ns:award.award_discipline	
+ns:comic_books.comic_book_writer	/people/person
+ns:base.obamabase.possible_cabinet_member	/base/obamabase/topic
+ns:base.argumentmaps.original_idea	/base/argumentmaps/topic
+ns:film.film_distribution_medium	
+ns:base.brand.glossary	/base/brand/topic
+ns:base.crime.lawyer_type	
+ns:user.rcheramy.default_domain.hockey_team	
+ns:base.terrorism.terrorist	/base/terrorism/topic
+ns:base.schemastaging.athlete_extra	/sports/pro_athlete,/people/measured_person,/people/person
+ns:soccer.football_team	/sports/sports_team
+ns:protected_sites.park_system	
+ns:law.courthouse	/architecture/building,/architecture/structure
+ns:conferences.type_of_conference	
+ns:base.community.local_currency	/base/community/topic
+ns:distilled_spirits.distilled_spirit_type	
+ns:base.facetedbrowsing.application_related_to_faceted_browsing	/base/facetedbrowsing/topic,/computer/software
+ns:automotive.designer	/people/person
+ns:theater.theater_production	
+ns:user.chabot_bernard.semantic_cartography.organization	
+ns:base.schemastaging.sports_facility_extra	/architecture/structure,/sports/sports_facility,/projects/project_focus,/location/location,/architecture/venue
+ns:periodicals.newspaper_circulation_area	/location/location
+ns:base.infrastructure.power_station	/architecture/structure,/projects/project_focus,/location/location,/base/infrastructure/topic
+ns:user.denny.default_domain.role_playing_game	
+ns:base.aubreymaturin.treatment	/base/aubreymaturin/topic
+ns:religion.religious_leader	/people/person
+ns:base.monster.countries_in_fiction	
+ns:visual_art.color	
+ns:aviation.airport_type	
+ns:base.bioventurist.bv_geography	
+ns:base.breakfast.breakfast_cereal_ingredient	/base/breakfast/topic
+ns:location.symbol_of_administrative_division	
+ns:base.mediaextended.media_franchise	
+ns:royalty.chivalric_title	
+ns:base.morelaw.type_of_legal_subject	
+ns:sports.sports_equipment	
+ns:location.cn_autonomous_prefecture	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:games.game_expansion	
+ns:broadcast.distributor	
+ns:cvg.video_game_soundtrack	/music/album
+ns:olympics.olympic_torchbearer	/people/person
+ns:location.de_state	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.popstra.business_location	/base/popstra/topic,/base/popstra/sww_base
+ns:user.mcstrother.default_domain.bacterial_shape	
+ns:base.architecture2.structure_destroying_event	/time/event
+ns:internet.top_level_domain_type	
+ns:law.constitution	
+ns:user.micahsaul.advertising.advertised_thing	/m/04mny2g
+ns:base.crime.execution_type	/people/cause_of_death
+ns:base.kinometric.genre	/base/kinometric/topic
+ns:computer.computer_peripheral	/business/consumer_product
+ns:base.trails.trail	/m/0dk0v5d,/m/0dk0vtg,/location/location
+ns:user.yge.default_domain.web_technologies	
+ns:music.concert	/time/event
+ns:sports.tournament_team	/sports/sports_team
+ns:astronomy.meteor_shower	
+ns:user.cip22.default_domain.software_design_pattern_type	
+ns:base.motorsports.circuit	/base/motorsports/topic,/location/location
+ns:organization.organization_member	
+ns:biology.breed_origin	/location/location
+ns:user.sprocketonline.economics.legislation	
+ns:location.id_province	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:computer.software	
+ns:award.ranked_list_compiler	
+ns:base.forts.fort	/architecture/structure,/base/forts/topic,/projects/project_focus
+ns:base.militaryinfiction.event_in_fiction	/base/militaryinfiction/topic
+ns:base.ancientegypt.tomb_excavator	
+ns:user.lukeschubert.default_domain.language_classification	
+ns:user.nevali.internet.website_developer	
+ns:base.juiced.user_of_banned_substances	/base/juiced/topic
+ns:type.type	
+ns:distilled_spirits.distillery	/business/business_operation,/organization/organization,/business/employer
+ns:astronomy.galactic_group	/astronomy/celestial_object
+ns:internet.website_category	
+ns:base.endofallthings.apocalyptic_scale	/base/endofallthings/topic
+ns:religion.adherents	
+ns:base.fictionaluniverse.fictional_spacecraft	/fictional_universe/fictional_setting,/base/fictionaluniverse/topic
+ns:organization.organization_committee	
+ns:time.holiday	
+ns:user.zenkat.default_domain.tarot_suit	
+ns:base.umltools.uml_tool	/base/umltools/topic,/computer/software
+ns:base.x2010fifaworldcupsouthafrica.world_cup_participant	/base/x2010fifaworldcupsouthafrica/topic
+ns:base.column.column_publisher	/base/column/topic
+ns:base.irishpoliticians.irish_politician	/base/irishpoliticians/topic
+ns:base.animanga.anime_series	/base/animanga/topic
+ns:exhibitions.exhibition_sponsor	
+ns:olympics.olympic_torch_relay_location	/location/location
+ns:base.ancientegypt.kind_of_pyramid	/base/ancientegypt/topic
+ns:base.x2010fifaworldcupsouthafrica.world_cup_qualification_group	
+ns:base.atitdatlas.point_of_interest	/base/atitdatlas/topic
+ns:base.change.changing_thing	/base/change/topic
+ns:base.pipesmoking.pipe_tobacco	/base/pipesmoking/topic,/business/consumer_product
+ns:law.legal_case	/time/event
+ns:spaceflight.space_agency	/organization/organization
+ns:base.column.column_author	/base/column/topic,/people/person
+ns:fictional_universe.fictional_creature	
+ns:music.conducted_ensemble	/music/musical_group,/music/artist
+ns:measurement_unit.unit_of_force	/freebase/unit_profile,/type/unit
+ns:base.webvideo.internet_video_writer	/base/webvideo/topic
+ns:sports.sports_league_draft	
+ns:book.magazine_genre	/media_common/media_genre
+ns:base.tallships.tv_show_with_tall_ships	/base/tallships/topic,/tv/tv_program
+ns:user.rlyeh.history.causal_event	
+ns:medicine.infectious_disease	
+ns:cricket.cricket_coach	/people/person
+ns:travel.accommodation_feature	
+ns:base.americancomedy.tv_show	
+ns:base.engineering.structural_system_category	
+ns:food.dietary_restriction	
+ns:base.grecoromanmythology.source	/base/grecoromanmythology/topic
+ns:base.popstra.religion	/base/popstra/topic,/base/popstra/sww_base
+ns:user.abombss.default_domain.internetdomain	
+ns:food.wine_style	
+ns:user.synedra.didwho.support	/user/synedra/didwho/connection
+ns:meteorology.cyclone_affected_area	/location/location
+ns:people.place_of_interment	/location/location
+ns:book.series_editor	/people/person
+ns:base.monster.monstrous_act_of_creation	
+ns:user.uoa_it.uoa_it.uoa_vendor	
+ns:user.jamie.default_domain.war_ship	/user/jamie/default_domain/boat
+ns:people.profession	
+ns:user.pumpkin.etymology.word	
+ns:base.braziliangovt.brazilian_political_party	/government/political_party,/base/braziliangovt/topic
+ns:base.typefaces.typeface	/base/typefaces/topic
+ns:base.goldenbooks.golden_book_author	
+ns:food.ingredient	
+ns:music.record_label	/business/business_operation,/organization/organization
+ns:games.game_publisher	
+ns:tv.tv_episode_segment	
+ns:user.mt.default_domain.chemical_species	
+ns:tv.tv_location	/location/location
+ns:base.fictionaluniverse.fictional_clone_creator	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:royalty.system_of_nobility	
+ns:base.gossipgirl.character	/fictional_universe/fictional_character,/tv/tv_character,/base/gossipgirl/topic
+ns:measurement_unit.temperature_unit	/freebase/unit_profile,/type/unit
+ns:architecture.engineer	/people/person
+ns:user.cheunger.sports_test.team_roster	
+ns:digicams.camera_uncompressed_format	
+ns:user.alexander.default_domain.royal_house	
+ns:celebrities.reason_for_arrest	
+ns:base.disaster2.injured_person	/people/person
+ns:base.charities.geographic_scope	/base/charities/topic
+ns:base.argumentmaps.praise	/base/argumentmaps/topic
+ns:user.cheunger.sports_test.team_athlete	
+ns:base.semanticnames.personal_name_element	/base/semanticnames/topic
+ns:base.semantics.meaning	/base/semantics/topic
+ns:base.fictionaluniverse.fictional_inhabiting_character	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:base.popstra.location	/base/popstra/topic,/base/popstra/sww_base
+ns:organization.contact_category	
+ns:government.political_appointer	
+ns:base.recordingstudios.arranger	
+ns:basketball.basketball_team	/sports/sports_team
+ns:user.tsegaran.language.phrase	
+ns:base.technologyofdoing.knowledge_worker_practice_type	
+ns:base.convictsydney.convict	/base/convictsydney/resident,/people/deceased_person,/people/person,/base/convictsydney/topic
+ns:base.horticulture.cultivar	/biology/organism_classification,/base/horticulture/topic
+ns:base.fragrances.fragrances	/base/fashion/perfume
+ns:user.rcheramy.default_domain.hockey_player	/people/person
+ns:base.regulation.regulatory_code	/base/regulation/topic
+ns:music.performance_venue	/location/location,/architecture/venue
+ns:medicine.hospital	/architecture/building,/architecture/structure,/location/location
+ns:theater.theater_production_staff	/people/person
+ns:user.mangala.default_domain.branch_of_government	
+ns:location.in_division	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:user.robert.roman_empire.roman_dynasty	
+ns:physics.quark	/physics/particle
+ns:medicine.vaccine	/medicine/medical_treatment,/medicine/drug,/medicine/condition_prevention_factors
+ns:user.rcheramy.default_domain.newspaper	
+ns:user.robert3.default_domain.building	
+ns:base.tallships.museum_ships	/boats/ship
+ns:base.playball.baseball_stadium	/architecture/structure,/sports/sports_facility,/base/playball/topic,/location/location
+ns:base.vanhomeless.government_program	/base/vanhomeless/topic
+ns:base.rollerderby.team	/base/rollerderby/topic
+ns:user.alexbl.honorary_title.honorary_title	
+ns:automotive.model_year	
+ns:location.de_regierungsbezirk	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.marchmadness.ncaa_basketball_team	/sports/school_sports_team,/basketball/basketball_team,/sports/sports_team,/base/marchmadness/topic
+ns:base.universities.university	/base/universities/topic
+ns:base.fight.sentence	
+ns:tv.tv_network	
+ns:user.synedra.didwho.personal_relationship	
+ns:base.recordingstudios.studio_album	
+ns:event.public_speaking_event	/time/event
+ns:interests.hobby	/interests/interest
+ns:base.landcover.classification_system	/base/landcover/topic
+ns:base.events.event_presenting_organisation	/base/events/topic
+ns:base.events.food_festival	/base/events/festival_series,/base/events/topic,/time/recurring_event
+ns:base.vermont.vermont_fresh_network	/base/vermont/topic
+ns:sports.sport_medal	
+ns:base.feudalism.fief	/base/feudalism/topic,/location/dated_location,/location/location
+ns:base.yalebase.college_master	/base/yalebase/topic
+ns:base.infrastructure.infrastructural_municipality	/location/location
+ns:base.bioventurist.science_or_technology_company	/base/bioventurist/organization,/business/business_operation,/organization/organization,/business/employer
+ns:skiing.ski_area	/location/location
+ns:base.oclbase.video_collection	/base/oclbase/topic
+ns:base.fight.subject_of_protest	/base/argumentmaps/motivation_s
+ns:spaceflight.satellite_manufacturer	/business/business_operation,/organization/organization
+ns:olympics.olympic_host_city	/location/citytown,/location/location
+ns:user.patrick.default_domain.military_combatant	
+ns:people.appointee	/people/person
+ns:location.vn_province	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:chess.chess_game	
+ns:exhibitions.type_of_exhibition	
+ns:user.thadguidry.default_domain.musical_note	
+ns:user.giladgoren.default_domain.network	
+ns:fictional_universe.character_gender	
+ns:user.allain.default_domain.programming_library	
+ns:base.morelaw.plaintiff	
+ns:base.argumentmaps.innovator	/base/argumentmaps/topic
+ns:base.jamesbond007.bond_movie_villain	/film/film_character,/fictional_universe/fictional_character,/base/jamesbond007/topic
+ns:base.switzerland.ch_district	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location,/base/switzerland/topic
+ns:aviation.aircraft_engine_type	
+ns:film.film_festival	/time/recurring_event
+ns:theater.theater_director	/people/person
+ns:people.appointer	
+ns:medicine.medical_treatment	
+ns:base.animemanga.anime_manga_creator	/base/animemanga/topic
+ns:geography.mountain_listing	
+ns:comic_books.comic_book_letterer	/people/person
+ns:user.saiyr.Computers.web_framework	
+ns:people.chinese_ethnic_group	/people/ethnicity
+ns:user.dylanrocks.national_football_league.super_bowl_site	/architecture/structure,/sports/sports_facility,/location/location
+ns:base.americancomedy.double_act_comic	
+ns:comic_books.comic_book_creator	/people/person
+ns:user.weel.default_domain.periodical	
+ns:base.infection.computer_crime_victim	
+ns:user.arielb.israel.kibbutz	/location/statistical_region,/location/dated_location,/location/citytown,/location/location
+ns:base.infrastructure.power_plant_type	
+ns:measurement_unit.capacitance_unit	/freebase/unit_profile,/type/unit
+ns:user.maport.cocktail.cocktail_recipe	
+ns:user.buxul.default_domain.german_political_party	/government/political_party
+ns:base.aubreymaturin.book	/media_common/quotation_source,/book/book,/book/written_work,/base/aubreymaturin/topic
+ns:law.legal_subject	
+ns:chemistry.isotope	
+ns:base.aubreymaturin.character	/base/aubreymaturin/topic,/fictional_universe/fictional_character
+ns:law.judge	/people/person
+ns:base.watches.watch_brand	/base/watches/topic,/business/business_operation,/organization/organization,/business/employer
+ns:opera.opera_producer	/people/person
+ns:location.in_city	/location/statistical_region,/location/dated_location,/location/citytown,/location/location
+ns:event.speech_topic	
+ns:base.morelaw.legal_case	/time/event,/base/morelaw/topic,/base/argumentmaps/topic
+ns:base.americancomedy.double_act	
+ns:base.crime.fugitive	/base/crime/topic,/people/person,/base/crime/crime_suspect
+ns:base.proofsareprograms.key_concept	/base/proofsareprograms/topic
+ns:base.educationalshortfilm.educational_short_film	/base/oclbase/video,/film/film
+ns:base.abcbirds.partnership	/base/abcbirds/topic
+ns:media_common.finished_work	
+ns:computer.protocol_provider	
+ns:transportation.bridge	/architecture/structure,/location/location
+ns:base.electromagneticspectrum.frequency_band	/m/04snrnl
+ns:base.classiccars.classic_car	/base/classiccars/topic,/automotive/model
+ns:user.brendan.musician_products.product_model	
+ns:law.invention	
+ns:base.peleton.road_bicycle_racing_event	/time/event
+ns:base.convictsydney.ship	/boats/ship,/base/convictsydney/topic
+ns:base.gamers.online_gaming_network	/base/gamers/topic
+ns:base.linkeddata.linked_data_website	/base/database/topic,/internet/website,/base/database/database_website
+ns:base.skills.skilled_person	/people/person,/base/skills/topic
+ns:base.arthist.int_zm_nyek	
+ns:time.geologic_time_period	
+ns:sports.sports_team_owner	
+ns:base.ikariam.ikariam_buildings	/base/ikariam/topic
+ns:base.localfood.regional_food	/base/localfood/topic,/food/food
+ns:base.animemanga.manga_publisher	/base/animemanga/topic
+ns:base.thoroughbredracing.thoroughbred_racehorse	/biology/owned_animal,/biology/organism,/biology/pedigreed_animal,/base/thoroughbredracing/topic
+ns:base.zionism.settlement	/location/statistical_region,/location/dated_location,/base/zionism/topic,/location/location
+ns:music.recording	
+ns:book.report_issuing_institution	
+ns:base.gadgets.gadget_category	/base/gadgets/topic
+ns:spaceflight.space_program	
+ns:base.litcentral.focal_taxa	/book/book_subject,/base/birdwatching/topic,/base/birdconservation/topic,/biology/organism_classification,/base/litcentral/topic
+ns:user.lars3loff.software_standards.java_specification_request	
+ns:fictional_universe.school_in_fiction	
+ns:business.company_termination_type	
+ns:user.alexander.misc.murder_method	/user/alexander/misc/topic
+ns:comic_strips.comic_strip_syndicate	
+ns:digicams.camera_sensor_manufacturer	
+ns:base.peleton.cyclist	/base/peleton/topic,/people/person,/sports/cyclist
+ns:aviation.airline	/aviation/aircraft_owner,/business/business_operation,/organization/organization
+ns:base.coltrane.jazz_album	/music/album,/base/coltrane/topic
+ns:user.doconnor.industry_standards.standard	
+ns:base.saints.feast_day	/base/saints/topic
+ns:book.book_edition	/media_common/cataloged_instance
+ns:projects.project_role	
+ns:religion.religious_jurisdiction_class	
+ns:award.ranked_list	
+ns:olympics.olympic_medal	
+ns:base.grecoromanmythology.mythological_entity	/base/grecoromanmythology/greek_mythology,/base/grecoromanmythology/topic
+ns:base.killers.spree_killing	/time/event,/base/crime/crime,/base/crime/topic,/base/killers/topic
+ns:base.lookalikes.twin	/base/lookalikes/topic
+ns:user.faye.default_domain.travel_destination	/location/location
+ns:architecture.destruction_method	
+ns:user.sbennett.default_domain.automobile	
+ns:user.tsturge.language.letter	
+ns:base.caveart.region	/location/location
+ns:spaceflight.bipropellant_rocket_engine	/spaceflight/rocket_engine
+ns:base.cocktails.cocktail_drinkware	/base/cocktails/topic
+ns:base.socanddatamanagement.concept	/base/socanddatamanagement/topic
+ns:base.eating.diets	/base/eating/topic
+ns:protected_sites.protected_site	/location/dated_location,/location/location
+ns:base.cimis.weather_station	/base/cimis/topic
+ns:film.film_art_director	/people/person
+ns:base.musiteca.composition	/base/musiteca/topic
+ns:base.ports.port_of_call	/location/dated_location,/projects/project_focus,/location/location
+ns:user.jamie.default_domain.yacht_racing.race_tactician	/people/person
+ns:base.jewlib.research_center	/education/academic_institution,/base/jewishstudies/topic,/base/jewlib/topic,/business/employer,/location/location
+ns:geography.island	/geography/geographical_feature,/location/location
+ns:user.ajedi32.default_domain.pseudonym	
+ns:base.postagestamps.postage_stamp	/base/postagestamps/topic
+ns:location.province	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:measurement_unit.time_unit	/freebase/unit_profile,/type/unit
+ns:book.newspaper	/book/periodical
+ns:base.morelaw.type_of_legal_system	
+ns:music.concert_film	/film/film
+ns:base.banned.banned_thing	/base/banned/topic
+ns:base.services.performance_venue	/base/services/topic,/location/location
+ns:computer.file_format_genre	
+ns:base.adventures.computer_game_theme	
+ns:base.engineeringdraft.manufacturer	/business/business_operation,/base/engineeringdraft/topic,/organization/organization,/business/employer
+ns:base.yalebase.secret_society	/base/yalebase/topic
+ns:base.anglican.diocese	/base/anglican/topic
+ns:base.thatguy.locally_famous_person	/base/thatguy/topic
+ns:base.convictsydney.convict_fleet	/base/convictsydney/topic
+ns:base.americancivilwar.campaign	/time/event,/base/americancivilwar/topic
+ns:soccer.football_match	/time/event
+ns:user.lapax.default_domain.landlocked_country	/location/country
+ns:interests.collector	/people/person
+ns:base.gametheory.instance_of_game_theory_game	
+ns:location.jp_prefecture	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:user.geektastique.superheroes.superhero	
+ns:base.rollerderby.league	/base/rollerderby/topic
+ns:organization.role	
+ns:cvg.cvg_genre	/media_common/media_genre
+ns:base.undergroundhumanthings.location_on_top_of_something_buried	/location/location
+ns:base.godparents.godparent	
+ns:base.endofallthings.apocalypses_imagined	/base/endofallthings/topic
+ns:internet.top_level_domain_sponsor	
+ns:base.recoveryact.recovery_act_recipient	
+ns:tv.tv_actor	/people/person
+ns:award.award_winning_work	
+ns:user.alexander.philosophy.philosopher	/influence/influence_node,/people/person
+ns:film.cinematographer	/people/person
+ns:base.exercises.body_part	/base/exercises/topic
+ns:base.mystery.type_of_paranormal_event	/base/paranormal/topic
+ns:base.typefaces.typeface_creator	/base/typefaces/topic
+ns:user.mcstrother.default_domain.arterial_origin	
+ns:computer.computer_designer	
+ns:base.athletics.athletics_organization	/base/athletics/topic,/organization/organization,/business/employer
+ns:base.ecology.ecosystem	/location/location,/base/ecology/topic
+ns:base.litcentral.current_organism_classification	/biology/organism_classification
+ns:biology.hybrid_parent_classification	
+ns:user.dwiel.default_domain.plant_lifetime	
+ns:user.pak21.default_domain.derived_software	
+ns:base.engineering.canal_lock	/base/engineering/topic
+ns:base.activism.activist	/people/person
+ns:base.bioventurist.bv_venture_investor	/venture_capital/venture_investor
+ns:user.zeusi.default_domain.sport_governing_body	/organization/organization
+ns:base.mediaasset.entity_appearing_in_media_asset	
+ns:organization.organization_scope	
+ns:base.database.database_website	/base/database/topic,/internet/website
+ns:base.ancientegypt.historical_period	/time/event
+ns:opera.opera_company	/organization/organization
+ns:food.cheese_milk_source	
+ns:user.anne8.spa.massage_origin	/location/statistical_region,/location/dated_location,/location/country,/location/location
+ns:base.landcover.geographical_feature_category	/base/landcover/code_category,/geography/geographical_feature_category,/base/landcover/topic
+ns:user.sandos.computer_networks.open_access_network	/user/sandos/computer_networks/topic
+ns:base.casinos.casino_show	
+ns:user.pak21.default_domain.tectonic_plate_boundary_type	
+ns:base.cycleroute.cycle_route_network	
+ns:base.culturalevent.person	/base/culturalevent/topic,/people/person
+ns:automotive.generation	
+ns:medicine.drug_class	
+ns:user.peter.default_domain.programmer	
+ns:base.iceandfire.house_founder	/base/iceandfire/topic,/fictional_universe/fictional_character
+ns:base.tournaments.tournament	/time/event
+ns:base.seafood.fishing_method	
+ns:internet.blogger	/people/person
+ns:film.film_collection	
+ns:base.bowlgames.bowl_game	/base/bowlgames/topic,/time/recurring_event
+ns:freebase.notability_hints	
+ns:base.coinsdaily.issuer	
+ns:base.arthist.mutargyak	
+ns:user.dylanrocks.national_football_league.nfl_draft_diamond_in_the_rough	
+ns:organization.endowed_organization	/organization/organization
+ns:broadcast.radio_network	
+ns:user.tfmorris.default_domain.signatory	
+ns:digicams.camera_sensor_type	
+ns:base.permaculture.permaculture_element	/base/permaculture/topic
+ns:geography.mountaineer	/people/person
+ns:spaceflight.rocket_manufacturer	
+ns:user.synedra.didwho.organization	
+ns:base.tallships.tall_ship_in_film	
+ns:base.jewlib.parent_institution	/base/jewlib/topic
+ns:user.denny.default_domain.world	
+ns:base.biologydev.organism_part	/base/biologydev/topic
+ns:architecture.building_function	
+ns:media_common.unfinished_work	
+ns:people.deceased_person	/people/person
+ns:base.monster.monster_creator	
+ns:base.computerscience.block_cipher	/user/tsegaran/computer/algorithm,/base/computerscience/topic
+ns:base.americancivilwar.military_unit	/military/military_unit,/organization/organization
+ns:location.statistical_region	/location/location
+ns:business.brand	
+ns:award.award	
+ns:protected_sites.site_listing_category	
+ns:event.disaster_survivor	/people/person
+ns:base.ancientegypt.tomb	/location/location
+ns:fictional_universe.work_of_fiction	
+ns:dataworld.information_source	
+ns:location.cn_prefecture	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:protected_sites.natural_or_cultural_site_designation	
+ns:base.schemastaging.educational_institution_extra	/education/educational_institution,/organization/organization,/business/employer,/organization/organization
+ns:base.pokemon.pok_mon	/base/animemanga/anime_manga_character,/cvg/game_character,/fictional_universe/character_species,/base/pokemon/topic,/fictional_universe/fictional_character
+ns:base.tallships.tall_ship_rig	
+ns:user.jeff.stories_to_novels.resultant_novel	/fictional_universe/work_of_fiction,/book/book,/book/written_work,/user/jeff/stories_to_novels/topic
+ns:user.exooo.default_domain.head_of_state	
+ns:rail.railway_operator	/business/business_operation,/organization/organization,/business/employer
+ns:base.sportssandbox.sports_governing_body	/business/employer,/base/sportssandbox/topic
+ns:aviation.aircraft_owner	
+ns:user.sandos.computation.web_development_framework	/user/sandos/computation/software_framework,/user/saiyr/Computers/web_framework
+ns:book.journal_article	/book/scholarly_work,/book/written_work
+ns:base.litcentral.extinct_taxon_time_period	/time/geologic_time_period
+ns:base.popstra.restaurant	/base/popstra/topic,/base/popstra/sww_base
+ns:location.kp_province	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.dinosaur.dinosaur_diet	
+ns:base.animanga.franchise	/base/animanga/topic
+ns:user.niallo.default_domain.lift	
+ns:chess.chess_player	/people/person
+ns:music.producer	
+ns:base.nightclubs.nightclub	/architecture/building,/architecture/structure,/music/performance_venue,/projects/project_focus,/base/nightclubs/topic,/location/location
+ns:geography.mountain	/geography/geographical_feature,/location/location
+ns:base.statistics.statistics_agency	
+ns:base.formula1.formula_1_driver	/base/formula1/topic,/people/person
+ns:user.tsegaran.business.trademark_holder	
+ns:cricket.cricket_bowling_technique	
+ns:fashion.fashion_label	
+ns:celebrities.supercouple	
+ns:user.i001962.consumer_preferences.brands	
+ns:language.language_regulator	/organization/organization
+ns:base.mullardspacesciencelaboratoryprojects.observation_satellite	/base/mullardspacesciencelaboratoryprojects/topic
+ns:user.thalendar.default_domain.roleplaying_game_genre	
+ns:user.techgnostic.default_domain.market_area	
+ns:user.alexbl.honorary_title.titled_person	/people/person
+ns:user.narphorium.people.citizen	/user/narphorium/people/topic
+ns:government.government_office_or_title	
+ns:base.proofsareprograms.key_contributor	/base/proofsareprograms/topic,/people/person
+ns:user.sblom.default_domain.island	
+ns:base.conservationaction.lead_agency_or_organization	/base/conservationaction/topic
+ns:user.sprocketonline.default_domain.military_conflict_victim	
+ns:film.producer	/people/person
+ns:base.formula1.formula_1_team	/base/formula1/topic
+ns:location.nl_province	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.ancientegypt.pyramid_owner	
+ns:royalty.noble_rank	
+ns:user.kouyubo.computer.pc	
+ns:law.court_jurisdiction_area	/user/skud/legal/topic,/location/location
+ns:location.capital_category	
+ns:biology.breed_registry	
+ns:base.ikariam.ikariam_research_category	/base/ikariam/topic
+ns:astronomy.astronomical_observatory	/projects/project_focus
+ns:base.bioventurist.bv_therapeutic_molecule	
+ns:base.humanresources.employee	/people/person,/base/humanresources/topic
+ns:base.americancomedy.comedy_group_member	/base/americancomedy/comedian
+ns:user.timrdf.default_domain.affiliated_thing	
+ns:base.militaryinfiction.military_commander_in_fiction	/fictional_universe/fictional_character,/base/militaryinfiction/topic
+ns:base.peleton.cycling_organization_membership	/base/peleton/topic
+ns:base.conservation.protected_species	/base/conservation/topic
+ns:location.ar_province	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.bioventurist.bv_therapeutic	/medicine/medical_treatment,/medicine/drug,/base/bioventurist/product
+ns:base.ghtech.gh_focus_areas	/base/ghtech/topic
+ns:base.grecoromanmythology.roman_hero	/m/04lpl96,/base/grecoromanmythology/topic,/base/grecoromanmythology/roman_mythology
+ns:religion.type_of_place_of_worship	
+ns:skiing.ski_lift	
+ns:sports.golf_course	
+ns:base.inaugurations.inauguration	/time/event,/base/inaugurations/topic
+ns:user.sandos.computation.specification	
+ns:freebase.list_entry	
+ns:base.industrystandards.industry_standard	/base/industrystandards/topic,/user/doconnor/industry_standards/standard
+ns:biology.chromosome	
+ns:religion.religious_leadership_jurisdiction	/location/dated_location,/location/location
+ns:religion.religious_order	/religion/religious_organization,/organization/organization
+ns:base.adoption.adopter	/base/adoption/topic,/people/person
+ns:sports.boxer	/martial_arts/martial_artist,/sports/pro_athlete,/people/person
+ns:base.mystery.person_with_alleged_paranormal_powers	/base/paranormal/topic
+ns:visual_art.art_period_movement	
+ns:user.mt.default_domain.tissue	
+ns:law.constitutional_convention	/time/event
+ns:base.iniciador.ubicaci_n_iniciador	
+ns:user.proveit.default_domain.video_game_composer	/music/composer,/people/person
+ns:base.crime.chief_of_police	/people/person
+ns:physics.particle	
+ns:base.schemastaging.sports_team_manager	/people/person
+ns:user.kofish.default_domain.lpmud_driver	
+ns:theater.theater_producer	/people/person
+ns:user.joehughes.default_domain.transit_application_creator	
+ns:user.jamie.food.food_additive_category	
+ns:film.editor	/people/person
+ns:user.cheunger.sports_test.draft_athlete	
+ns:base.monster.monstrous_works_of_fiction	
+ns:user.jamie.default_domain.yacht_racing.yacht_helmsman	/people/person
+ns:astronomy.near_earth_object	/astronomy/celestial_object
+ns:location.fr_region	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.gadgets.gadget	/base/gadgets/topic
+ns:user.aineko.origins.evidence	
+ns:base.horseracing.horse_race	/time/event,/base/horseracing/topic
+ns:dataworld.gardening_hint	
+ns:user.nlatysh.default_domain.scientific_model	
+ns:base.thebigpitch.pitchman	/base/thebigpitch/topic,/people/person
+ns:base.ghtech.technologies	/base/ghtech/topic
+ns:user.johm.carnegie_mellon_university.school	/education/educational_institution,/education/university
+ns:business.product_endorsee	
+ns:user.jamie.default_domain.yacht_racing.competition	/time/event
+ns:film.film_genre	/media_common/media_genre
+ns:food.beer_country_region	
+ns:user.skud.embassies_and_consulates.embassy	
+ns:base.humanresources.employer	/business/business_operation,/organization/organization,/business/employer,/base/humanresources/topic
+ns:user.alexander.default_domain.planetary_atmosphere	
+ns:film.film_job	
+ns:business.product_endorser	
+ns:base.crime.lawyer	/base/crime/topic,/people/person
+ns:user.hangy.default_domain.at_district	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:fictional_universe.fictional_language	
+ns:spaceflight.satellite	/spaceflight/spacecraft
+ns:base.computerscience.data_structure	/base/computerscience/topic
+ns:base.engineering.reclaimed_land	/base/engineering/topic,/location/location
+ns:base.thoroughbredracing.thoroughbred_racehorse_color	/base/thoroughbredracing/topic
+ns:business.acquisition	
+ns:user.narphorium.people.notable_couple	/user/narphorium/people/topic
+ns:base.argumentmaps.argument	/base/argumentmaps/original_idea,/base/argumentmaps/topic,/base/argumentmaps/idea
+ns:base.argumentmaps.possibly_correlated_thing	/base/argumentmaps/topic
+ns:baseball.baseball_league	/organization/organization,/business/employer,/sports/sports_league
+ns:user.patrick.default_domain.warship_v1_1	/boats/ship
+ns:people.appointed_role	
+ns:base.fictionaluniverse.impersonated_fictional_character	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:cvg.game_version	
+ns:base.terrorism.terrorist_organization	/base/terrorism/topic
+ns:base.argumentmaps.motivated_event	/base/argumentmaps/topic
+ns:dining.chef	/influence/influence_node,/people/person
+ns:user.stu.default_domain.constellation	
+ns:tv.tv_crewmember	/people/person
+ns:base.athletics.athletics_medal	/base/athletics/topic
+ns:base.dancingwiththestars.professional_performer	/base/dancingwiththestars/topic
+ns:base.mystery.type_of_paranormal_ability	/base/paranormal/topic
+ns:base.militaryinfiction.military_character	/fictional_universe/fictional_character,/base/militaryinfiction/topic
+ns:wine.wine_producer	/business/business_operation,/organization/organization,/business/employer
+ns:music.genre	
+ns:user.micahsaul.default_domain.recurring_festival	
+ns:travel.travel_destination	/location/location
+ns:celebrities.sexual_orientation	
+ns:user.brandon_macuser.default_domain.bible_translation	
+ns:cricket.cricket_team	/sports/sports_team
+ns:base.litcentral.extinct_taxon	/biology/organism_classification,/base/litcentral/topic
+ns:fictional_universe.ethnicity_in_fiction	
+ns:music.soundtrack	/music/album
+ns:digicams.digital_camera	/business/consumer_product
+ns:film.film_series	
+ns:user.beadnall.garden_plant.plant_form	
+ns:base.schemastaging.tv_actor_extra	/tv/tv_actor,/people/person
+ns:user.danm.default_domain.gossip_node	
+ns:base.newsevents.footage	/base/newsevents/topic
+ns:user.rcheramy.default_domain.sport	
+ns:medicine.drug_brand	
+ns:base.aubreymaturin.sailor	/base/aubreymaturin/character,/base/aubreymaturin/topic,/fictional_universe/fictional_character
+ns:sports.tournament_event	
+ns:base.disaster2.tactic	
+ns:base.thoroughbredracing.thoroughbred_racehorse_breeder	/base/thoroughbredracing/topic
+ns:user.robert.tallest.building	
+ns:user.sandos.software.remote_ui	
+ns:user.jamie.default_domain.yacht_racing.yacht_owner	/boats/ship_owner
+ns:sports.mascot	
+ns:base.gadgets.brand	/base/gadgets/topic
+ns:radio.radio_program	/broadcast/content
+ns:user.aabs.default_domain.data_structure	
+ns:base.x2010fifaworldcupsouthafrica.world_cup_squad	/base/x2010fifaworldcupsouthafrica/topic
+ns:user.dwiel.default_domain.plant	
+ns:base.politeuri.life_science_software	/computer/software
+ns:base.realitytv.reality_tv_contestant	/base/realitytv/topic
+ns:user.skud.nuclear_weapons.nuclear_test	/time/event
+ns:protected_sites.listed_site	
+ns:base.schemastaging.fish	/biology/organism_classification
+ns:base.centreforeresearch.service	/base/centreforeresearch/topic
+ns:base.conservationaction.participant	
+ns:base.landcover.category_quality	
+ns:user.moonhouse.default_domain.addictive_product	
+ns:base.movietheatres.type_of_movie_theatre_cinema	
+ns:book.technical_report	/book/scholarly_work,/book/written_work
+ns:user.ktrueman.default_domain.official_language	
+ns:architecture.architectural_structure_owner	
+ns:base.engineering.flooding_body_of_water	/base/engineering/topic,/location/location,/geography/body_of_water
+ns:user.dminkley.biology.biological_lineage	/user/dminkley/biology/topic
+ns:user.robert.us_congress.house_committee_chairperson	
+ns:measurement_unit.luminous_intensity_unit	/freebase/unit_profile,/type/unit
+ns:base.snowboard.type_of_snowboarding	
+ns:user.ndunham.default_domain.uol_author	
+ns:geography.lake_type	
+ns:user.dylanrocks.national_football_league.suffered_nasty_nfl_injury	
+ns:user.robert.mobile_phones.product_brand	
+ns:religion.religious_leadership_title	
+ns:user.ddammann.default_domain.hypothesis	
+ns:location.uk_non_metropolitan_district	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:music.music_video_performer	
+ns:base.antarctica.antarctic_expedition	/time/event,/m/031j2qd
+ns:base.digitalcameras.lens_mount	/base/digitalcameras/topic
+ns:book.illustrator	/people/person
+ns:base.disaster2.wrecked_ship	/boats/ship,/base/disaster2/topic
+ns:music.composition	
+ns:base.testmatchspecial.test_match_special_commentator	/people/person,/base/testmatchspecial/topic
+ns:user.jasso.default_domain.instant_messagers	/computer/software
+ns:base.seafood.fishery_location	/base/seafood/topic
+ns:base.popstra.party	/base/popstra/topic,/base/popstra/sww_base
+ns:location.mx_state	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:business.company_advisor	/people/person
+ns:measurement_unit.dose_equivalence_unit	/freebase/unit_profile,/type/unit
+ns:film.film_subject	
+ns:comic_strips.comic_strip_genre	/media_common/media_genre
+ns:broadcast.tv_station_owner	
+ns:base.filmcameras.camera_lens	/base/filmcameras/topic
+ns:base.zionism.settlement_type	/base/zionism/topic
+ns:media_common.dedicatee	
+ns:film.content_rating	
+ns:base.localfood.regional_food_source	/base/localfood/topic
+ns:base.typefaces.typeface_classification	/base/typefaces/topic
+ns:event.type_of_public_presentation	
+ns:conferences.conference_series	/time/recurring_event
+ns:base.engineering.tunnel	/base/engineering/topic,/architecture/structure,/projects/project_focus,/location/location
+ns:architecture.architect	/people/person
+ns:user.jamie.food.food_additive	
+ns:user.hangy.default_domain.sports_team_gender	
+ns:symbols.heraldic_supporter	
+ns:base.references.manuscript	/base/references/topic,/book/written_work
+ns:film.film_story_contributor	
+ns:base.peleton.spring_classic	/base/peleton/topic,/base/peleton/road_bicycling_race,/time/recurring_event
+ns:music.release_component	/media_common/creative_work,/music/release
+ns:user.bitwiseplatypus.default_domain.mobile_telephony_standard	
+ns:user.robert.cool_tools.cool_tool	
+ns:user.mcstrother.default_domain.infectious_bacteria	/medicine/disease_cause,/user/mcstrother/default_domain/human_pathogenic_microbe
+ns:base.gadgets.storage_type	
+ns:interests.collection_activity	/interests/hobby,/interests/interest
+ns:base.sailors.ship_passenger	/people/person
+ns:media_common.adaptation	
+ns:base.bibkn.author	/education/academic,/book/author,/base/bibkn/topic,/people/person
+ns:base.honouriam.honoured_person	/base/honouriam/topic
+ns:base.engineering.canal_network	/base/engineering/topic,/projects/project_focus,/location/location
+ns:broadcast.broadcast	
+ns:base.obamabase.cabinet_member	/base/obamabase/topic
+ns:visual_art.visual_art_genre	
+ns:organization.club_interest	
+ns:user.narphorium.people.notable_person	/user/narphorium/people/topic
+ns:user.skud.sex.sexual_orientation	
+ns:base.qualia.recreational_drug	/base/qualia/topic
+ns:base.typefaces.typeface_foundry	/base/typefaces/topic
+ns:user.alexander.misc.review	/user/alexander/misc/topic
+ns:user.dminkley.biology.biological_classification	/user/dminkley/biology/topic
+ns:user.pak21.default_domain.tectonic_plate	/location/location
+ns:location.in_state	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.kwebbase.kwconnection	/base/kwebbase/topic
+ns:user.kesava.indian_railways_base.railway_zone	
+ns:tv.tv_soundtrack	/music/album
+ns:base.prison.prison_security_class	
+ns:base.weapons.weapon	/base/weapons/topic
+ns:measurement_unit.measuring_instrument	
+ns:base.cycleroute.cycle_route	
+ns:base.landcover.classification_code	/base/landcover/topic
+ns:base.celeb.celeb	
+ns:base.sportsrecords.athlete	/base/sportsrecords/topic
+ns:user.techgnostic.default_domain.periodical	
+ns:base.zionism.founder	/base/zionism/topic
+ns:user.movgp0.default_domain.measurement_system	
+ns:user.jg.default_domain.olympic_medal_winner	
+ns:user.narphorium.default_domain.brand	
+ns:base.argumentmaps.innovative_work	/base/argumentmaps/topic
+ns:sports.sport	
+ns:base.events.geographical_scope	/base/events/topic
+ns:theater.play	/book/written_work
+ns:music.concert_tour	/time/event
+ns:base.scenicbyways.scenic_byway_authority	
+ns:education.school	/organization/organization,/education/educational_institution
+ns:user.sprocketonline.economics.political_philosophy	
+ns:user.thadguidry.default_domain.cereal_grain	
+ns:location.neighborhood	/location/location
+ns:medicine.risk_factor	
+ns:base.filmcameras.camera	/base/filmcameras/topic
+ns:sports.school_sports_team	/sports/sports_team
+ns:base.rugby.type_of_rugby	/base/rugby/topic
+ns:time.day_of_year	
+ns:protected_sites.governing_body_of_protected_sites	/organization/organization
+ns:zoos.zoo_exhibit	
+ns:media_common.completer_of_unfinished_work	/people/person
+ns:base.tallships.tall_ship_on_tv	/base/tallships/topic,/boats/ship,/base/tallships/tall_ship
+ns:base.natlang.grouped_topic	/base/natlang/topic
+ns:military.military_unit_size	
+ns:base.proposedprojects.proposed_project	/base/proposedprojects/topic
+ns:base.aubreymaturin.ship	/base/aubreymaturin/topic
+ns:user.fairestcat.bandom.band	
+ns:base.nobelprizes.nobel_prize_winner	/base/nobelprizes/topic,/award/award_winner
+ns:film.film_featured_song	
+ns:measurement_unit.absorbed_dose_unit	/freebase/unit_profile,/type/unit
+ns:education.educational_degree	
+ns:astronomy.planetographic_coordinate_system	
+ns:astronomy.star_system_body	/astronomy/celestial_object
+ns:base.technologyofdoing.high_performance_concern	
+ns:visual_art.art_subject	
+ns:astronomy.comet_group	
+ns:film.film	
+ns:distilled_spirits.spirit_producing_region	/location/location
+ns:education.department	
+ns:user.trs80.default_domain.software_platform	/computer/computing_platform
+ns:base.disaster2.shipwreck	/base/underwater/underwater_thing,/base/underwater/topic,/location/location
+ns:measurement_unit.substance_unit	/freebase/unit_profile,/type/unit
+ns:base.naturalist.taxon_traits	/base/naturalist/topic
+ns:base.fairytales.fairy_tale	/base/fairytales/topic
+ns:base.mapcentral.map_projection_property	/base/mapcentral/topic
+ns:base.crime.convicted_criminal	/base/crime/topic,/people/person
+ns:base.braziliangovt.politician	/government/politician,/base/braziliangovt/topic,/people/person
+ns:base.observances.recurring_observance	/base/observances/topic,/time/recurring_event
+ns:bicycles.bicycle_model	/business/consumer_product
+ns:base.givennames.given_name	/base/givennames/topic
+ns:food.beer	
+ns:education.educational_institution_campus	/location/location
+ns:cvg.computer_videogame	
+ns:film.film_cut_type	
+ns:fictional_universe.fictional_character_creator	/people/person
+ns:medicine.vaccine_developer	
+ns:base.politeuri.biohacker	
+ns:user.danny.default_domain.athlete	
+ns:theater.theater_production_staff_role	
+ns:user.digitalarchivist.default_domain.animation	
+ns:user.cheunger.sports_test.professional_athlete	
+ns:baseball.baseball_coaching_position	
+ns:award.hall_of_fame_inductee	
+ns:projects.project_focus	
+ns:base.identifier.identifier_issuer	
+ns:base.activism.activism_issue	
+ns:user.chaswarner.default_domain.computing_platform	
+ns:base.politicalconventions.convention_leader	/base/politicalconventions/topic
+ns:user.patrick.default_domain.tagged_topic	
+ns:user.danja.default_domain.semantic_web_developer	/people/person
+ns:base.recordingstudios.recording_studio	/location/location
+ns:base.skateboarding.skateboarding_brand	/base/skateboarding/topic,/business/business_operation,/organization/organization,/business/employer,/business/sponsor
+ns:geology.rock_type	
+ns:cvg.game_character	/fictional_universe/fictional_character
+ns:base.wordnet.antonym_relation	/base/wordnet/topic
+ns:user.rcheramy.default_domain.nickname	
+ns:language.conlang	/language/human_language
+ns:base.pokervariants.game_mechanic	/base/pokervariants/topic
+ns:user.sandos.computation.web_development_framework_paradigm	
+ns:computer.programming_language_paradigm	
+ns:base.ballet.ballet_character	/base/ballet/topic
+ns:user.daepark.default_domain.golf_equipment_maker	
+ns:user.micahsaul.advertising.ad_agency	/m/04mny2g
+ns:engineering.material	
+ns:base.change.change	/base/change/topic
+ns:military.military_person	/people/person
+ns:broadcast.genre	
+ns:base.eating.diet_creator	
+ns:base.banking.investment_scheme	
+ns:base.bowlgames.bowl_game_stadium	/base/bowlgames/topic
+ns:base.fires.explosion	/time/event,/event/disaster
+ns:language.language_family	
+ns:base.animalnames.animal	/base/animalnames/topic
+ns:cricket.cricket_series	/time/recurring_event
+ns:book.periodical_subject	
+ns:base.abcbirds.conservation_plan	/book/scholarly_work,/book/technical_report,/book/written_work,/base/abcbirds/topic
+ns:base.inspiration.inspiration	/base/inspiration/topic
+ns:music.instrument	/music/performance_role
+ns:user.szaijan.fantasy_football.position	
+ns:base.weapons.ammunition	/base/weapons/topic
+ns:base.anglican.archdiocese	/base/anglican/topic
+ns:base.artmetadata.art_form	/base/artmetadata/topic,/base/artmetadata/facet
+ns:base.danceporn.dancer	/base/danceporn/topic
+ns:user.alecf.default_domain.audio_program_host	/people/person
+ns:broadcast.radio_station_owner	
+ns:base.goodrelations.hproduct	/base/goodrelations/topic
+ns:base.celebrations.celebration	/base/celebrations/topic
+ns:user.skud.legal.treaty_signatory	
+ns:automotive.model	
+ns:education.grade_level	
+ns:music.opera_singer	/people/person
+ns:base.mystery.paranormal_event	/base/paranormal/topic,/time/event
+ns:location.us_indian_reservation	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:location.citytown	/location/statistical_region,/location/dated_location,/location/location
+ns:internet.top_level_domain_registry	
+ns:user.micahsaul.five_alarm_food.hot_sauce	
+ns:base.ndbcd.buoy	/base/ndbcd/topic,/location/location
+ns:measurement_unit.unit_of_frequency	/freebase/unit_profile,/type/unit
+ns:amusement_parks.disney_ride	/amusement_parks/ride
+ns:base.academyawards.host_of_oscar_show	/base/academyawards/topic
+ns:medicine.drug_mechanism_of_action	
+ns:medicine.symptom	
+ns:user.radiusrs.default_domain.comic_book_collection	
+ns:user.patrick.default_domain.submarine_class	/boats/ship_class
+ns:user.thalendar.default_domain.roleplaying_game	/games/game
+ns:base.musiteca.music_teacher	/base/myschool/topic,/people/person
+ns:location.de_rural_district	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:user.robert.military.branch	
+ns:base.morelaw.war	/base/morelaw/topic
+ns:base.eating.subject_of_diet	
+ns:base.productplacement.product_placed_brand	/base/productplacement/topic
+ns:base.localfood.seasonal_month	/base/localfood/topic
+ns:base.propositions.proposition_issue	/base/propositions/topic
+ns:architecture.architecture_firm_partners	/people/person
+ns:medicine.condition_prevention_factors	
+ns:base.eventparticipants.known_participants	/people/person
+ns:base.satelites.natural_satellite	/base/satelites/orbit,/base/satelites/topic
+ns:user.thadguidry.default_domain.administrative_subdivision_level	
+ns:computer.computer_processor	
+ns:cvg.cvg_developer	
+ns:user.skud.boats.sailing_vessel_rig	/user/skud/boats/topic
+ns:base.qualia.disability_organization	/organization/organization,/business/employer
+ns:user.freebass.default_domain.work	
+ns:base.socialdance.dance_venue	/location/location,/base/socialdance/topic
+ns:architecture.building_complex	/location/location
+ns:medicine.drug_administration_route	
+ns:tv.tv_character	/fictional_universe/fictional_character
+ns:user.robert.mobile_phones.mobile_phone_carrier	
+ns:user.robert.earthquakes.earthquake_epicenter	/location/location
+ns:location.region	/location/location
+ns:base.aptamer.molecular_target	/base/aptamer/topic
+ns:base.militaryinfiction.military_unit_size_designation_in_fiction	/base/militaryinfiction/topic
+ns:base.thefuture.possible_future_event	/base/argumentmaps/topic,/base/argumentmaps/original_idea,/base/argumentmaps/idea,/base/thefuture/topic
+ns:base.fictionaluniverse.fictional_spacecraft_designer	/visual_art/visual_artist,/people/person,/base/fictionaluniverse/topic
+ns:film.film_company_role_or_service	
+ns:symbols.heraldic_charge	
+ns:user.patrick.default_domain.military_conflict	
+ns:biology.fossil_specimen	
+ns:user.mikeshwe.hairstyles.hairstyle	
+ns:base.endorsements.endorsee	/government/politician,/people/person,/base/endorsements/topic
+ns:spaceflight.mission_destination	
+ns:base.nightclubs.resident_musical_artist	/base/nightclubs/topic,/music/artist
+ns:user.alexander.default_domain.fire_department	
+ns:base.scenicbyways.scenic_byway_program	
+ns:base.technologyofdoing.knowledge_worker_trait_class	
+ns:base.wastrology.zodiacsign	/base/wastrology/topic
+ns:base.fragrances.perfumer	/people/person
+ns:base.surfing.region	/location/location
+ns:base.wsjbase.person	
+ns:base.fictionaluniverse.fictional_killer	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:user.anjackson.default_domain.file_format	/computer/file_format
+ns:military.military_combatant	/military/armed_force,/user/robert/military/military_person,/people/person
+ns:location.us_county	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:user.thadguidry.default_domain.bread	
+ns:base.bioventurist.product	
+ns:base.sails.sailing_ship	/boats/ship
+ns:user.hangy.default_domain.at_municipality	/location/statistical_region,/location/dated_location,/location/citytown,/location/location
+ns:user.richdice.ontario_microbrew_beers.brewery	
+ns:meteorology.tropical_cyclone_season	
+ns:user.arielb.default_domain.concentration_camp	
+ns:base.philbsuniverse.musical_album_detailed_view	/m/06vwzp1,/music/release
+ns:sports.sports_team_location	/location/location
+ns:user.maxim75.default_domain.transit_stop_connection	
+ns:sports.golf_course_designer	/people/person
+ns:base.landcover.code_category	
+ns:military.military_service	
+ns:chemistry.chemical_element	
+ns:base.inaugurations.inauguration_speaker	/base/inaugurations/topic,/people/person
+ns:computer.computing_platform	
+ns:base.onlineadvertising.ad_pricing_model	/base/onlineadvertising/topic
+ns:fictional_universe.fictional_organization_founder	
+ns:tennis.tennis_player	/sports/pro_athlete,/people/person
+ns:base.mathematics1.set	/base/mathematics1/topic
+ns:base.divinity.human_child_of_divinity	/base/divinity/topic
+ns:base.facetedbrowsing.software_environment	
+ns:base.rosetta.languoid	/base/rosetta/topic
+ns:film.music_contributor	
+ns:base.sameas.consuming_api_format	/base/sameas/topic
+ns:time.month	
+ns:base.dance.dance_form	/base/dance/topic
+ns:base.concepts.religious_concept	/base/concepts/topic
+ns:user.deizel.default_domain.event	
+ns:broadcast.producer	
+ns:astronomy.planet	/astronomy/celestial_object,/astronomy/orbital_relationship
+ns:user.buxul.default_domain.german_politician	/people/person
+ns:base.symbols.symbol_user	/base/symbols/topic
+ns:base.pests.pesticide_class	/base/pests/topic
+ns:base.goldenbooks.little_golden_books	/base/goldenbooks/topic,/book/book,/book/written_work
+ns:base.greatgardens.botanical_garden	/base/greatgardens/topic
+ns:base.feudalism.feudal_title	/base/feudalism/topic,/royalty/noble_title
+ns:base.peleton.classic_road_bicycling_race_type	/base/peleton/topic
+ns:astronomy.comet	/astronomy/celestial_object,/astronomy/orbital_relationship,/astronomy/astronomical_discovery
+ns:dataworld.provenance	/type/attribution
+ns:user.spencermountain.default_domain.fruit	/food/food
+ns:venture_capital.venture_funded_company	/business/business_operation,/organization/organization,/business/employer
+ns:base.events.performer	/base/events/topic
+ns:base.symbols.symbol_system	/base/symbols/topic
+ns:base.visleg.collaboration	/base/visleg/topic
+ns:base.wordnet.word_sense	/base/wordnet/topic
+ns:user.alexbl.default_domain.exchanged_currency	/finance/currency
+ns:tv.tv_song_performer	
+ns:base.mosaic.mosaic_country	/location/statistical_region,/location/dated_location,/location/country,/location/location
+ns:base.catalog.music_catalog	/base/catalog/topic
+ns:base.horsefacts.coat_color	/base/horsefacts/topic
+ns:base.mladraft.collection	/base/mladraft/topic
+ns:base.schemastaging.nutrient_extra	
+ns:book.poetic_verse_form	
+ns:base.jamesbond007.bond_film	/film/film
+ns:user.micahsaul.advertising.ad_campaign	/m/04mny2g
+ns:base.jewlib.judaica_owner	/base/jewlib/topic
+ns:base.graphicnovels.graphic_novel_artist	/base/graphicnovels/topic
+ns:base.seafood.contaminant	
+ns:base.ballet.ballet	/base/ballet/topic
+ns:base.skateboarding.type_of_skateboarding_location	
+ns:user.jamie.default_domain.yacht_racing.yacht_crew	/people/person
+ns:user.pak21.default_domain.tectonic_plate_boundary	/geography/geographical_feature,/location/location
+ns:user.moonhouse.default_domain.reference_rate	
+ns:location.administrative_division	/location/statistical_region,/location/dated_location,/location/location
+ns:base.process.tool	
+ns:base.events.performance_event	/base/fight/topic,/time/event,/base/fight/crowd_event,/base/events/topic
+ns:base.argumentmaps.existential_argument	/base/argumentmaps/argument,/base/argumentmaps/topic,/base/argumentmaps/original_idea
+ns:base.vancouver.podcaster	
+ns:base.jewlib.responsible_body	/base/jewlib/topic,/organization/organization,/base/jewishpress/topic
+ns:user.jfry.default_domain.knight	
+ns:user.techgnostic.default_domain.tv_series_serial	
+ns:base.antarctica.antarctic_outpost	/architecture/building_complex,/location/location
+ns:base.bibkn.organization	/base/bibkn/topic
+ns:base.animalpathology.animal_disease	/base/animalpathology/topic
+ns:user.cip22.default_domain.design_pattern	/freebase/equivalent_topic
+ns:base.industrystandards.standard_organization	
+ns:base.startrek.starship_from_star_trek	/base/startrek/topic
+ns:base.classiccars.antique_car	/base/classiccars/topic,/automotive/model
+ns:base.locations.cities_and_towns	/base/locations/topic
+ns:location.country	/location/statistical_region,/location/dated_location,/location/location
+ns:base.x2010fifaworldcupsouthafrica.x2010_world_cup_qualifications	/base/x2010fifaworldcupsouthafrica/topic
+ns:base.icons.represented_by_icon	
+ns:biology.taxonomic_authority	
+ns:base.jewlib.collection_type	/base/jewlib/topic
+ns:music.album	
+ns:travel.transportation_mode	
+ns:user.tfmorris.default_domain.computer	
+ns:user.kconragan.graphic_design.graphic_design_style	/user/kconragan/graphic_design/topic
+ns:cvg.computer_game_subject	
+ns:base.wastrology.astrologicalplanet	/base/wastrology/topic
+ns:law.constitutional_convention_delegate	/people/person
+ns:base.litcentral.land_manager	
+ns:location.cn_province	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:user.thadguidry.default_domain.motorsport_race_style	
+ns:base.gender.transgender_person	/base/gender/topic,/people/person
+ns:base.newsevents.news_reporting_organisation	
+ns:user.robert.roman_empire.roman_region	
+ns:base.proposedprojects.project_funder	/base/proposedprojects/topic
+ns:base.whamoworld.wham_o_toys	/base/whamoworld/topic
+ns:location.uk_metropolitan_borough	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.mapcentral.map_projection_type	
+ns:location.location	/location/dated_location,/location/statistical_region,/location/country,/organization/organization
+ns:base.worldwonders.wonder_creator	
+ns:opera.opera_genre	
+ns:music.group_membership	
+ns:user.robert.performance.performance_venue	
+ns:user.ramanan.default_domain.musical_composer	
+ns:base.argumentmaps.moral_support	/base/argumentmaps/topic
+ns:base.billionaires.billionaire	/base/billionaires/topic
+ns:base.fictionaluniverse.inhabited_fictional_character	/base/fictionaluniverse/topic
+ns:base.ballet.ballet_composer	/base/ballet/topic
+ns:base.locations.continents	/base/locations/topic
+ns:award.ranked_item	
+ns:user.moisteh.default_domain.glue	
+ns:business.defunct_company	/organization/organization
+ns:user.mrmasterbastard.default_domain.battery_cell_type	
+ns:base.engineering1.rfid_iso_standarts_type	
+ns:user.robert.military.military_person	
+ns:biology.animal_owner	
+ns:user.kofish.default_domain.lpc_dialect	
+ns:base.parody.parody	/base/parody/topic
+ns:user.joehughes.default_domain.data_format	
+ns:business.consumer_product	
+ns:base.engineering.chartering_institution	/base/engineering/topic
+ns:location.metropolitan_area	/location/statistical_region,/location/location
+ns:base.monetarydebase.governments_that_debase	
+ns:american_football.football_division	/organization/organization,/business/employer,/sports/sports_league
+ns:base.fairytales.fairy_tale_author	/base/fairytales/topic,/people/person
+ns:user.jamie.default_domain.boat_class	
+ns:base.famouspets.pet	/base/famouspets/topic,/biology/organism
+ns:conferences.conference_subject	
+ns:business.issue	
+ns:education.university	/organization/organization,/education/educational_institution
+ns:military.armed_force	/organization/organization
+ns:base.celebrations.celebration_subject	/base/celebrations/topic
+ns:user.ktrueman.default_domain.governing_body	
+ns:base.filmcameras.camera_series	/base/filmcameras/topic
+ns:organization.organization_founder	
+ns:base.usnationalparks.nps_classification	/base/usnationalparks/topic
+ns:base.disaster2.attack	/time/event,/base/argumentmaps/motivated_event,/base/disaster2/topic
+ns:base.mystery.ufo_sighting	/time/event,/base/aliens/topic
+ns:government.political_ideology	
+ns:religion.religious_organization	/organization/organization
+ns:base.morelaw.court	/base/morelaw/topic
+ns:base.twinnedtowns.twinned_town	/location/statistical_region,/location/dated_location,/base/twinnedtowns/topic,/location/citytown,/location/location
+ns:computer.software_genre	
+ns:base.collectiblecards.trading_card_company	/base/collectiblecards/topic
+ns:measurement_unit.force_moment_unit	/freebase/unit_profile,/type/unit
+ns:food.cheese_certification	
+ns:sports.sports_team_captain	/people/person
+ns:business.shopping_center_owner	/business/business_operation,/organization/organization,/business/employer
+ns:base.mathematics1.mathematical_concept	/base/mathematics1/topic
+ns:base.aareas.schema.administrative_area_type	/base/uncommon/topic,/base/aareas/aat_mapping
+ns:spaceflight.rocket_launch_site	/location/location
+ns:base.whamoworld.movies_featuring_wham_o_products	/base/whamoworld/topic
+ns:government.form_of_government	
+ns:user.chabot_bernard.semantic_cartography.software	
+ns:film.personal_film_appearance_type	
+ns:base.argumentmaps.motivation_s	/base/argumentmaps/topic
+ns:base.aareas.schema.earth.citytown	/base/aareas/schema/administrative_area,/location/location
+ns:event.produced_event	
+ns:base.sharing.sharing_method	/base/sharing/topic
+ns:base.folklore.mythology_origin_location	
+ns:base.vancouver.location_in_neighborhood	/base/vancouver/topic,/location/location
+ns:user.micahsaul.five_alarm_food.chili_pepper	
+ns:base.fires.firefighter	
+ns:government.political_district	/location/dated_location,/location/location
+ns:biology.breed_group	
+ns:base.trails.activity	/m/0dk0v5d
+ns:base.vancouver.conference_series	/conferences/conference_series,/base/vancouver/topic,/time/recurring_event
+ns:base.ballet.choreographer	/base/ballet/topic
+ns:base.engineering.mined_material	/base/engineering/topic,/engineering/material
+ns:user.alexander.default_domain.supergame	/cvg/computer_videogame
+ns:base.centreforeresearch.project	/base/centreforeresearch/topic
+ns:baseball.baseball_coach	
+ns:base.trails.trailhead	/m/0dk0v5d,/location/location
+ns:olympics.olympic_event	
+ns:base.tallships.maritime_museum	/architecture/building,/architecture/structure,/architecture/museum
+ns:user.dfhuynh.default_domain.assassinated_person	
+ns:tv.sequence_of_tv_episode_segments	
+ns:baseball.baseball_position	
+ns:base.saturdaynightlive.snl_musical_guest	
+ns:user.jg.default_domain.olympic_sport	/sports/sport
+ns:internet.website	
+ns:base.divinity.divinity	/base/divinity/topic
+ns:automotive.platform	
+ns:film.film_screening_venue	
+ns:government.government	
+ns:base.firsts.achievement	/base/firsts/topic
+ns:base.fight.protest_type	/base/fight/topic
+ns:base.wrestling.professional_wrestler	/tv/tv_personality,/people/measured_person,/sports/pro_athlete,/people/person,/base/wrestling/solo_wrestler_or_team,/base/wrestling/topic
+ns:user.kake.default_domain.london_underground_station	
+ns:law.constitutional_amendment_proposer	
+ns:base.mathematics1.statement	/base/mathematics1/topic
+ns:base.fight.protester	/people/person
+ns:base.thesocialset.clique_interest	
+ns:sports.sports_award_type	
+ns:user.jerols.default_domain.war	/user/jerols/default_domain/historical_event
+ns:business.endorsed_product	/business/consumer_product
+ns:biology.organism_classification_rank	
+ns:base.x2010fifaworldcupsouthafrica.world_cup_participation	/base/x2010fifaworldcupsouthafrica/topic
+ns:base.engineering.tunnel_use	/base/engineering/topic
+ns:sports.drafted_athlete	/people/measured_person,/sports/pro_athlete,/people/person
+ns:base.engineeringdraft.manufactured_component	/base/engineeringdraft/topic,/projects/project_focus
+ns:user.zsi_editorial.editorial.comment	
+ns:user.bibliostuff.record_types.census_record	
+ns:base.services.martial_arts_studio	/base/services/topic,/base/services/retail_location
+ns:theater.musical_director	/people/person
+ns:user.mr_kav.default_domain.isreal_prime_minister	
+ns:base.bizmo.federal_agency	/base/bizmo/topic,/base/bizmo/gov
+ns:user.pak21.default_domain.sports_league_championship_event_extension	/time/event,/sports/sports_championship_event
+ns:base.kwebbase.kwtopic	/base/kwebbase/topic
+ns:ice_hockey.hockey_team	/sports/sports_team
+ns:base.horseracing.horse_race_form	
+ns:user.chaswarner.default_domain.file_format	
+ns:user.frakilk.default_domain.family	
+ns:base.argumentmaps.proposed_solution	/base/argumentmaps/argument,/base/argumentmaps/topic,/base/argumentmaps/idea
+ns:base.duketip.system	
+ns:base.process.process	/base/process/topic
+ns:base.bigsky.site	/base/bigsky/topic,/location/location
+ns:base.services.service	/base/services/topic,/business/business_location,/base/services/local_business,/business/employer
+ns:military.military_resource	
+ns:base.argumentmaps.morally_disputed_activity	/base/argumentmaps/topic
+ns:base.casinos.casino_owner	/base/casinos/topic
+ns:geography.mountain_range	/geography/geographical_feature,/location/location
+ns:user.uroscion.default_domain.martial_arts_styles	
+ns:base.pokervariants.poker_variant	/base/pokervariants/topic
+ns:base.cocktails.cocktail_ingredient	/base/cocktails/topic
+ns:base.schemastaging.tv_character_extra	/fictional_universe/fictional_character,/tv/tv_character
+ns:amusement_parks.ride	
+ns:base.schemastaging.scholastic_library	/base/schemastaging/topic
+ns:sports.coaching_position	
+ns:base.lawsandbox.statute	/base/lawsandbox/topic
+ns:religion.founding_figure	
+ns:base.aareas.schema.earth.sovereign_state	/base/aareas/schema/administrative_area,/base/aareas/schema/earth/sovereignty,/location/location
+ns:user.akatenev.weapons.armored_vehicle	/user/akatenev/weapons/military_vehicle,/user/akatenev/weapons/weapon
+ns:education.school_district	/organization/organization
+ns:base.recordingstudios.studio_musician	
+ns:user.lindenb.default_domain.student	/people/person
+ns:base.esports.e_sports_team	/base/esports/topic,/organization/organization
+ns:ice_hockey.hockey_position	
+ns:medicine.biofluid	
+ns:base.mystery.cryptozoologist	/base/mystery/topic,/people/person
+ns:base.aareas.coding_scheme	/base/industrystandards/industry_standard,/user/doconnor/industry_standards/standard
+ns:user.sandos.semantic_web.semantic_website_export	
+ns:base.fictionaluniverse.fictional_clone	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:government.politician	/people/person
+ns:user.lindenb.default_domain.teacher	/people/person
+ns:base.peleton.cycling_team_professional	/business/sponsored_recipient,/base/peleton/topic,/sports/sports_team
+ns:computer.computer	
+ns:base.rugby.rugby_club	/sports/sports_team
+ns:base.plantstructure.structure	/base/plantstructure/topic
+ns:base.militaryinfiction.military_combatant_in_fiction	/base/militaryinfiction/topic,/fictional_universe/fictional_organization
+ns:user.sbennett.default_domain.automobile_manufacturer	
+ns:base.foodiefieldguide.street_food	/food/dish,/base/foodiefieldguide/topic
+ns:base.windenergy.wind_turbine_type	/base/windenergy/topic
+ns:media_common.dedicator	
+ns:base.politicalconventions.political_convention	/base/politicalconventions/topic
+ns:user.robert.x2008_presidential_election.campaign_manager	
+ns:base.ports.port_authority	/organization/organization,/business/employer,/base/ports/topic
+ns:education.educational_institution	/organization/organization,/business/employer
+ns:base.events.type_of_event	/base/events/topic
+ns:base.ballet.ballet_school	/base/ballet/topic
+ns:base.locations.planets	/base/locations/topic
+ns:base.fictionaluniverse.fictional_spaceship_crewman	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
+ns:user.jschell.default_domain.famous_speech	
+ns:base.infection.computer_infection_type	
+ns:book.poetic_meter	
+ns:aviation.aircraft_line	
+ns:base.filmcameras.camera_manufacturer	/base/filmcameras/topic
+ns:sports.golf_facility	/location/location
+ns:base.revisioncontrol.revision_control_software	/base/revisioncontrol/topic,/computer/software
+ns:user.hailey2009.default_domain.artist_model	
+ns:base.unitednations.united_nations_body	/organization/organization,/base/unitednations/topic
+ns:time.recurring_event	
+ns:tv.tv_director	/people/person
+ns:base.supertopics.supertopic	/base/supertopics/topic
+ns:base.braziliangovt.state	/base/braziliangovt/topic
+ns:base.engineering.aqueduct	/transportation/bridge,/base/engineering/topic,/architecture/structure,/projects/project_focus,/location/location
+ns:book.periodical_editor	/people/person
+ns:base.politicalconventions.convention_speaker	/base/politicalconventions/topic,/people/person
+ns:base.culturalevent.event	/time/event
+ns:amusement_parks.ride_designer	
+ns:user.wiznia.default_domain.p2p_system	
+ns:base.skills.skill	/base/skills/topic
+ns:base.portmanteau.word_combinations	
+ns:food.brewery_brand_of_beer	
+ns:exhibitions.exhibition_subject	
+ns:base.musicmanager.music_manager	
+ns:base.engineering.building_material	/base/engineering/topic,/engineering/material
+ns:base.materials.alloy	/base/materials/solid_material,/base/materials/topic
+ns:user.techgnostic.default_domain.doctor_who_episode	
+ns:base.virtualheliosphericobservatory.observatory	/base/virtualheliosphericobservatory/topic
+ns:user.alexbl.congressional_voting_records.bill	/user/alexbl/congressional_voting_records/legislative_matter
+ns:base.facetedbrowsing.result_view	
+ns:location.capital_of_administrative_division	/location/dated_location,/location/location
+ns:location.metropolitan_area_category	
+ns:theater.theatrical_orchestrator	/people/person
+ns:computer.operating_system_developer	
+ns:distilled_spirits.blended_spirit	
+ns:base.mosaic.included_broadcaster	/base/mosaic/topic,/broadcast/broadcast,/broadcast/tv_station
+ns:engineering.piston_configuration	
+ns:sports.sports_team_coach	/people/person
+ns:base.mystery.cryptid_classification	/base/mystery/topic
+ns:medicine.icd_9_cm_classification	
+ns:theater.theater	/architecture/venue
+ns:basketball.basketball_division	/organization/organization,/business/employer,/sports/sports_league
+ns:cvg.game_voice_actor	/people/person
+ns:base.folklore.mythology	/base/folklore/topic
+ns:base.mathematics1.mathematician	/people/person,/base/mathematics1/topic
+ns:user.jeff.default_domain.addressed_topic	
+ns:base.biblioness.bibs_location	
+ns:base.standardizedtesting.standardized_test	/base/standardizedtesting/topic
+ns:symbols.heraldic_crest	
+ns:base.athletics.track_and_field_athlete	/base/athletics/topic,/sports/pro_athlete,/people/person
+ns:user.anjackson.default_domain.bitstream_encoding	
+ns:aviation.aircraft_designer	
+ns:base.fight.labour_dispute	/time/event,/base/fight/topic,/base/argumentmaps/motivated_event
+ns:astronomy.galactic_super_cluster	/astronomy/celestial_object
+ns:base.conservation.legislation	/base/conservation/topic
+ns:computer.software_developer	
+ns:base.iceandfire.noble_house	/base/iceandfire/topic
+ns:base.abcbirds.conservation_project	/base/abcbirds/topic
+ns:base.argumentmaps.abstract_moral_dispute	/base/argumentmaps/topic
+ns:base.danceporn.video	/base/danceporn/topic
+ns:fictional_universe.fictional_organization_type	
+ns:base.gambling.lottery	/base/gambling/topic
+ns:base.engineering.dike	/base/engineering/topic,/projects/project_focus,/location/location
+ns:base.athletics.athletics_championships_series	/base/athletics/topic,/base/athletics/athletics_series,/time/recurring_event
+ns:base.fairytales.fairy_tale_origin	/base/fairytales/topic,/location/location
+ns:award.competitor	
+ns:base.banned.banned_person	/base/banned/topic
+ns:base.aubreymaturin.malady	/medicine/disease,/base/aubreymaturin/topic
+ns:user.robert.us_congress.congressional_caucus	
+ns:baseball.baseball_team	/sports/sports_team
+ns:base.crime.criminal_organisation	/base/crime/topic,/organization/organization
+ns:base.jamesbond007.bond_girl	/film/film_character,/fictional_universe/fictional_character,/base/jamesbond007/topic
+ns:base.newsevents.photograph	/base/newsevents/topic
+ns:user.jamie.military_awards.award	/user/jamie/military_awards/topic
+ns:user.alexander.default_domain.royal_title	
+ns:base.virtualheliosphericobservatory.instrument	/base/virtualheliosphericobservatory/topic
+ns:base.casinos.casino_theme	/base/casinos/topic
+ns:base.breakfast.breakfast_cereal_mascot	/base/breakfast/topic
+ns:base.fires.fire_department	
+ns:cvg.musical_game	/cvg/computer_videogame
+ns:base.opposites.opposite	/base/opposites/topic
+ns:award.long_listed_work	
+ns:location.uk_district	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:user.yarnover.default_domain.handcraft	
+ns:fictional_universe.fictional_employer	
+ns:base.commonsprototypes.fictional_object_class	
+ns:user.alexander.philosophy.idea	
+ns:religion.place_of_worship	/architecture/building,/architecture/structure,/projects/project_focus,/location/location
+ns:book.short_story	/fictional_universe/work_of_fiction,/book/written_work,/book/published_work
+ns:measurement_unit.inductance_unit	/freebase/unit_profile,/type/unit
+ns:language.language_writing_type	
+ns:user.tsturge.language.alphabet	
+ns:base.contractbridge.bridge_player_partnership	
+ns:computer.internet_protocol	
+ns:royalty.chivalric_order_member	/people/person
+ns:american_football.football_coach	/people/person
+ns:base.onlineadvertising.ad_network	/base/onlineadvertising/topic
+ns:people.family	
+ns:language.human_language	
+ns:astronomy.near_earth_object_classification	
+ns:user.mbmuhr.default_domain.non_profit_organization	
+ns:base.pethealth.pet_disease_risk_factor	/base/pethealth/topic
+ns:user.jefft0.default_domain.purebred_dog	/biology/organism
+ns:people.marriage_union_type	
+ns:user.rpasay.software_package.database_management_system	/computer/software
+ns:base.concepts.concept_developer	/people/person,/base/concepts/topic
+ns:base.pethealth.pet_with_medical_condition	/biology/organism_classification,/base/pethealth/topic
+ns:law.constitutional_amendment	
+ns:user.olivergbayley.sherlock_holmes.person	
+ns:base.writing.symset	/base/writing/topic
+ns:user.mcstrother.default_domain.virulence_factor	
+ns:medicine.vector_of_disease	
+ns:tv.tv_program_guest	
+ns:film.film_festival_focus	
+ns:base.crime.warrant_issuer	
+ns:location.es_autonomous_community	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:base.filmcameras.lens_mount	/base/filmcameras/topic
+ns:biology.hybrid_parent_gender	
+ns:award.long_list_nominee	
+ns:base.infrastructure.lock	/architecture/structure,/projects/project_focus,/location/location,/base/infrastructure/topic
+ns:fictional_universe.event_in_fiction	
+ns:base.skateboarding.distribution_company	/business/business_operation,/organization/organization,/business/employer
+ns:base.iceandfire.house_lord	/base/iceandfire/topic,/base/iceandfire/person
+ns:user.thadguidry.default_domain.ad_spot	
+ns:conferences.conference_venue	
+ns:user.jg.default_domain.olympic_games	
+ns:user.freebass.default_domain.topic_mentioned	
+ns:user.rcheramy.default_domain.hockey_league	
+ns:base.ports.marine_terminal	/business/asset,/projects/project_focus,/location/location
+ns:visual_art.art_owner	
+ns:astronomy.astronomer	/people/person
+ns:aviation.aircraft	/business/asset
+ns:education.academic	/people/person
+ns:base.bsocbase.cancer_subtype	/base/bsocbase/topic,/medicine/disease
+ns:base.mediaextended.film_ranch	/location/dated_location,/tv/tv_location,/film/film_location,/base/mediaextended/topic,/location/location
+ns:metropolitan_transit.transit_stop	/location/location
+ns:user.ramanan.default_domain.composition	
+ns:base.watches.watch_model	/base/watches/topic,/interests/collectable_item,/business/consumer_product
+ns:base.column.column_author_duration	/base/column/topic
+ns:amusement_parks.ride_theme	
+ns:base.bio2rdf.database_format	/base/bio2rdf/topic
+ns:location.it_comune	/location/statistical_region,/location/dated_location,/location/citytown,/location/location
+ns:astronomy.asterism	
+ns:ice_hockey.hockey_player	/sports/pro_athlete,/people/person
+ns:user.rcheramy.default_domain.nhl_conference	
+ns:people.family_member	/people/person
+ns:base.disaster2.death_causing_event	/time/event
+ns:user.agroschim.default_domain.school_tradition	
+ns:base.handball.handball_player	/base/handball/topic,/sports/pro_athlete,/people/person
+ns:base.column.column_genre	/base/column/topic,/media_common/media_genre
+ns:cvg.cvg_platform	
+ns:music.music_video_character	
+ns:user.robert.us_congress.caucus_chairperson	
+ns:base.americancomedy.comedy_group_founder	
+ns:base.ballet.ballet_company	/base/ballet/topic
+ns:conferences.conference	/time/event,/event/public_speaking_event
+ns:base.feudalism.feudal_location	/base/feudalism/topic,/location/dated_location,/location/location
+ns:opera.librettist	
+ns:base.mediaextended.film_ranch_owner	/business/business_operation,/organization/organization,/business/employer,/film/film_company,/base/mediaextended/topic
+ns:base.engineeringdraft.product_designer	/m/07_1xrs,/base/engineeringdraft/topic
+ns:base.honouriam.acclaimant_of_honor	/base/honouriam/topic
+ns:base.services.practice_jurisdiction	/base/services/topic
+ns:base.services.lawyer	/base/services/topic,/base/services/person,/base/services/certified_person
+ns:base.pinball.pinball_machine_manufacturer	/business/business_operation,/base/pinball/topic,/organization/organization,/business/employer
+ns:base.animemanga.anime_director	/base/animemanga/topic,/people/person
+ns:base.satelites.artificial_satellite	/base/satelites/orbit,/base/satelites/topic
+ns:amusement_parks.ride_manufacturer	/business/business_operation,/organization/organization,/business/employer
+ns:user.danja.default_domain.project	
+ns:rail.locomotive_builder	/business/business_operation,/organization/organization,/business/employer
+ns:location.de_city	/location/statistical_region,/location/dated_location,/location/citytown,/location/location
+ns:base.saturdaynightlive.snl_actor	
+ns:cvg.computer_game_mod	/cvg/computer_videogame
+ns:base.jewlib.research_collection	/m/05svdt4,/base/jewlib/topic
+ns:user.sandos.computation.serialization	
+ns:ice_hockey.hockey_coach	
+ns:aviation.airline_alliance	
+ns:fictional_universe.character_powers	
+ns:base.satelites.earth_observing_satellite	/spaceflight/satellite,/base/landcover/lc,/base/satelites/earth_orbiting_satellite,/base/satelites/topic
+ns:base.cocktails.cocktail	/food/dish,/base/cocktails/topic
+ns:exhibitions.exhibition_producer	
+ns:book.book_character	/fictional_universe/fictional_character
+ns:base.triggers.triggery_material	/base/triggers/topic
+ns:book.magazine	/book/periodical
+ns:royalty.royal_line	/people/family
+ns:user.alexander.default_domain.chess_opening	
+ns:award.award_nominated_work	
+ns:book.magazine_issue	/book/publication
+ns:automotive.automotive_class	
+ns:user.pak21.default_domain.major_league_sports_team	
+ns:user.zanerokklyn.default_domain.smartphone	/user/bitwiseplatypus/default_domain/mobile_phone,/user/randy/default_domain/consumer_electronics
+ns:user.skud.boats.vessel_use	/user/skud/boats/topic
+ns:base.skosbase.skos_concept	
+ns:base.electromagneticspectrum.wireless_protocol	/m/04snrnl
+ns:broadcast.radio_station	/broadcast/broadcast
+ns:base.realitytv.reality_tv_season	/tv/tv_series_season,/base/realitytv/topic
+ns:base.collectives.people	/base/collectives/topic
+ns:cvg.computer_game_rating	
+ns:digicams.digital_camera_manufacturer	
+ns:user.frakilk.default_domain.order	
+ns:user.olivergbayley.sherlock_holmes.thoroughfare	
+ns:user.dsinclair.default_domain.archaeologist	
+ns:base.infrastructure.type_of_lock	
+ns:book.translation	/book/published_work
+ns:user.aabs.default_domain.algorithm	
+ns:engineering.engine	/projects/project_focus
+ns:business.competitive_space	
+ns:military.military_post	
+ns:base.actsofparliament.acts_of_parliament	/base/actsofparliament/topic
+ns:zoos.zoo	/travel/tourist_attraction,/location/location
+ns:base.argumentmaps.practical_problem	/base/argumentmaps/topic
+ns:music.multipart_release	/media_common/creative_work,/music/release
+ns:media_common.adapted_work	
+ns:base.sharing.sharing_system	/base/sharing/topic
+ns:film.content_rating_system	
+ns:base.metaschema.instance	
+ns:architecture.architectural_style	
+ns:user.dylanrocks.national_football_league.nfl_stadiums_where_home_team_lost_the_first_game	
+ns:base.schemastaging.ship_extra	
+ns:theater.theatrical_lyricist	/people/person
+ns:book.author	/people/person
+ns:amusement_parks.ride_type	
+ns:base.patronage.client	
+ns:sports.sports_award_winner	
+ns:base.argumentmaps.decision_maker	/base/argumentmaps/topic
+ns:user.carmenmfenn1.default_domain.sculpture	
+ns:base.cdnpolitics.member_of_parliament	/government/politician,/base/cdnpolitics/politician,/people/person,/base/cdnpolitics/topic
+ns:user.jeremy.default_domain.mma_fighter	/people/person
+ns:language.language_dialect	
+ns:music.media_format	
+ns:user.hailey2009.default_domain.chinese_zodiac	/base/symbols/symbol
+ns:spaceflight.rocket_engine_oxidizer	
+ns:base.schemastaging.body_of_water_extra	/geography/geographical_feature,/geography/body_of_water,/location/location
+ns:boats.ship_builder	
+ns:wine.wine	
+ns:location.ru_oblast	/location/statistical_region,/location/dated_location,/location/administrative_division,/location/location
+ns:soccer.football_position	
+ns:base.handball.handball_league	/base/handball/topic,/time/recurring_event
+ns:user.pak21.default_domain.derivative_software	
+ns:freebase.list	
+ns:user.thadguidry.default_domain.musical_note_family	
+ns:user.uoa_it.uoa_it.uoa_application	
+ns:base.services.performing_art	/base/services/topic
+ns:base.government2.elected_official	/base/government2/topic
+ns:user.maximilianschich.CIDOC_CRM.e19_physical_object	/user/maximilianschich/CIDOC_CRM/e18_physical_thing
+ns:user.doconnor.pets.horse	/user/doconnor/pets/pet
+ns:user.zeusi.default_domain.sports_representative	
+ns:base.grecoromanmythology.roman_deity	/religion/deity,/base/grecoromanmythology/topic,/base/grecoromanmythology/roman_mythology,/m/04lpl8_
+ns:user.gavinci.default_domain.transformer_character	
+ns:user.skud.boats.naval_engagement	/time/event,/user/skud/boats/topic,/military/military_conflict
+ns:user.rcheramy.default_domain.hockey_championship	
+ns:geography.mountain_pass	/geography/geographical_feature,/location/location
+ns:base.engineering1.rfid_company	
+ns:base.collectiblecards.trading_card_set	/base/collectiblecards/topic
+ns:base.represent.agent	/base/represent/topic
+ns:base.lawsandbox.prison_system	
+ns:base.government2.appointed_official	/people/appointee,/base/government2/topic,/people/person
+ns:user.techgnostic.default_domain.doctor_who_companions	/tv/tv_character
+ns:sports.sports_position	
+ns:comic_strips.comic_strip_character	/fictional_universe/fictional_character
+ns:symbols.namesake	
+ns:fictional_universe.fictional_setting	
+ns:base.bioventurist.area_of_expertise	
+ns:theater.theater_character	/fictional_universe/fictional_character
+ns:base.godparents.godchild	/celebrities/celebrity
+ns:astronomy.satellite_galaxy	/astronomy/celestial_object,/astronomy/galaxy,/astronomy/orbital_relationship
+ns:base.phobias.phobia	/medicine/disease
+ns:user.jefft0.default_domain.dog_breed_group	
+ns:base.contractbridge.bridge_player	/people/person,/base/contractbridge/topic
+ns:biology.gene_ontology_group	
+ns:user.narphorium.default_domain.job_title	
+ns:base.philbsuniverse.artist_s_or_band_s	/m/06vwzp1,/music/artist
+ns:base.livemusic.concert_venue	/base/livemusic/topic
+ns:organization.organization_founder	/people/person

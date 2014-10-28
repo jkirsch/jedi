@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CAS version="2">
+    <uima.cas.Sofa _indexed="0" _id="1" sofaNum="1" sofaID="_InitialView" mimeType="text" sofaString="Michael Hollinger (born January 13, 1962 in Lancaster, Pennsylvania) is an American playwright who is currently an assistant professor of Theatre at Villanova University and a resident playwright at New Dramatists. He received a Bachelor of Music in viola performance from Oberlin Conservatory in 1984 and a Master of Arts in theatre from Villanova in 1989. He has been married to Megan Bellwoar since 1990."/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData _indexed="1" _id="13" _ref_sofa="1" begin="0" end="407" language="en" documentUri="id" isLastSegment="false"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="32" _ref_sofa="1" begin="0" end="7" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="50" _ref_sofa="1" begin="8" end="17" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="109" _ref_sofa="1" begin="24" end="31" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="204" _ref_sofa="1" begin="44" end="53" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="245" _ref_sofa="1" begin="55" end="67" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="494" _ref_sofa="1" begin="138" end="145" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="530" _ref_sofa="1" begin="149" end="158" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="548" _ref_sofa="1" begin="159" end="169" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="661" _ref_sofa="1" begin="199" end="202" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="679" _ref_sofa="1" begin="203" end="213" PosValue="NNPS"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="905" _ref_sofa="1" begin="273" end="280" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="923" _ref_sofa="1" begin="281" end="293" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="1131" _ref_sofa="1" begin="339" end="348" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="1303" _ref_sofa="1" begin="381" end="386" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed="1" _id="1321" _ref_sofa="1" begin="387" end="395" PosValue="NNP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="37" _ref_sofa="1" begin="0" end="7" value="Michael"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="55" _ref_sofa="1" begin="8" end="17" value="Hollinger"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="73" _ref_sofa="1" begin="18" end="19" value="-lrb-"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="96" _ref_sofa="1" begin="19" end="23" value="bear"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="114" _ref_sofa="1" begin="24" end="31" value="January"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="132" _ref_sofa="1" begin="32" end="34" value="13"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="150" _ref_sofa="1" begin="34" end="35" value=","/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="168" _ref_sofa="1" begin="36" end="40" value="1962"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="186" _ref_sofa="1" begin="41" end="43" value="in"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="209" _ref_sofa="1" begin="44" end="53" value="Lancaster"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="227" _ref_sofa="1" begin="53" end="54" value=","/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="250" _ref_sofa="1" begin="55" end="67" value="Pennsylvania"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="268" _ref_sofa="1" begin="67" end="68" value="-rrb-"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="291" _ref_sofa="1" begin="69" end="71" value="be"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="309" _ref_sofa="1" begin="72" end="74" value="a"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="327" _ref_sofa="1" begin="75" end="83" value="american"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="345" _ref_sofa="1" begin="84" end="94" value="playwright"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="368" _ref_sofa="1" begin="95" end="98" value="who"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="386" _ref_sofa="1" begin="99" end="101" value="be"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="404" _ref_sofa="1" begin="102" end="111" value="currently"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="422" _ref_sofa="1" begin="112" end="114" value="a"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="445" _ref_sofa="1" begin="115" end="124" value="assistant"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="463" _ref_sofa="1" begin="125" end="134" value="professor"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="481" _ref_sofa="1" begin="135" end="137" value="of"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="499" _ref_sofa="1" begin="138" end="145" value="Theatre"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="517" _ref_sofa="1" begin="146" end="148" value="at"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="535" _ref_sofa="1" begin="149" end="158" value="Villanova"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="553" _ref_sofa="1" begin="159" end="169" value="University"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="571" _ref_sofa="1" begin="170" end="173" value="and"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="594" _ref_sofa="1" begin="174" end="175" value="a"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="612" _ref_sofa="1" begin="176" end="184" value="resident"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="630" _ref_sofa="1" begin="185" end="195" value="playwright"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="648" _ref_sofa="1" begin="196" end="198" value="at"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="666" _ref_sofa="1" begin="199" end="202" value="New"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="684" _ref_sofa="1" begin="203" end="213" value="Dramatists"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="702" _ref_sofa="1" begin="213" end="214" value="."/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="725" _ref_sofa="1" begin="215" end="217" value="he"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="743" _ref_sofa="1" begin="218" end="226" value="receive"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="761" _ref_sofa="1" begin="227" end="228" value="a"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="779" _ref_sofa="1" begin="229" end="237" value="bachelor"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="797" _ref_sofa="1" begin="238" end="240" value="of"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="815" _ref_sofa="1" begin="241" end="246" value="music"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="833" _ref_sofa="1" begin="247" end="249" value="in"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="856" _ref_sofa="1" begin="250" end="255" value="viola"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="874" _ref_sofa="1" begin="256" end="267" value="performance"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="892" _ref_sofa="1" begin="268" end="272" value="from"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="910" _ref_sofa="1" begin="273" end="280" value="Oberlin"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="928" _ref_sofa="1" begin="281" end="293" value="Conservatory"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="946" _ref_sofa="1" begin="294" end="296" value="in"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="969" _ref_sofa="1" begin="297" end="301" value="1984"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="987" _ref_sofa="1" begin="302" end="305" value="and"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1010" _ref_sofa="1" begin="306" end="307" value="a"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1028" _ref_sofa="1" begin="308" end="314" value="master"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1046" _ref_sofa="1" begin="315" end="317" value="of"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1064" _ref_sofa="1" begin="318" end="322" value="art"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1082" _ref_sofa="1" begin="323" end="325" value="in"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1100" _ref_sofa="1" begin="326" end="333" value="theatre"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1118" _ref_sofa="1" begin="334" end="338" value="from"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1136" _ref_sofa="1" begin="339" end="348" value="Villanova"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1154" _ref_sofa="1" begin="349" end="351" value="in"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1177" _ref_sofa="1" begin="352" end="356" value="1989"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1195" _ref_sofa="1" begin="356" end="357" value="."/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1218" _ref_sofa="1" begin="358" end="360" value="he"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1236" _ref_sofa="1" begin="361" end="364" value="have"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1254" _ref_sofa="1" begin="365" end="369" value="be"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1272" _ref_sofa="1" begin="370" end="377" value="marry"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1290" _ref_sofa="1" begin="378" end="380" value="to"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1308" _ref_sofa="1" begin="381" end="386" value="Megan"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1326" _ref_sofa="1" begin="387" end="395" value="Bellwoar"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1344" _ref_sofa="1" begin="396" end="401" value="since"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1367" _ref_sofa="1" begin="402" end="406" value="1990"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed="1" _id="1385" _ref_sofa="1" begin="406" end="407" value="."/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="24" _ref_sofa="1" begin="0" end="7" _ref_lemma="37" _ref_pos="32"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="42" _ref_sofa="1" begin="8" end="17" _ref_lemma="55" _ref_pos="50"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="60" _ref_sofa="1" begin="18" end="19" _ref_lemma="73" _ref_pos="68"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="83" _ref_sofa="1" begin="19" end="23" _ref_lemma="96" _ref_pos="91"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="101" _ref_sofa="1" begin="24" end="31" _ref_lemma="114" _ref_pos="109"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="119" _ref_sofa="1" begin="32" end="34" _ref_lemma="132" _ref_pos="127"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="137" _ref_sofa="1" begin="34" end="35" _ref_lemma="150" _ref_pos="145"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="155" _ref_sofa="1" begin="36" end="40" _ref_lemma="168" _ref_pos="163"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="173" _ref_sofa="1" begin="41" end="43" _ref_lemma="186" _ref_pos="181"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="196" _ref_sofa="1" begin="44" end="53" _ref_lemma="209" _ref_pos="204"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="214" _ref_sofa="1" begin="53" end="54" _ref_lemma="227" _ref_pos="222"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="237" _ref_sofa="1" begin="55" end="67" _ref_lemma="250" _ref_pos="245"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="255" _ref_sofa="1" begin="67" end="68" _ref_lemma="268" _ref_pos="263"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="278" _ref_sofa="1" begin="69" end="71" _ref_lemma="291" _ref_pos="286"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="296" _ref_sofa="1" begin="72" end="74" _ref_lemma="309" _ref_pos="304"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="314" _ref_sofa="1" begin="75" end="83" _ref_lemma="327" _ref_pos="322"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="332" _ref_sofa="1" begin="84" end="94" _ref_lemma="345" _ref_pos="340"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="355" _ref_sofa="1" begin="95" end="98" _ref_lemma="368" _ref_pos="363"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="373" _ref_sofa="1" begin="99" end="101" _ref_lemma="386" _ref_pos="381"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="391" _ref_sofa="1" begin="102" end="111" _ref_lemma="404" _ref_pos="399"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="409" _ref_sofa="1" begin="112" end="114" _ref_lemma="422" _ref_pos="417"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="432" _ref_sofa="1" begin="115" end="124" _ref_lemma="445" _ref_pos="440"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="450" _ref_sofa="1" begin="125" end="134" _ref_lemma="463" _ref_pos="458"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="468" _ref_sofa="1" begin="135" end="137" _ref_lemma="481" _ref_pos="476"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="486" _ref_sofa="1" begin="138" end="145" _ref_lemma="499" _ref_pos="494"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="504" _ref_sofa="1" begin="146" end="148" _ref_lemma="517" _ref_pos="512"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="522" _ref_sofa="1" begin="149" end="158" _ref_lemma="535" _ref_pos="530"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="540" _ref_sofa="1" begin="159" end="169" _ref_lemma="553" _ref_pos="548"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="558" _ref_sofa="1" begin="170" end="173" _ref_lemma="571" _ref_pos="566"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="581" _ref_sofa="1" begin="174" end="175" _ref_lemma="594" _ref_pos="589"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="599" _ref_sofa="1" begin="176" end="184" _ref_lemma="612" _ref_pos="607"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="617" _ref_sofa="1" begin="185" end="195" _ref_lemma="630" _ref_pos="625"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="635" _ref_sofa="1" begin="196" end="198" _ref_lemma="648" _ref_pos="643"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="653" _ref_sofa="1" begin="199" end="202" _ref_lemma="666" _ref_pos="661"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="671" _ref_sofa="1" begin="203" end="213" _ref_lemma="684" _ref_pos="679"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="689" _ref_sofa="1" begin="213" end="214" _ref_lemma="702" _ref_pos="697"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="712" _ref_sofa="1" begin="215" end="217" _ref_lemma="725" _ref_pos="720"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="730" _ref_sofa="1" begin="218" end="226" _ref_lemma="743" _ref_pos="738"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="748" _ref_sofa="1" begin="227" end="228" _ref_lemma="761" _ref_pos="756"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="766" _ref_sofa="1" begin="229" end="237" _ref_lemma="779" _ref_pos="774"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="784" _ref_sofa="1" begin="238" end="240" _ref_lemma="797" _ref_pos="792"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="802" _ref_sofa="1" begin="241" end="246" _ref_lemma="815" _ref_pos="810"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="820" _ref_sofa="1" begin="247" end="249" _ref_lemma="833" _ref_pos="828"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="843" _ref_sofa="1" begin="250" end="255" _ref_lemma="856" _ref_pos="851"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="861" _ref_sofa="1" begin="256" end="267" _ref_lemma="874" _ref_pos="869"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="879" _ref_sofa="1" begin="268" end="272" _ref_lemma="892" _ref_pos="887"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="897" _ref_sofa="1" begin="273" end="280" _ref_lemma="910" _ref_pos="905"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="915" _ref_sofa="1" begin="281" end="293" _ref_lemma="928" _ref_pos="923"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="933" _ref_sofa="1" begin="294" end="296" _ref_lemma="946" _ref_pos="941"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="956" _ref_sofa="1" begin="297" end="301" _ref_lemma="969" _ref_pos="964"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="974" _ref_sofa="1" begin="302" end="305" _ref_lemma="987" _ref_pos="982"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="997" _ref_sofa="1" begin="306" end="307" _ref_lemma="1010" _ref_pos="1005"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1015" _ref_sofa="1" begin="308" end="314" _ref_lemma="1028" _ref_pos="1023"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1033" _ref_sofa="1" begin="315" end="317" _ref_lemma="1046" _ref_pos="1041"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1051" _ref_sofa="1" begin="318" end="322" _ref_lemma="1064" _ref_pos="1059"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1069" _ref_sofa="1" begin="323" end="325" _ref_lemma="1082" _ref_pos="1077"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1087" _ref_sofa="1" begin="326" end="333" _ref_lemma="1100" _ref_pos="1095"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1105" _ref_sofa="1" begin="334" end="338" _ref_lemma="1118" _ref_pos="1113"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1123" _ref_sofa="1" begin="339" end="348" _ref_lemma="1136" _ref_pos="1131"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1141" _ref_sofa="1" begin="349" end="351" _ref_lemma="1154" _ref_pos="1149"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1164" _ref_sofa="1" begin="352" end="356" _ref_lemma="1177" _ref_pos="1172"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1182" _ref_sofa="1" begin="356" end="357" _ref_lemma="1195" _ref_pos="1190"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1205" _ref_sofa="1" begin="358" end="360" _ref_lemma="1218" _ref_pos="1213"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1223" _ref_sofa="1" begin="361" end="364" _ref_lemma="1236" _ref_pos="1231"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1241" _ref_sofa="1" begin="365" end="369" _ref_lemma="1254" _ref_pos="1249"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1259" _ref_sofa="1" begin="370" end="377" _ref_lemma="1272" _ref_pos="1267"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1277" _ref_sofa="1" begin="378" end="380" _ref_lemma="1290" _ref_pos="1285"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1295" _ref_sofa="1" begin="381" end="386" _ref_lemma="1308" _ref_pos="1303"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1313" _ref_sofa="1" begin="387" end="395" _ref_lemma="1326" _ref_pos="1321"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1331" _ref_sofa="1" begin="396" end="401" _ref_lemma="1344" _ref_pos="1339"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1354" _ref_sofa="1" begin="402" end="406" _ref_lemma="1367" _ref_pos="1362"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed="1" _id="1372" _ref_sofa="1" begin="406" end="407" _ref_lemma="1385" _ref_pos="1380"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.O _indexed="1" _id="68" _ref_sofa="1" begin="18" end="19" PosValue="-LRB-"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.O _indexed="1" _id="263" _ref_sofa="1" begin="67" end="68" PosValue="-RRB-"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Person _indexed="1" _id="78" _ref_sofa="1" begin="0" end="17" value="PERSON"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Person _indexed="1" _id="1349" _ref_sofa="1" begin="381" end="395" value="PERSON"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed="1" _id="91" _ref_sofa="1" begin="19" end="23" PosValue="VBN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed="1" _id="286" _ref_sofa="1" begin="69" end="71" PosValue="VBZ"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed="1" _id="381" _ref_sofa="1" begin="99" end="101" PosValue="VBZ"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed="1" _id="738" _ref_sofa="1" begin="218" end="226" PosValue="VBD"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed="1" _id="1231" _ref_sofa="1" begin="361" end="364" PosValue="VBZ"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed="1" _id="1249" _ref_sofa="1" begin="365" end="369" PosValue="VBN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed="1" _id="1267" _ref_sofa="1" begin="370" end="377" PosValue="VBN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD _indexed="1" _id="127" _ref_sofa="1" begin="32" end="34" PosValue="CD"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD _indexed="1" _id="163" _ref_sofa="1" begin="36" end="40" PosValue="CD"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD _indexed="1" _id="964" _ref_sofa="1" begin="297" end="301" PosValue="CD"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD _indexed="1" _id="1172" _ref_sofa="1" begin="352" end="356" PosValue="CD"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD _indexed="1" _id="1362" _ref_sofa="1" begin="402" end="406" PosValue="CD"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed="1" _id="145" _ref_sofa="1" begin="34" end="35" PosValue=","/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed="1" _id="222" _ref_sofa="1" begin="53" end="54" PosValue=","/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed="1" _id="697" _ref_sofa="1" begin="213" end="214" PosValue="."/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed="1" _id="1190" _ref_sofa="1" begin="356" end="357" PosValue="."/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed="1" _id="1380" _ref_sofa="1" begin="406" end="407" PosValue="."/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="181" _ref_sofa="1" begin="41" end="43" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="476" _ref_sofa="1" begin="135" end="137" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="512" _ref_sofa="1" begin="146" end="148" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="643" _ref_sofa="1" begin="196" end="198" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="792" _ref_sofa="1" begin="238" end="240" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="828" _ref_sofa="1" begin="247" end="249" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="887" _ref_sofa="1" begin="268" end="272" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="941" _ref_sofa="1" begin="294" end="296" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="1041" _ref_sofa="1" begin="315" end="317" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="1077" _ref_sofa="1" begin="323" end="325" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="1113" _ref_sofa="1" begin="334" end="338" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="1149" _ref_sofa="1" begin="349" end="351" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="1285" _ref_sofa="1" begin="378" end="380" PosValue="TO"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed="1" _id="1339" _ref_sofa="1" begin="396" end="401" PosValue="IN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Date _indexed="1" _id="191" _ref_sofa="1" begin="24" end="40" value="DATE"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Date _indexed="1" _id="427" _ref_sofa="1" begin="102" end="111" value="DATE"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Date _indexed="1" _id="992" _ref_sofa="1" begin="297" end="301" value="DATE"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Date _indexed="1" _id="1200" _ref_sofa="1" begin="352" end="356" value="DATE"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Date _indexed="1" _id="1390" _ref_sofa="1" begin="402" end="406" value="DATE"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Location _indexed="1" _id="232" _ref_sofa="1" begin="44" end="53" value="LOCATION"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Location _indexed="1" _id="273" _ref_sofa="1" begin="55" end="67" value="LOCATION"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Location _indexed="1" _id="951" _ref_sofa="1" begin="273" end="293" value="LOCATION"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Location _indexed="1" _id="1159" _ref_sofa="1" begin="339" end="348" value="LOCATION"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ART _indexed="1" _id="304" _ref_sofa="1" begin="72" end="74" PosValue="DT"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ART _indexed="1" _id="417" _ref_sofa="1" begin="112" end="114" PosValue="DT"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ART _indexed="1" _id="589" _ref_sofa="1" begin="174" end="175" PosValue="DT"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ART _indexed="1" _id="756" _ref_sofa="1" begin="227" end="228" PosValue="DT"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ART _indexed="1" _id="1005" _ref_sofa="1" begin="306" end="307" PosValue="DT"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADJ _indexed="1" _id="322" _ref_sofa="1" begin="75" end="83" PosValue="JJ"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADJ _indexed="1" _id="440" _ref_sofa="1" begin="115" end="124" PosValue="JJ"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADJ _indexed="1" _id="607" _ref_sofa="1" begin="176" end="184" PosValue="JJ"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed="1" _id="340" _ref_sofa="1" begin="84" end="94" PosValue="NN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed="1" _id="458" _ref_sofa="1" begin="125" end="134" PosValue="NN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed="1" _id="625" _ref_sofa="1" begin="185" end="195" PosValue="NN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed="1" _id="774" _ref_sofa="1" begin="229" end="237" PosValue="NN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed="1" _id="810" _ref_sofa="1" begin="241" end="246" PosValue="NN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed="1" _id="851" _ref_sofa="1" begin="250" end="255" PosValue="NN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed="1" _id="869" _ref_sofa="1" begin="256" end="267" PosValue="NN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed="1" _id="1023" _ref_sofa="1" begin="308" end="314" PosValue="NN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed="1" _id="1059" _ref_sofa="1" begin="318" end="322" PosValue="NNS"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed="1" _id="1095" _ref_sofa="1" begin="326" end="333" PosValue="NN"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity _indexed="1" _id="350" _ref_sofa="1" begin="75" end="83" value="MISC"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity _indexed="1" _id="838" _ref_sofa="1" begin="229" end="246" value="MISC"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PR _indexed="1" _id="363" _ref_sofa="1" begin="95" end="98" PosValue="WP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PR _indexed="1" _id="720" _ref_sofa="1" begin="215" end="217" PosValue="PRP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PR _indexed="1" _id="1213" _ref_sofa="1" begin="358" end="360" PosValue="PRP"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADV _indexed="1" _id="399" _ref_sofa="1" begin="102" end="111" PosValue="RB"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CONJ _indexed="1" _id="566" _ref_sofa="1" begin="170" end="173" PosValue="CC"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CONJ _indexed="1" _id="982" _ref_sofa="1" begin="302" end="305" PosValue="CC"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Organization _indexed="1" _id="576" _ref_sofa="1" begin="149" end="169" value="ORGANIZATION"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.ner.type.Organization _indexed="1" _id="707" _ref_sofa="1" begin="199" end="213" value="ORGANIZATION"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence _indexed="1" _id="1395" _ref_sofa="1" begin="0" end="214"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence _indexed="1" _id="1399" _ref_sofa="1" begin="215" end="357"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence _indexed="1" _id="1403" _ref_sofa="1" begin="358" end="407"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1414" _ref_sofa="1" _ref_first="1407"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1424" _ref_sofa="1" _ref_first="1417"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1434" _ref_sofa="1" _ref_first="1427"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1444" _ref_sofa="1" _ref_first="1437"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1475" _ref_sofa="1" _ref_first="1468"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1485" _ref_sofa="1" _ref_first="1478"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1495" _ref_sofa="1" _ref_first="1488"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1505" _ref_sofa="1" _ref_first="1498"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1515" _ref_sofa="1" _ref_first="1508"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1525" _ref_sofa="1" _ref_first="1518"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1535" _ref_sofa="1" _ref_first="1528"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1545" _ref_sofa="1" _ref_first="1538"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1555" _ref_sofa="1" _ref_first="1548"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1565" _ref_sofa="1" _ref_first="1558"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1575" _ref_sofa="1" _ref_first="1568"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1585" _ref_sofa="1" _ref_first="1578"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1595" _ref_sofa="1" _ref_first="1588"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1605" _ref_sofa="1" _ref_first="1598"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1615" _ref_sofa="1" _ref_first="1608"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1625" _ref_sofa="1" _ref_first="1618"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1635" _ref_sofa="1" _ref_first="1628"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed="1" _id="1645" _ref_sofa="1" _ref_first="1638"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1407" _ref_sofa="1" begin="44" end="53" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1417" _ref_sofa="1" begin="149" end="169" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1427" _ref_sofa="1" begin="199" end="213" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1437" _ref_sofa="1" begin="0" end="68" _ref_next="1447" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1447" _ref_sofa="1" begin="72" end="213" _ref_next="1454" referenceType="NOMINAL"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1454" _ref_sofa="1" begin="215" end="217" _ref_next="1461" referenceType="PRONOMINAL"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1461" _ref_sofa="1" begin="358" end="360" referenceType="PRONOMINAL"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1468" _ref_sofa="1" begin="24" end="40" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1478" _ref_sofa="1" begin="44" end="67" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1488" _ref_sofa="1" begin="112" end="213" referenceType="NOMINAL"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1498" _ref_sofa="1" begin="138" end="213" referenceType="LIST"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1508" _ref_sofa="1" begin="138" end="169" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1518" _ref_sofa="1" begin="174" end="213" referenceType="NOMINAL"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1528" _ref_sofa="1" begin="227" end="267" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1538" _ref_sofa="1" begin="241" end="267" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1548" _ref_sofa="1" begin="250" end="267" referenceType="NOMINAL"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1558" _ref_sofa="1" begin="273" end="301" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1568" _ref_sofa="1" begin="273" end="333" referenceType="LIST"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1578" _ref_sofa="1" begin="306" end="333" referenceType="NOMINAL"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1588" _ref_sofa="1" begin="297" end="301" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1598" _ref_sofa="1" begin="339" end="356" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1608" _ref_sofa="1" begin="318" end="333" referenceType="NOMINAL"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1618" _ref_sofa="1" begin="352" end="356" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1628" _ref_sofa="1" begin="402" end="406" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed="1" _id="1638" _ref_sofa="1" begin="381" end="406" referenceType="PROPER"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagsetDescription _indexed="1" _id="1648" _ref_sofa="1" begin="0" end="407" layer="de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency" name="stanford" _ref_tags="1755"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1807" _ref_sofa="1" begin="0" end="7" _ref_Governor="42" _ref_Dependent="24" DependencyType="nn"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1814" _ref_sofa="1" begin="8" end="17" _ref_Governor="278" _ref_Dependent="42" DependencyType="nsubj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1821" _ref_sofa="1" begin="18" end="19" _ref_Governor="83" _ref_Dependent="60" DependencyType="punct"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1828" _ref_sofa="1" begin="19" end="23" _ref_Governor="42" _ref_Dependent="83" DependencyType="partmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1835" _ref_sofa="1" begin="24" end="31" _ref_Governor="83" _ref_Dependent="101" DependencyType="npadvmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1842" _ref_sofa="1" begin="32" end="34" _ref_Governor="101" _ref_Dependent="119" DependencyType="num"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1849" _ref_sofa="1" begin="34" end="35" _ref_Governor="101" _ref_Dependent="137" DependencyType="punct"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1856" _ref_sofa="1" begin="36" end="40" _ref_Governor="101" _ref_Dependent="155" DependencyType="appos"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1863" _ref_sofa="1" begin="41" end="43" _ref_Governor="155" _ref_Dependent="173" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1870" _ref_sofa="1" begin="44" end="53" _ref_Governor="173" _ref_Dependent="196" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1877" _ref_sofa="1" begin="53" end="54" _ref_Governor="196" _ref_Dependent="214" DependencyType="punct"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1884" _ref_sofa="1" begin="55" end="67" _ref_Governor="196" _ref_Dependent="237" DependencyType="appos"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1891" _ref_sofa="1" begin="67" end="68" _ref_Governor="83" _ref_Dependent="255" DependencyType="punct"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1898" _ref_sofa="1" begin="72" end="74" _ref_Governor="332" _ref_Dependent="296" DependencyType="det"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1905" _ref_sofa="1" begin="75" end="83" _ref_Governor="332" _ref_Dependent="314" DependencyType="amod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1912" _ref_sofa="1" begin="84" end="94" _ref_Governor="278" _ref_Dependent="332" DependencyType="attr"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1919" _ref_sofa="1" begin="95" end="98" _ref_Governor="373" _ref_Dependent="355" DependencyType="nsubj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1926" _ref_sofa="1" begin="99" end="101" _ref_Governor="332" _ref_Dependent="373" DependencyType="rcmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1933" _ref_sofa="1" begin="102" end="111" _ref_Governor="373" _ref_Dependent="391" DependencyType="advmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1940" _ref_sofa="1" begin="112" end="114" _ref_Governor="450" _ref_Dependent="409" DependencyType="det"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1947" _ref_sofa="1" begin="115" end="124" _ref_Governor="450" _ref_Dependent="432" DependencyType="amod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1954" _ref_sofa="1" begin="125" end="134" _ref_Governor="373" _ref_Dependent="450" DependencyType="attr"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1961" _ref_sofa="1" begin="135" end="137" _ref_Governor="450" _ref_Dependent="468" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1968" _ref_sofa="1" begin="138" end="145" _ref_Governor="468" _ref_Dependent="486" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1975" _ref_sofa="1" begin="146" end="148" _ref_Governor="450" _ref_Dependent="504" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1982" _ref_sofa="1" begin="149" end="158" _ref_Governor="540" _ref_Dependent="522" DependencyType="nn"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1989" _ref_sofa="1" begin="159" end="169" _ref_Governor="504" _ref_Dependent="540" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="1996" _ref_sofa="1" begin="170" end="173" _ref_Governor="450" _ref_Dependent="558" DependencyType="cc"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2003" _ref_sofa="1" begin="174" end="175" _ref_Governor="617" _ref_Dependent="581" DependencyType="det"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2010" _ref_sofa="1" begin="176" end="184" _ref_Governor="617" _ref_Dependent="599" DependencyType="amod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2017" _ref_sofa="1" begin="185" end="195" _ref_Governor="450" _ref_Dependent="617" DependencyType="conj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2024" _ref_sofa="1" begin="196" end="198" _ref_Governor="617" _ref_Dependent="635" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2031" _ref_sofa="1" begin="199" end="202" _ref_Governor="671" _ref_Dependent="653" DependencyType="nn"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2038" _ref_sofa="1" begin="203" end="213" _ref_Governor="635" _ref_Dependent="671" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2045" _ref_sofa="1" begin="213" end="214" _ref_Governor="278" _ref_Dependent="689" DependencyType="punct"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2052" _ref_sofa="1" begin="215" end="217" _ref_Governor="730" _ref_Dependent="712" DependencyType="nsubj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2059" _ref_sofa="1" begin="227" end="228" _ref_Governor="766" _ref_Dependent="748" DependencyType="det"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2066" _ref_sofa="1" begin="229" end="237" _ref_Governor="730" _ref_Dependent="766" DependencyType="dobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2073" _ref_sofa="1" begin="238" end="240" _ref_Governor="766" _ref_Dependent="784" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2080" _ref_sofa="1" begin="241" end="246" _ref_Governor="784" _ref_Dependent="802" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2087" _ref_sofa="1" begin="247" end="249" _ref_Governor="730" _ref_Dependent="820" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2094" _ref_sofa="1" begin="250" end="255" _ref_Governor="861" _ref_Dependent="843" DependencyType="nn"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2101" _ref_sofa="1" begin="256" end="267" _ref_Governor="820" _ref_Dependent="861" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2108" _ref_sofa="1" begin="268" end="272" _ref_Governor="861" _ref_Dependent="879" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2115" _ref_sofa="1" begin="273" end="280" _ref_Governor="915" _ref_Dependent="897" DependencyType="nn"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2122" _ref_sofa="1" begin="281" end="293" _ref_Governor="879" _ref_Dependent="915" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2129" _ref_sofa="1" begin="294" end="296" _ref_Governor="730" _ref_Dependent="933" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2136" _ref_sofa="1" begin="297" end="301" _ref_Governor="933" _ref_Dependent="956" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2143" _ref_sofa="1" begin="302" end="305" _ref_Governor="956" _ref_Dependent="974" DependencyType="cc"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2150" _ref_sofa="1" begin="306" end="307" _ref_Governor="1015" _ref_Dependent="997" DependencyType="det"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2157" _ref_sofa="1" begin="308" end="314" _ref_Governor="956" _ref_Dependent="1015" DependencyType="conj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2164" _ref_sofa="1" begin="315" end="317" _ref_Governor="1015" _ref_Dependent="1033" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2171" _ref_sofa="1" begin="318" end="322" _ref_Governor="1033" _ref_Dependent="1051" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2178" _ref_sofa="1" begin="323" end="325" _ref_Governor="1051" _ref_Dependent="1069" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2185" _ref_sofa="1" begin="326" end="333" _ref_Governor="1069" _ref_Dependent="1087" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2192" _ref_sofa="1" begin="334" end="338" _ref_Governor="1015" _ref_Dependent="1105" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2199" _ref_sofa="1" begin="339" end="348" _ref_Governor="1105" _ref_Dependent="1123" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2206" _ref_sofa="1" begin="349" end="351" _ref_Governor="1015" _ref_Dependent="1141" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2213" _ref_sofa="1" begin="352" end="356" _ref_Governor="1141" _ref_Dependent="1164" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2220" _ref_sofa="1" begin="356" end="357" _ref_Governor="730" _ref_Dependent="1182" DependencyType="punct"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2227" _ref_sofa="1" begin="358" end="360" _ref_Governor="1259" _ref_Dependent="1205" DependencyType="nsubjpass"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2234" _ref_sofa="1" begin="361" end="364" _ref_Governor="1259" _ref_Dependent="1223" DependencyType="aux"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2241" _ref_sofa="1" begin="365" end="369" _ref_Governor="1259" _ref_Dependent="1241" DependencyType="auxpass"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2248" _ref_sofa="1" begin="378" end="380" _ref_Governor="1259" _ref_Dependent="1277" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2255" _ref_sofa="1" begin="381" end="386" _ref_Governor="1313" _ref_Dependent="1295" DependencyType="nn"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2262" _ref_sofa="1" begin="387" end="395" _ref_Governor="1277" _ref_Dependent="1313" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2269" _ref_sofa="1" begin="396" end="401" _ref_Governor="1259" _ref_Dependent="1331" DependencyType="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2276" _ref_sofa="1" begin="402" end="406" _ref_Governor="1331" _ref_Dependent="1354" DependencyType="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed="1" _id="2283" _ref_sofa="1" begin="406" end="407" _ref_Governor="1259" _ref_Dependent="1372" DependencyType="punct"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1753" name="xcomp"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1751" name="root"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1749" name="rcmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1747" name="quantmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1745" name="punct"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1743" name="prt"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1741" name="prep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1739" name="predet"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1737" name="preconj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1735" name="possessive"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1733" name="poss"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1731" name="pobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1729" name="pcomp"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1727" name="partmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1725" name="parataxis"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1723" name="oprd"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1721" name="number"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1719" name="num"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1717" name="nsubjpass"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1715" name="nsubj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1713" name="npadvmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1711" name="nn"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1709" name="nmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1707" name="neg"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1705" name="meta"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1703" name="mark"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1701" name="iobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1699" name="intj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1697" name="infmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1695" name="hyph"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1693" name="hmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1691" name="expl"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1689" name="dobj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1687" name="det"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1685" name="dep"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1683" name="csubjpass"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1681" name="csubj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1679" name="conj"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1677" name="complm"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1675" name="ccomp"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1673" name="cc"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1671" name="auxpass"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1669" name="aux"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1667" name="attr"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1665" name="appos"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1663" name="amod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1661" name="agent"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1659" name="advmod"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1657" name="advcl"/>
+    <de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id="1655" name="acomp"/>
+    <uima.cas.FSArray _id="1755" size="50">
+        <i>1655</i>
+        <i>1657</i>
+        <i>1659</i>
+        <i>1661</i>
+        <i>1663</i>
+        <i>1665</i>
+        <i>1667</i>
+        <i>1669</i>
+        <i>1671</i>
+        <i>1673</i>
+        <i>1675</i>
+        <i>1677</i>
+        <i>1679</i>
+        <i>1681</i>
+        <i>1683</i>
+        <i>1685</i>
+        <i>1687</i>
+        <i>1689</i>
+        <i>1691</i>
+        <i>1693</i>
+        <i>1695</i>
+        <i>1697</i>
+        <i>1699</i>
+        <i>1701</i>
+        <i>1703</i>
+        <i>1705</i>
+        <i>1707</i>
+        <i>1709</i>
+        <i>1711</i>
+        <i>1713</i>
+        <i>1715</i>
+        <i>1717</i>
+        <i>1719</i>
+        <i>1721</i>
+        <i>1723</i>
+        <i>1725</i>
+        <i>1727</i>
+        <i>1729</i>
+        <i>1731</i>
+        <i>1733</i>
+        <i>1735</i>
+        <i>1737</i>
+        <i>1739</i>
+        <i>1741</i>
+        <i>1743</i>
+        <i>1745</i>
+        <i>1747</i>
+        <i>1749</i>
+        <i>1751</i>
+        <i>1753</i>
+    </uima.cas.FSArray>
+</CAS>

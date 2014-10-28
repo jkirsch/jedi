@@ -1,0 +1,7 @@
+ORGANIZATION=de.tudarmstadt.ukp.dkpro.core.api.ner.type.Organization
+PERSON=de.tudarmstadt.ukp.dkpro.core.api.ner.type.Person
+LOCATION=de.tudarmstadt.ukp.dkpro.core.api.ner.type.Location
+DATE=de.tudarmstadt.ukp.dkpro.core.api.ner.type.Date
+NUMBER=de.tudarmstadt.ukp.dkpro.core.api.ner.type.Cardinal
+TIME=de.tudarmstadt.ukp.dkpro.core.api.ner.type.Time
+*=de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity
