@@ -452,6 +452,10 @@ public class FindShortestPathFeatureExtractor {
             // get the head
             final Token namedEntityHead = getNamedEntityHead(entity, graph);
 
+            if(!graph.containsVertex(namedEntityHead)) {
+                continue;
+            }
+
             // now check if the incoming edge is of type appos
             final Optional<DependencyEdge> appos = Iterables.tryFind(graph.edgesOf(namedEntityHead), new Predicate<DependencyEdge>() {
                 @Override
