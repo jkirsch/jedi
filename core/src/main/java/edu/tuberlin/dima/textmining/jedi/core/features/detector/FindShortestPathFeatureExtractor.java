@@ -444,6 +444,50 @@ public class FindShortestPathFeatureExtractor {
             }
         }
 
+        // now check that none of the entities is an appos of another ..
+        // this should void examples such as "A, a New York City group" .. to treat A new York city group
+        for (Iterator<? extends Annotation> it = namedEntities.iterator(); it.hasNext(); ) {
+
+            Annotation entity = it.next();
+            // get the head
+            final Token namedEntityHead = getNamedEntityHead(entity, graph);
+
+            // now check if the incoming edge is of type appos
+            final Optional<DependencyEdge> appos = Iterables.tryFind(graph.edgesOf(namedEntityHead), new Predicate<DependencyEdge>() {
+                @Override
+                public boolean apply(@Nullable DependencyEdge input) {
+                    // allow conjunctions and also prepositions of the form of .. of
+                    return input.dependency.equals("appos") && input.to.equals(namedEntityHead);
+                }
+            });
+
+            if(appos.isPresent()) {
+                // check if the source of the edge is actually part of a named entity that we know
+                final Token source = appos.get().from;
+                boolean any = Iterables.any(namedEntities, new Predicate<Annotation>() {
+                    @Override
+                    public boolean apply(@Nullable Annotation input) {
+
+                        final Token nextToFirst = Iterables.getFirst(JCasUtil.selectFollowing(Token.class, input, 1), null);
+                        if(nextToFirst != null && nextToFirst.getPos().getClass().equals(O.class)) {
+                            // if first is followed by "(" don't remove ..
+                            // quite likely something like Vanessa Chinitor (born 13 October 1976, Dendermonde)
+                            return false;
+                        } else {
+                            return source.getBegin() >= input.getBegin() && source.getEnd() <= input.getEnd();
+                        }
+                    }
+                });
+
+                // check if right next to Token is a bracket (parataxis) (problem in parsing)
+                if(any) {
+                    // remove the annotation
+                    it.remove();
+                }
+            }
+        }
+
+
         DirectedGraph<Annotation, DefaultEdge> coref = new SimpleDirectedGraph<>(DefaultEdge.class);
 
         // check for co-reference links?
