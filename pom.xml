@@ -35,10 +35,10 @@
         <timestamp>${maven.build.timestamp}</timestamp>
 
         <dkpro.version>1.7.0</dkpro.version>
-        <lucene.version>4.10.2</lucene.version>
+        <lucene.version>4.10.3</lucene.version>
         <stanford.version>3.4.1</stanford.version>
         <metrics.version>3.0.2</metrics.version>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
 
         <gson.version>2.3.1</gson.version>
 
@@ -130,7 +130,7 @@
             <dependency>
                 <groupId>com.beust</groupId>
                 <artifactId>jcommander</artifactId>
-                <version>1.35</version>
+                <version>1.47</version>
             </dependency>
 
             <dependency>
