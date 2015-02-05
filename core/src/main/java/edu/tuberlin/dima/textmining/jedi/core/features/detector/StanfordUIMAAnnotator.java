@@ -30,13 +30,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import edu.stanford.nlp.dcoref.CorefChain;
 import edu.stanford.nlp.dcoref.CorefChain.CorefMention;
 import edu.stanford.nlp.dcoref.CorefCoreAnnotations.CorefChainAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.CharacterOffsetBeginAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.CharacterOffsetEndAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.LemmaAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.NamedEntityTagAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.PartOfSpeechAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;
+import edu.stanford.nlp.ling.CoreAnnotations.*;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
@@ -157,6 +151,7 @@ public class StanfordUIMAAnnotator extends JCasAnnotator_ImplBase {
 
             // hackery to convert token-level named entity tag into phrase-level tag
             String neTag = tokenAnn.get(NamedEntityTagAnnotation.class);
+            if(neTag == null) continue;
             if (neTag.equals("O") && !lastNETag.equals("O")) {
 
                 Type type = nerMappingProvider.getTagType(lastNETag);
@@ -204,36 +199,40 @@ public class StanfordUIMAAnnotator extends JCasAnnotator_ImplBase {
         }
 
         Map<Integer, CorefChain> corefChains = document.get(CorefChainAnnotation.class);
-        for (CorefChain chain : corefChains.values()) {
-            CoreferenceLink last = null;
-            for (CorefMention mention : chain.getMentionsInTextualOrder()) {
+        if(corefChains != null) {
+            for (CorefChain chain : corefChains.values()) {
+                CoreferenceLink last = null;
+                for (CorefMention mention : chain.getMentionsInTextualOrder()) {
 
 
-                CoreLabel beginLabel = sentenceAnnotations.get(mention.sentNum - 1)
-                        .get(TokensAnnotation.class).get(mention.startIndex - 1);
-                CoreLabel endLabel = sentenceAnnotations.get(mention.sentNum - 1).get(TokensAnnotation.class)
-                        .get(mention.endIndex - 2);
-                CoreferenceLink link = new CoreferenceLink(jCas, beginLabel.get(CharacterOffsetBeginAnnotation.class)
-                        , endLabel.get(CharacterOffsetEndAnnotation.class));
+                    CoreLabel beginLabel = sentenceAnnotations.get(mention.sentNum - 1)
+                            .get(TokensAnnotation.class).get(mention.startIndex - 1);
+                    CoreLabel endLabel = sentenceAnnotations.get(mention.sentNum - 1).get(TokensAnnotation.class)
+                            .get(mention.endIndex - 2);
+                    CoreferenceLink link = new CoreferenceLink(jCas, beginLabel.get(CharacterOffsetBeginAnnotation.class)
+                            , endLabel.get(CharacterOffsetEndAnnotation.class));
 
-                if (mention.mentionType != null) {
-                    link.setReferenceType(mention.mentionType.toString());
+                    if (mention.mentionType != null) {
+                        link.setReferenceType(mention.mentionType.toString());
+                    }
+
+                    if (last == null) {
+                        // This is the first mention. Here we'll initialize the chain
+                        CoreferenceChain corefChain = new CoreferenceChain(jCas);
+                        corefChain.setFirst(link);
+                        corefChain.addToIndexes();
+                    } else {
+                        // For the other mentions, we'll add them to the chain.
+                        last.setNext(link);
+                    }
+                    last = link;
+
+                    link.addToIndexes();
                 }
-
-                if (last == null) {
-                    // This is the first mention. Here we'll initialize the chain
-                    CoreferenceChain corefChain = new CoreferenceChain(jCas);
-                    corefChain.setFirst(link);
-                    corefChain.addToIndexes();
-                } else {
-                    // For the other mentions, we'll add them to the chain.
-                    last.setNext(link);
-                }
-                last = link;
-
-                link.addToIndexes();
             }
         }
+
+
 
 
     }
