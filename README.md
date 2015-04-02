@@ -1,6 +1,7 @@
-jedi
+JEDI
 ====
 
+This module contains the Shortest Path Extractor and the Constraint Solver Code.
 
 Eval-Data
 

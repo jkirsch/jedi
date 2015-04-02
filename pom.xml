@@ -35,10 +35,12 @@
         <timestamp>${maven.build.timestamp}</timestamp>
 
         <dkpro.version>1.7.0</dkpro.version>
-        <lucene.version>4.10.3</lucene.version>
+        <lucene.version>5.0.0</lucene.version>
         <stanford.version>3.4.1</stanford.version>
-        <metrics.version>3.0.2</metrics.version>
+        <metrics.version>3.1.1</metrics.version>
         <junit.version>4.12</junit.version>
+
+        <spring.boot.version>1.2.3.RELEASE</spring.boot.version>
 
         <gson.version>2.3.1</gson.version>
 
@@ -97,6 +99,12 @@
                 </exclusions>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
             <!-- import Model definitions -->
             <dependency>
                 <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
@@ -122,7 +130,7 @@
             </dependency>
 
             <dependency>
-                <groupId>com.codahale.metrics</groupId>
+                <groupId>io.dropwizard.metrics</groupId>
                 <artifactId>metrics-core</artifactId>
                 <version>${metrics.version}</version>
             </dependency>
