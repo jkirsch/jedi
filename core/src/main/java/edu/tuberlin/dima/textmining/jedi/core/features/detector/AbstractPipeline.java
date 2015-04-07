@@ -134,12 +134,12 @@ public class AbstractPipeline {
             if (enableReporting) {
                 MetricsAggregator.updateMetrics(
                         sentences.size(), tokens.size(),
-                        serialize.elapsedTime(TimeUnit.MILLISECONDS),
+                        serialize.elapsed(TimeUnit.MILLISECONDS),
                         "Serialization");
 
                 MetricsAggregator.updateMetrics(
                         sentences.size(), tokens.size(),
-                        complete.elapsedTime(TimeUnit.MILLISECONDS),
+                        complete.elapsed(TimeUnit.MILLISECONDS),
                         "UDF");
             }
 
@@ -229,7 +229,7 @@ public class AbstractPipeline {
 
             MetricsAggregator.updateMetrics(
                     sentences.size(), tokens.size(),
-                    languageTimer.elapsedTime(TimeUnit.MILLISECONDS),
+                    languageTimer.elapsed(TimeUnit.MILLISECONDS),
                     "LanguageDetect");
         }
 

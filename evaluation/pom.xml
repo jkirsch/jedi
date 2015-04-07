@@ -11,5 +11,12 @@
 
     <artifactId>evaluation</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>edu.tuberlin.dima.textmining.jedi</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>
