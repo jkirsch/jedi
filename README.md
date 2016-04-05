@@ -27,10 +27,10 @@ For the sample sentence
 
     Bill Gothard received his B.A. in Biblical Studies from Wheaton College in 1957.
 
-This system produces
+The system produces
 
-| Object           | Relation                                                                                        | Subject          | Pattern
-|------------------|-------------------------------------------------------------------------------------------------|------------------|-----------------------------------------------------                                                      
+| Object           | Relation                                                                                         | Subject          | Pattern
+|------------------|--------------------------------------------------------------------------------------------------|------------------|-----------------------------------------------------                                                      
 | Bill Gothard     | /people/person/education. /education/education/degree                                            | B.A.             | [X] receive [Y] [1-dobj-2,1-nsubj-0]                          
 | Bill Gothard     | /people/person/education. /education/education/major_field_of_study                              | Biblical Studies | [X] receive in [Y] [1-nsubj-0,1-prep-2,2-pobj-3]              
 | Bill Gothard     | /people/person/education. /education/education/institution                                       | Wheaton College  | [X] receive from [Y] [1-nsubj-0,1-prep-2,2-pobj-3]            
