@@ -32,6 +32,7 @@ import javax.annotation.Nullable;
 import java.util.*;
 
 /**
+ * The main class.
  */
 public class ConstraintSolver<T> {
 
@@ -43,7 +44,7 @@ public class ConstraintSolver<T> {
 
     private static final Logger LOG = LoggerFactory.getLogger(ConstraintSolver.class);
 
-    final Predicate<T> orphanedVerticesPredicate = new Predicate<T>() {
+    private final Predicate<T> orphanedVerticesPredicate = new Predicate<T>() {
         @Override
         public boolean apply(@Nullable T input) {
             return graph.degreeOf(input) == 0;
@@ -105,12 +106,10 @@ public class ConstraintSolver<T> {
                     graph.addVertex(right);
                 }
 
-                // System.out.println(String.format("Before: %3d  - %3d\n", graph.vertexSet().size(), graph.edgeSet().size()));
                 boolean added = graph.addEdge(left, right, new Edge(++edgeCounter, relation, pattern, domain, range, score, entropy, count, fixedEdge));
                 if(!added) {
                     LOG.error("Did not add edge! " + Joiner.on(",").join(edgeCounter, relation, pattern, domain, range, score, entropy, count, fixedEdge));
                 }
-                //System.out.println(String.format("After : %3d  - %3d\n", graph.vertexSet().size(), graph.edgeSet().size()));
             } else {
                 LOG.error(String.format("Adding %s -> %s (%s) would create a loop - skipping", transformToString(left), transformToString(right), relation));
             }
@@ -164,17 +163,14 @@ public class ConstraintSolver<T> {
         return sums + solution.size()/ (float) connectedComponents.size();
     }
 
-    final Comparator<List<Solution<T>>> solutionComparator = new Comparator<List<Solution<T>>>() {
-        @Override
-        public int compare(List<Solution<T>> o1, List<Solution<T>> o2) {
+    private final Comparator<List<Solution<T>>> solutionComparator = (o1, o2) -> {
 
-            // compare size of solution chain as well
-            return ComparisonChain.start()/*.compare(o1.size(), o2.size())*/.compare(score(o1), score(o2)).result();
-        }
+        // compare size of solution chain as well
+        return ComparisonChain.start()/*.compare(o1.size(), o2.size())*/.compare(score(o1), score(o2)).result();
     };
 
 
-    class DistinctEdge {
+    private class DistinctEdge {
         final Edge edge;
 
         final T left;
@@ -352,12 +348,7 @@ public class ConstraintSolver<T> {
             // this means there is only one connection ..
             // remove all edges that are not fixed
             ArrayList<Edge> edges = Lists.newArrayList(graph.edgeSet());
-            Iterable<Edge> filter = Iterables.filter(edges, new Predicate<Edge>() {
-                @Override
-                public boolean apply(@Nullable Edge input) {
-                    return !input.isFixed();
-                }
-            });
+            Iterable<Edge> filter = Iterables.filter(edges, input -> !input.isFixed());
             for (Edge edge : Iterables.skip(filter, 1)) {
                 graph.removeEdge(edge);
             }
@@ -568,221 +559,6 @@ public class ConstraintSolver<T> {
         return bestSolution;
     }
 
-    // repeatably take away a node
-          /*  ConnectivityInspector<T, Edge> connectivityInspector = new ConnectivityInspector<T, Edge>(graph);
-
-            final List<Set<T>> connectedSets = connectivityInspector.connectedSets();
-
-            // remove the smallest clique
-            Collections.sort(connectedSets, Ordering.from(new Comparator<Set<T>>() {
-                @Override
-                public int compare(Set<T> o1, Set<T> o2) {
-                    return Ints.compare(o1.size(), o2.size());
-                }
-            }));
-
-            if(connectedSets.size() > 0) {*/
-
-    // if(graph.vertexSet().size() > 1) {
-                    /*printCollector.print("Remove a Vertex with the least number of edges");
-                    // remove the smallest one ...
-                    final ArrayList<T> verticies = Lists.newArrayList(graph.vertexSet());
-                    Collections.sort(verticies, Ordering.from(new Comparator<T>() {
-                        @Override
-                        public int compare(T o1, T o2) {
-                            return Ints.compare(graph.degreeOf(o1), graph.degreeOf(o2));
-                        }
-                    }));
-
-                    printCollector.print("Removing: " + verticies.get(0));
-                    graph.removeVertex(verticies.get(0));
-                    solutions = internalSolve(printCollector);                */
-
-/*                    final ArrayList<Edge> edges = Lists.newArrayList(graph.edgeSet());
-                    Collections.sort(edges, Ordering.from(new Comparator<Edge>() {
-                        @Override
-                        public int compare(Edge o1, Edge o2) {
-                            return Floats.compare(o1.getScore(), o2.getScore());
-                        }
-                    }));
-
-                    printCollector.print("Remove an edge with the smallest score");
-                    printCollector.print("Removing (and all similar ones): " + edges.toString());
-                    final Edge toRemove = edges.get(0);
-
-                    // check for orphaned nodes
-                    final T edgeSource = graph.getEdgeSource(toRemove);
-                    final T edgeTarget = graph.getEdgeTarget(toRemove);
-
-                    // get all edges between source and target that are similar in terms off score a
-
-                    final Set<Edge> allEdges = graph.getAllEdges(edgeSource, edgeTarget);
-
-                    final Collection<Edge> filter = Collections2.filter(allEdges, new Predicate<Edge>() {
-                        @Override
-                        public boolean apply(@Nullable Edge input) {
-                            return input.getRelation().equals(toRemove.getRelation()) &&
-                                    input.getScore() == toRemove.score;
-                        }
-                    });
-                    graph.removeAllEdges(filter);
-
-                    if(graph.degreeOf(edgeSource) == 0) {
-                        graph.removeVertex(edgeTarget);
-                    }
-
-                    if(graph.degreeOf(edgeSource) == 0) {
-                        graph.removeVertex(edgeTarget);
-                    }
-        */
-
-                    /*final ArrayList<T> verticies = Lists.newArrayList(graph.vertexSet());
-                    Collections.sort(verticies, Ordering.from(new Comparator<T>() {
-                        @Override
-                        public int compare(T o1, T o2) {
-
-                            final Set<Edge> sourceEdges = graph.edgesOf(o1);
-                            final Set<Edge> targetEdges= graph.edgesOf(o2);
-
-                            // average the scores
-                            float sourceScore = 0;
-                            int score_counts = 0;
-                            for (Edge edge : sourceEdges) {
-                                sourceScore += edge.getScore(); score_counts++;
-                            }
-                            sourceScore = sourceScore / (float) score_counts;
-
-                            float targetScore = 0;
-                            int target_counts = 0;
-                            for (Edge edge : targetEdges) {
-                                targetScore += edge.getScore(); target_counts++;
-                            }
-                            targetScore = targetScore / (float) target_counts;
-
-                            return Floats.compare(sourceScore, targetScore);
-                        }
-                    }));         */
-
-/*                    final ArrayList<T> candidates = Lists.newArrayList(graph.vertexSet());
-                    // clone graph
-                    final UndirectedGraph<T, Edge> restored = new Multigraph<T, Edge>(Edge.class);
-                    Graphs.addGraph(restored, graph);
-                    for (T candidate : candidates) {
-                        printCollector.print("Removing: " + transformToString(candidate) + "  " + graph.vertexSet().size());
-                        graph.removeVertex(candidate);
-                        // now check if we have orphaned any other verticies
-                        final Iterable<T> filter = Iterables.filter(graph.vertexSet(), orphanedVerticesPredicate);
-
-                        final ArrayList<T> ts = Lists.newArrayList(filter);
-                        if(ts != null && ts.size() > 0) {
-                            graph.removeAllVertices(ts);
-                        }
-                        solutions = internalSolve(printCollector, false);
-                        if(solutions.size() > 0) break;
-                        printCollector.print("Backtracking: " + transformToString(candidate));
-                        // restore graph
-                        Graphs.addGraph(graph, restored);
-                    }
-*/
-    //   printCollector.print("Need to remove more nodes");
-
-
-/*                    final T first = Iterables.getFirst(graph.vertexSet(), null);
-                    printCollector.print("Removing: " + transformToString(first));
-
-                    // we could now remove any as well .. and backtrack
-
-
-                    graph.removeVertex(first);
-
-                    // now check if we have orphaned any other verticies
-                    final Iterable<T> filter = Iterables.filter(graph.vertexSet(), new Predicate<T>() {
-                        @Override
-                        public boolean apply(@Nullable T input) {
-                            return graph.degreeOf(input) == 0;
-                        }
-                    });
-
-                    final ArrayList<T> ts = Lists.newArrayList(filter);
-                    if(ts != null && ts.size() > 0) {
-                        graph.removeAllVertices(ts);
-                    }
-
-                    solutions = internalSolve(printCollector, false);               */
-
-    //  } else {
-
-    //  break;
-    //  }
-
-    //}
-
-
-/*        while (solutions.size() == 0) {
-            // remove a node from the graph
-            // sort by the number verts ...
-
-            final Collection<Set<T>> biggestMaximalCliques = cliqueFinder.getBiggestMaximalCliques();
-
-            // remove the smallest clique
-
-            // find the vertex with the smallest number of edges
-            final List<T> vertexSet = Lists.newArrayList(graph.vertexSet());
-
-            Collections.sort(vertexSet, new Comparator<T>() {
-                @Override
-                public int compare(T o1, T o2) {
-                    return Ints.compare(graph.degreeOf(o1), graph.degreeOf(o2));
-                }
-            });
-
-            // simple between two
-            final Iterable<List<T>> partition = Iterables.paddedPartition(vertexSet, 2);
-
-            Set<Edge> e = null;
-            T first = null;
-            T second = null;
-            for (List<T> ts : partition) {
-                first = Iterables.getFirst(ts, null);
-                second = Iterables.get(ts, 1, null);
-
-                e = graph.getAllEdges(first, second);
-
-                if(e != null && e.size() > 0) break;
-            }
-
-            // low degree vertices might not contain an edge
-
-            if(first != null && second != null) {
-                // remove an edge between E1 and E2
-
-                // constraint that any of these edges must be true
-                TreeSet<Edge> edges = new TreeSet<Edge>(new EdgeComperator());
-                edges.addAll(e);
-
-                final Edge edge = Iterables.getFirst(edges, null);
-
-                System.out.println("Removing " + edge);
-
-                graph.removeEdge(edge);
-
-                for (T t : Lists.newArrayList(first, second)) {
-                    if(graph.degreeOf(t) == 0) {
-                        System.out.println("Deleting orphaned vertex " + t);
-                        graph.removeVertex(t);
-                    }
-                }
-
-                solutions = internalSolve();
-            } else {
-                System.out.println("No solution ...");
-                break;
-            }
-
-        }
-
-        return solutions;                       */
-    //}
 
     private static final class InternalSolveResult<T> {
         List<Solution<T>> solution;
@@ -917,21 +693,8 @@ public class ConstraintSolver<T> {
         solver.plugMonitor(new IMonitorSolution() {
             @Override
             public void onSolution() {
-         /*       printCollector.print("Found a solution");
-         /*       printCollector.print(Joiner.on("\n").join(Iterables.transform(encoding.entrySet(), new Function<Map.Entry<T, IntVar>, String>() {
-                    @Nullable
-                    @Override
-                    public String apply(@Nullable Map.Entry<T, IntVar> input) {
-                        return Joiner.on("=").join(input.getValue().getName(), input.getValue().getValue(), typeMapping.get(input.getValue().getValue()));
-                    }
-                })));
-                printCollector.print(Strings.repeat("-", 50)); */
                 if (!solver.hasReachedLimit()) {
                     List<Solution<T>> generateSolution = generateSolution(typeMapping, encoding);
-            /*        printCollector.print(" Score: " + score(generateSolution));
-                      for (Solution<T> tSolution : generateSolution) {
-                        printCollector.print(transformToString(tSolution.getLeft()) + " -> " + transformToString(tSolution.getRight()) + "  " + tSolution.getEdge());
-                    } */
                     solutions.add(generateSolution);
                 }
             }
@@ -946,8 +709,6 @@ public class ConstraintSolver<T> {
             counter++;
         }
 
-        //printCollector.print("Found solution: " + solver.isFeasible() + " # ("+solutions.size()+")");
-
         if (solver.isFeasible().equals(ESat.FALSE)) {
             // no solution
             new InternalSolveResult<T>(emptyList, solver.hasReachedLimit());
@@ -959,23 +720,6 @@ public class ConstraintSolver<T> {
 
         final List<Solution<T>> solution = Iterables.getFirst(solutions, null);
 
-    /*    if(solution != null) {
-                printCollector.print("Found a solution");
-                printCollector.print(Joiner.on("\n").join(Iterables.transform(encoding.entrySet(), new Function<Map.Entry<T, IntVar>, String>() {
-                    @Nullable
-                    @Override
-                    public String apply(@Nullable Map.Entry<T, IntVar> input) {
-                        if (input.getValue().getDomainSize() > 1) {
-                            return Joiner.on("=").join(input.getValue().getName(), input.getValue());
-                        } else {
-                            return Joiner.on("=").join(input.getValue().getName(), input.getValue().getValue(), typeMapping.get(input.getValue().getValue()));
-                        }
-                    }
-                })));
-                printCollector.print(Strings.repeat("-", 50));
-
-        }
-       */
         return new InternalSolveResult<>(solution, solver.hasReachedLimit());
     }
 
@@ -1026,7 +770,7 @@ public class ConstraintSolver<T> {
         return solutions;
     }
 
-    final static class EdgeComparator implements Comparator<Edge> {
+    private final static class EdgeComparator implements Comparator<Edge> {
 
         @Override
         public int compare(Edge o1, Edge o2) {
@@ -1034,7 +778,7 @@ public class ConstraintSolver<T> {
         }
     }
 
-    private static final <T> String transformToString(T node) {
+    private static <T> String transformToString(T node) {
         if (node instanceof Annotation) {
             return ((Annotation) node).getCoveredText();
         } else {
