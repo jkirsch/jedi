@@ -236,7 +236,7 @@ public class FindShortestPathFeatureExtractorTest {
 		List<FoundFeature<Annotation>> parse = parse("His daughter was actress Jessie Lonnen, who performed with George Edwardes's company in England and the J. C. Williamson company in Australia.");
 
 		Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("daughter"));
-		Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("George Edwardes's company"));
+		Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("George Edwardes"));
 
 	}
 
@@ -400,9 +400,9 @@ public class FindShortestPathFeatureExtractorTest {
 
 		List<FoundFeature<Annotation>> parse = parse("Bell , a telecommunication company , which is based in Los Angeles , makes and distributes electronic , computer and building products");
 
-		assertEntity(parse.get(0), "Bell", "Los Angeles", "[X] company base in [Y] [0-appos-1,1-rcmod-2,2-prep-3,3-pobj-4]");
-		assertEntity(parse.get(1), "Bell", "computer", "[X] make distribute electronic [Y] product [1-conj-2,1-nsubj-0,2-dobj-5,3-conj-4,5-amod-3]");
-		assertEntity(parse.get(2), "Bell", "building", "[X] make distribute electronic computer [Y] product [1-conj-2,1-nsubj-0,2-dobj-6,3-conj-4,4-conj-5,6-amod-3]");
+		assertEntity(parse.get(1), "Bell", "Los Angeles",  "[X] company base in [Y] [0-appos-1,1-rcmod-2,2-prep-3,3-pobj-4]");
+		assertEntity(parse.get(2), "Bell", "computer",  "[X] make distribute electronic [Y] product [1-conj-2,1-nsubj-0,2-dobj-5,3-conj-4,5-amod-3]");
+		assertEntity(parse.get(3), "Bell", "building",  "[X] make distribute electronic computer [Y] product [1-conj-2,1-nsubj-0,2-dobj-6,3-conj-4,4-conj-5,6-amod-3]");
 
 	}
 
@@ -420,26 +420,8 @@ public class FindShortestPathFeatureExtractorTest {
 	public void testPatternDetect() throws Exception {
 		List<FoundFeature<Annotation>> parse = parseFromXML(Resources.toString(Resources.getResource("sampleCAS/sampleSentenceCAS.xml"), Charsets.UTF_8));
 
-		assertEntity(parse.get(30), "Bachelor of Music", "Villanova", "receive [X] in 1984 master from [Y] [0-dobj-1,0-prep-2,2-pobj-3,3-conj-4,4-prep-5,5-pobj-6]");
-
-	}
-
-	@Test
-	public void testApposition() throws Exception {
-		List<FoundFeature<Annotation>> parse = parse("Last year , a state screening committee recommended giving the franchise to Excelsior Racing Associates , a New York City group led by Richard Fields , a casino developer , and Stephen W. Swindal , a partner in the New York Yankees who is also George Steinbrenner 's son-in-law .");
-
-		Assert.assertThat(parse.size(), is(21));
-
-		assertEntity(parse.get(11), "Excelsior Racing Associates", "Richard Fields", "[X] group lead by [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4]");
-		assertEntity(parse.get(12), "Excelsior Racing Associates", "Stephen W. Swindal", "[X] group lead by [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4]");
-		assertEntity(parse.get(13), "Excelsior Racing Associates", "New York Yankees", "[X] group lead by Fields Swindal partner in [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4,4-conj-5,5-appos-6,6-prep-7,7-pobj-8]");
-		assertEntity(parse.get(14), "Excelsior Racing Associates", "George Steinbrenner 's son-in-law", "[X] group lead by Fields Swindal partner in Yankees be [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4,4-conj-5,5-appos-6,6-prep-7,7-pobj-8,8-rcmod-9,9-attr-10]");
-		assertEntity(parse.get(15), "Richard Fields", "Stephen W. Swindal", "[X] [Y] [0-conj-1]");
-		assertEntity(parse.get(16), "Richard Fields", "New York Yankees", "[X] Swindal partner in [Y] [0-conj-1,1-appos-2,2-prep-3,3-pobj-4]");
-		assertEntity(parse.get(17), "Richard Fields", "George Steinbrenner 's son-in-law", "[X] Swindal partner in Yankees be [Y] [0-conj-1,1-appos-2,2-prep-3,3-pobj-4,4-rcmod-5,5-attr-6]");
-		assertEntity(parse.get(18), "Stephen W. Swindal", "New York Yankees", "[X] partner in [Y] [0-appos-1,1-prep-2,2-pobj-3]");
-		assertEntity(parse.get(19), "Stephen W. Swindal", "George Steinbrenner 's son-in-law", "[X] partner in Yankees be [Y] [0-appos-1,1-prep-2,2-pobj-3,3-rcmod-4,4-attr-5]");
-		assertEntity(parse.get(20), "New York Yankees", "George Steinbrenner 's son-in-law", "[X] be [Y] [0-rcmod-1,1-attr-2]");
+		Assert.assertThat(parse.size(), is(49));
+		assertEntity(parse.get(37), "Bachelor of Music", "Villanova", "receive [X] in 1984 master from [Y] [0-dobj-1,0-prep-2,2-pobj-3,3-conj-4,4-prep-5,5-pobj-6]");
 
 	}
 
