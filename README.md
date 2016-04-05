@@ -22,7 +22,12 @@ To start a simple test once setup, run
 ```
 
 ## Sample result
-This should produce the following result
+
+For the sample sentence
+
+    Bill Gothard received his B.A. in Biblical Studies from Wheaton College in 1957.
+
+This system produces
 
 | Object           | Relation                                                                                        | Subject          | Pattern
 |------------------|-------------------------------------------------------------------------------------------------|------------------|-----------------------------------------------------                                                      
