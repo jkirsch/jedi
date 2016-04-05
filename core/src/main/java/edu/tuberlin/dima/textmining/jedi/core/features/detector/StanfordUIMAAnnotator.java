@@ -62,7 +62,6 @@ import java.util.Properties;
  * This uses the Stanford NER suite to parse an english document - copying over all annotations except the dependency parse
  *
  * @author Steven Bethard
- * @author Johannes Kirschnick
  */
 public class StanfordUIMAAnnotator extends JCasAnnotator_ImplBase {
 

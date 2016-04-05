@@ -75,6 +75,6 @@ public class FreebaseHelperTest {
 		Assert.assertThat(typesForRelationFromFreebase.getDomain(), is("ns:education.educational_institution"));
 		Assert.assertThat(typesForRelationFromFreebase.getRange(), is("ns:education.field_of_study"));
 
-
 	}
+
 }

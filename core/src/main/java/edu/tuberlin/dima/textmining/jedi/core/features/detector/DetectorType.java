@@ -1,10 +1,7 @@
 package edu.tuberlin.dima.textmining.jedi.core.features.detector;
 
 /**
- * Date: 25.08.2014
- * Time: 22:47
- *
- * @author Johannes Kirschnick
+ * The different tyoe of entity makers.
  */
 public enum DetectorType {
 

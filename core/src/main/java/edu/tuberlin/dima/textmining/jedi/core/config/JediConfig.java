@@ -27,10 +27,6 @@ import java.net.URL;
 import java.util.Arrays;
 
 /**
- * Date: 16.09.2014
- * Time: 14:54
- *
- * @author Johannes Kirschnick
  */
 @Configuration
 public class JediConfig {

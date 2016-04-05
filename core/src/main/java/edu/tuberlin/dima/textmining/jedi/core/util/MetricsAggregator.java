@@ -14,18 +14,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Date: 12.08.13
- * Time: 14:02
- *
- * @author Johannes Kirschnick
+ * Helper to record UIMA performance.
  */
 public class MetricsAggregator {
-
 
 	/**
 	 * Global Metrics Registry.
 	 */
-	public static final MetricRegistry registry = new MetricRegistry();
+	private static final MetricRegistry registry = new MetricRegistry();
 
 	public static final ConsoleReporter reporter = ConsoleReporter.forRegistry(registry)
 		.convertRatesTo(TimeUnit.SECONDS)

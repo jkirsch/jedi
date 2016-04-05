@@ -18,18 +18,12 @@ import java.util.Set;
 import static org.apache.uima.fit.util.JCasUtil.selectCovered;
 
 /**
- * Date: 15.07.2014
- * Time: 16:36
- *
- * @author Johannes Kirschnick
  */
 public class AnnovisTransformerWriter {
 
     private static final String DASH = "_";
 
     public static Map<String, Annovis> generateFormat(JCas jCas) {
-
-        StringBuilder stringBuilder = new StringBuilder();
 
         // all tokens
         final List<Token> tokens = Lists.newArrayList(JCasUtil.select(jCas, Token.class));

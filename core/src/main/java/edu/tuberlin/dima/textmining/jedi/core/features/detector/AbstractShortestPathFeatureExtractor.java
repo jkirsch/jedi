@@ -28,10 +28,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Date: 14.11.2014
- * Time: 21:07
- *
- * @author Johannes Kirschnick
  */
 public abstract class AbstractShortestPathFeatureExtractor {
 

@@ -1,20 +1,19 @@
 JEDI
 ====
 
-This module contains the Shortest Path Extractor and the Constraint Solver Code.
-
+JEDI is an automated system to jointly extract typed named entities and Freebase relations using dependency pattern from text. 
 
 To run:
-You need to setup the pattern-relation assigmnent corpus.
-Download the DB here http://www.user.tu-berlin.de/jkirsch/datasets/acl2016-jedi/freepal-index.tar.bz2
-and extract it into the root directory of the project
+You need to setup the pattern-relation assignment lucene index.
+A ready made index is hosted here http://www.user.tu-berlin.de/jkirsch/datasets/acl2016-jedi/freepal-index.tar.bz2
+Download and extract it into the root directory of the project
 
     curl -O http://www.user.tu-berlin.de/jkirsch/datasets/acl2016-jedi/freepal-index.tar.bz2
     tar xvfj freepal-index.tar.bz2
 
-If you place the index directory into a different location, adjust the `index.directory` location in the properties file `sample/src/main/resources/application.properties`
+If you place the index directory into a different location, adjust the `index.directory` location field in the properties file `sample/src/main/resources/application.properties`
 
-To start a simple test
+To start a simple test once setup, run
 
     ./mvnw install -DskipTests 
     ./mvnw spring-boot:run -pl sample

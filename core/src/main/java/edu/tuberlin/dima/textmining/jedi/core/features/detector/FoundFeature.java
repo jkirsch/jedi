@@ -3,10 +3,6 @@ package edu.tuberlin.dima.textmining.jedi.core.features.detector;
 import org.apache.uima.jcas.tcas.Annotation;
 
 /**
- * Date: 10.09.2014
- * Time: 18:36
- *
- * @author Johannes Kirschnick
  */
 public class FoundFeature<T> {
 

@@ -3,10 +3,7 @@ package edu.tuberlin.dima.textmining.jedi.core.util;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * Date: 28.10.2014
- * Time: 20:27
- *
- * @author Johannes Kirschnick
+ * Simple string comparision based on LevenshteinDistance.
  */
 public class StringComparision {
 

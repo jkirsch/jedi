@@ -10,10 +10,7 @@ import java.util.zip.GZIPInputStream;
  * Detects if the stream is of type GZIP and decorates it -  otherwise pass through
  * From http://stackoverflow.com/questions/4818468/how-to-check-if-inputstream-is-gzipped
  *
- * Date: 30.09.2014
- * Time: 21:03
  *
- * @author Johannes Kirschnick
  */
 public class CompressionHelper {
 

@@ -20,10 +20,6 @@ import java.io.StringWriter;
 /**
  * XMI Cas serializer / de-serializer Helper.
  *
- * Date: 18.02.13
- * Time: 14:47
- *
- * @author Johannes Kirschnick
  */
 public class UIMAXMLConverterHelper {
 
@@ -37,7 +33,7 @@ public class UIMAXMLConverterHelper {
      * Creates a new instance of the XML serializer.
      *
      * @param formattedOutput if true the output will be XML pretty printed, otherwise it will be just on one line
-     * @throws org.apache.uima.UIMAException in case of errors
+     * @throws IllegalStateException in case of errors
      */
     public UIMAXMLConverterHelper(boolean formattedOutput) {
         this.formattedOutput = formattedOutput;

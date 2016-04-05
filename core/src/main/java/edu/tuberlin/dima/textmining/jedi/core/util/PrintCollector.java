@@ -1,16 +1,13 @@
 package edu.tuberlin.dima.textmining.jedi.core.util;
 
 /**
- * Date: 11.07.2014
- * Time: 22:15
- *
- * @author Johannes Kirschnick
+ * Print collector, to keep track of the resolution process.
  */
 public class PrintCollector {
 
-    StringBuilder stringBuilder;
+    private StringBuilder stringBuilder;
 
-    final boolean printToStdout;
+    private final boolean printToStdout;
 
     public PrintCollector(boolean printToStdout) {
         this.printToStdout = printToStdout;

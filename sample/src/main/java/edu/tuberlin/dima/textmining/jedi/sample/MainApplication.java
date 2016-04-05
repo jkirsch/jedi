@@ -3,6 +3,7 @@ package edu.tuberlin.dima.textmining.jedi.sample;
 import edu.tuberlin.dima.textmining.jedi.core.config.DetectorService;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.DetectorType;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.model.Answer;
+import edu.tuberlin.dima.textmining.jedi.core.freebase.FreebaseHelper;
 import edu.tuberlin.dima.textmining.jedi.core.model.Solution;
 import edu.tuberlin.dima.textmining.jedi.sample.util.TableBuilder;
 import org.apache.uima.jcas.tcas.Annotation;
@@ -13,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * Created by Johannes on 05.04.2016.
+ * Sample application.
  */
 @ComponentScan(basePackages = {"edu.tuberlin.dima.textmining.jedi.core.config"})
 @SpringBootApplication
@@ -33,7 +34,7 @@ public class MainApplication implements CommandLineRunner {
 
 		final Answer<Annotation> annotationAnswer = detectorService.detectFeatures(sentence, DetectorType.ALLPairs, true);
 
-		Answer<String> x = Answer.generateStringVersion(annotationAnswer);
+		Answer<String> stringSolutions = Answer.generateStringVersion(annotationAnswer);
 
 		System.out.println("\n ------------ Input Sentence     ------------ \n");
 		System.out.println(sentence);
@@ -42,10 +43,12 @@ public class MainApplication implements CommandLineRunner {
 		TableBuilder tb = new TableBuilder();
 
 		tb.addRow("Object", "Relation", "Subject", "Pattern");
-		tb.addRow("-----", "----", "-----", "-----");
+		tb.addRow("------", "--------", "-------", "-------");
 
-		for (Solution<String> solution : x.getSolutions()) {
-			tb.addRow(solution.getLeft(), solution.getEdge().getRelation(), solution.getRight(), solution.getEdge().getPattern());
+		for (Solution<String> solution : stringSolutions.getSolutions()) {
+
+			String relation = FreebaseHelper.transformOldToNewId(solution.getEdge().getRelation());
+			tb.addRow(solution.getLeft(), relation, solution.getRight(), solution.getEdge().getPattern());
 		}
 
 		System.out.println(tb.toString());

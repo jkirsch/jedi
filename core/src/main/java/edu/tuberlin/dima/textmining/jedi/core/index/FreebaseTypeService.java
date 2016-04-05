@@ -17,10 +17,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Date: 09.09.2014
- * Time: 18:48
- *
- * @author Johannes Kirschnick
  */
 public class FreebaseTypeService {
 

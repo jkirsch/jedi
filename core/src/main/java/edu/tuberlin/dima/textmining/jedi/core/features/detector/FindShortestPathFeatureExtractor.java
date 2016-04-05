@@ -29,14 +29,9 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 /**
- * Date: 4/10/13
- * Time: 3:35 PM
- *
- * @author Priska Herger, Johannes Kirschnick, Alan Akbik
- *         <p/>
- *         Description: A Function that takes a JCas as input and extracts
- *         its annotations in terms of the shortest path between
- *         all recognized entities.
+ * A Function that takes a JCas as input and extracts
+ * its annotations in terms of the shortest path between
+ * all recognized entities.
  */
 
 public class FindShortestPathFeatureExtractor extends AbstractShortestPathFeatureExtractor {
@@ -489,7 +484,7 @@ public class FindShortestPathFeatureExtractor extends AbstractShortestPathFeatur
 
 							// also add all token
 							// now check all right annotations if they are maybe a named entity
-          /*                  for (Annotation namedEntity : namedEntities) {
+		  /*                  for (Annotation namedEntity : namedEntities) {
                                 // last the ihe coref target
                                 if(namedEntity.getBegin() >= last.getBegin() && namedEntity.getEnd() <= last.getEnd()) {
                                     coref.addVertex(namedEntity);

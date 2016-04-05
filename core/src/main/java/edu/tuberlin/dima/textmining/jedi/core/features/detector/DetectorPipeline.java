@@ -12,10 +12,6 @@ import org.apache.uima.resource.ResourceInitializationException;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 
 /**
- * Date: 22.03.13
- * Time: 14:19
- *
- * @author Johannes Kirschnick
  */
 public class DetectorPipeline extends AbstractPipeline {
 

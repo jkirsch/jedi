@@ -41,10 +41,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
 /**
- * Date: 09.07.2014
- * Time: 14:59
- *
- * @author Johannes Kirschnick
  */
 @Service
 public class DetectorService {
@@ -84,18 +80,18 @@ public class DetectorService {
     @Value("${detector.nonEntitiesFile}")
     URL nonEntitiesFile;
 
-    Set<String> nonEntities;
+    private Set<String> blacklistEntities;
 
 	private static final Logger LOG = LoggerFactory.getLogger(DetectorService.class);
 
     @PostConstruct
-    public void initIt() throws Exception {
+    public void init() throws Exception {
         // parse the non entities
         List<String> readLines = Resources.readLines(nonEntitiesFile, Charsets.UTF_8);
-        nonEntities = Sets.newHashSet();
+        blacklistEntities = Sets.newHashSet();
 
         for (String nonEntity : readLines) {
-            nonEntities.add(nonEntity.trim());
+            blacklistEntities.add(nonEntity.trim());
         }
 
     }
@@ -311,8 +307,8 @@ public class DetectorService {
         Iterator<FoundFeature<Annotation>> iterator = tuples.iterator();
         while (iterator.hasNext()) {
             FoundFeature<Annotation> foundFeature = iterator.next();
-            if(nonEntities.contains(foundFeature.getEntity1().getCoveredText()) ||
-                    nonEntities.contains(foundFeature.getEntity2().getCoveredText())) {
+            if(blacklistEntities.contains(foundFeature.getEntity1().getCoveredText()) ||
+                    blacklistEntities.contains(foundFeature.getEntity2().getCoveredText())) {
                 iterator.remove();
             }
         }

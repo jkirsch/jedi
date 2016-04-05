@@ -35,10 +35,6 @@ import java.net.URL;
 import java.util.*;
 
 /**
- * Date: 15.01.14
- * Time: 16:16
- *
- * @author Johannes Kirschnick
  */
 public class PatternIndexer {
 

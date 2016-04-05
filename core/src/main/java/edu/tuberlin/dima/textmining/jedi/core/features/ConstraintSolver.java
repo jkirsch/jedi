@@ -4,17 +4,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Predicate;
 import com.google.common.base.Strings;
-import com.google.common.collect.BiMap;
-import com.google.common.collect.ComparisonChain;
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.HashBiMap;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.google.common.collect.Ordering;
-import com.google.common.collect.Sets;
-import com.google.common.collect.Table;
+import com.google.common.collect.*;
 import com.google.common.primitives.Doubles;
 import edu.tuberlin.dima.textmining.jedi.core.model.Edge;
 import edu.tuberlin.dima.textmining.jedi.core.model.Solution;
@@ -39,21 +29,9 @@ import solver.variables.VariableFactory;
 import util.ESat;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
- * Date: 26.06.2014
- * Time: 14:50
- *
- * @author Johannes Kirschnick
  */
 public class ConstraintSolver<T> {
 

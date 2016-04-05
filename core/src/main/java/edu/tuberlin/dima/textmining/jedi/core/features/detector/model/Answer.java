@@ -1,8 +1,5 @@
 package edu.tuberlin.dima.textmining.jedi.core.features.detector.model;
 
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.DetectorType;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.FoundFeature;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.SearchResult;
@@ -11,7 +8,6 @@ import edu.tuberlin.dima.textmining.jedi.core.model.Solution;
 import edu.tuberlin.dima.textmining.jedi.core.util.AnnovisTransformerWriter;
 import org.apache.uima.jcas.tcas.Annotation;
 
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -67,36 +63,31 @@ public class Answer<T> {
         this.annovis = annovis;
     }
 
-    public static final <T> Answer<String> generateStringVersion(Answer<T> input) {
+	/**
+	 * Transforms a solution using UIMA objects into their string representations, by using the covered text implementation.
+	 *
+	 * @param input object with cas annotations
+	 * @param <T> the type of the annotations
+     * @return answer with string representations
+     */
+    public static <T> Answer<String> generateStringVersion(Answer<T> input) {
 
-        List<Solution<String>> transform = Lists.newArrayList(Iterables.transform(input.getSolutions(), new Function<Solution<T>, Solution<String>>() {
-            @Nullable
-            @Override
-            public Solution<String> apply(@Nullable Solution<T> input) {
-                return new Solution<>(
-                        transformToString(input.getLeft()),
-                        transformToString(input.getRight()),
-                        input.getEdge());
-            }
-        }));
+		List<Solution<String>> transform = input.getSolutions().stream().map(solution -> new Solution<>(
+			transformToString(solution.getLeft()),
+			transformToString(solution.getRight()),
+			solution.getEdge())).collect(Collectors.toList());
 
-        List<SearchResult<String>> transformedFeatures = Lists.newArrayList(Iterables.transform(input.foundFeatures, new Function<FoundFeature<T>, SearchResult<String>>() {
-            @Nullable
-            @Override
-            public SearchResult<String> apply(@Nullable FoundFeature<T> input) {
-                return new SearchResult<String>(
-                        new FoundFeature<>(
-                                transformToString(input.getEntity1()),
-                                transformToString(input.getEntity2()),
-                                input.getPattern()), null);
-            }
-        }));
+		List<SearchResult<String>> transformedFeatures = input.foundFeatures.stream().map(feature -> new SearchResult<>(
+			new FoundFeature<>(
+				transformToString(feature.getEntity1()),
+				transformToString(feature.getEntity2()),
+				feature.getPattern()), null)).collect(Collectors.toList());;
 
         return new Answer<>(transformedFeatures, transform, input.getDetectorType(), input.getGraph(), input.getStdout(), input.getAnnovis());
 
     }
 
-    private static final <T> String transformToString(T input) {
+    private static <T> String transformToString(T input) {
         if(input instanceof Annotation) {
             return ((Annotation) input).getCoveredText();
         } else {

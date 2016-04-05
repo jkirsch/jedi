@@ -28,10 +28,6 @@ import javax.annotation.Nullable;
 import java.util.*;
 
 /**
- * Date: 14.11.2014
- * Time: 21:05
- *
- * @author Johannes Kirschnick
  */
 public class AllPairsShortestPathFeatureExtractor extends AbstractShortestPathFeatureExtractor {
 
