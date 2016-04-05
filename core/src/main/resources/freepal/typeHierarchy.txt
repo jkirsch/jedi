@@ -1026,8 +1026,8 @@ ns:venture_capital.venture_investor
 ns:user.cip22.default_domain.scientist	/people/person
 ns:base.americancivilwar.theater	/base/americancivilwar/topic
 ns:user.detroiter313.default_domain.licensee	
-ns:business.employer	
-ns:people.gender	
+ns:business.employer
+ns:people.gender
 ns:base.fictionaluniverse.fictional_impersonator	/fictional_universe/fictional_character,/base/fictionaluniverse/topic
 ns:base.fight.protest	/base/fight/topic,/time/event,/base/argumentmaps/motivated_event
 ns:language.language_creator	/people/person
@@ -2206,7 +2206,6 @@ ns:media_common.adaptation
 ns:base.bibkn.author	/education/academic,/book/author,/base/bibkn/topic,/people/person
 ns:base.honouriam.honoured_person	/base/honouriam/topic
 ns:base.engineering.canal_network	/base/engineering/topic,/projects/project_focus,/location/location
-ns:broadcast.broadcast	
 ns:base.obamabase.cabinet_member	/base/obamabase/topic
 ns:visual_art.visual_art_genre	
 ns:organization.club_interest	
@@ -2862,7 +2861,7 @@ ns:user.zanerokklyn.default_domain.smartphone	/user/bitwiseplatypus/default_doma
 ns:user.skud.boats.vessel_use	/user/skud/boats/topic
 ns:base.skosbase.skos_concept	
 ns:base.electromagneticspectrum.wireless_protocol	/m/04snrnl
-ns:broadcast.radio_station	/broadcast/broadcast
+ns:broadcast.radio_station	/broadcast/broadcast,/business/employer
 ns:base.realitytv.reality_tv_season	/tv/tv_series_season,/base/realitytv/topic
 ns:base.collectives.people	/base/collectives/topic
 ns:cvg.computer_game_rating	
@@ -2942,3 +2941,4 @@ ns:user.narphorium.default_domain.job_title
 ns:base.philbsuniverse.artist_s_or_band_s	/m/06vwzp1,/music/artist
 ns:base.livemusic.concert_venue	/base/livemusic/topic
 ns:organization.organization_founder	/people/person
+ns:broadcast.broadcast	/business/employer

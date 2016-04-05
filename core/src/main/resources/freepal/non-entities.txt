@@ -112,3 +112,6 @@ power
 progress
 everything
 common area
+itself
+seriousness
+tone

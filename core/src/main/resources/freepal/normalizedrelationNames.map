@@ -1,0 +1,1 @@
+/business/person/company	ns:people.person.employment_history..business.employment_tenure.company,ns:business.employer.employees..business.employment_tenure.person,ns:people.person.education..education.education.institution,ns:business.board_member.leader_of..organization.leadership.organization

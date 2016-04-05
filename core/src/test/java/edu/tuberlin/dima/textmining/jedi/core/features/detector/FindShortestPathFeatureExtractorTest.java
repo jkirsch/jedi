@@ -23,436 +23,430 @@ import static org.hamcrest.core.Is.is;
 
 public class FindShortestPathFeatureExtractorTest {
 
-    static DetectorPipeline detectorPipeline;
-    private static FindShortestPathFeatureExtractor featureExtractor;
-    private static UIMAXMLConverterHelper uimaxmlConverterHelper;
+	static DetectorPipeline detectorPipeline;
+	private static FindShortestPathFeatureExtractor featureExtractor;
+	private static UIMAXMLConverterHelper uimaxmlConverterHelper;
 
-    static final Logger LOG = LoggerFactory.getLogger(FindShortestPathFeatureExtractorTest.class);
+	static final Logger LOG = LoggerFactory.getLogger(FindShortestPathFeatureExtractorTest.class);
 
-    @BeforeClass
-    public static void setUp() throws Throwable {
-        detectorPipeline = new DetectorPipeline("-lang en -testMode");
-        featureExtractor = new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -pickupSimilar -selectionType " + N.class.getName() + " -additionalSelectionType " + PR.class.getName());
+	@BeforeClass
+	public static void setUp() throws Throwable {
+		detectorPipeline = new DetectorPipeline("-lang en -testMode");
+		featureExtractor = new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -pickupSimilar -selectionType " + N.class.getName() + " -additionalSelectionType " + PR.class.getName());
 
-        uimaxmlConverterHelper = new UIMAXMLConverterHelper(true);
-    }
+		uimaxmlConverterHelper = new UIMAXMLConverterHelper(true);
+	}
 
-    @Test
-    public void testFind() throws Exception {
+	@Test
+	public void testFind() throws Exception {
 
-        final List<FoundFeature<Annotation>> exec = parse("Dmitry was born in Moscow. In 1993 he graduated from Russian Academy of Theatre Arts as stage director. ");
-        //JCas cas = detectorPipeline.exec(Lists.newArrayList("Born in Ashland, Kentucky, Hermansdorfer received an A.B. from Princeton University in 1953 and an LL.B. from the University of Virginia School of Law in 1959. He was in private practice in Ashland, Kentucky from 1959 to 1972.", "id"));
-//        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <CAS version=\"2\"><uima.cas.Sofa _indexed=\"0\" _id=\"1\" sofaNum=\"1\" sofaID=\"_InitialView\" mimeType=\"text\" sofaString=\"Dmitry was born in Moscow. In 1993 he graduated from Russian Academy of Theatre Arts as stage director.\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData _indexed=\"1\" _id=\"13\" _ref_sofa=\"1\" begin=\"0\" end=\"103\" language=\"en\" documentUri=\"id\" isLastSegment=\"false\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"24\" _ref_sofa=\"1\" begin=\"0\" end=\"6\" _ref_parent=\"930\" _ref_lemma=\"943\" _ref_pos=\"439\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"32\" _ref_sofa=\"1\" begin=\"7\" end=\"10\" _ref_parent=\"951\" _ref_lemma=\"964\" _ref_pos=\"444\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"40\" _ref_sofa=\"1\" begin=\"11\" end=\"15\" _ref_parent=\"969\" _ref_lemma=\"982\" _ref_pos=\"449\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"48\" _ref_sofa=\"1\" begin=\"16\" end=\"18\" _ref_parent=\"987\" _ref_lemma=\"1000\" _ref_pos=\"454\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"56\" _ref_sofa=\"1\" begin=\"19\" end=\"25\" _ref_parent=\"1005\" _ref_lemma=\"1018\" _ref_pos=\"459\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"64\" _ref_sofa=\"1\" begin=\"25\" end=\"26\" _ref_parent=\"922\" _ref_lemma=\"1043\" _ref_pos=\"464\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"72\" _ref_sofa=\"1\" begin=\"27\" end=\"29\" _ref_parent=\"1072\" _ref_lemma=\"1085\" _ref_pos=\"469\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"80\" _ref_sofa=\"1\" begin=\"30\" end=\"34\" _ref_parent=\"1090\" _ref_lemma=\"1103\" _ref_pos=\"474\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"88\" _ref_sofa=\"1\" begin=\"35\" end=\"37\" _ref_parent=\"1115\" _ref_lemma=\"1128\" _ref_pos=\"479\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"96\" _ref_sofa=\"1\" begin=\"38\" end=\"47\" _ref_parent=\"1136\" _ref_lemma=\"1149\" _ref_pos=\"484\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"104\" _ref_sofa=\"1\" begin=\"48\" end=\"52\" _ref_parent=\"1154\" _ref_lemma=\"1167\" _ref_pos=\"489\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"112\" _ref_sofa=\"1\" begin=\"53\" end=\"60\" _ref_parent=\"1180\" _ref_lemma=\"1193\" _ref_pos=\"494\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"120\" _ref_sofa=\"1\" begin=\"61\" end=\"68\" _ref_parent=\"1180\" _ref_lemma=\"1203\" _ref_pos=\"499\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"128\" _ref_sofa=\"1\" begin=\"69\" end=\"71\" _ref_parent=\"1212\" _ref_lemma=\"1225\" _ref_pos=\"504\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"136\" _ref_sofa=\"1\" begin=\"72\" end=\"79\" _ref_parent=\"1230\" _ref_lemma=\"1243\" _ref_pos=\"509\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"144\" _ref_sofa=\"1\" begin=\"80\" end=\"84\" _ref_parent=\"1230\" _ref_lemma=\"1253\" _ref_pos=\"514\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"152\" _ref_sofa=\"1\" begin=\"85\" end=\"87\" _ref_parent=\"1274\" _ref_lemma=\"1287\" _ref_pos=\"519\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"160\" _ref_sofa=\"1\" begin=\"88\" end=\"93\" _ref_parent=\"1292\" _ref_lemma=\"1305\" _ref_pos=\"524\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"168\" _ref_sofa=\"1\" begin=\"94\" end=\"102\" _ref_parent=\"1292\" _ref_lemma=\"1315\" _ref_pos=\"529\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"176\" _ref_sofa=\"1\" begin=\"102\" end=\"103\" _ref_parent=\"1064\" _ref_lemma=\"1338\" _ref_pos=\"534\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence _indexed=\"1\" _id=\"184\" _ref_sofa=\"1\" begin=\"0\" end=\"26\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence _indexed=\"1\" _id=\"188\" _ref_sofa=\"1\" begin=\"27\" end=\"103\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"192\" _ref_sofa=\"1\" begin=\"0\" end=\"6\" value=\"dmitry\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"197\" _ref_sofa=\"1\" begin=\"7\" end=\"10\" value=\"be\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"202\" _ref_sofa=\"1\" begin=\"11\" end=\"15\" value=\"bear\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"207\" _ref_sofa=\"1\" begin=\"16\" end=\"18\" value=\"in\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"212\" _ref_sofa=\"1\" begin=\"19\" end=\"25\" value=\"moscow\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"217\" _ref_sofa=\"1\" begin=\"25\" end=\"26\" value=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"222\" _ref_sofa=\"1\" begin=\"27\" end=\"29\" value=\"in\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"227\" _ref_sofa=\"1\" begin=\"30\" end=\"34\" value=\"1993\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"232\" _ref_sofa=\"1\" begin=\"35\" end=\"37\" value=\"he\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"237\" _ref_sofa=\"1\" begin=\"38\" end=\"47\" value=\"graduate\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"242\" _ref_sofa=\"1\" begin=\"48\" end=\"52\" value=\"from\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"247\" _ref_sofa=\"1\" begin=\"53\" end=\"60\" value=\"russian\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"252\" _ref_sofa=\"1\" begin=\"61\" end=\"68\" value=\"academy\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"257\" _ref_sofa=\"1\" begin=\"69\" end=\"71\" value=\"of\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"262\" _ref_sofa=\"1\" begin=\"72\" end=\"79\" value=\"theatre\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"267\" _ref_sofa=\"1\" begin=\"80\" end=\"84\" value=\"art\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"272\" _ref_sofa=\"1\" begin=\"85\" end=\"87\" value=\"as\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"277\" _ref_sofa=\"1\" begin=\"88\" end=\"93\" value=\"stage\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"282\" _ref_sofa=\"1\" begin=\"94\" end=\"102\" value=\"director\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"287\" _ref_sofa=\"1\" begin=\"102\" end=\"103\" value=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"943\" _ref_sofa=\"1\" begin=\"0\" end=\"6\" value=\"Dmitry\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"964\" _ref_sofa=\"1\" begin=\"7\" end=\"10\" value=\"be\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"982\" _ref_sofa=\"1\" begin=\"11\" end=\"15\" value=\"bear\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1000\" _ref_sofa=\"1\" begin=\"16\" end=\"18\" value=\"in\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1018\" _ref_sofa=\"1\" begin=\"19\" end=\"25\" value=\"Moscow\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1043\" _ref_sofa=\"1\" begin=\"25\" end=\"26\" value=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1085\" _ref_sofa=\"1\" begin=\"27\" end=\"29\" value=\"in\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1103\" _ref_sofa=\"1\" begin=\"30\" end=\"34\" value=\"1993\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1128\" _ref_sofa=\"1\" begin=\"35\" end=\"37\" value=\"he\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1149\" _ref_sofa=\"1\" begin=\"38\" end=\"47\" value=\"graduate\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1167\" _ref_sofa=\"1\" begin=\"48\" end=\"52\" value=\"from\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1193\" _ref_sofa=\"1\" begin=\"53\" end=\"60\" value=\"Russian\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1203\" _ref_sofa=\"1\" begin=\"61\" end=\"68\" value=\"Academy\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1225\" _ref_sofa=\"1\" begin=\"69\" end=\"71\" value=\"of\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1243\" _ref_sofa=\"1\" begin=\"72\" end=\"79\" value=\"Theatre\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1253\" _ref_sofa=\"1\" begin=\"80\" end=\"84\" value=\"Arts\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1287\" _ref_sofa=\"1\" begin=\"85\" end=\"87\" value=\"as\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1305\" _ref_sofa=\"1\" begin=\"88\" end=\"93\" value=\"stage\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1315\" _ref_sofa=\"1\" begin=\"94\" end=\"102\" value=\"director\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"1338\" _ref_sofa=\"1\" begin=\"102\" end=\"103\" value=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagsetDescription _indexed=\"1\" _id=\"292\" _ref_sofa=\"1\" begin=\"0\" end=\"103\" layer=\"de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS\" name=\"ptb\" _ref_tags=\"391\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagsetDescription _indexed=\"1\" _id=\"539\" _ref_sofa=\"1\" begin=\"0\" end=\"103\" layer=\"de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency\" name=\"stanford\" _ref_tags=\"646\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagsetDescription _indexed=\"1\" _id=\"824\" _ref_sofa=\"1\" begin=\"0\" end=\"103\" layer=\"de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.Constituent\" name=\"ptb\" _ref_tags=\"885\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"439\" _ref_sofa=\"1\" begin=\"0\" end=\"6\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"459\" _ref_sofa=\"1\" begin=\"19\" end=\"25\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"494\" _ref_sofa=\"1\" begin=\"53\" end=\"60\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"499\" _ref_sofa=\"1\" begin=\"61\" end=\"68\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"509\" _ref_sofa=\"1\" begin=\"72\" end=\"79\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"514\" _ref_sofa=\"1\" begin=\"80\" end=\"84\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed=\"1\" _id=\"444\" _ref_sofa=\"1\" begin=\"7\" end=\"10\" PosValue=\"VBD\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed=\"1\" _id=\"449\" _ref_sofa=\"1\" begin=\"11\" end=\"15\" PosValue=\"VBN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed=\"1\" _id=\"484\" _ref_sofa=\"1\" begin=\"38\" end=\"47\" PosValue=\"VBD\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed=\"1\" _id=\"454\" _ref_sofa=\"1\" begin=\"16\" end=\"18\" PosValue=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed=\"1\" _id=\"469\" _ref_sofa=\"1\" begin=\"27\" end=\"29\" PosValue=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed=\"1\" _id=\"489\" _ref_sofa=\"1\" begin=\"48\" end=\"52\" PosValue=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed=\"1\" _id=\"504\" _ref_sofa=\"1\" begin=\"69\" end=\"71\" PosValue=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed=\"1\" _id=\"519\" _ref_sofa=\"1\" begin=\"85\" end=\"87\" PosValue=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed=\"1\" _id=\"464\" _ref_sofa=\"1\" begin=\"25\" end=\"26\" PosValue=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed=\"1\" _id=\"534\" _ref_sofa=\"1\" begin=\"102\" end=\"103\" PosValue=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD _indexed=\"1\" _id=\"474\" _ref_sofa=\"1\" begin=\"30\" end=\"34\" PosValue=\"CD\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PR _indexed=\"1\" _id=\"479\" _ref_sofa=\"1\" begin=\"35\" end=\"37\" PosValue=\"PRP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed=\"1\" _id=\"524\" _ref_sofa=\"1\" begin=\"88\" end=\"93\" PosValue=\"NN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed=\"1\" _id=\"529\" _ref_sofa=\"1\" begin=\"94\" end=\"102\" PosValue=\"NN\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"698\" _ref_sofa=\"1\" begin=\"0\" end=\"6\" _ref_Governor=\"40\" _ref_Dependent=\"24\" DependencyType=\"nsubjpass\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"705\" _ref_sofa=\"1\" begin=\"7\" end=\"10\" _ref_Governor=\"40\" _ref_Dependent=\"32\" DependencyType=\"auxpass\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"712\" _ref_sofa=\"1\" begin=\"16\" end=\"18\" _ref_Governor=\"40\" _ref_Dependent=\"48\" DependencyType=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"719\" _ref_sofa=\"1\" begin=\"19\" end=\"25\" _ref_Governor=\"48\" _ref_Dependent=\"56\" DependencyType=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"726\" _ref_sofa=\"1\" begin=\"25\" end=\"26\" _ref_Governor=\"40\" _ref_Dependent=\"64\" DependencyType=\"punct\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"733\" _ref_sofa=\"1\" begin=\"27\" end=\"29\" _ref_Governor=\"96\" _ref_Dependent=\"72\" DependencyType=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"740\" _ref_sofa=\"1\" begin=\"30\" end=\"34\" _ref_Governor=\"72\" _ref_Dependent=\"80\" DependencyType=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"747\" _ref_sofa=\"1\" begin=\"35\" end=\"37\" _ref_Governor=\"96\" _ref_Dependent=\"88\" DependencyType=\"nsubj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"754\" _ref_sofa=\"1\" begin=\"48\" end=\"52\" _ref_Governor=\"96\" _ref_Dependent=\"104\" DependencyType=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"761\" _ref_sofa=\"1\" begin=\"53\" end=\"60\" _ref_Governor=\"120\" _ref_Dependent=\"112\" DependencyType=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"768\" _ref_sofa=\"1\" begin=\"61\" end=\"68\" _ref_Governor=\"104\" _ref_Dependent=\"120\" DependencyType=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"775\" _ref_sofa=\"1\" begin=\"69\" end=\"71\" _ref_Governor=\"120\" _ref_Dependent=\"128\" DependencyType=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"782\" _ref_sofa=\"1\" begin=\"72\" end=\"79\" _ref_Governor=\"144\" _ref_Dependent=\"136\" DependencyType=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"789\" _ref_sofa=\"1\" begin=\"80\" end=\"84\" _ref_Governor=\"128\" _ref_Dependent=\"144\" DependencyType=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"796\" _ref_sofa=\"1\" begin=\"85\" end=\"87\" _ref_Governor=\"96\" _ref_Dependent=\"152\" DependencyType=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"803\" _ref_sofa=\"1\" begin=\"88\" end=\"93\" _ref_Governor=\"168\" _ref_Dependent=\"160\" DependencyType=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"810\" _ref_sofa=\"1\" begin=\"94\" end=\"102\" _ref_Governor=\"152\" _ref_Dependent=\"168\" DependencyType=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"817\" _ref_sofa=\"1\" begin=\"102\" end=\"103\" _ref_Governor=\"96\" _ref_Dependent=\"176\" DependencyType=\"punct\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.NP _indexed=\"1\" _id=\"930\" _ref_sofa=\"1\" begin=\"0\" end=\"6\" constituentType=\"NP\" _ref_parent=\"922\" _ref_children=\"948\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.NP _indexed=\"1\" _id=\"1005\" _ref_sofa=\"1\" begin=\"19\" end=\"25\" constituentType=\"NP\" _ref_parent=\"987\" _ref_children=\"1023\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.NP _indexed=\"1\" _id=\"1090\" _ref_sofa=\"1\" begin=\"30\" end=\"34\" constituentType=\"NP\" _ref_parent=\"1072\" _ref_children=\"1108\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.NP _indexed=\"1\" _id=\"1115\" _ref_sofa=\"1\" begin=\"35\" end=\"37\" constituentType=\"NP\" _ref_parent=\"1064\" _ref_children=\"1133\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.NP _indexed=\"1\" _id=\"1172\" _ref_sofa=\"1\" begin=\"53\" end=\"84\" constituentType=\"NP\" _ref_parent=\"1154\" _ref_children=\"1266\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.NP _indexed=\"1\" _id=\"1180\" _ref_sofa=\"1\" begin=\"53\" end=\"68\" constituentType=\"NP\" _ref_parent=\"1172\" _ref_children=\"1208\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.NP _indexed=\"1\" _id=\"1230\" _ref_sofa=\"1\" begin=\"72\" end=\"84\" constituentType=\"NP\" _ref_parent=\"1212\" _ref_children=\"1258\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.NP _indexed=\"1\" _id=\"1292\" _ref_sofa=\"1\" begin=\"88\" end=\"102\" constituentType=\"NP\" _ref_parent=\"1274\" _ref_children=\"1320\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.PP _indexed=\"1\" _id=\"987\" _ref_sofa=\"1\" begin=\"16\" end=\"25\" constituentType=\"PP\" _ref_parent=\"969\" _ref_children=\"1026\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.PP _indexed=\"1\" _id=\"1072\" _ref_sofa=\"1\" begin=\"27\" end=\"34\" constituentType=\"PP\" _ref_parent=\"1064\" _ref_children=\"1111\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.PP _indexed=\"1\" _id=\"1154\" _ref_sofa=\"1\" begin=\"48\" end=\"84\" constituentType=\"PP\" _ref_parent=\"1136\" _ref_children=\"1270\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.PP _indexed=\"1\" _id=\"1212\" _ref_sofa=\"1\" begin=\"69\" end=\"84\" constituentType=\"PP\" _ref_parent=\"1172\" _ref_children=\"1262\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.PP _indexed=\"1\" _id=\"1274\" _ref_sofa=\"1\" begin=\"85\" end=\"102\" constituentType=\"PP\" _ref_parent=\"1136\" _ref_children=\"1324\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.VP _indexed=\"1\" _id=\"951\" _ref_sofa=\"1\" begin=\"7\" end=\"25\" constituentType=\"VP\" _ref_parent=\"922\" _ref_children=\"1034\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.VP _indexed=\"1\" _id=\"969\" _ref_sofa=\"1\" begin=\"11\" end=\"25\" constituentType=\"VP\" _ref_parent=\"951\" _ref_children=\"1030\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.VP _indexed=\"1\" _id=\"1136\" _ref_sofa=\"1\" begin=\"38\" end=\"102\" constituentType=\"VP\" _ref_parent=\"1064\" _ref_children=\"1328\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.S _indexed=\"1\" _id=\"922\" _ref_sofa=\"1\" begin=\"0\" end=\"26\" constituentType=\"S\" _ref_parent=\"914\" _ref_children=\"1048\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.S _indexed=\"1\" _id=\"1064\" _ref_sofa=\"1\" begin=\"27\" end=\"103\" constituentType=\"S\" _ref_parent=\"1056\" _ref_children=\"1343\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.ROOT _indexed=\"1\" _id=\"914\" _ref_sofa=\"1\" begin=\"0\" end=\"26\" constituentType=\"ROOT\" _ref_children=\"1053\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.ROOT _indexed=\"1\" _id=\"1056\" _ref_sofa=\"1\" begin=\"27\" end=\"103\" constituentType=\"ROOT\" _ref_children=\"1349\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.Person _indexed=\"1\" _id=\"1352\" _ref_sofa=\"1\" begin=\"0\" end=\"6\" value=\"PERSON\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.Location _indexed=\"1\" _id=\"1357\" _ref_sofa=\"1\" begin=\"19\" end=\"25\" value=\"LOCATION\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.Organization _indexed=\"1\" _id=\"1362\" _ref_sofa=\"1\" begin=\"53\" end=\"84\" value=\"ORGANIZATION\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"1374\" _ref_sofa=\"1\" _ref_first=\"1367\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"1384\" _ref_sofa=\"1\" _ref_first=\"1377\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"1394\" _ref_sofa=\"1\" _ref_first=\"1387\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"1411\" _ref_sofa=\"1\" _ref_first=\"1404\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"1421\" _ref_sofa=\"1\" _ref_first=\"1414\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"1431\" _ref_sofa=\"1\" _ref_first=\"1424\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"1367\" _ref_sofa=\"1\" begin=\"0\" end=\"6\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"1377\" _ref_sofa=\"1\" begin=\"19\" end=\"25\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"1387\" _ref_sofa=\"1\" begin=\"30\" end=\"34\" _ref_next=\"1397\" referenceType=\"NOMINAL\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"1397\" _ref_sofa=\"1\" begin=\"35\" end=\"37\" referenceType=\"PRONOMINAL\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"1404\" _ref_sofa=\"1\" begin=\"53\" end=\"84\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"1414\" _ref_sofa=\"1\" begin=\"72\" end=\"84\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"1424\" _ref_sofa=\"1\" begin=\"88\" end=\"102\" referenceType=\"NOMINAL\"/><uima.cas.FSArray _id=\"1349\" size=\"1\"><i>1064</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1053\" size=\"1\"><i>922</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1343\" size=\"4\"><i>1072</i><i>1115</i><i>1136</i><i>176</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1048\" size=\"3\"><i>930</i><i>951</i><i>64</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1328\" size=\"3\"><i>96</i><i>1154</i><i>1274</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1030\" size=\"2\"><i>40</i><i>987</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1034\" size=\"2\"><i>32</i><i>969</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1324\" size=\"2\"><i>152</i><i>1292</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1262\" size=\"2\"><i>128</i><i>1230</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1270\" size=\"2\"><i>104</i><i>1172</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1111\" size=\"2\"><i>72</i><i>1090</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1026\" size=\"2\"><i>48</i><i>1005</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1320\" size=\"2\"><i>160</i><i>168</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1258\" size=\"2\"><i>136</i><i>144</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1208\" size=\"2\"><i>112</i><i>120</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1266\" size=\"2\"><i>1180</i><i>1212</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1133\" size=\"1\"><i>88</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1108\" size=\"1\"><i>80</i></uima.cas.FSArray><uima.cas.FSArray _id=\"1023\" size=\"1\"><i>56</i></uima.cas.FSArray><uima.cas.FSArray _id=\"948\" size=\"1\"><i>24</i></uima.cas.FSArray><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"883\" name=\"X\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"881\" name=\"WHPP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"879\" name=\"WHNP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"877\" name=\"WHADVP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"875\" name=\"WHADJP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"873\" name=\"VP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"871\" name=\"UCP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"869\" name=\"SQ\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"867\" name=\"SINV\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"865\" name=\"SBARQ\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"863\" name=\"SBAR\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"861\" name=\"S\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"859\" name=\"RRC\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"857\" name=\"ROOT\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"855\" name=\"QP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"853\" name=\"PRT\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"851\" name=\"PRN\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"849\" name=\"PP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"847\" name=\"NX\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"845\" name=\"NP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"843\" name=\"NAC\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"841\" name=\"LST\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"839\" name=\"INTJ\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"837\" name=\"FRAG\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"835\" name=\"CONJP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"833\" name=\"ADVP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"831\" name=\"ADJP\"/><uima.cas.FSArray _id=\"885\" size=\"27\"><i>831</i><i>833</i><i>835</i><i>837</i><i>839</i><i>841</i><i>843</i><i>845</i><i>847</i><i>849</i><i>851</i><i>853</i><i>855</i><i>857</i><i>859</i><i>861</i><i>863</i><i>865</i><i>867</i><i>869</i><i>871</i><i>873</i><i>875</i><i>877</i><i>879</i><i>881</i><i>883</i></uima.cas.FSArray><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"644\" name=\"xcomp\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"642\" name=\"root\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"640\" name=\"rcmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"638\" name=\"quantmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"636\" name=\"punct\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"634\" name=\"prt\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"632\" name=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"630\" name=\"predet\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"628\" name=\"preconj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"626\" name=\"possessive\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"624\" name=\"poss\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"622\" name=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"620\" name=\"pcomp\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"618\" name=\"partmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"616\" name=\"parataxis\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"614\" name=\"oprd\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"612\" name=\"number\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"610\" name=\"num\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"608\" name=\"nsubjpass\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"606\" name=\"nsubj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"604\" name=\"npadvmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"602\" name=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"600\" name=\"nmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"598\" name=\"neg\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"596\" name=\"meta\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"594\" name=\"mark\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"592\" name=\"iobj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"590\" name=\"intj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"588\" name=\"infmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"586\" name=\"hyph\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"584\" name=\"hmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"582\" name=\"expl\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"580\" name=\"dobj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"578\" name=\"det\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"576\" name=\"dep\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"574\" name=\"csubjpass\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"572\" name=\"csubj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"570\" name=\"conj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"568\" name=\"complm\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"566\" name=\"ccomp\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"564\" name=\"cc\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"562\" name=\"auxpass\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"560\" name=\"aux\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"558\" name=\"attr\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"556\" name=\"appos\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"554\" name=\"amod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"552\" name=\"agent\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"550\" name=\"advmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"548\" name=\"advcl\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"546\" name=\"acomp\"/><uima.cas.FSArray _id=\"646\" size=\"50\"><i>546</i><i>548</i><i>550</i><i>552</i><i>554</i><i>556</i><i>558</i><i>560</i><i>562</i><i>564</i><i>566</i><i>568</i><i>570</i><i>572</i><i>574</i><i>576</i><i>578</i><i>580</i><i>582</i><i>584</i><i>586</i><i>588</i><i>590</i><i>592</i><i>594</i><i>596</i><i>598</i><i>600</i><i>602</i><i>604</i><i>606</i><i>608</i><i>610</i><i>612</i><i>614</i><i>616</i><i>618</i><i>620</i><i>622</i><i>624</i><i>626</i><i>628</i><i>630</i><i>632</i><i>634</i><i>636</i><i>638</i><i>640</i><i>642</i><i>644</i></uima.cas.FSArray><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"389\" name=\"``\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"387\" name=\"WRB\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"385\" name=\"WP$\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"383\" name=\"WP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"381\" name=\"WDT\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"379\" name=\"VBZ\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"377\" name=\"VBP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"375\" name=\"VBN\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"373\" name=\"VBG\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"371\" name=\"VBD\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"369\" name=\"VB\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"367\" name=\"UH\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"365\" name=\"TO\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"363\" name=\"SYM\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"361\" name=\"RP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"359\" name=\"RBS\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"357\" name=\"RBR\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"355\" name=\"RB\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"353\" name=\"PRP$\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"351\" name=\"PRP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"349\" name=\"POS\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"347\" name=\"PDT\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"345\" name=\"NNS\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"343\" name=\"NNPS\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"341\" name=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"339\" name=\"NN\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"337\" name=\"MD\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"335\" name=\"LS\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"333\" name=\"JJS\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"331\" name=\"JJR\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"329\" name=\"JJ\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"327\" name=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"325\" name=\"FW\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"323\" name=\"EX\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"321\" name=\"DT\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"319\" name=\"CD\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"317\" name=\"CC\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"315\" name=\":\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"313\" name=\".$$.\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"311\" name=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"309\" name=\"-RRB-\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"307\" name=\"-LRB-\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"305\" name=\",\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"303\" name=\"''\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"301\" name=\"$\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"299\" name=\"#\"/><uima.cas.FSArray _id=\"391\" size=\"46\"><i>299</i><i>301</i><i>303</i><i>305</i><i>307</i><i>309</i><i>311</i><i>313</i><i>315</i><i>317</i><i>319</i><i>321</i><i>323</i><i>325</i><i>327</i><i>329</i><i>331</i><i>333</i><i>335</i><i>337</i><i>339</i><i>341</i><i>343</i><i>345</i><i>347</i><i>349</i><i>351</i><i>353</i><i>355</i><i>357</i><i>359</i><i>361</i><i>363</i><i>365</i><i>367</i><i>369</i><i>371</i><i>373</i><i>375</i><i>377</i><i>379</i><i>381</i><i>383</i><i>385</i><i>387</i><i>389</i></uima.cas.FSArray> </CAS> ";
+		final List<FoundFeature<Annotation>> exec = parse("Dmitry was born in Moscow. In 1993 he graduated from Russian Academy of Theatre Arts as stage director. ");
 
-        //final JCas cas = uimaxmlConverterHelper.deserialize(xml, JCasFactory.createJCas());
+		Assert.assertThat(exec.size(), is(4));
+		Assert.assertThat(exec.get(0).getEntity1().getCoveredText(), is("Dmitry"));
+		Assert.assertThat(exec.get(0).getEntity2().getCoveredText(), is("Moscow"));
 
-        Assert.assertThat(exec.size(), is(4));
-        Assert.assertThat(exec.get(0).getEntity1().getCoveredText(), is("Dmitry"));
-        Assert.assertThat(exec.get(0).getEntity2().getCoveredText(), is("Moscow"));
+		Assert.assertThat(exec.get(3).getEntity1().getCoveredText(), is("Russian Academy of Theatre Arts"));
+		Assert.assertThat(exec.get(3).getEntity2().getCoveredText(), is("stage director"));
 
-        Assert.assertThat(exec.get(3).getEntity1().getCoveredText(), is("Russian Academy of Theatre Arts"));
-        Assert.assertThat(exec.get(3).getEntity2().getCoveredText(), is("stage director"));
+	}
 
-    }
+	@Test
+	public void testFindOf() throws Exception {
 
-    @Test
-    public void testFindOf() throws Exception {
+		final List<FoundFeature<Annotation>> exec = parse(
+			"Adam received a Bachelor of Science in commerce and business administration from the University of Illinois at Urbana-Champaign. He also holds a Master of Business Administration degree.");
 
-        final List<FoundFeature<Annotation>> exec = parse("Adam received a Bachelor of Science in commerce and business administration from the University of Illinois at Urbana-Champaign. He also holds a Master of Business Administration degree.");
+		Assert.assertThat(exec.size(), is(16));
+		Assert.assertThat(exec.get(0).getEntity1().getCoveredText(), is("Adam"));
+		Assert.assertThat(exec.get(0).getEntity2().getCoveredText(), is("Bachelor of Science"));
 
-        Assert.assertThat(exec.size(), is(16));
-        Assert.assertThat(exec.get(0).getEntity1().getCoveredText(), is("Adam"));
-        Assert.assertThat(exec.get(0).getEntity2().getCoveredText(), is("Bachelor of Science"));
+		LOG.info(Joiner.on("\n").join(exec));
 
-        LOG.info(Joiner.on("\n").join(exec));
+	}
 
-    }
+	private List<FoundFeature<Annotation>> parse(String text) throws Exception {
+		JCas cas = detectorPipeline.exec(Lists.newArrayList(text, "id"));
+		return detect(cas);
+	}
 
-    private List<FoundFeature<Annotation>> parse(String text) throws Exception {
-        JCas cas = detectorPipeline.exec(Lists.newArrayList(text, "id"));
-        return detect(cas);
-    }
+	private List<FoundFeature<Annotation>> parseFromXML(String xml) throws Exception {
+		JCas deserialize = uimaxmlConverterHelper.deserialize(xml, JCasFactory.createJCas());
+		LOG.info(deserialize.getDocumentText());
 
-    private List<FoundFeature<Annotation>> parseFromXML(String xml) throws Exception {
-        JCas deserialize = uimaxmlConverterHelper.deserialize(xml, JCasFactory.createJCas());
-        LOG.info(deserialize.getDocumentText());
+		return detect(deserialize);
+	}
 
-        return detect(deserialize);
-    }
+	private List<FoundFeature<Annotation>> detect(JCas cas) throws Exception {
+		List<FoundFeature<Annotation>> exec = featureExtractor.exec(cas);
 
-    private List<FoundFeature<Annotation>> detect(JCas cas) throws Exception {
-        List<FoundFeature<Annotation>> exec = featureExtractor.exec(cas);
+		LOG.info(Strings.repeat("-", 50));
+		LOG.info("Found features \n{}", Joiner.on("\n").join(exec));
 
-        LOG.info(Strings.repeat("-", 50));
-        LOG.info("Found features \n{}",Joiner.on("\n").join(exec));
+		return exec;
+	}
 
-        return exec;
-    }
+	@Test
+	public void testParse1() throws Throwable {
 
-    @Test
-    public void testParse1() throws Throwable {
+		final List<FoundFeature<Annotation>> exec = parse("Rob Chandra is an early investor in Kovio.");
 
-        final List<FoundFeature<Annotation>> exec = parse("Rob Chandra is an early investor in Kovio.");
+		Assert.assertThat(exec.size(), is(2));
+		Assert.assertThat(exec.get(0).getEntity1().getCoveredText(), is("Rob Chandra"));
+		Assert.assertThat(exec.get(0).getEntity2().getCoveredText(), is("Kovio"));
 
-        Assert.assertThat(exec.size(), is(2));
-        Assert.assertThat(exec.get(0).getEntity1().getCoveredText(), is("Rob Chandra"));
-        Assert.assertThat(exec.get(0).getEntity2().getCoveredText(), is("Kovio"));
+		Assert.assertThat(exec.get(1).getEntity1().getCoveredText(), is("Rob Chandra"));
+		Assert.assertThat(exec.get(1).getEntity2().getCoveredText(), is("Kovio"));
 
-        Assert.assertThat(exec.get(1).getEntity1().getCoveredText(), is("Rob Chandra"));
-        Assert.assertThat(exec.get(1).getEntity2().getCoveredText(), is("Kovio"));
+	}
 
-    }
+	@Test
+	public void testParse2() throws Throwable {
 
-    @Test
-    public void testParse2() throws Throwable {
+		final List<FoundFeature<Annotation>> exec = parse(
+			"Martin Blank is an American glass artist who was born August 29, 1962. He received a BFA degree from the Rhode Island School of Design in 1984 with a major in glass.");
+	}
 
-        final List<FoundFeature<Annotation>> exec = parse("Martin Blank is an American glass artist who was born August 29, 1962. He received a BFA degree from the Rhode Island School of Design in 1984 with a major in glass.");
-    }
+	@Test
+	public void testParse3() throws Throwable {
 
-    @Test
-    public void testParse3() throws Throwable {
+		final List<FoundFeature<Annotation>> exec = parse("The cognitive model was developed by Aaron Beck at the University of Pennsylvania");
 
-        final List<FoundFeature<Annotation>> exec = parse("The cognitive model was developed by Aaron Beck at the University of Pennsylvania");
+		Assert.assertThat(exec.size(), is(3));
+		Assert.assertThat(exec.get(0).getEntity1().getCoveredText(), is("model"));
+		Assert.assertThat(exec.get(1).getEntity2().getCoveredText(), is("University of Pennsylvania"));
+		Assert.assertThat(exec.get(2).getEntity1().getCoveredText(), is("Aaron Beck"));
 
-        Assert.assertThat(exec.size(), is(3));
-        Assert.assertThat(exec.get(0).getEntity1().getCoveredText(), is("model"));
-        Assert.assertThat(exec.get(1).getEntity2().getCoveredText(), is("University of Pennsylvania"));
-        Assert.assertThat(exec.get(2).getEntity1().getCoveredText(), is("Aaron Beck"));
+	}
 
-    }
+	@Test
+	public void testParse4() throws Throwable {
 
-    @Test
-    public void testParse4() throws Throwable {
 
+		final List<FoundFeature<Annotation>> exec = parse("In June 2003 André Previn again performed the work together with the London Symphony Orchestra and original cast.");
 
-        final List<FoundFeature<Annotation>> exec = parse("In June 2003 André Previn again performed the work together with the London Symphony Orchestra and original cast.");
+		Assert.assertThat(exec.size(), is(6));
+		Assert.assertThat(exec.get(0).getEntity1().getCoveredText(), is("André Previn"));
+		Assert.assertThat(exec.get(0).getEntity2().getCoveredText(), is("work"));
+		Assert.assertThat(exec.get(1).getEntity1().getCoveredText(), is("André Previn"));
+		Assert.assertThat(exec.get(1).getEntity2().getCoveredText(), is("London Symphony Orchestra"));
 
-        Assert.assertThat(exec.size(), is(6));
-        Assert.assertThat(exec.get(0).getEntity1().getCoveredText(), is("André Previn"));
-        Assert.assertThat(exec.get(0).getEntity2().getCoveredText(), is("work"));
-        Assert.assertThat(exec.get(1).getEntity1().getCoveredText(), is("André Previn"));
-        Assert.assertThat(exec.get(1).getEntity2().getCoveredText(), is("London Symphony Orchestra"));
+	}
 
-    }
+	@Test
+	public void testSonOf() throws Exception {
 
-    @Test
-    public void testSonOf() throws Exception {
+		String xml = Resources.toString(Resources.getResource("sampleCAS/sonofcas.xml"), Charsets.UTF_8);
 
-        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <CAS version=\"2\"><uima.cas.Sofa _indexed=\"0\" _id=\"1\" sofaNum=\"1\" sofaID=\"_InitialView\" mimeType=\"text\" sofaString=\"Lewis Yelland Andrews (b. 1896 in Sydney; d. 26 September 1937 in Nazareth). He was a son of A.E. Andrews from Sydney. Andrews had fought in World War I for the Australian Imperial Forces.\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData _indexed=\"1\" _id=\"13\" _ref_sofa=\"1\" begin=\"0\" end=\"188\" language=\"en\" documentUri=\"id\" isLastSegment=\"false\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"32\" _ref_sofa=\"1\" begin=\"0\" end=\"5\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"50\" _ref_sofa=\"1\" begin=\"6\" end=\"13\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"68\" _ref_sofa=\"1\" begin=\"14\" end=\"21\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"168\" _ref_sofa=\"1\" begin=\"34\" end=\"40\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"245\" _ref_sofa=\"1\" begin=\"48\" end=\"57\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"304\" _ref_sofa=\"1\" begin=\"66\" end=\"74\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"453\" _ref_sofa=\"1\" begin=\"93\" end=\"97\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"471\" _ref_sofa=\"1\" begin=\"98\" end=\"105\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"512\" _ref_sofa=\"1\" begin=\"111\" end=\"117\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"553\" _ref_sofa=\"1\" begin=\"119\" end=\"126\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"630\" _ref_sofa=\"1\" begin=\"141\" end=\"146\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"648\" _ref_sofa=\"1\" begin=\"147\" end=\"150\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"666\" _ref_sofa=\"1\" begin=\"151\" end=\"152\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"743\" _ref_sofa=\"1\" begin=\"172\" end=\"180\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP _indexed=\"1\" _id=\"766\" _ref_sofa=\"1\" begin=\"181\" end=\"187\" PosValue=\"NNP\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"37\" _ref_sofa=\"1\" begin=\"0\" end=\"5\" value=\"Lewis\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"55\" _ref_sofa=\"1\" begin=\"6\" end=\"13\" value=\"Yelland\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"73\" _ref_sofa=\"1\" begin=\"14\" end=\"21\" value=\"Andrews\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"91\" _ref_sofa=\"1\" begin=\"22\" end=\"23\" value=\"-lrb-\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"114\" _ref_sofa=\"1\" begin=\"23\" end=\"25\" value=\"b.\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"132\" _ref_sofa=\"1\" begin=\"26\" end=\"30\" value=\"1896\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"150\" _ref_sofa=\"1\" begin=\"31\" end=\"33\" value=\"in\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"173\" _ref_sofa=\"1\" begin=\"34\" end=\"40\" value=\"Sydney\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"191\" _ref_sofa=\"1\" begin=\"40\" end=\"41\" value=\";\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"214\" _ref_sofa=\"1\" begin=\"42\" end=\"44\" value=\"d.\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"232\" _ref_sofa=\"1\" begin=\"45\" end=\"47\" value=\"26\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"250\" _ref_sofa=\"1\" begin=\"48\" end=\"57\" value=\"September\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"268\" _ref_sofa=\"1\" begin=\"58\" end=\"62\" value=\"1937\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"286\" _ref_sofa=\"1\" begin=\"63\" end=\"65\" value=\"in\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"309\" _ref_sofa=\"1\" begin=\"66\" end=\"74\" value=\"Nazareth\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"327\" _ref_sofa=\"1\" begin=\"74\" end=\"75\" value=\"-rrb-\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"350\" _ref_sofa=\"1\" begin=\"75\" end=\"76\" value=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"368\" _ref_sofa=\"1\" begin=\"77\" end=\"79\" value=\"he\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"386\" _ref_sofa=\"1\" begin=\"80\" end=\"83\" value=\"be\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"404\" _ref_sofa=\"1\" begin=\"84\" end=\"85\" value=\"a\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"422\" _ref_sofa=\"1\" begin=\"86\" end=\"89\" value=\"son\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"440\" _ref_sofa=\"1\" begin=\"90\" end=\"92\" value=\"of\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"458\" _ref_sofa=\"1\" begin=\"93\" end=\"97\" value=\"A.E.\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"476\" _ref_sofa=\"1\" begin=\"98\" end=\"105\" value=\"Andrews\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"494\" _ref_sofa=\"1\" begin=\"106\" end=\"110\" value=\"from\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"517\" _ref_sofa=\"1\" begin=\"111\" end=\"117\" value=\"Sydney\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"535\" _ref_sofa=\"1\" begin=\"117\" end=\"118\" value=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"558\" _ref_sofa=\"1\" begin=\"119\" end=\"126\" value=\"Andrews\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"576\" _ref_sofa=\"1\" begin=\"127\" end=\"130\" value=\"have\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"599\" _ref_sofa=\"1\" begin=\"131\" end=\"137\" value=\"fight\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"617\" _ref_sofa=\"1\" begin=\"138\" end=\"140\" value=\"in\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"635\" _ref_sofa=\"1\" begin=\"141\" end=\"146\" value=\"World\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"653\" _ref_sofa=\"1\" begin=\"147\" end=\"150\" value=\"War\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"671\" _ref_sofa=\"1\" begin=\"151\" end=\"152\" value=\"I\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"694\" _ref_sofa=\"1\" begin=\"153\" end=\"156\" value=\"for\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"712\" _ref_sofa=\"1\" begin=\"157\" end=\"160\" value=\"the\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"730\" _ref_sofa=\"1\" begin=\"161\" end=\"171\" value=\"australian\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"748\" _ref_sofa=\"1\" begin=\"172\" end=\"180\" value=\"Imperial\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"771\" _ref_sofa=\"1\" begin=\"181\" end=\"187\" value=\"Forces\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma _indexed=\"1\" _id=\"789\" _ref_sofa=\"1\" begin=\"187\" end=\"188\" value=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"24\" _ref_sofa=\"1\" begin=\"0\" end=\"5\" _ref_lemma=\"37\" _ref_pos=\"32\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"42\" _ref_sofa=\"1\" begin=\"6\" end=\"13\" _ref_lemma=\"55\" _ref_pos=\"50\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"60\" _ref_sofa=\"1\" begin=\"14\" end=\"21\" _ref_lemma=\"73\" _ref_pos=\"68\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"78\" _ref_sofa=\"1\" begin=\"22\" end=\"23\" _ref_lemma=\"91\" _ref_pos=\"86\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"101\" _ref_sofa=\"1\" begin=\"23\" end=\"25\" _ref_lemma=\"114\" _ref_pos=\"109\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"119\" _ref_sofa=\"1\" begin=\"26\" end=\"30\" _ref_lemma=\"132\" _ref_pos=\"127\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"137\" _ref_sofa=\"1\" begin=\"31\" end=\"33\" _ref_lemma=\"150\" _ref_pos=\"145\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"160\" _ref_sofa=\"1\" begin=\"34\" end=\"40\" _ref_lemma=\"173\" _ref_pos=\"168\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"178\" _ref_sofa=\"1\" begin=\"40\" end=\"41\" _ref_lemma=\"191\" _ref_pos=\"186\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"201\" _ref_sofa=\"1\" begin=\"42\" end=\"44\" _ref_lemma=\"214\" _ref_pos=\"209\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"219\" _ref_sofa=\"1\" begin=\"45\" end=\"47\" _ref_lemma=\"232\" _ref_pos=\"227\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"237\" _ref_sofa=\"1\" begin=\"48\" end=\"57\" _ref_lemma=\"250\" _ref_pos=\"245\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"255\" _ref_sofa=\"1\" begin=\"58\" end=\"62\" _ref_lemma=\"268\" _ref_pos=\"263\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"273\" _ref_sofa=\"1\" begin=\"63\" end=\"65\" _ref_lemma=\"286\" _ref_pos=\"281\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"296\" _ref_sofa=\"1\" begin=\"66\" end=\"74\" _ref_lemma=\"309\" _ref_pos=\"304\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"314\" _ref_sofa=\"1\" begin=\"74\" end=\"75\" _ref_lemma=\"327\" _ref_pos=\"322\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"337\" _ref_sofa=\"1\" begin=\"75\" end=\"76\" _ref_lemma=\"350\" _ref_pos=\"345\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"355\" _ref_sofa=\"1\" begin=\"77\" end=\"79\" _ref_lemma=\"368\" _ref_pos=\"363\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"373\" _ref_sofa=\"1\" begin=\"80\" end=\"83\" _ref_lemma=\"386\" _ref_pos=\"381\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"391\" _ref_sofa=\"1\" begin=\"84\" end=\"85\" _ref_lemma=\"404\" _ref_pos=\"399\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"409\" _ref_sofa=\"1\" begin=\"86\" end=\"89\" _ref_lemma=\"422\" _ref_pos=\"417\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"427\" _ref_sofa=\"1\" begin=\"90\" end=\"92\" _ref_lemma=\"440\" _ref_pos=\"435\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"445\" _ref_sofa=\"1\" begin=\"93\" end=\"97\" _ref_lemma=\"458\" _ref_pos=\"453\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"463\" _ref_sofa=\"1\" begin=\"98\" end=\"105\" _ref_lemma=\"476\" _ref_pos=\"471\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"481\" _ref_sofa=\"1\" begin=\"106\" end=\"110\" _ref_lemma=\"494\" _ref_pos=\"489\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"504\" _ref_sofa=\"1\" begin=\"111\" end=\"117\" _ref_lemma=\"517\" _ref_pos=\"512\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"522\" _ref_sofa=\"1\" begin=\"117\" end=\"118\" _ref_lemma=\"535\" _ref_pos=\"530\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"545\" _ref_sofa=\"1\" begin=\"119\" end=\"126\" _ref_lemma=\"558\" _ref_pos=\"553\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"563\" _ref_sofa=\"1\" begin=\"127\" end=\"130\" _ref_lemma=\"576\" _ref_pos=\"571\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"586\" _ref_sofa=\"1\" begin=\"131\" end=\"137\" _ref_lemma=\"599\" _ref_pos=\"594\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"604\" _ref_sofa=\"1\" begin=\"138\" end=\"140\" _ref_lemma=\"617\" _ref_pos=\"612\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"622\" _ref_sofa=\"1\" begin=\"141\" end=\"146\" _ref_lemma=\"635\" _ref_pos=\"630\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"640\" _ref_sofa=\"1\" begin=\"147\" end=\"150\" _ref_lemma=\"653\" _ref_pos=\"648\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"658\" _ref_sofa=\"1\" begin=\"151\" end=\"152\" _ref_lemma=\"671\" _ref_pos=\"666\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"681\" _ref_sofa=\"1\" begin=\"153\" end=\"156\" _ref_lemma=\"694\" _ref_pos=\"689\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"699\" _ref_sofa=\"1\" begin=\"157\" end=\"160\" _ref_lemma=\"712\" _ref_pos=\"707\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"717\" _ref_sofa=\"1\" begin=\"161\" end=\"171\" _ref_lemma=\"730\" _ref_pos=\"725\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"735\" _ref_sofa=\"1\" begin=\"172\" end=\"180\" _ref_lemma=\"748\" _ref_pos=\"743\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"758\" _ref_sofa=\"1\" begin=\"181\" end=\"187\" _ref_lemma=\"771\" _ref_pos=\"766\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token _indexed=\"1\" _id=\"776\" _ref_sofa=\"1\" begin=\"187\" end=\"188\" _ref_lemma=\"789\" _ref_pos=\"784\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.O _indexed=\"1\" _id=\"86\" _ref_sofa=\"1\" begin=\"22\" end=\"23\" PosValue=\"-LRB-\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.O _indexed=\"1\" _id=\"109\" _ref_sofa=\"1\" begin=\"23\" end=\"25\" PosValue=\"FW\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.O _indexed=\"1\" _id=\"322\" _ref_sofa=\"1\" begin=\"74\" end=\"75\" PosValue=\"-RRB-\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.Person _indexed=\"1\" _id=\"96\" _ref_sofa=\"1\" begin=\"0\" end=\"21\" value=\"PERSON\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.Person _indexed=\"1\" _id=\"499\" _ref_sofa=\"1\" begin=\"93\" end=\"105\" value=\"PERSON\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.Person _indexed=\"1\" _id=\"581\" _ref_sofa=\"1\" begin=\"119\" end=\"126\" value=\"PERSON\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD _indexed=\"1\" _id=\"127\" _ref_sofa=\"1\" begin=\"26\" end=\"30\" PosValue=\"CD\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD _indexed=\"1\" _id=\"227\" _ref_sofa=\"1\" begin=\"45\" end=\"47\" PosValue=\"CD\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD _indexed=\"1\" _id=\"263\" _ref_sofa=\"1\" begin=\"58\" end=\"62\" PosValue=\"CD\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed=\"1\" _id=\"145\" _ref_sofa=\"1\" begin=\"31\" end=\"33\" PosValue=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed=\"1\" _id=\"281\" _ref_sofa=\"1\" begin=\"63\" end=\"65\" PosValue=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed=\"1\" _id=\"435\" _ref_sofa=\"1\" begin=\"90\" end=\"92\" PosValue=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed=\"1\" _id=\"489\" _ref_sofa=\"1\" begin=\"106\" end=\"110\" PosValue=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed=\"1\" _id=\"612\" _ref_sofa=\"1\" begin=\"138\" end=\"140\" PosValue=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP _indexed=\"1\" _id=\"689\" _ref_sofa=\"1\" begin=\"153\" end=\"156\" PosValue=\"IN\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.Date _indexed=\"1\" _id=\"155\" _ref_sofa=\"1\" begin=\"26\" end=\"30\" value=\"DATE\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.Date _indexed=\"1\" _id=\"291\" _ref_sofa=\"1\" begin=\"45\" end=\"62\" value=\"DATE\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed=\"1\" _id=\"186\" _ref_sofa=\"1\" begin=\"40\" end=\"41\" PosValue=\":\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed=\"1\" _id=\"209\" _ref_sofa=\"1\" begin=\"42\" end=\"44\" PosValue=\"SYM\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed=\"1\" _id=\"345\" _ref_sofa=\"1\" begin=\"75\" end=\"76\" PosValue=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed=\"1\" _id=\"530\" _ref_sofa=\"1\" begin=\"117\" end=\"118\" PosValue=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC _indexed=\"1\" _id=\"784\" _ref_sofa=\"1\" begin=\"187\" end=\"188\" PosValue=\".\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.Location _indexed=\"1\" _id=\"196\" _ref_sofa=\"1\" begin=\"34\" end=\"40\" value=\"LOCATION\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.Location _indexed=\"1\" _id=\"332\" _ref_sofa=\"1\" begin=\"66\" end=\"74\" value=\"LOCATION\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.Location _indexed=\"1\" _id=\"540\" _ref_sofa=\"1\" begin=\"111\" end=\"117\" value=\"LOCATION\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PR _indexed=\"1\" _id=\"363\" _ref_sofa=\"1\" begin=\"77\" end=\"79\" PosValue=\"PRP\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed=\"1\" _id=\"381\" _ref_sofa=\"1\" begin=\"80\" end=\"83\" PosValue=\"VBD\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed=\"1\" _id=\"571\" _ref_sofa=\"1\" begin=\"127\" end=\"130\" PosValue=\"VBD\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V _indexed=\"1\" _id=\"594\" _ref_sofa=\"1\" begin=\"131\" end=\"137\" PosValue=\"VBN\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ART _indexed=\"1\" _id=\"399\" _ref_sofa=\"1\" begin=\"84\" end=\"85\" PosValue=\"DT\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ART _indexed=\"1\" _id=\"707\" _ref_sofa=\"1\" begin=\"157\" end=\"160\" PosValue=\"DT\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NN _indexed=\"1\" _id=\"417\" _ref_sofa=\"1\" begin=\"86\" end=\"89\" PosValue=\"NN\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity _indexed=\"1\" _id=\"676\" _ref_sofa=\"1\" begin=\"141\" end=\"150\" value=\"MISC\"/><de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity _indexed=\"1\" _id=\"753\" _ref_sofa=\"1\" begin=\"161\" end=\"171\" value=\"MISC\"/><de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADJ _indexed=\"1\" _id=\"725\" _ref_sofa=\"1\" begin=\"161\" end=\"171\" PosValue=\"JJ\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence _indexed=\"1\" _id=\"794\" _ref_sofa=\"1\" begin=\"0\" end=\"76\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence _indexed=\"1\" _id=\"798\" _ref_sofa=\"1\" begin=\"77\" end=\"118\"/><de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence _indexed=\"1\" _id=\"802\" _ref_sofa=\"1\" begin=\"119\" end=\"188\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"813\" _ref_sofa=\"1\" _ref_first=\"806\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"830\" _ref_sofa=\"1\" _ref_first=\"823\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"840\" _ref_sofa=\"1\" _ref_first=\"833\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"864\" _ref_sofa=\"1\" _ref_first=\"857\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"874\" _ref_sofa=\"1\" _ref_first=\"867\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"884\" _ref_sofa=\"1\" _ref_first=\"877\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"894\" _ref_sofa=\"1\" _ref_first=\"887\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"904\" _ref_sofa=\"1\" _ref_first=\"897\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"921\" _ref_sofa=\"1\" _ref_first=\"914\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"931\" _ref_sofa=\"1\" _ref_first=\"924\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain _indexed=\"1\" _id=\"941\" _ref_sofa=\"1\" _ref_first=\"934\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"806\" _ref_sofa=\"1\" begin=\"34\" end=\"40\" _ref_next=\"816\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"816\" _ref_sofa=\"1\" begin=\"111\" end=\"117\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"823\" _ref_sofa=\"1\" begin=\"66\" end=\"74\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"833\" _ref_sofa=\"1\" begin=\"0\" end=\"76\" _ref_next=\"843\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"843\" _ref_sofa=\"1\" begin=\"77\" end=\"79\" _ref_next=\"850\" referenceType=\"PRONOMINAL\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"850\" _ref_sofa=\"1\" begin=\"84\" end=\"117\" referenceType=\"NOMINAL\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"857\" _ref_sofa=\"1\" begin=\"23\" end=\"74\" referenceType=\"NOMINAL\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"867\" _ref_sofa=\"1\" begin=\"26\" end=\"74\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"877\" _ref_sofa=\"1\" begin=\"45\" end=\"47\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"887\" _ref_sofa=\"1\" begin=\"48\" end=\"62\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"897\" _ref_sofa=\"1\" begin=\"93\" end=\"117\" _ref_next=\"907\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"907\" _ref_sofa=\"1\" begin=\"119\" end=\"126\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"914\" _ref_sofa=\"1\" begin=\"141\" end=\"150\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"924\" _ref_sofa=\"1\" begin=\"141\" end=\"187\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink _indexed=\"1\" _id=\"934\" _ref_sofa=\"1\" begin=\"157\" end=\"187\" referenceType=\"PROPER\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagsetDescription _indexed=\"1\" _id=\"944\" _ref_sofa=\"1\" begin=\"0\" end=\"188\" layer=\"de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency\" name=\"stanford\" _ref_tags=\"1051\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1103\" _ref_sofa=\"1\" begin=\"0\" end=\"5\" _ref_Governor=\"60\" _ref_Dependent=\"24\" DependencyType=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1110\" _ref_sofa=\"1\" begin=\"6\" end=\"13\" _ref_Governor=\"60\" _ref_Dependent=\"42\" DependencyType=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1117\" _ref_sofa=\"1\" begin=\"22\" end=\"23\" _ref_Governor=\"60\" _ref_Dependent=\"78\" DependencyType=\"punct\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1124\" _ref_sofa=\"1\" begin=\"23\" end=\"25\" _ref_Governor=\"119\" _ref_Dependent=\"101\" DependencyType=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1131\" _ref_sofa=\"1\" begin=\"26\" end=\"30\" _ref_Governor=\"60\" _ref_Dependent=\"119\" DependencyType=\"appos\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1138\" _ref_sofa=\"1\" begin=\"31\" end=\"33\" _ref_Governor=\"119\" _ref_Dependent=\"137\" DependencyType=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1145\" _ref_sofa=\"1\" begin=\"34\" end=\"40\" _ref_Governor=\"137\" _ref_Dependent=\"160\" DependencyType=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1152\" _ref_sofa=\"1\" begin=\"40\" end=\"41\" _ref_Governor=\"119\" _ref_Dependent=\"178\" DependencyType=\"punct\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1159\" _ref_sofa=\"1\" begin=\"42\" end=\"44\" _ref_Governor=\"237\" _ref_Dependent=\"201\" DependencyType=\"punct\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1166\" _ref_sofa=\"1\" begin=\"45\" end=\"47\" _ref_Governor=\"237\" _ref_Dependent=\"219\" DependencyType=\"num\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1173\" _ref_sofa=\"1\" begin=\"48\" end=\"57\" _ref_Governor=\"119\" _ref_Dependent=\"237\" DependencyType=\"appos\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1180\" _ref_sofa=\"1\" begin=\"58\" end=\"62\" _ref_Governor=\"237\" _ref_Dependent=\"255\" DependencyType=\"num\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1187\" _ref_sofa=\"1\" begin=\"63\" end=\"65\" _ref_Governor=\"237\" _ref_Dependent=\"273\" DependencyType=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1194\" _ref_sofa=\"1\" begin=\"66\" end=\"74\" _ref_Governor=\"273\" _ref_Dependent=\"296\" DependencyType=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1201\" _ref_sofa=\"1\" begin=\"74\" end=\"75\" _ref_Governor=\"60\" _ref_Dependent=\"314\" DependencyType=\"punct\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1208\" _ref_sofa=\"1\" begin=\"75\" end=\"76\" _ref_Governor=\"60\" _ref_Dependent=\"337\" DependencyType=\"punct\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1215\" _ref_sofa=\"1\" begin=\"77\" end=\"79\" _ref_Governor=\"373\" _ref_Dependent=\"355\" DependencyType=\"nsubj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1222\" _ref_sofa=\"1\" begin=\"84\" end=\"85\" _ref_Governor=\"409\" _ref_Dependent=\"391\" DependencyType=\"det\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1229\" _ref_sofa=\"1\" begin=\"86\" end=\"89\" _ref_Governor=\"373\" _ref_Dependent=\"409\" DependencyType=\"attr\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1236\" _ref_sofa=\"1\" begin=\"90\" end=\"92\" _ref_Governor=\"409\" _ref_Dependent=\"427\" DependencyType=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1243\" _ref_sofa=\"1\" begin=\"93\" end=\"97\" _ref_Governor=\"463\" _ref_Dependent=\"445\" DependencyType=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1250\" _ref_sofa=\"1\" begin=\"98\" end=\"105\" _ref_Governor=\"427\" _ref_Dependent=\"463\" DependencyType=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1257\" _ref_sofa=\"1\" begin=\"106\" end=\"110\" _ref_Governor=\"463\" _ref_Dependent=\"481\" DependencyType=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1264\" _ref_sofa=\"1\" begin=\"111\" end=\"117\" _ref_Governor=\"481\" _ref_Dependent=\"504\" DependencyType=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1271\" _ref_sofa=\"1\" begin=\"117\" end=\"118\" _ref_Governor=\"373\" _ref_Dependent=\"522\" DependencyType=\"punct\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1278\" _ref_sofa=\"1\" begin=\"119\" end=\"126\" _ref_Governor=\"586\" _ref_Dependent=\"545\" DependencyType=\"nsubj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1285\" _ref_sofa=\"1\" begin=\"127\" end=\"130\" _ref_Governor=\"586\" _ref_Dependent=\"563\" DependencyType=\"aux\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1292\" _ref_sofa=\"1\" begin=\"138\" end=\"140\" _ref_Governor=\"586\" _ref_Dependent=\"604\" DependencyType=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1299\" _ref_sofa=\"1\" begin=\"141\" end=\"146\" _ref_Governor=\"658\" _ref_Dependent=\"622\" DependencyType=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1306\" _ref_sofa=\"1\" begin=\"147\" end=\"150\" _ref_Governor=\"658\" _ref_Dependent=\"640\" DependencyType=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1313\" _ref_sofa=\"1\" begin=\"151\" end=\"152\" _ref_Governor=\"604\" _ref_Dependent=\"658\" DependencyType=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1320\" _ref_sofa=\"1\" begin=\"153\" end=\"156\" _ref_Governor=\"586\" _ref_Dependent=\"681\" DependencyType=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1327\" _ref_sofa=\"1\" begin=\"157\" end=\"160\" _ref_Governor=\"758\" _ref_Dependent=\"699\" DependencyType=\"det\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1334\" _ref_sofa=\"1\" begin=\"161\" end=\"171\" _ref_Governor=\"758\" _ref_Dependent=\"717\" DependencyType=\"amod\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1341\" _ref_sofa=\"1\" begin=\"172\" end=\"180\" _ref_Governor=\"758\" _ref_Dependent=\"735\" DependencyType=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1348\" _ref_sofa=\"1\" begin=\"181\" end=\"187\" _ref_Governor=\"681\" _ref_Dependent=\"758\" DependencyType=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency _indexed=\"1\" _id=\"1355\" _ref_sofa=\"1\" begin=\"187\" end=\"188\" _ref_Governor=\"586\" _ref_Dependent=\"776\" DependencyType=\"punct\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1049\" name=\"xcomp\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1047\" name=\"root\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1045\" name=\"rcmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1043\" name=\"quantmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1041\" name=\"punct\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1039\" name=\"prt\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1037\" name=\"prep\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1035\" name=\"predet\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1033\" name=\"preconj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1031\" name=\"possessive\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1029\" name=\"poss\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1027\" name=\"pobj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1025\" name=\"pcomp\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1023\" name=\"partmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1021\" name=\"parataxis\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1019\" name=\"oprd\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1017\" name=\"number\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1015\" name=\"num\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1013\" name=\"nsubjpass\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1011\" name=\"nsubj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1009\" name=\"npadvmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1007\" name=\"nn\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1005\" name=\"nmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1003\" name=\"neg\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"1001\" name=\"meta\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"999\" name=\"mark\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"997\" name=\"iobj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"995\" name=\"intj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"993\" name=\"infmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"991\" name=\"hyph\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"989\" name=\"hmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"987\" name=\"expl\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"985\" name=\"dobj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"983\" name=\"det\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"981\" name=\"dep\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"979\" name=\"csubjpass\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"977\" name=\"csubj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"975\" name=\"conj\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"973\" name=\"complm\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"971\" name=\"ccomp\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"969\" name=\"cc\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"967\" name=\"auxpass\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"965\" name=\"aux\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"963\" name=\"attr\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"961\" name=\"appos\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"959\" name=\"amod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"957\" name=\"agent\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"955\" name=\"advmod\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"953\" name=\"advcl\"/><de.tudarmstadt.ukp.dkpro.core.api.metadata.type.TagDescription _id=\"951\" name=\"acomp\"/><uima.cas.FSArray _id=\"1051\" size=\"50\"><i>951</i><i>953</i><i>955</i><i>957</i><i>959</i><i>961</i><i>963</i><i>965</i><i>967</i><i>969</i><i>971</i><i>973</i><i>975</i><i>977</i><i>979</i><i>981</i><i>983</i><i>985</i><i>987</i><i>989</i><i>991</i><i>993</i><i>995</i><i>997</i><i>999</i><i>1001</i><i>1003</i><i>1005</i><i>1007</i><i>1009</i><i>1011</i><i>1013</i><i>1015</i><i>1017</i><i>1019</i><i>1021</i><i>1023</i><i>1025</i><i>1027</i><i>1029</i><i>1031</i><i>1033</i><i>1035</i><i>1037</i><i>1039</i><i>1041</i><i>1043</i><i>1045</i><i>1047</i><i>1049</i></uima.cas.FSArray> </CAS>";
+		List<FoundFeature<Annotation>> exec = parseFromXML(xml);
 
-        List<FoundFeature<Annotation>> exec = parseFromXML(xml);
 
+		Assert.assertThat(exec.size(), is(11));
 
-        Assert.assertThat(exec.size(), is(11));
+		assertEntity(exec.get(3), "Lewis Yelland Andrews", "A.E. Andrews", "[X] be son of [Y] [1-attr-2,1-nsubj-0,2-prep-3,3-pobj-4]");
 
-        assertEntity(exec.get(3),  "Lewis Yelland Andrews", "A.E. Andrews", "[X] be son of [Y] [1-attr-2,1-nsubj-0,2-prep-3,3-pobj-4]");
+		assertEntity(exec.get(5), "Lewis Yelland Andrews", "A.E. Andrews", "[X] of [Y] [0-prep-1,1-pobj-2]");
+		assertEntity(exec.get(9), "A.E. Andrews", "Imperial Forces", "[X] fight for [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
+		assertEntity(exec.get(10), "World War I", "Imperial Forces", "fight in [X] for [Y] [0-prep-1,0-prep-3,1-pobj-2,3-pobj-4]");
 
-        assertEntity(exec.get(5),  "Lewis Yelland Andrews", "A.E. Andrews", "[X] of [Y] [0-prep-1,1-pobj-2]");
-        assertEntity(exec.get(9), "A.E. Andrews", "Imperial Forces", "[X] fight for [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
-        assertEntity(exec.get(10), "World War I", "Imperial Forces", "fight in [X] for [Y] [0-prep-1,0-prep-3,1-pobj-2,3-pobj-4]");
 
+	}
 
-    }
+	@Test
+	public void testParse5() throws Exception {
+		final List<FoundFeature<Annotation>> exec = parse("Lonnen was born in Kingston upon Hull, Yorkshire into a theatrical family. ");
 
-    @Test
-    public void testParse5() throws Exception {
-        final List<FoundFeature<Annotation>> exec = parse("Lonnen was born in Kingston upon Hull, Yorkshire into a theatrical family. ");
+		Assert.assertThat(exec.size(), is(6));
 
-        Assert.assertThat(exec.size(), is(6));
+		assertEntity(exec.get(0), "Lonnen", "Kingston", "[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
+		assertEntity(exec.get(1), "Lonnen", "Hull, Yorkshire", "[X] bear upon [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
+		assertEntity(exec.get(2), "Lonnen", "family", "[X] bear into [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
+		assertEntity(exec.get(3), "Kingston", "Hull, Yorkshire", "bear in [X] upon [Y] [0-prep-1,0-prep-3,1-pobj-2,3-pobj-4]");
+		assertEntity(exec.get(4), "Kingston", "family", "bear in [X] into [Y] [0-prep-1,0-prep-3,1-pobj-2,3-pobj-4]");
+		assertEntity(exec.get(5), "Hull, Yorkshire", "family", "bear upon [X] into [Y] [0-prep-1,0-prep-3,1-pobj-2,3-pobj-4]");
 
-        assertEntity(exec.get(0), "Lonnen", "Kingston", "[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
-        assertEntity(exec.get(1), "Lonnen", "Hull, Yorkshire", "[X] bear upon [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
-        assertEntity(exec.get(2), "Lonnen", "family", "[X] bear into [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
-        assertEntity(exec.get(3), "Kingston", "Hull, Yorkshire", "bear in [X] upon [Y] [0-prep-1,0-prep-3,1-pobj-2,3-pobj-4]");
-        assertEntity(exec.get(4), "Kingston", "family", "bear in [X] into [Y] [0-prep-1,0-prep-3,1-pobj-2,3-pobj-4]");
-        assertEntity(exec.get(5), "Hull, Yorkshire", "family", "bear upon [X] into [Y] [0-prep-1,0-prep-3,1-pobj-2,3-pobj-4]");
+	}
 
-    }
+	@Test
+	public void testConjunctionBeginning() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("The ANSA news agency said the operation involved police in Umbria and Lazio provinces in central Italy and Campania province in the south , without specifying exact arrest locations .");
 
-    @Test
-    public void testConjunctionBeginning() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("The ANSA news agency said the operation involved police in Umbria and Lazio provinces in central Italy and Campania province in the south , without specifying exact arrest locations .");
+		assertEntity(parse.get(14), "Umbria", "Italy", "[X] province in [Y] [1-nn-0,1-prep-2,2-pobj-3]");
+	}
 
-        assertEntity(parse.get(14), "Umbria", "Italy", "[X] province in [Y] [1-nn-0,1-prep-2,2-pobj-3]");
-    }
+	@Test
+	public void testBornIn1() throws Exception {
+		final List<FoundFeature<Annotation>> parse = parse("Morris Smith Miller (July 31, 1779 -- November 16, 1824) was a United States Representative from New York. Born in New York City, he graduated from Union College in Schenectady in 1798. He studied law and was admitted to the bar. Miller served as private secretary to Governor Jay, and subsequently, in 1806, commenced the practice of his profession in Utica. He was president of the village of Utica in 1808 and judge of the court of common pleas of Oneida County from 1810 until his death.");
 
-    @Test
-    public void testBornIn1() throws Exception {
-        final List<FoundFeature<Annotation>> parse = parse("Morris Smith Miller (July 31, 1779 -- November 16, 1824) was a United States Representative from New York. Born in New York City, he graduated from Union College in Schenectady in 1798. He studied law and was admitted to the bar. Miller served as private secretary to Governor Jay, and subsequently, in 1806, commenced the practice of his profession in Utica. He was president of the village of Utica in 1808 and judge of the court of common pleas of Oneida County from 1810 until his death.");
+		Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Morris Smith Miller"));
+		Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("New York"));
 
-        Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Morris Smith Miller"));
-        Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("New York"));
+		Assert.assertThat(parse.get(1).getEntity1().getCoveredText(), is("Morris Smith Miller"));
+		Assert.assertThat(parse.get(1).getEntity2().getCoveredText(), is("New York"));
 
-        Assert.assertThat(parse.get(1).getEntity1().getCoveredText(), is("Morris Smith Miller"));
-        Assert.assertThat(parse.get(1).getEntity2().getCoveredText(), is("New York"));
+		Assert.assertThat(parse.get(2).getEntity1().getCoveredText(), is("New York City"));
+		Assert.assertThat(parse.get(2).getEntity2().getCoveredText(), is("Morris Smith Miller"));
+	}
 
-        Assert.assertThat(parse.get(2).getEntity1().getCoveredText(), is("New York City"));
-        Assert.assertThat(parse.get(2).getEntity2().getCoveredText(), is("Morris Smith Miller"));
-    }
+	@Test
+	public void testBornOn() throws Exception {
+		final List<FoundFeature<Annotation>> parse = parse("Adam was born on 7 March 1891 in Vitebsk, Russian Empire. He enlisted in the Russian Navy to become a military officer, finishing the Naval Corps School in Saint Petersburg in 1911.");
 
-    @Test
-    public void testBornOn() throws Exception {
-        final List<FoundFeature<Annotation>> parse = parse("Adam was born on 7 March 1891 in Vitebsk, Russian Empire. He enlisted in the Russian Navy to become a military officer, finishing the Naval Corps School in Saint Petersburg in 1911.");
+		Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Adam"));
+		Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("Vitebsk"));
+	}
 
-        Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Adam"));
-        Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("Vitebsk"));
-    }
+	@Test
+	public void testBornPlaceParataxis() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("Sinclair, was born in Russia in 1890 and educated in Philadelphia, before attending St Leonards School in St Andrews, where women's lacrosse had been introduced by Louisa Lumsden. Lumsden brought the game to Scotland after watching a men's lacrosse game between the Canghuwaya Indians and the Montreal Lacrosse Club.");
 
-    @Test
-    public void testBornPlaceParataxis() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("Sinclair, was born in Russia in 1890 and educated in Philadelphia, before attending St Leonards School in St Andrews, where women's lacrosse had been introduced by Louisa Lumsden. Lumsden brought the game to Scotland after watching a men's lacrosse game between the Canghuwaya Indians and the Montreal Lacrosse Club.");
+		assertEntity(parse.get(0), "Sinclair", "Russia", "[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
 
-        assertEntity(parse.get(0), "Sinclair", "Russia", "[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
+	}
 
-    }
+	@Test
+	public void testJoiner() throws Exception {
 
-    @Test
-    public void testJoiner() throws Exception {
+		String sentence = "STOCKTON-ON-TEES , England  AP  - Michael Minns received $160 , 000 from the father he never knew and thought was killed in World War II .";
+		final List<FoundFeature<Annotation>> parse = parse(sentence);
 
-        String sentence = "STOCKTON-ON-TEES , England  AP  - Michael Minns received $160 , 000 from the father he never knew and thought was killed in World War II .";
-        final List<FoundFeature<Annotation>> parse = parse(sentence);
+		Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("STOCKTON-ON-TEES"));
+		Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("England"));
 
-        Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("STOCKTON-ON-TEES"));
-        Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("England"));
+		Assert.assertThat(parse.get(1).getEntity1().getCoveredText(), is("STOCKTON-ON-TEES"));
+		Assert.assertThat(parse.get(1).getEntity2().getCoveredText(), is("AP"));
 
-        Assert.assertThat(parse.get(1).getEntity1().getCoveredText(), is("STOCKTON-ON-TEES"));
-        Assert.assertThat(parse.get(1).getEntity2().getCoveredText(), is("AP"));
+	}
 
-    }
+	@Test
+	public void testCoref() throws Exception {
+		final List<FoundFeature<Annotation>> parse = parse("Dimitry was born in Moscow. In 1993 he graduated from Russian Academy of Theatre Arts as a stage director.");
 
-    @Test
-    public void testCoref() throws Exception {
-        final List<FoundFeature<Annotation>> parse = parse("Dimitry was born in Moscow. In 1993 he graduated from Russian Academy of Theatre Arts as a stage director.");
+		Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Dimitry"));
+		Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("Moscow"));
 
-        Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Dimitry"));
-        Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("Moscow"));
+		Assert.assertThat(parse.get(3).getEntity1().getCoveredText(), is("Russian Academy of Theatre Arts"));
+		Assert.assertThat(parse.get(3).getEntity2().getCoveredText(), is("stage director"));
 
-        Assert.assertThat(parse.get(3).getEntity1().getCoveredText(), is("Russian Academy of Theatre Arts"));
-        Assert.assertThat(parse.get(3).getEntity2().getCoveredText(), is("stage director"));
+	}
 
-    }
+	@Test
+	public void testParseConj() throws Exception {
 
-    @Test
-    public void testParseConj() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("His daughter was actress Jessie Lonnen, who performed with George Edwardes's company in England and the J. C. Williamson company in Australia.");
 
-        List<FoundFeature<Annotation>> parse = parse("His daughter was actress Jessie Lonnen, who performed with George Edwardes's company in England and the J. C. Williamson company in Australia.");
+		Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("daughter"));
+		Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("George Edwardes's company"));
 
-        Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("daughter"));
-        Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("George Edwardes's company"));
+	}
 
-    }
+	@Test
+	public void testCoref2() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("Martin Blank is an American glass artist. He received a BFA degree from the Rhode Island School of Design in 1984.");
 
-    @Test
-    public void testCoref2() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("Martin Blank is an American glass artist. He received a BFA degree from the Rhode Island School of Design in 1984.");
+		Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Martin Blank"));
+		Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("BFA degree"));
+		Assert.assertThat(parse.get(0).getPattern(), is("[X] receive [Y] [1-dobj-2,1-nsubj-0]"));
 
-        Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Martin Blank"));
-        Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("BFA degree"));
-        Assert.assertThat(parse.get(0).getPattern(), is("[X] receive [Y] [1-dobj-2,1-nsubj-0]"));
 
+	}
 
-    }
+	@Test
+	public void testBornInBrackets() throws Exception {
+		final List<FoundFeature<Annotation>> parse = parse("Günter Theodor Netzer (born 14 September 1944 in Mönchengladbach) is a former German football player and team general manager currently working in the media business.");
 
-    @Test
-    public void testBornInBrackets() throws Exception {
-        final List<FoundFeature<Annotation>> parse = parse("Günter Theodor Netzer (born 14 September 1944 in Mönchengladbach) is a former German football player and team general manager currently working in the media business.");
 
+		assertEntity(parse.get(0), "Günter Theodor Netzer", "Mönchengladbach", "[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
+		assertEntity(parse.get(1), "Günter Theodor Netzer", "football player and team general manager", "[X] bear [Y] work [1-advcl-3,1-nsubjpass-0,3-attr-2]");
+		assertEntity(parse.get(2), "Günter Theodor Netzer", "business", "[X] bear work in [Y] [1-advcl-2,1-nsubjpass-0,2-prep-3,3-pobj-4]");
+		assertEntity(parse.get(3), "Mönchengladbach", "football player and team general manager", "bear in [X] [Y] work [0-advcl-4,0-prep-1,1-pobj-2,4-attr-3]");
+		assertEntity(parse.get(4), "Mönchengladbach", "business", "bear in [X] work in [Y] [0-advcl-3,0-prep-1,1-pobj-2,3-prep-4,4-pobj-5]");
+		assertEntity(parse.get(5), "football player and team general manager", "business", "[X] work in [Y] [1-attr-0,1-prep-2,2-pobj-3]");
 
-        assertEntity(parse.get(0), "Günter Theodor Netzer", "Mönchengladbach", "[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
-        assertEntity(parse.get(1), "Günter Theodor Netzer", "football player and team general manager", "[X] bear [Y] work [1-advcl-3,1-nsubjpass-0,3-attr-2]");
-        assertEntity(parse.get(2), "Günter Theodor Netzer", "business", "[X] bear work in [Y] [1-advcl-2,1-nsubjpass-0,2-prep-3,3-pobj-4]");
-        assertEntity(parse.get(3), "Mönchengladbach", "football player and team general manager", "bear in [X] [Y] work [0-advcl-4,0-prep-1,1-pobj-2,4-attr-3]");
-        assertEntity(parse.get(4), "Mönchengladbach", "business", "bear in [X] work in [Y] [0-advcl-3,0-prep-1,1-pobj-2,3-prep-4,4-pobj-5]");
-        assertEntity(parse.get(5), "football player and team general manager", "business", "[X] work in [Y] [1-attr-0,1-prep-2,2-pobj-3]");
+	}
 
-    }
+	@Test
+	public void testBornInBrackets2() throws Exception {
+		final List<FoundFeature<Annotation>> parse = parse("Vanessa Chinitor (born 13 October 1976, Dendermonde) is a Belgian singer");
 
-    @Test
-    public void testBornInBrackets2() throws Exception {
-        final List<FoundFeature<Annotation>> parse = parse("Vanessa Chinitor (born 13 October 1976, Dendermonde) is a Belgian singer");
+		assertEntity(parse.get(0), "Vanessa Chinitor", "Dendermonde", "[X] bear in [Y] [1-npadvmod-0,1-prep-2,2-pobj-3]");
+		assertEntity(parse.get(1), "Dendermonde", "singer", "Chinitor [X] be [Y] [0-appos-1,2-attr-3,2-nsubj-0]");
 
-        assertEntity(parse.get(0), "Vanessa Chinitor", "Dendermonde", "[X] bear in [Y] [1-npadvmod-0,1-prep-2,2-pobj-3]");
-        assertEntity(parse.get(1), "Dendermonde", "singer", "Chinitor [X] be [Y] [0-appos-1,2-attr-3,2-nsubj-0]");
+	}
 
-    }
+	@Test
+	public void testConjunctions() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("John Milne Bramwell (1852 -- 1925) was a Scottish physician and author, born at Perth, and educated at the University of Edinburgh.");
 
-    @Test
-    public void testConjunctions() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("John Milne Bramwell (1852 -- 1925) was a Scottish physician and author, born at Perth, and educated at the University of Edinburgh.");
+		assertEntity(parse.get(1), "John Milne Bramwell", "Perth", "[X] be bear at [Y] [1-advcl-2,1-nsubj-0,2-prep-3,3-pobj-4]");
 
-        assertEntity(parse.get(1), "John Milne Bramwell", "Perth",  "[X] be bear at [Y] [1-advcl-2,1-nsubj-0,2-prep-3,3-pobj-4]");
 
+	}
 
-    }
+	@Test
+	public void testName() throws Exception {
 
-    @Test
-    public void testName() throws Exception {
+		parse("Lonnen died of tuberculosis. His daughter was actress Jessie Lonnen.");
 
-        parse("Lonnen died of tuberculosis. His daughter was actress Jessie Lonnen.");
+	}
 
-    }
+	@Test
+	public void testBornAt() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("Morsztyn was born 24 July 1621 at Wiśnicz, near Kraków.");
 
-    @Test
-    public void testBornAt() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("Morsztyn was born 24 July 1621 at Wiśnicz, near Kraków.");
+		Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Morsztyn"));
+		Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("Wiśnicz"));
+		Assert.assertThat(parse.get(0).getPattern(), is("[X] bear at [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]"));
+		// [X] bear July at [Y] [1-npadvmod-2,1-nsubjpass-0,2-prep-3,3-pobj-4]
 
-        Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Morsztyn"));
-        Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("Wiśnicz"));
-        Assert.assertThat(parse.get(0).getPattern(), is("[X] bear at [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]"));
-        // [X] bear July at [Y] [1-npadvmod-2,1-nsubjpass-0,2-prep-3,3-pobj-4]
+	}
 
-    }
+	@Test
+	public void testBornIn() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("Morsztyn was born 24 July 1621 in Wiśnicz, near Kraków.");
 
-    @Test
-    public void testBornIn() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("Morsztyn was born 24 July 1621 in Wiśnicz, near Kraków.");
+		Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Morsztyn"));
+		Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("Wiśnicz"));
+		Assert.assertThat(parse.get(0).getPattern(), is("[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]"));
+		// [X] bear July at [Y] [1-npadvmod-2,1-nsubjpass-0,2-prep-3,3-pobj-4]
 
-        Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Morsztyn"));
-        Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("Wiśnicz"));
-        Assert.assertThat(parse.get(0).getPattern(), is("[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]"));
-        // [X] bear July at [Y] [1-npadvmod-2,1-nsubjpass-0,2-prep-3,3-pobj-4]
+	}
 
-    }
+	@Test
+	public void testCollapseSimilar() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("Lonnen died of tuberculosis at the age of 41 and was buried at the Norwood Cemetery. His daughter was actress Jessie Lonnen.");
 
-    @Test
-    public void testCollapseSimilar() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("Lonnen died of tuberculosis at the age of 41 and was buried at the Norwood Cemetery. His daughter was actress Jessie Lonnen.");
+		Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Lonnen"));
+		Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("tuberculosis"));
+		Assert.assertThat(parse.get(0).getPattern(), is("[X] die of [Y] [1-nsubj-0,1-prep-2,2-pobj-3]"));
 
-        Assert.assertThat(parse.get(0).getEntity1().getCoveredText(), is("Lonnen"));
-        Assert.assertThat(parse.get(0).getEntity2().getCoveredText(), is("tuberculosis"));
-        Assert.assertThat(parse.get(0).getPattern(), is("[X] die of [Y] [1-nsubj-0,1-prep-2,2-pobj-3]"));
+	}
 
-//        Assert.assertThat(parse.get(4).getEntity1().getCoveredText(), is("His"));
-//        Assert.assertThat(parse.get(4).getEntity2().getCoveredText(), is("Lonnen"));
-//        Assert.assertThat(parse.get(4).getPattern(), is("[X] daughter be [Y] [1-poss-0,2-attr-3,2-nsubj-1]"));
-    }
+	@Test
+	public void testBrackets() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("Henry Hall (born 1810 at Sheffield; died 1 December 1864 at Nottingham) ");
 
-    @Test
-    public void testBrackets() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("Henry Hall (born 1810 at Sheffield; died 1 December 1864 at Nottingham) ");
+		assertEntity(parse.get(0), "Henry Hall", "Sheffield", "[X] bear at [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
+		assertEntity(parse.get(1), "Henry Hall", "Nottingham", "[X] die at [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
+	}
 
-        assertEntity(parse.get(0), "Henry Hall", "Sheffield",  "[X] bear at [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
-        assertEntity(parse.get(1), "Henry Hall", "Nottingham", "[X] die at [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
-    }
+	@Test
+	public void testReplaceHer() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("Born in 1953 in Harrogate, Yorkshire, England, Carol was educated in Whitby by Anglican nuns within sight of Whitby Abbey. Her love of ancient and medieval history took her to London University where she read History at Royal Holloway College. Her first novel, set in 11th century England and published by Mills & Boon, won the RNA New Writers' Award in 1989. For the last 20 years she has lived in London with her husband and daughter.");
 
-    @Test
-    public void testReplaceHer() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("Born in 1953 in Harrogate, Yorkshire, England, Carol was educated in Whitby by Anglican nuns within sight of Whitby Abbey. Her love of ancient and medieval history took her to London University where she read History at Royal Holloway College. Her first novel, set in 11th century England and published by Mills & Boon, won the RNA New Writers' Award in 1989. For the last 20 years she has lived in London with her husband and daughter.");
 
+	}
 
+	@Test
+	public void testBrackets2() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("Max Ferguson (born 1959, New York City) is an American artist best known for his realistic paintings of vanishing urban scenes in and around New York City.");
 
-    }
+		assertEntity(parse.get(0), "Max Ferguson", "New York City", "[X] bear in [Y] [1-npadvmod-0,1-prep-2,2-pobj-3]");
 
-    @Test
-    public void testBrackets2() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("Max Ferguson (born 1959, New York City) is an American artist best known for his realistic paintings of vanishing urban scenes in and around New York City.");
+	}
 
-        assertEntity(parse.get(0), "Max Ferguson", "New York City",  "[X] bear in [Y] [1-npadvmod-0,1-prep-2,2-pobj-3]");
 
-    }
+	@Test
+	public void testBornNear() throws Exception {
 
+		List<FoundFeature<Annotation>> parse = parse("Njavro was born in Cerovica, near Neum in the Kingdom of Yugoslavia (today part of Bosnia and Herzegovina). He attended elementary school here and gymnasium in Dubrovnik, Croatia.");
 
-    @Test
-    public void testBornNear() throws Exception {
+		assertEntity(parse.get(0), "Njavro", "Cerovica", "[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
+		assertEntity(parse.get(1), "Njavro", "Neum", "[X] bear near [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
+	}
 
-        List<FoundFeature<Annotation>> parse = parse("Njavro was born in Cerovica, near Neum in the Kingdom of Yugoslavia (today part of Bosnia and Herzegovina). He attended elementary school here and gymnasium in Dubrovnik, Croatia.");
+	@Test
+	public void testBornBracket() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("Juan Laporte (born November 24, 1959) is a former boxer who was born in Guayama, Puerto Rico.");
 
-        assertEntity(parse.get(0), "Njavro", "Cerovica",  "[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
-        assertEntity(parse.get(1), "Njavro", "Neum",  "[X] bear near [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
-    }
+		assertEntity(parse.get(0), "Juan Laporte", "Guayama, Puerto Rico", "[X] be boxer bear in [Y] [1-attr-2,1-nsubj-0,2-rcmod-3,3-prep-4,4-pobj-5]");
+		assertEntity(parse.get(1), "Juan Laporte", "Guayama, Puerto Rico", "[X] bear in [Y] [0-rcmod-1,1-prep-2,2-pobj-3]");
+	}
 
-    @Test
-    public void testBornBracket() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("Juan Laporte (born November 24, 1959) is a former boxer who was born in Guayama, Puerto Rico.");
+	@Test
+	public void testCoreference() throws Exception {
 
-        assertEntity(parse.get(0), "Juan Laporte", "Guayama, Puerto Rico",  "[X] be boxer bear in [Y] [1-attr-2,1-nsubj-0,2-rcmod-3,3-prep-4,4-pobj-5]");
-        assertEntity(parse.get(1), "Juan Laporte", "Guayama, Puerto Rico",  "[X] bear in [Y] [0-rcmod-1,1-prep-2,2-pobj-3]");
-    }
+		List<FoundFeature<Annotation>> parse = parse("Prior to Microsoft, Adam was a consultant with Andersen Consulting for three years. While at Andersen Consulting, Adam worked with clients including those in financial services, government, and utilities. Adam received a Bachelor of Science in commerce and business administration from the University of Illinois at Urbana-Champaign. He also holds a Master of Business Administration degree.");
 
-    @Test
-    public void testCoreference() throws Exception {
+		assertEntity(parse.get(0), "Microsoft", "Adam", "prior to [X] [Y] be [0-prep-1,1-pobj-2,4-advmod-0,4-nsubj-3]");
+		assertEntity(parse.get(1), "Microsoft", "consultant", "prior to [X] be [Y] [0-prep-1,1-pobj-2,3-advmod-0,3-attr-4]");
+		assertEntity(parse.get(2), "Microsoft", "Andersen Consulting", "prior to [X] be consultant with [Y] [0-prep-1,1-pobj-2,3-advmod-0,3-attr-4,4-prep-5,5-pobj-6]");
+		assertEntity(parse.get(3), "Adam", "Andersen Consulting", "[X] be consultant with [Y] [1-attr-2,1-nsubj-0,2-prep-3,3-pobj-4]");
+		assertEntity(parse.get(4), "Adam", "Andersen Consulting", "[X] with [Y] [0-prep-1,1-pobj-2]");
+		assertEntity(parse.get(5), "Andersen Consulting", "Adam", "at [X] [Y] work [0-pobj-1,3-nsubj-2,3-prep-0]");
+		assertEntity(parse.get(6), "Andersen Consulting", "government", "at [X] work with client include those in [Y] [0-pobj-1,2-prep-0,2-prep-3,3-pobj-4,4-prep-5,5-pobj-6,6-prep-7,7-pobj-8]");
+		assertEntity(parse.get(7), "Adam", "government", "[X] work with client include those in [Y] [1-nsubj-0,1-prep-2,2-pobj-3,3-prep-4,4-pobj-5,5-prep-6,6-pobj-7]");
+		assertEntity(parse.get(8), "Adam", "Bachelor of Science", "[X] receive [Y] [1-dobj-2,1-nsubj-0]");
+		assertEntity(parse.get(9), "Adam", "commerce", "[X] receive bachelor in [Y] [1-dobj-2,1-nsubj-0,2-prep-3,3-pobj-4]");
+		assertEntity(parse.get(10), "Adam", "business administration", "[X] receive bachelor in [Y] [1-dobj-2,1-nsubj-0,2-prep-3,3-pobj-4]");
+		assertEntity(parse.get(11), "Adam", "University of Illinois", "[X] receive bachelor in commerce administration from [Y] [1-dobj-2,1-nsubj-0,2-prep-3,3-pobj-4,4-conj-5,5-prep-6,6-pobj-7]");
+		assertEntity(parse.get(12), "Adam", "Urbana-Champaign", "[X] receive bachelor in commerce administration from University at [Y] [1-dobj-2,1-nsubj-0,2-prep-3,3-pobj-4,4-conj-5,5-prep-6,6-pobj-7,7-prep-8,8-pobj-9]");
 
-        List<FoundFeature<Annotation>> parse = parse("Prior to Microsoft, Adam was a consultant with Andersen Consulting for three years. While at Andersen Consulting, Adam worked with clients including those in financial services, government, and utilities. Adam received a Bachelor of Science in commerce and business administration from the University of Illinois at Urbana-Champaign. He also holds a Master of Business Administration degree.");
 
-        assertEntity(parse.get(0), "Microsoft", "Adam",  "prior to [X] [Y] be [0-prep-1,1-pobj-2,4-advmod-0,4-nsubj-3]");
-        assertEntity(parse.get(1), "Microsoft", "consultant",  "prior to [X] be [Y] [0-prep-1,1-pobj-2,3-advmod-0,3-attr-4]");
-        assertEntity(parse.get(2), "Microsoft", "Andersen Consulting",  "prior to [X] be consultant with [Y] [0-prep-1,1-pobj-2,3-advmod-0,3-attr-4,4-prep-5,5-pobj-6]");
-        assertEntity(parse.get(3), "Adam", "Andersen Consulting",  "[X] be consultant with [Y] [1-attr-2,1-nsubj-0,2-prep-3,3-pobj-4]");
-        assertEntity(parse.get(4), "Adam", "Andersen Consulting",  "[X] with [Y] [0-prep-1,1-pobj-2]");
-        assertEntity(parse.get(5), "Andersen Consulting", "Adam",  "at [X] [Y] work [0-pobj-1,3-nsubj-2,3-prep-0]");
-        assertEntity(parse.get(6), "Andersen Consulting", "government",  "at [X] work with client include those in [Y] [0-pobj-1,2-prep-0,2-prep-3,3-pobj-4,4-prep-5,5-pobj-6,6-prep-7,7-pobj-8]");
-        assertEntity(parse.get(7), "Adam", "government",  "[X] work with client include those in [Y] [1-nsubj-0,1-prep-2,2-pobj-3,3-prep-4,4-pobj-5,5-prep-6,6-pobj-7]");
-        assertEntity(parse.get(8), "Adam", "Bachelor of Science",  "[X] receive [Y] [1-dobj-2,1-nsubj-0]");
-        assertEntity(parse.get(9), "Adam", "commerce",  "[X] receive bachelor in [Y] [1-dobj-2,1-nsubj-0,2-prep-3,3-pobj-4]");
-        assertEntity(parse.get(10), "Adam", "business administration",  "[X] receive bachelor in [Y] [1-dobj-2,1-nsubj-0,2-prep-3,3-pobj-4]");
-        assertEntity(parse.get(11), "Adam", "University of Illinois",  "[X] receive bachelor in commerce administration from [Y] [1-dobj-2,1-nsubj-0,2-prep-3,3-pobj-4,4-conj-5,5-prep-6,6-pobj-7]");
-        assertEntity(parse.get(12), "Adam", "Urbana-Champaign",  "[X] receive bachelor in commerce administration from University at [Y] [1-dobj-2,1-nsubj-0,2-prep-3,3-pobj-4,4-conj-5,5-prep-6,6-pobj-7,7-prep-8,8-pobj-9]");
+	}
 
+	@Test
+	public void testCoref3() throws Exception {
 
-    }
+		List<FoundFeature<Annotation>> parse = parse("Eric was born in Bronx, New York. He received a B.A. in French.");
+		assertEntity(parse.get(0), "Eric", "Bronx, New York", "[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
+		assertEntity(parse.get(1), "Eric", "B.A.", "[X] receive [Y] [1-dobj-2,1-nsubj-0]");
+		assertEntity(parse.get(2), "Eric", "French", "[X] receive in [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
+		assertEntity(parse.get(3), "B.A.", "French", "receive [X] in [Y] [0-dobj-1,0-prep-2,2-pobj-3]");
+	}
 
-    @Test
-    public void testCoref3() throws Exception {
+	@Test
+	public void testSampleSentence() throws Exception {
 
-        List<FoundFeature<Annotation>> parse = parse("Eric was born in Bronx, New York. He received a B.A. in French.");
-        assertEntity(parse.get(0), "Eric", "Bronx, New York",  "[X] bear in [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
-        assertEntity(parse.get(1), "Eric", "B.A.",  "[X] receive [Y] [1-dobj-2,1-nsubj-0]");
-        assertEntity(parse.get(2), "Eric", "French",  "[X] receive in [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
-        assertEntity(parse.get(3), "B.A.", "French",  "receive [X] in [Y] [0-dobj-1,0-prep-2,2-pobj-3]");
-    }
+		List<FoundFeature<Annotation>> parse = parse("Bell , a telecommunication company , which is based in Los Angeles , makes and distributes electronic , computer and building products");
 
-    @Test
-    public void testSampleSentence() throws Exception {
+		assertEntity(parse.get(0), "Bell", "Los Angeles", "[X] company base in [Y] [0-appos-1,1-rcmod-2,2-prep-3,3-pobj-4]");
+		assertEntity(parse.get(1), "Bell", "computer", "[X] make distribute electronic [Y] product [1-conj-2,1-nsubj-0,2-dobj-5,3-conj-4,5-amod-3]");
+		assertEntity(parse.get(2), "Bell", "building", "[X] make distribute electronic computer [Y] product [1-conj-2,1-nsubj-0,2-dobj-6,3-conj-4,4-conj-5,6-amod-3]");
 
-        List<FoundFeature<Annotation>> parse = parse("Bell , a telecommunication company , which is based in Los Angeles , makes and distributes electronic , computer and building products");
+	}
 
-        assertEntity(parse.get(0), "Bell", "Los Angeles",  "[X] company base in [Y] [0-appos-1,1-rcmod-2,2-prep-3,3-pobj-4]");
-        assertEntity(parse.get(1), "Bell", "computer",  "[X] make distribute electronic [Y] product [1-conj-2,1-nsubj-0,2-dobj-5,3-conj-4,5-amod-3]");
-        assertEntity(parse.get(2), "Bell", "building",  "[X] make distribute electronic computer [Y] product [1-conj-2,1-nsubj-0,2-dobj-6,3-conj-4,4-conj-5,6-amod-3]");
+	@Test
+	public void testParsePhrase() throws Exception {
 
-    }
+		List<FoundFeature<Annotation>> parse = parse("Warga received a Bachelor of Science in anthropology from UC Davis in 1995 and a Master of Arts in visual anthropology from Goldsmiths.");
 
-    @Test
-    public void testParsePhrase() throws Exception {
 
-        List<FoundFeature<Annotation>> parse = parse("Warga received a Bachelor of Science in anthropology from UC Davis in 1995 and a Master of Arts in visual anthropology from Goldsmiths.");
+		assertEntity(parse.get(0), "Warga", "Bachelor of Science", "[X] receive [Y] [1-dobj-2,1-nsubj-0]");
+		assertEntity(parse.get(3), "Warga", "Master of Arts", "[X] receive in [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
+	}
 
+	@Test
+	public void testPatternDetect() throws Exception {
+		List<FoundFeature<Annotation>> parse = parseFromXML(Resources.toString(Resources.getResource("sampleCAS/sampleSentenceCAS.xml"), Charsets.UTF_8));
 
-        assertEntity(parse.get(0), "Warga", "Bachelor of Science", "[X] receive [Y] [1-dobj-2,1-nsubj-0]");
-        assertEntity(parse.get(3), "Warga", "Master of Arts", "[X] receive in [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
-    }
+		assertEntity(parse.get(30), "Bachelor of Music", "Villanova", "receive [X] in 1984 master from [Y] [0-dobj-1,0-prep-2,2-pobj-3,3-conj-4,4-prep-5,5-pobj-6]");
 
-    @Test
-    public void testPatternDetect() throws Exception {
-        List<FoundFeature<Annotation>> parse = parseFromXML(Resources.toString(Resources.getResource("sampleCAS/sampleSentenceCAS.xml"), Charsets.UTF_8));
+	}
 
-        assertEntity(parse.get(30), "Bachelor of Music", "Villanova", "receive [X] in 1984 master from [Y] [0-dobj-1,0-prep-2,2-pobj-3,3-conj-4,4-prep-5,5-pobj-6]");
+	@Test
+	public void testApposition() throws Exception {
+		List<FoundFeature<Annotation>> parse = parse("Last year , a state screening committee recommended giving the franchise to Excelsior Racing Associates , a New York City group led by Richard Fields , a casino developer , and Stephen W. Swindal , a partner in the New York Yankees who is also George Steinbrenner 's son-in-law .");
 
-    }
+		Assert.assertThat(parse.size(), is(21));
 
-    @Test
-    public void testApposition() throws Exception {
-        List<FoundFeature<Annotation>> parse = parse("Last year , a state screening committee recommended giving the franchise to Excelsior Racing Associates , a New York City group led by Richard Fields , a casino developer , and Stephen W. Swindal , a partner in the New York Yankees who is also George Steinbrenner 's son-in-law .");
+		assertEntity(parse.get(11), "Excelsior Racing Associates", "Richard Fields", "[X] group lead by [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4]");
+		assertEntity(parse.get(12), "Excelsior Racing Associates", "Stephen W. Swindal", "[X] group lead by [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4]");
+		assertEntity(parse.get(13), "Excelsior Racing Associates", "New York Yankees", "[X] group lead by Fields Swindal partner in [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4,4-conj-5,5-appos-6,6-prep-7,7-pobj-8]");
+		assertEntity(parse.get(14), "Excelsior Racing Associates", "George Steinbrenner 's son-in-law", "[X] group lead by Fields Swindal partner in Yankees be [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4,4-conj-5,5-appos-6,6-prep-7,7-pobj-8,8-rcmod-9,9-attr-10]");
+		assertEntity(parse.get(15), "Richard Fields", "Stephen W. Swindal", "[X] [Y] [0-conj-1]");
+		assertEntity(parse.get(16), "Richard Fields", "New York Yankees", "[X] Swindal partner in [Y] [0-conj-1,1-appos-2,2-prep-3,3-pobj-4]");
+		assertEntity(parse.get(17), "Richard Fields", "George Steinbrenner 's son-in-law", "[X] Swindal partner in Yankees be [Y] [0-conj-1,1-appos-2,2-prep-3,3-pobj-4,4-rcmod-5,5-attr-6]");
+		assertEntity(parse.get(18), "Stephen W. Swindal", "New York Yankees", "[X] partner in [Y] [0-appos-1,1-prep-2,2-pobj-3]");
+		assertEntity(parse.get(19), "Stephen W. Swindal", "George Steinbrenner 's son-in-law", "[X] partner in Yankees be [Y] [0-appos-1,1-prep-2,2-pobj-3,3-rcmod-4,4-attr-5]");
+		assertEntity(parse.get(20), "New York Yankees", "George Steinbrenner 's son-in-law", "[X] be [Y] [0-rcmod-1,1-attr-2]");
 
-        Assert.assertThat(parse.size(), is(21));
+	}
 
-        assertEntity(parse.get(11), "Excelsior Racing Associates", "Richard Fields",  "[X] group lead by [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4]");
-        assertEntity(parse.get(12), "Excelsior Racing Associates", "Stephen W. Swindal",  "[X] group lead by [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4]");
-        assertEntity(parse.get(13), "Excelsior Racing Associates", "New York Yankees",  "[X] group lead by Fields Swindal partner in [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4,4-conj-5,5-appos-6,6-prep-7,7-pobj-8]");
-        assertEntity(parse.get(14), "Excelsior Racing Associates", "George Steinbrenner 's son-in-law",  "[X] group lead by Fields Swindal partner in Yankees be [Y] [0-appos-1,1-partmod-2,2-agent-3,3-pobj-4,4-conj-5,5-appos-6,6-prep-7,7-pobj-8,8-rcmod-9,9-attr-10]");
-        assertEntity(parse.get(15), "Richard Fields", "Stephen W. Swindal",  "[X] [Y] [0-conj-1]");
-        assertEntity(parse.get(16), "Richard Fields", "New York Yankees",  "[X] Swindal partner in [Y] [0-conj-1,1-appos-2,2-prep-3,3-pobj-4]");
-        assertEntity(parse.get(17), "Richard Fields", "George Steinbrenner 's son-in-law",  "[X] Swindal partner in Yankees be [Y] [0-conj-1,1-appos-2,2-prep-3,3-pobj-4,4-rcmod-5,5-attr-6]");
-        assertEntity(parse.get(18), "Stephen W. Swindal", "New York Yankees",  "[X] partner in [Y] [0-appos-1,1-prep-2,2-pobj-3]");
-        assertEntity(parse.get(19), "Stephen W. Swindal", "George Steinbrenner 's son-in-law",  "[X] partner in Yankees be [Y] [0-appos-1,1-prep-2,2-pobj-3,3-rcmod-4,4-attr-5]");
-        assertEntity(parse.get(20), "New York Yankees", "George Steinbrenner 's son-in-law",  "[X] be [Y] [0-rcmod-1,1-attr-2]");
-
-    }
-
-    private void assertEntity(FoundFeature<Annotation> toCheck, String entity1, String entity2, String pattern) {
-        Assert.assertThat(toCheck.getEntity1().getCoveredText(), is(entity1));
-        Assert.assertThat(toCheck.getEntity2().getCoveredText(), is(entity2));
-        Assert.assertThat(toCheck.getPattern(), is(pattern));
-    }
+	private void assertEntity(FoundFeature<Annotation> toCheck, String entity1, String entity2, String pattern) {
+		Assert.assertThat(toCheck.getEntity1().getCoveredText(), is(entity1));
+		Assert.assertThat(toCheck.getEntity2().getCoveredText(), is(entity2));
+		Assert.assertThat(toCheck.getPattern(), is(pattern));
+	}
 
 }

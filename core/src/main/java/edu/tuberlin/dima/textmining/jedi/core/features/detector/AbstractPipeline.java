@@ -14,7 +14,6 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.uima.analysis_engine.AnalysisEngine;
-import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.factory.JCasFactory;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
@@ -26,228 +25,228 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class AbstractPipeline {
-    private static final Log LOG = LogFactory
-            .getLog(AbstractPipeline.class);
+	private static final Log LOG = LogFactory
+		.getLog(AbstractPipeline.class);
 
-    private AnalysisEngine analysisEngine;
+	private AnalysisEngine analysisEngine;
 
-    private JCas jCas;
+	private JCas jCas;
 
-    private UIMAXMLConverterHelper converterHelper;
+	private UIMAXMLConverterHelper converterHelper;
 
-    private CsvReporter csvreporter;
+	private CsvReporter csvreporter;
 
-    private Boolean renderNewCas = false;
+	private Boolean renderNewCas = false;
 
-    private String defaultLanguage;
+	private String defaultLanguage;
 
-    private boolean enableReporting = false;
+	private boolean enableReporting = false;
 
-    @Parameter(names = {"-testMode"},
-            description = "If enabled, frontend checking is disabled", required = false)
-    private boolean testMode = false;
+	@Parameter(names = {"-testMode"},
+		description = "If enabled, frontend checking is disabled", required = false)
+	private boolean testMode = false;
 
-    @Parameter(names = {"-warmup"},
-            description = "Parses a small sentence, to load the resources", required = false)
-    private boolean warmup = false;
+	@Parameter(names = {"-warmup"},
+		description = "Parses a small sentence, to load the resources", required = false)
+	private boolean warmup = false;
 
-    enum Counters {
-        TOKENS,
-        SENTENCES,
-        DOCUMENTS,
-        WRONG_LANGUAGE,
-        ERRORS
-    }
+	enum Counters {
+		TOKENS,
+		SENTENCES,
+		DOCUMENTS,
+		WRONG_LANGUAGE,
+		ERRORS
+	}
 
-    Collection<Token> tokens;
-    Collection<Sentence> sentences;
+	Collection<Token> tokens;
+	Collection<Sentence> sentences;
 
-    public void init(
-            AnalysisEngine analysisEngine,
-            boolean renderNewCas,
-            String defaultLanguage,
-            boolean enableReporting,
-            String reportCSV,
-            boolean prettyPrintXML)
-            throws Throwable {
-        // load properties early
-        this.analysisEngine = analysisEngine;
-        this.renderNewCas = renderNewCas;
-        this.defaultLanguage = defaultLanguage;
-        this.enableReporting = enableReporting;
+	public void init(
+		AnalysisEngine analysisEngine,
+		boolean renderNewCas,
+		String defaultLanguage,
+		boolean enableReporting,
+		String reportCSV,
+		boolean prettyPrintXML)
+		throws Throwable {
+		// load properties early
+		this.analysisEngine = analysisEngine;
+		this.renderNewCas = renderNewCas;
+		this.defaultLanguage = defaultLanguage;
+		this.enableReporting = enableReporting;
 
-        // init only in backend
-        if (testMode) {
+		// init only in backend
+		if (testMode) {
 
-            this.converterHelper = new UIMAXMLConverterHelper(prettyPrintXML);
-            this.jCas = JCasFactory.createJCas();
-            if (enableReporting) {
+			this.converterHelper = new UIMAXMLConverterHelper(prettyPrintXML);
+			this.jCas = JCasFactory.createJCas();
+			if (enableReporting) {
 
-                MetricsAggregator.reporter.start(10, TimeUnit.MINUTES);
-                if (reportCSV != null) {
+				MetricsAggregator.reporter.start(10, TimeUnit.MINUTES);
+				if (reportCSV != null) {
 
-                    csvreporter.start(
-                            10, TimeUnit.MINUTES);
-                }
-            }
+					csvreporter.start(
+						10, TimeUnit.MINUTES);
+				}
+			}
 
-            if (warmup) {
-                warmup();
-            }
-        }
-    }
+			if (warmup) {
+				warmup();
+			}
+		}
+	}
 
-    public JCas exec(
-            List<String> input) throws IOException {
-        tokens = null;
-        sentences = null;
+	public JCas exec(
+		List<String> input) throws IOException {
+		tokens = null;
+		sentences = null;
 
-        if (input == null) {
-            return null;
-        }
-        if (renderNewCas && input.size() != 2) {
-            throw new IllegalArgumentException(
-                    "Tuple needs to contain two arguments");
-        }
+		if (input == null) {
+			return null;
+		}
+		if (renderNewCas && input.size() != 2) {
+			throw new IllegalArgumentException(
+				"Tuple needs to contain two arguments");
+		}
 
-        String document = input.get(0);
-        String documentID = renderNewCas ? input.get(1) : "";
+		String document = input.get(0);
+		String documentID = renderNewCas ? input.get(1) : "";
 
-        if (document == null) {
-            return null;
-        }
+		if (document == null) {
+			return null;
+		}
 
 
-        try {
-            Stopwatch complete = new Stopwatch();
-            Stopwatch serialize = new Stopwatch();
+		try {
+			Stopwatch complete = new Stopwatch();
+			Stopwatch serialize = new Stopwatch();
 
-            complete.start();
-            runPipeline(StringUtils.trim(document), documentID);
-            serialize.start();
+			complete.start();
+			runPipeline(StringUtils.trim(document), documentID);
+			serialize.start();
 
-            //String result = converterHelper.serialize( jCas );
+			//String result = converterHelper.serialize( jCas );
 
-            serialize.stop();
-            complete.stop();
+			serialize.stop();
+			complete.stop();
 
-            if (enableReporting) {
-                MetricsAggregator.updateMetrics(
-                        sentences.size(), tokens.size(),
-                        serialize.elapsed(TimeUnit.MILLISECONDS),
-                        "Serialization");
+			if (enableReporting) {
+				MetricsAggregator.updateMetrics(
+					sentences.size(), tokens.size(),
+					serialize.elapsed(TimeUnit.MILLISECONDS),
+					"Serialization");
 
-                MetricsAggregator.updateMetrics(
-                        sentences.size(), tokens.size(),
-                        complete.elapsed(TimeUnit.MILLISECONDS),
-                        "UDF");
-            }
+				MetricsAggregator.updateMetrics(
+					sentences.size(), tokens.size(),
+					complete.elapsed(TimeUnit.MILLISECONDS),
+					"UDF");
+			}
 
-            return jCas;
+			return jCas;
 
-        } catch (Throwable e) {
-            LOG.error(
-                    e.getMessage() + ">" + document + "<", e);
-            return null;
-        }
-    }
+		} catch (Throwable e) {
+			LOG.error(
+				e.getMessage() + ">" + document + "<", e);
+			return null;
+		}
+	}
 
-    /**
-     * Triggers the pipeline, without reporting measurements - loads all classes = warmup
-     */
-    private void warmup() throws AnalysisEngineProcessException {
+	/**
+	 * Triggers the pipeline, without reporting measurements - loads all classes = warmup.
+	 */
+	private void warmup() {
 
-        LOG.info("Triggering a warmup, with language set to " + defaultLanguage);
-        jCas.reset();
+		LOG.info("Triggering a warmup, with language set to " + defaultLanguage);
+		jCas.reset();
 
-        String sampleText;
-        switch (defaultLanguage) {
-            case "en":
-                sampleText = "This is a not so super important sample warmup text to trigger the loading";
-                break;
-            case "de":
-                sampleText = "Dies ist in Beispiel text, der zum Laden von Modulen führen sollte ....";
-                break;
-            default:
-                sampleText = "This is a not so super important sample warmup text to trigger the loading";
+		String sampleText;
+		switch (defaultLanguage) {
+			case "en":
+				sampleText = "This is a not so super important sample warmup text to trigger the loading";
+				break;
+			case "de":
+				sampleText = "Dies ist in Beispiel text, der zum Laden von Modulen führen sollte ....";
+				break;
+			default:
+				sampleText = "This is a not so super important sample warmup text to trigger the loading";
 
-        }
+		}
 
-        jCas.setDocumentText(sampleText);
-        jCas.setDocumentLanguage(defaultLanguage);
+		jCas.setDocumentText(sampleText);
+		jCas.setDocumentLanguage(defaultLanguage);
 
-        // clear jcas again
-        jCas.reset();
-        LOG.info("Done with warmup test ...");
-    }
+		// clear jcas again
+		jCas.reset();
+		LOG.info("Done with warmup test ...");
+	}
 
-    /**
-     * Performs the named entity recognition with the specified model.
-     *
-     * @param document   the document to be ne-tagged
-     * @param documentID the document id - or null
-     * @throws Exception
-     */
-    private void
-    runPipeline(
-            String document, String documentID) throws Exception {
+	/**
+	 * Performs the named entity recognition with the specified model.
+	 *
+	 * @param document   the document to be ne-tagged
+	 * @param documentID the document id - or null
+	 * @throws Exception in case of error
+	 */
+	private void
+	runPipeline(
+		String document, String documentID) throws Exception {
 
-        Stopwatch languageTimer = new Stopwatch();
-        if (renderNewCas) {
-            jCas.reset();
-            jCas.setDocumentText(UIMAXMLConverterHelper
-                    .sanitizeString(document));
+		Stopwatch languageTimer = new Stopwatch();
+		if (renderNewCas) {
+			jCas.reset();
+			jCas.setDocumentText(UIMAXMLConverterHelper
+				.sanitizeString(document));
 
-            languageTimer.start();
+			languageTimer.start();
 
-            setLanguage();
+			setLanguage();
 
-            if (documentID != null) {
-                DocumentMetaData documentMetaData = DocumentMetaData.create(jCas);
-                documentMetaData.setDocumentUri(documentID);
-            }
-            languageTimer.stop();
+			if (documentID != null) {
+				DocumentMetaData documentMetaData = DocumentMetaData.create(jCas);
+				documentMetaData.setDocumentUri(documentID);
+			}
+			languageTimer.stop();
 
-        } else {
+		} else {
 
-            jCas = converterHelper.deserialize(
-                    IOUtils.toInputStream(
-                            document, Charsets.UTF_8.name()), jCas);
-        }
+			jCas = converterHelper.deserialize(
+				IOUtils.toInputStream(
+					document, Charsets.UTF_8.name()), jCas);
+		}
 
-        ProcessTrace process = analysisEngine.process(jCas);
+		ProcessTrace process = analysisEngine.process(jCas);
 
-        if (enableReporting) {
+		if (enableReporting) {
 
-            sentences = JCasUtil.select(
-                    jCas, Sentence.class);
-            tokens = JCasUtil.select(
-                    jCas, Token.class);
+			sentences = JCasUtil.select(
+				jCas, Sentence.class);
+			tokens = JCasUtil.select(
+				jCas, Token.class);
 
-            MetricsAggregator.accummulateMetrics(
-                    process, sentences.size(), tokens.size());
+			MetricsAggregator.accummulateMetrics(
+				process, sentences.size(), tokens.size());
 
-            MetricsAggregator.updateMetrics(
-                    sentences.size(), tokens.size(),
-                    languageTimer.elapsed(TimeUnit.MILLISECONDS),
-                    "LanguageDetect");
-        }
+			MetricsAggregator.updateMetrics(
+				sentences.size(), tokens.size(),
+				languageTimer.elapsed(TimeUnit.MILLISECONDS),
+				"LanguageDetect");
+		}
 
-    }
+	}
 
-    public void setLanguage()
-            throws IllegalArgumentException {
-        if (defaultLanguage != null) {
-            jCas.setDocumentLanguage(defaultLanguage);
-        } else {
-            throw new IllegalArgumentException(
-                    "No default language set.");
-        }
-    }
+	public void setLanguage()
+		throws IllegalArgumentException {
+		if (defaultLanguage != null) {
+			jCas.setDocumentLanguage(defaultLanguage);
+		} else {
+			throw new IllegalArgumentException(
+				"No default language set.");
+		}
+	}
 
-    public void finish() {
-        if (enableReporting) {
-            MetricsAggregator.reporter.report();
-        }
-    }
+	public void finish() {
+		if (enableReporting) {
+			MetricsAggregator.reporter.report();
+		}
+	}
 }

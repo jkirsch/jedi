@@ -19,7 +19,7 @@ import java.io.StringWriter;
 
 /**
  * XMI Cas serializer / de-serializer Helper.
- * <p/>
+ *
  * Date: 18.02.13
  * Time: 14:47
  *
@@ -95,7 +95,7 @@ public class UIMAXMLConverterHelper {
      * uimaj-core
      *
      * org/apache/uima/util/CasToInlineXml
-     * @param aChars
+     * @param aChars input
      */
     private static void replaceInvalidXmlChars(char[] aChars) {
         for (int i = 0; i < aChars.length; i++) {

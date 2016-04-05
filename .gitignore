@@ -25,3 +25,9 @@ hs_err_pid*
 # Maven
 log/
 target/
+
+# The index
+freepal-index
+
+#exludes for the maven wrapper
+!.mvn/wrapper/*.jar

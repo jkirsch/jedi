@@ -10,10 +10,10 @@ public class PrintCollector {
 
     StringBuilder stringBuilder;
 
-    final boolean printoutput;
+    final boolean printToStdout;
 
-    public PrintCollector(boolean printoutput) {
-        this.printoutput = printoutput;
+    public PrintCollector(boolean printToStdout) {
+        this.printToStdout = printToStdout;
         stringBuilder = new StringBuilder();
     }
 
@@ -21,7 +21,7 @@ public class PrintCollector {
 
         stringBuilder.append(line);
         stringBuilder.append("\n");
-        if(printoutput) {
+        if(printToStdout) {
             System.out.println(line);
         }
 

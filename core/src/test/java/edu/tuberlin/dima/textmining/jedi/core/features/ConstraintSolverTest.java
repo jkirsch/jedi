@@ -1,6 +1,7 @@
 package edu.tuberlin.dima.textmining.jedi.core.features;
 
 import com.google.common.base.Joiner;
+import com.google.common.collect.ComparisonChain;
 import com.google.common.primitives.Doubles;
 import edu.tuberlin.dima.textmining.jedi.core.model.Edge;
 import edu.tuberlin.dima.textmining.jedi.core.model.Graph;
@@ -8,7 +9,11 @@ import edu.tuberlin.dima.textmining.jedi.core.model.Solution;
 import edu.tuberlin.dima.textmining.jedi.core.util.PrintCollector;
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;
@@ -16,6 +21,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 public class ConstraintSolverTest {
+
+    static final Logger LOG = LoggerFactory.getLogger(ConstraintSolverTest.class);
 
     @Test
     public void testSolve() throws Exception {
@@ -502,8 +509,20 @@ public class ConstraintSolverTest {
 
         List<Solution<String>> solutions = builder.build().solve(new PrintCollector(true));
 
+        // sort
+        Collections.sort(solutions, new Comparator<Solution<String>>() {
+            @Override
+            public int compare(Solution<String> o1, Solution<String> o2) {
+                return ComparisonChain.start()
+                        .compare(o1.getLeft(), o2.getLeft())
+                        .compare(o1.getRight(), o2.getRight())
+                        .compare(o1.getEdge().getRelation(), o2.getEdge().getRelation())
+                        .result();
+            }
+        });
+
         for (Solution<String> entry : solutions) {
-            System.out.println(entry.getLeft() + " -> " + entry.getRight() + "  " + entry.getEdge());
+            LOG.info(entry.getLeft() + " -> " + entry.getRight() + "  " + entry.getEdge());
         }
 
         Assert.assertThat(solutions.size(), is(3));

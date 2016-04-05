@@ -8,9 +8,10 @@ package edu.tuberlin.dima.textmining.jedi.core.features.detector;
  */
 public enum DetectorType {
 
-    NOUNS,
-    NOUN_PHASE,
-    NAMED_ENTITIES,
-    NOUN_PR
+	NOUNS,
+	NOUN_PHRASE,
+	NAMED_ENTITIES,
+	NOUN_PR,
+	ALLPairs
 
 }

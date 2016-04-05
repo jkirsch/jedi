@@ -23,7 +23,7 @@ public class CompressionHelper {
      *
      * @param input inputstream
      * @return GZIPInputStream or inputstream
-     * @throws java.io.IOException
+     * @throws java.io.IOException in case of errors
      */
     public static InputStream getDecompressionStream(InputStream input) throws IOException {
         PushbackInputStream pb = new PushbackInputStream(input, 2); //we need a pushbackstream to look ahead

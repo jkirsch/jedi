@@ -54,11 +54,11 @@ import java.util.Properties;
 /**
  * Adapted from
  * http://cleartk.googlecode.com/git/cleartk-stanford-corenlp/src/main/java/org/cleartk/stanford/corenlp/StanfordCoreNlpAnnotator.java
- * <p/>
- * <br>
+ *
+ *
  * Copyright (c) 2011, Regents of the University of Colorado <br>
  * All rights reserved.
- * <p/>
+ *
  * This uses the Stanford NER suite to parse an english document - copying over all annotations except the dependency parse
  *
  * @author Steven Bethard
