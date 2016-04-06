@@ -50,6 +50,19 @@ public class FreebaseTypeService {
 
 	}
 
+	/**
+	 * Init with defaults
+	 */
+	public FreebaseTypeService() throws IOException {
+
+		this(
+			Resources.getResource("freepal/relation-types.txt"),
+			Resources.getResource("freepal/typeHierarchy.txt"),
+			Resources.getResource("freepal/inversetypes.txt"),
+			Resources.getResource("freepal/normalizedtypes.map")
+			);
+	}
+
 	public FreebaseTypeService(URL relationTypes, URL relationHierarchyFile, URL relationInverseFile, URL normalizedTypesFile) throws IOException {
 
 		typeHierarchy = Resources.readLines(relationHierarchyFile, Charsets.UTF_8, new LineProcessor<Map<String, List<String>>>() {

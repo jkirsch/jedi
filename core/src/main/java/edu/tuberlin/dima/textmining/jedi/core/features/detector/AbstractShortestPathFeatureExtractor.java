@@ -51,6 +51,9 @@ public abstract class AbstractShortestPathFeatureExtractor {
 
     private JCas jCas;
 
+	@Parameter(names = {"-name"}, description = "The name of the extractor", required = true)
+	private String name;
+
     public AbstractShortestPathFeatureExtractor(String options) throws UIMAException {
 
         JCommander jCommander = new JCommander(this);
@@ -146,7 +149,11 @@ public abstract class AbstractShortestPathFeatureExtractor {
         return graph;
     }
 
-    public JCas getjCas() {
+	public String getName() {
+		return name;
+	}
+
+	public JCas getjCas() {
         return jCas;
     }
 

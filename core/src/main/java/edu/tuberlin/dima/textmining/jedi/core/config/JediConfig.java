@@ -5,10 +5,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.N;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.NP;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PR;
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.AbstractShortestPathFeatureExtractor;
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.AllPairsShortestPathFeatureExtractor;
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.DetectorPipeline;
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.FindShortestPathFeatureExtractor;
+import edu.tuberlin.dima.textmining.jedi.core.features.detector.*;
 import edu.tuberlin.dima.textmining.jedi.core.index.FreebaseTypeService;
 import edu.tuberlin.dima.textmining.jedi.core.index.PatternIndexer;
 import org.apache.uima.UIMAException;
@@ -42,29 +39,31 @@ public class JediConfig {
 	@Bean(name = "NamedEntityFeatureDetector")
 	public AbstractShortestPathFeatureExtractor createNamedEntityFeatureDetector() throws UIMAException {
 
-		return new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -collapseMentions -selectionType " + NamedEntity.class.getName());
+		return new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -collapseMentions -selectionType " + NamedEntity.class.getName() + " -name " + DetectorType.NAMED_ENTITIES);
 	}
 
 	@Bean(name = "NounFeatureDetector")
 	public AbstractShortestPathFeatureExtractor createNounFeatureDetector() throws UIMAException {
 
-		return new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences  -pickupSimilar -selectionType " + N.class.getName() + " -additionalSelectionType " + PR.class.getName());
+		return new FindShortestPathFeatureExtractor(
+			"-lemmatize -resolveCoreferences  -pickupSimilar -selectionType " + N.class.getName() + " -additionalSelectionType " + PR.class.getName() + " -name " + DetectorType.NOUNS);
 	}
 
-	@Bean(name = "NounPhaseFeatureDetector")
-	public AbstractShortestPathFeatureExtractor createNounPhaseFeatureDetector() throws UIMAException {
+	@Bean(name = "NounPhraseFeatureDetector")
+	public AbstractShortestPathFeatureExtractor createNounPhraseFeatureDetector() throws UIMAException {
 
-		return new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -collapseMentions -pickupSimilar -selectionType " + NP.class.getName());
+		return new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -collapseMentions -pickupSimilar -selectionType " + NP.class.getName() + " -name " + DetectorType.NOUN_PHRASE);
 	}
 
 	@Bean(name = "NounPRFeatureDetector")
 	public AbstractShortestPathFeatureExtractor createNounPRFeatureDetector() throws UIMAException {
-		return new FindShortestPathFeatureExtractor("-lemmatize -collapseMentions -selectionType " + N.class.getName());
+		return new FindShortestPathFeatureExtractor("-lemmatize -collapseMentions -selectionType " + N.class.getName() + " -name " + DetectorType.NOUN_PR);
 	}
 
 	@Bean(name = "AllPairsFeatureDetector")
 	public AbstractShortestPathFeatureExtractor createAllPairDetector() throws UIMAException {
-		return new AllPairsShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -selectionType " + N.class.getName() + " -additionalSelectionType " + ADJ.class.getName());
+		return new AllPairsShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -selectionType " + N.class.getName() + " -additionalSelectionType " + ADJ.class.getName()
+			+ " -name " + DetectorType.ALLPairs);
 	}
 
 	@Bean

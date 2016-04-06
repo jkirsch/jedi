@@ -1,4 +1,4 @@
-package edu.tuberlin.dima.textmining.jedi.sample.util;
+package edu.tuberlin.dima.textmining.jedi.core.util;
 
 import org.apache.commons.lang3.StringUtils;
 

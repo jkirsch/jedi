@@ -3,9 +3,6 @@ package edu.tuberlin.dima.textmining.jedi.sample;
 import edu.tuberlin.dima.textmining.jedi.core.config.DetectorService;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.DetectorType;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.model.Answer;
-import edu.tuberlin.dima.textmining.jedi.core.freebase.FreebaseHelper;
-import edu.tuberlin.dima.textmining.jedi.core.model.Solution;
-import edu.tuberlin.dima.textmining.jedi.sample.util.TableBuilder;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,13 +15,13 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @ComponentScan(basePackages = {"edu.tuberlin.dima.textmining.jedi.core.config"})
 @SpringBootApplication
-public class MainApplication implements CommandLineRunner {
+public class JediSpringSampleApplication implements CommandLineRunner {
 
 	@Autowired
 	DetectorService detectorService;
 
 	public static void main(String[] args) {
-		SpringApplication.run(MainApplication.class, args);
+		SpringApplication.run(JediSpringSampleApplication.class, args);
 	}
 
 	@Override
@@ -34,24 +31,13 @@ public class MainApplication implements CommandLineRunner {
 
 		final Answer<Annotation> annotationAnswer = detectorService.detectFeatures(sentence, DetectorType.ALLPairs, true);
 
-		Answer<String> stringSolutions = Answer.generateStringVersion(annotationAnswer);
-
 		System.out.println("\n ------------ Input Sentence     ------------ \n");
 		System.out.println(sentence);
 		System.out.println("\n ------------ Detected Relations ------------ \n");
 
-		TableBuilder tb = new TableBuilder();
+		String tableString = annotationAnswer.generateReadableTableString();
 
-		tb.addRow("Object", "Relation", "Subject", "Pattern");
-		tb.addRow("------", "--------", "-------", "-------");
-
-		for (Solution<String> solution : stringSolutions.getSolutions()) {
-
-			String relation = FreebaseHelper.transformOldToNewId(solution.getEdge().getRelation());
-			tb.addRow(solution.getLeft(), relation, solution.getRight(), solution.getEdge().getPattern());
-		}
-
-		System.out.println(tb.toString());
+		System.out.println(tableString);
 
 	}
 }

@@ -1,11 +1,12 @@
 package edu.tuberlin.dima.textmining.jedi.core.features.detector.model;
 
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.DetectorType;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.FoundFeature;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.SearchResult;
+import edu.tuberlin.dima.textmining.jedi.core.freebase.FreebaseHelper;
 import edu.tuberlin.dima.textmining.jedi.core.model.Graph;
 import edu.tuberlin.dima.textmining.jedi.core.model.Solution;
 import edu.tuberlin.dima.textmining.jedi.core.util.AnnovisTransformerWriter;
+import edu.tuberlin.dima.textmining.jedi.core.util.TableBuilder;
 import org.apache.uima.jcas.tcas.Annotation;
 
 import java.util.List;
@@ -20,11 +21,11 @@ public class Answer<T> {
 
     String stdout;
 
-    DetectorType detectorType;
+    String detectorType;
 
     Map<String, AnnovisTransformerWriter.Annovis> annovis;
 
-    public Answer(List<SearchResult<T>> searchResults, List<Solution<T>> solutions, DetectorType detectorType, Graph graph, String stdout, Map<String, AnnovisTransformerWriter.Annovis> annovis) {
+    public Answer(List<SearchResult<T>> searchResults, List<Solution<T>> solutions, String detectorType, Graph graph, String stdout, Map<String, AnnovisTransformerWriter.Annovis> annovis) {
 
         this.foundFeatures = searchResults.stream().map(SearchResult::getTuple).collect(Collectors.toList());
 
@@ -47,7 +48,7 @@ public class Answer<T> {
         return stdout;
     }
 
-    public DetectorType getDetectorType() {
+    public String getDetectorType() {
         return detectorType;
     }
 
@@ -66,26 +67,43 @@ public class Answer<T> {
 	/**
 	 * Transforms a solution using UIMA objects into their string representations, by using the covered text implementation.
 	 *
-	 * @param input object with cas annotations
 	 * @param <T> the type of the annotations
      * @return answer with string representations
      */
-    public static <T> Answer<String> generateStringVersion(Answer<T> input) {
+    public <T> Answer<String> generateStringVersion() {
 
-		List<Solution<String>> transform = input.getSolutions().stream().map(solution -> new Solution<>(
+		List<Solution<String>> transform = solutions.stream().map(solution -> new Solution<>(
 			transformToString(solution.getLeft()),
 			transformToString(solution.getRight()),
 			solution.getEdge())).collect(Collectors.toList());
 
-		List<SearchResult<String>> transformedFeatures = input.foundFeatures.stream().map(feature -> new SearchResult<>(
+		List<SearchResult<String>> transformedFeatures = foundFeatures.stream().map(feature -> new SearchResult<>(
 			new FoundFeature<>(
 				transformToString(feature.getEntity1()),
 				transformToString(feature.getEntity2()),
 				feature.getPattern()), null)).collect(Collectors.toList());;
 
-        return new Answer<>(transformedFeatures, transform, input.getDetectorType(), input.getGraph(), input.getStdout(), input.getAnnovis());
+        return new Answer<>(transformedFeatures, transform, detectorType, graph, stdout, annovis);
 
     }
+
+	public String generateReadableTableString(){
+		TableBuilder tb = new TableBuilder();
+
+		Answer<String> stringVersion = generateStringVersion();
+
+		tb.addRow("Object", "Relation", "Subject", "Pattern");
+		tb.addRow("------", "--------", "-------", "-------");
+
+		for (Solution<String> solution : stringVersion.getSolutions()) {
+
+			String relation = FreebaseHelper.transformOldToNewId(solution.getEdge().getRelation());
+			tb.addRow(solution.getLeft(), relation, solution.getRight(), solution.getEdge().getPattern());
+		}
+
+		return tb.toString();
+	}
+
 
     private static <T> String transformToString(T input) {
         if(input instanceof Annotation) {
