@@ -29,13 +29,13 @@ public class JediSpringSampleApplication implements CommandLineRunner {
 
 		String sentence = "Bill Gothard received his B.A. in Biblical Studies from Wheaton College in 1957.";
 
-		final Answer<Annotation> annotationAnswer = detectorService.detectFeatures(sentence, DetectorType.ALLPairs, true);
+		final Answer<Annotation> relationAnswer = detectorService.detectRelations(sentence, DetectorType.ALLPairs, true);
 
 		System.out.println("\n ------------ Input Sentence     ------------ \n");
 		System.out.println(sentence);
 		System.out.println("\n ------------ Detected Relations ------------ \n");
 
-		String tableString = annotationAnswer.generateReadableTableString();
+		String tableString = relationAnswer.generateReadableTableString();
 
 		System.out.println(tableString);
 

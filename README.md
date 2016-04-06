@@ -82,7 +82,7 @@ JediService jediService = new JediService(detectorPipeline, featureExtractor);
 String sentence = "Bill Gothard received his B.A. in Biblical Studies from Wheaton College in 1957.";
 
 // execute relation detection
-Answer<Annotation> annotationAnswer = jediService.analyzeText(sentence);
+Answer<Annotation> relationAnswer = jediService.detectRelations(sentence);
 ```
 
 [Full example code](sample/src/main/java/edu/tuberlin/dima/textmining/jedi/sample)

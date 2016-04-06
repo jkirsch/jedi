@@ -17,6 +17,7 @@ public class JediSampleApplication {
 
 		DetectorPipeline detectorPipeline = new DetectorPipeline(
 			"-annotateNER -skipWrongLanguage false -lang en -testMode");
+
 		AllPairsShortestPathFeatureExtractor featureExtractor
 			= new AllPairsShortestPathFeatureExtractor(
 					    "-lemmatize " +
@@ -32,7 +33,7 @@ public class JediSampleApplication {
 		String sentence = "Bill Gothard received his B.A. in Biblical Studies from Wheaton College in 1957.";
 
 		// execute relation detection
-		Answer<Annotation> annotationAnswer = jediService.analyzeText(sentence);
+		Answer<Annotation> annotationAnswer = jediService.detectRelations(sentence);
 
 		System.out.println("\n ------------ Input Sentence     ------------ \n");
 		System.out.println(sentence);

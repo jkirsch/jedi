@@ -41,10 +41,11 @@ public class FindShortestPathFeatureExtractor extends AbstractShortestPathFeatur
 		super(options);
 	}
 
-
-	enum Counters {
-		FEATURES
+	public FindShortestPathFeatureExtractor(String options, DetectorType detectorType) throws UIMAException {
+		super(options);
+		setName(detectorType.name());
 	}
+
 
 	private static class EntityPair {
 

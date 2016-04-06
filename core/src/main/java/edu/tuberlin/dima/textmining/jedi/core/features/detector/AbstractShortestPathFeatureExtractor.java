@@ -51,7 +51,7 @@ public abstract class AbstractShortestPathFeatureExtractor {
 
     private JCas jCas;
 
-	@Parameter(names = {"-name"}, description = "The name of the extractor", required = true)
+	@Parameter(names = {"-name"}, description = "The name of the extractor", required = false)
 	private String name;
 
     public AbstractShortestPathFeatureExtractor(String options) throws UIMAException {
@@ -148,6 +148,10 @@ public abstract class AbstractShortestPathFeatureExtractor {
 
         return graph;
     }
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public String getName() {
 		return name;

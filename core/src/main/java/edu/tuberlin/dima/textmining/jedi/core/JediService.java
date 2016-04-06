@@ -45,9 +45,9 @@ public class JediService {
 
 	}
 
-	public Answer<Annotation> analyzeText(String text) throws InterruptedException, SAXException, ExecutionException, IOException {
+	public Answer<Annotation> detectRelations(String text) throws InterruptedException, SAXException, ExecutionException, IOException {
 
-		return service.detectFeatures(text, extractor, true);
+		return service.detectRelations(text, extractor, true);
 	}
 
 

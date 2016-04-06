@@ -32,7 +32,9 @@ public class FindShortestPathFeatureExtractorTest {
 	@BeforeClass
 	public static void setUp() throws Throwable {
 		detectorPipeline = new DetectorPipeline("-lang en -testMode");
-		featureExtractor = new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -pickupSimilar -selectionType " + N.class.getName() + " -additionalSelectionType " + PR.class.getName());
+		featureExtractor = new FindShortestPathFeatureExtractor(
+										"-lemmatize -resolveCoreferences -pickupSimilar -selectionType " + N.class.getName() + " -additionalSelectionType " + PR.class.getName()
+										, DetectorType.ALLPairs);
 
 		uimaxmlConverterHelper = new UIMAXMLConverterHelper(true);
 	}

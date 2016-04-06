@@ -284,9 +284,9 @@ public class DetectorService {
 		return "/" + StringUtils.lowerCase(StringUtils.substringAfterLast(namedEntity.getClass().getName(), "."), Locale.ENGLISH);
 	}
 
-	public Answer<Annotation> detectFeatures(String text,
-											 AbstractShortestPathFeatureExtractor detector,
-											 boolean resolveConstraints) throws IOException, SAXException, InterruptedException, ExecutionException {
+	public Answer<Annotation> detectRelations(String text,
+											  AbstractShortestPathFeatureExtractor detector,
+											  boolean resolveConstraints) throws IOException, SAXException, InterruptedException, ExecutionException {
 
 		Stopwatch stopwatch = new Stopwatch().start();
 		final JCas jCas = detectorPipeline.exec(Lists.newArrayList(text, "id"));
@@ -362,7 +362,7 @@ public class DetectorService {
 		return new Answer<>(candidates, solutionList, detector.getName(), Graph.transform(solutionList), printCollector.getOutput(), annovisMap);
 	}
 
-	public Answer<Annotation> detectFeatures(String text, DetectorType detectorType, boolean resolveConstraints) throws IOException, SAXException, InterruptedException, ExecutionException {
+	public Answer<Annotation> detectRelations(String text, DetectorType detectorType, boolean resolveConstraints) throws IOException, SAXException, InterruptedException, ExecutionException {
 
 		AbstractShortestPathFeatureExtractor detector;
 
@@ -386,7 +386,7 @@ public class DetectorService {
 				throw new IllegalArgumentException(detectorType.name() + " not set");
 		}
 
-		return detectFeatures(text, detector, resolveConstraints);
+		return detectRelations(text, detector, resolveConstraints);
 
 	}
 

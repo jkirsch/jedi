@@ -35,6 +35,12 @@ public class AllPairsShortestPathFeatureExtractor extends AbstractShortestPathFe
         super(options);
     }
 
+	public AllPairsShortestPathFeatureExtractor(String options, DetectorType detectorType) throws UIMAException {
+		super(options);
+		setName(detectorType.name());
+	}
+
+
     @Override
     public List<FoundFeature<Annotation>> getShortestPaths(UndirectedGraph<Token, DependencyEdge> graph) {
 

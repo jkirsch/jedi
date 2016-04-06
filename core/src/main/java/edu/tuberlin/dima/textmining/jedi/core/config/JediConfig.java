@@ -39,31 +39,35 @@ public class JediConfig {
 	@Bean(name = "NamedEntityFeatureDetector")
 	public AbstractShortestPathFeatureExtractor createNamedEntityFeatureDetector() throws UIMAException {
 
-		return new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -collapseMentions -selectionType " + NamedEntity.class.getName() + " -name " + DetectorType.NAMED_ENTITIES);
+		return new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -collapseMentions -selectionType " + NamedEntity.class.getName(),
+					DetectorType.NAMED_ENTITIES);
 	}
 
 	@Bean(name = "NounFeatureDetector")
 	public AbstractShortestPathFeatureExtractor createNounFeatureDetector() throws UIMAException {
 
 		return new FindShortestPathFeatureExtractor(
-			"-lemmatize -resolveCoreferences  -pickupSimilar -selectionType " + N.class.getName() + " -additionalSelectionType " + PR.class.getName() + " -name " + DetectorType.NOUNS);
+			"-lemmatize -resolveCoreferences  -pickupSimilar -selectionType " + N.class.getName() + " -additionalSelectionType " + PR.class.getName(),
+			DetectorType.NOUNS);
 	}
 
 	@Bean(name = "NounPhraseFeatureDetector")
 	public AbstractShortestPathFeatureExtractor createNounPhraseFeatureDetector() throws UIMAException {
 
-		return new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -collapseMentions -pickupSimilar -selectionType " + NP.class.getName() + " -name " + DetectorType.NOUN_PHRASE);
+		return new FindShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -collapseMentions -pickupSimilar -selectionType " + NP.class.getName(),
+			DetectorType.NOUN_PHRASE);
 	}
 
 	@Bean(name = "NounPRFeatureDetector")
 	public AbstractShortestPathFeatureExtractor createNounPRFeatureDetector() throws UIMAException {
-		return new FindShortestPathFeatureExtractor("-lemmatize -collapseMentions -selectionType " + N.class.getName() + " -name " + DetectorType.NOUN_PR);
+		return new FindShortestPathFeatureExtractor("-lemmatize -collapseMentions -selectionType " + N.class.getName(),
+			DetectorType.NOUN_PR);
 	}
 
 	@Bean(name = "AllPairsFeatureDetector")
 	public AbstractShortestPathFeatureExtractor createAllPairDetector() throws UIMAException {
-		return new AllPairsShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -selectionType " + N.class.getName() + " -additionalSelectionType " + ADJ.class.getName()
-			+ " -name " + DetectorType.ALLPairs);
+		return new AllPairsShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -selectionType " + N.class.getName() + " -additionalSelectionType " + ADJ.class.getName(),
+			DetectorType.ALLPairs);
 	}
 
 	@Bean
