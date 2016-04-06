@@ -35,6 +35,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>edu.tuberlin.dima.textmining.jedi.sample.JediSpringSampleApplication</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
