@@ -4,14 +4,15 @@ JEDI
 JEDI is an automated system to jointly extract typed named entities and Freebase relations using dependency pattern from text. 
 
 ## Running
-You need to setup the pattern-relation assignment lucene index.
-A ready made index is hosted here http://www.user.tu-berlin.de/jkirsch/datasets/acl2016-jedi/freepal-index.tar.bz2
+You need to setup the pattern-relation assignment lucene index, hosted here http://www.user.tu-berlin.de/jkirsch/datasets/acl2016-jedi/freepal-index.tar.bz2 (900 MB)
 Download and extract it into the root directory of the project
 
 ```shell
 curl -O http://www.user.tu-berlin.de/jkirsch/datasets/acl2016-jedi/freepal-index.tar.bz2
 tar xvfj freepal-index.tar.bz2
+rm freepal-index.tar.bz2
 ```
+
 If you place the index directory into a different location, adjust the `index.directory` location field in the properties file `sample/src/main/resources/application.properties`
 
 To start a simple test once setup, run
@@ -21,7 +22,7 @@ To start a simple test once setup, run
 ./mvnw spring-boot:run -pl sample
 ```
 
-## Sample result
+## Example result
 
 For the sample sentence
 
