@@ -38,7 +38,7 @@ public class JediService {
 
 		// setup services
 		FreebaseTypeService freebaseTypeService = new FreebaseTypeService();
-		PatternIndexer patternIndexer = new PatternIndexer(true);
+		PatternIndexer patternIndexer = new PatternIndexer();
 
 		this.service = new DetectorService(detectorPipeline, freebaseTypeService, patternIndexer);
 		this.service.init();

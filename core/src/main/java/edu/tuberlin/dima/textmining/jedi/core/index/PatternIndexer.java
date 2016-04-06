@@ -35,63 +35,68 @@ import java.net.URL;
 import java.util.*;
 
 /**
+ * The indexer used to query the pattern database.
  */
 public class PatternIndexer {
 
 	private static final Logger LOG = LoggerFactory.getLogger(PatternIndexer.class);
 
-    // Field Definitions
-    private static final String ENTROPY_FIELD = "entropy";
-    private static final String GLOBALCOUNT_FIELD = "globalcount";
-    private static final String RELATION_FIELD = "relation";
-    private static final String COUNT_FIELD = "count";
-    private static final String PATTERN_FIELD = "pattern";
+	// Field Definitions
+	private static final String ENTROPY_FIELD = "entropy";
+	private static final String GLOBALCOUNT_FIELD = "globalcount";
+	private static final String RELATION_FIELD = "relation";
+	private static final String COUNT_FIELD = "count";
+	private static final String PATTERN_FIELD = "pattern";
 
-    private final Directory index;
-    private final StandardAnalyzer analyzer;
+	private final Directory index;
+	private final StandardAnalyzer analyzer;
 
-    private IndexSearcher searcher;
+	private IndexSearcher searcher;
 
-    Table<String, String, Integer> additionalPattern = HashBasedTable.create();
+	Table<String, String, Integer> additionalPattern = HashBasedTable.create();
 
-    private final JsonParser jsonParser = new JsonParser();
-    final FreebaseTypeService freebaseTypeService;
+	private final JsonParser jsonParser = new JsonParser();
+	final FreebaseTypeService freebaseTypeService;
 
-    public PatternIndexer(boolean initSearch) throws IOException {
-        this(initSearch, new File("freepal-index"),
-                Resources.getResource("freepal/relation-types.txt"),
-                Resources.getResource("freepal/typeHierarchy.txt"),
-                Resources.getResource("freepal/inversetypes.txt"),
-                Resources.getResource("freepal/normalizedtypes.map"));
-    }
+	/**
+	 * Creates a new instance of the pattern indexer, using default settings.
+	 * @throws IOException in case of errors
+     */
+	public PatternIndexer() throws IOException {
+		this(true, new File("freepal-index"),
+			Resources.getResource("freepal/relation-types.txt"),
+			Resources.getResource("freepal/typeHierarchy.txt"),
+			Resources.getResource("freepal/inversetypes.txt"),
+			Resources.getResource("freepal/normalizedtypes.map"));
+	}
 
-    public PatternIndexer(boolean initSearch, File indexDirectory, URL relationTypes, URL relationHierarchyFile, URL inverseTypesFile, URL normalizedTypesFile) throws IOException {
-        this(initSearch, indexDirectory,
-                new FreebaseTypeService(
-                        relationTypes,
-                        relationHierarchyFile,
-                        inverseTypesFile,
-                        normalizedTypesFile)
-                );
-    }
+	public PatternIndexer(boolean initSearch, File indexDirectory, URL relationTypes, URL relationHierarchyFile, URL inverseTypesFile, URL normalizedTypesFile) throws IOException {
+		this(initSearch, indexDirectory,
+			new FreebaseTypeService(
+				relationTypes,
+				relationHierarchyFile,
+				inverseTypesFile,
+				normalizedTypesFile)
+		);
+	}
 
-    public PatternIndexer(boolean initSearch, File indexDirectory, FreebaseTypeService freebaseTypeService) throws IOException {
+	public PatternIndexer(boolean initSearch, File indexDirectory, FreebaseTypeService freebaseTypeService) throws IOException {
 
-        analyzer = new StandardAnalyzer((CharArraySet) null);
-        //index = new RAMDirectory(new MMapDirectory(new File(indexDirectory)), IOContext.READ);
-        index = MMapDirectory.open(indexDirectory.toPath());
+		analyzer = new StandardAnalyzer((CharArraySet) null);
+		//index = new RAMDirectory(new MMapDirectory(new File(indexDirectory)), IOContext.READ);
+		index = MMapDirectory.open(indexDirectory.toPath());
 
-        this.freebaseTypeService = freebaseTypeService;
+		this.freebaseTypeService = freebaseTypeService;
 
-        if (initSearch) {
+		if (initSearch) {
 			IndexReader reader = DirectoryReader.open(index);
-            searcher = new IndexSearcher(reader);
-        }
+			searcher = new IndexSearcher(reader);
+		}
 
-        reRanker.put("ns:people.person.nationality", 0.7f);
+		reRanker.put("ns:people.person.nationality", 0.7f);
 
-        readAdditionalTypes();
-    }
+		readAdditionalTypes();
+	}
 
     private void readAdditionalTypes() throws IOException {
         URL resource = Resources.getResource("freepal/additional-pattern.txt.gz");
@@ -151,12 +156,18 @@ public class PatternIndexer {
     }
 
     public static void main(String[] args) throws IOException, ArchiveException {
-        new PatternIndexer(true).exampleSearch();
+        new PatternIndexer().exampleSearch();
     }
 
+	/**
+	 * Tests if we can query.
+	 *
+	 * @throws IOException in case of error
+	 * @throws ArchiveException in case of errors
+     */
     public void exampleSearch() throws IOException, ArchiveException {
 
-        final PatternIndexer patternIndexer = new PatternIndexer(true);
+        final PatternIndexer patternIndexer = new PatternIndexer();
 
         //buildLuceneIndex.buildIndex();
         final PatternSearchResult search = patternIndexer.search("[X] base in [Y] [0-rcmod-1,1-prep-2,2-pobj-3]", 10.7f);
@@ -412,110 +423,110 @@ public class PatternIndexer {
 
 	}
 
-    private Map<String, Float> reRanker = Maps.newHashMap();
+	private Map<String, Float> reRanker = Maps.newHashMap();
 
-    private static void addDocumentToIndex(IndexWriter w, PatternSearchResult element) throws IOException {
+	private static void addDocumentToIndex(IndexWriter w, PatternSearchResult element) throws IOException {
 
-        for (PatternSearchResult.SubRelation subRelation : element.relationCount) {
-            Document doc = new Document();
+		for (PatternSearchResult.SubRelation subRelation : element.relationCount) {
+			Document doc = new Document();
 
-            String relation = subRelation.relation;
+			String relation = subRelation.relation;
 
-            doc.add(new StringField(PATTERN_FIELD, element.feature, org.apache.lucene.document.Field.Store.YES));
-            doc.add(new StringField(RELATION_FIELD, relation, org.apache.lucene.document.Field.Store.YES));
-            doc.add(new IntField(COUNT_FIELD, subRelation.count, org.apache.lucene.document.Field.Store.YES));
-            doc.add(new IntField(GLOBALCOUNT_FIELD, element.counts, org.apache.lucene.document.Field.Store.YES));
-            doc.add(new FloatField(ENTROPY_FIELD, element.entropy, org.apache.lucene.document.Field.Store.YES));
-            w.addDocument(doc);
-        }
+			doc.add(new StringField(PATTERN_FIELD, element.feature, org.apache.lucene.document.Field.Store.YES));
+			doc.add(new StringField(RELATION_FIELD, relation, org.apache.lucene.document.Field.Store.YES));
+			doc.add(new IntField(COUNT_FIELD, subRelation.count, org.apache.lucene.document.Field.Store.YES));
+			doc.add(new IntField(GLOBALCOUNT_FIELD, element.counts, org.apache.lucene.document.Field.Store.YES));
+			doc.add(new FloatField(ENTROPY_FIELD, element.entropy, org.apache.lucene.document.Field.Store.YES));
+			w.addDocument(doc);
+		}
 
-    }
+	}
 
-    public static class PatternSearchResult {
+	public static class PatternSearchResult {
 
-        String feature;
-        String toprelation;
-        int counts;
-        float entropy;
+		String feature;
+		String toprelation;
+		int counts;
+		float entropy;
 
-        List<SubRelation> relationCount = Lists.newArrayList();
+		List<SubRelation> relationCount = Lists.newArrayList();
 
-        public String getFeature() {
-            return feature;
-        }
+		public String getFeature() {
+			return feature;
+		}
 
-        public String getToprelation() {
-            return toprelation;
-        }
+		public String getToprelation() {
+			return toprelation;
+		}
 
-        public int getCounts() {
-            return counts;
-        }
+		public int getCounts() {
+			return counts;
+		}
 
-        public float getEntropy() {
-            return entropy;
-        }
+		public float getEntropy() {
+			return entropy;
+		}
 
-        public List<SubRelation> getRelationCount() {
-            return relationCount;
-        }
+		public List<SubRelation> getRelationCount() {
+			return relationCount;
+		}
 
-        @Override
-        public String toString() {
-            return "PatternSearchresult{" +
-                    "feature='" + feature + '\'' +
-                    ", toprelation='" + toprelation + '\'' +
-                    ", counts=" + counts +
-                    ", entropy=" + entropy +
-                    ", relationCount=" + relationCount +
-                    '}';
-        }
+		@Override
+		public String toString() {
+			return "PatternSearchresult{" +
+				"feature='" + feature + '\'' +
+				", toprelation='" + toprelation + '\'' +
+				", counts=" + counts +
+				", entropy=" + entropy +
+				", relationCount=" + relationCount +
+				'}';
+		}
 
-        public static class SubRelation {
-            String relation;
-            int count;
+		public static class SubRelation {
+			String relation;
+			int count;
 
-            public SubRelation(String relation, int count) {
-                this.relation = relation;
-                this.count = count;
-            }
+			public SubRelation(String relation, int count) {
+				this.relation = relation;
+				this.count = count;
+			}
 
-            public String getRelation() {
-                return relation;
-            }
+			public String getRelation() {
+				return relation;
+			}
 
-            public int getCount() {
-                return count;
-            }
+			public int getCount() {
+				return count;
+			}
 
-            @Override
-            public String toString() {
-                return "SubRelation{" +
-                        "relation='" + relation + '\'' +
-                        ", count=" + count +
-                        '}';
-            }
+			@Override
+			public String toString() {
+				return "SubRelation{" +
+					"relation='" + relation + '\'' +
+					", count=" + count +
+					'}';
+			}
 
-            @Override
-            public boolean equals(Object o) {
-                if (this == o) return true;
-                if (o == null || getClass() != o.getClass()) return false;
+			@Override
+			public boolean equals(Object o) {
+				if (this == o) return true;
+				if (o == null || getClass() != o.getClass()) return false;
 
-                SubRelation that = (SubRelation) o;
+				SubRelation that = (SubRelation) o;
 
-                if (count != that.count) return false;
-                if (relation != null ? !relation.equals(that.relation) : that.relation != null) return false;
+				if (count != that.count) return false;
+				if (relation != null ? !relation.equals(that.relation) : that.relation != null) return false;
 
-                return true;
-            }
+				return true;
+			}
 
-            @Override
-            public int hashCode() {
-                int result = relation != null ? relation.hashCode() : 0;
-                result = 31 * result + count;
-                return result;
-            }
-        }
-    }
+			@Override
+			public int hashCode() {
+				int result = relation != null ? relation.hashCode() : 0;
+				result = 31 * result + count;
+				return result;
+			}
+		}
+	}
 
 }

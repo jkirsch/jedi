@@ -62,15 +62,26 @@ And add the following dependency, which uses the latest master version.
 Sample Code
 
 ```java
+// text parsing pipeline
+DetectorPipeline detectorPipeline = new DetectorPipeline(
+    "-annotateNER -skipWrongLanguage false -lang en -testMode");
 
-DetectorPipeline detectorPipeline = new DetectorPipeline("-annotateNER -skipWrongLanguage false -lang en -testMode");
-AllPairsShortestPathFeatureExtractor featureExtractor = 
-   new AllPairsShortestPathFeatureExtractor("-lemmatize -resolveCoreferences -name all -selectionType " + N.class.getName() + " -additionalSelectionType " + ADJ.class.getName());
+// feature extractor
+AllPairsShortestPathFeatureExtractor featureExtractor
+    = new AllPairsShortestPathFeatureExtractor(
+                "-lemmatize " +
+                "-resolveCoreferences " +
+                " -selectionType " + N.class.getName() +
+                " -additionalSelectionType " + ADJ.class.getName() +
+                " -name all");
 
+
+// initialize detection service with defaults
 JediService jediService = new JediService(detectorPipeline, featureExtractor);
 
 String sentence = "Bill Gothard received his B.A. in Biblical Studies from Wheaton College in 1957.";
 
+// execute relation detection
 Answer<Annotation> annotationAnswer = jediService.analyzeText(sentence);
 ```
 

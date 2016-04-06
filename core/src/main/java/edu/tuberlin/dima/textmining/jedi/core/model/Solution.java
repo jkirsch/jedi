@@ -1,5 +1,10 @@
 package edu.tuberlin.dima.textmining.jedi.core.model;
 
+/**
+ * A solution holds a detected relation between two entities.
+ *
+ * @param <T> type of the entities
+ */
 public class Solution<T> {
     T left;
     T right;

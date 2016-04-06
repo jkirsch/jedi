@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * Freebase Type Helper class.
  */
 public class FreebaseTypeService {
 

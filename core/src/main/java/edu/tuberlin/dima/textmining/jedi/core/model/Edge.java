@@ -1,5 +1,8 @@
 package edu.tuberlin.dima.textmining.jedi.core.model;
 
+/**
+ * An Edge in the constraint graph.
+ */
 public class Edge {
 
     public String relation;

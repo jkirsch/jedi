@@ -2,6 +2,9 @@ package edu.tuberlin.dima.textmining.jedi.core.model;
 
 import java.util.List;
 
+/**
+ * A freebase relation.
+ */
 public class FreebaseRelation {
 
         String domain;
