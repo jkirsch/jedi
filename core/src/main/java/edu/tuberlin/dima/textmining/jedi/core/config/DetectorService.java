@@ -9,14 +9,12 @@ import com.google.common.primitives.Floats;
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import edu.tuberlin.dima.textmining.jedi.core.features.ConstraintSolver;
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.*;
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.model.Answer;
+import edu.tuberlin.dima.textmining.jedi.core.features.detector.AbstractShortestPathFeatureExtractor;
+import edu.tuberlin.dima.textmining.jedi.core.features.detector.AnnotationPipeline;
+import edu.tuberlin.dima.textmining.jedi.core.features.detector.DetectorType;
 import edu.tuberlin.dima.textmining.jedi.core.index.FreebaseTypeService;
 import edu.tuberlin.dima.textmining.jedi.core.index.PatternIndexer;
-import edu.tuberlin.dima.textmining.jedi.core.model.Edge;
-import edu.tuberlin.dima.textmining.jedi.core.model.FreebaseRelation;
-import edu.tuberlin.dima.textmining.jedi.core.model.Graph;
-import edu.tuberlin.dima.textmining.jedi.core.model.Solution;
+import edu.tuberlin.dima.textmining.jedi.core.model.*;
 import edu.tuberlin.dima.textmining.jedi.core.util.AnnovisTransformerWriter;
 import edu.tuberlin.dima.textmining.jedi.core.util.PrintCollector;
 import org.apache.commons.lang.StringUtils;
@@ -36,7 +34,6 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
@@ -65,7 +62,7 @@ public class DetectorService {
 	@Qualifier("AllPairsFeatureDetector")
 	AbstractShortestPathFeatureExtractor allPairsFeatureDetector;
 
-	DetectorPipeline detectorPipeline;
+	AnnotationPipeline annotationPipeline;
 
 	PatternIndexer featureIndexer;
 
@@ -82,11 +79,11 @@ public class DetectorService {
 	private static final Logger LOG = LoggerFactory.getLogger(DetectorService.class);
 
 	@Autowired
-	public DetectorService(DetectorPipeline detectorPipeline,
+	public DetectorService(AnnotationPipeline annotationPipeline,
 						   FreebaseTypeService freebaseTypeService,
 						   PatternIndexer featureIndexer) throws Exception {
 
-		this.detectorPipeline = detectorPipeline;
+		this.annotationPipeline = annotationPipeline;
 		this.featureIndexer = featureIndexer;
 		this.freebaseTypeService = freebaseTypeService;
 		this.blacklistEntitiesFile = Resources.getResource("freepal/non-entities.txt");
@@ -105,29 +102,12 @@ public class DetectorService {
 
 	}
 
-	private final class SearchTask<T> implements Callable<SearchResult<T>> {
+	private List<DetectedRelation<Annotation>> detectUsingMaximumLikelihood(List<PatternSearchResult<Annotation>> patternSearchResults) throws ExecutionException, InterruptedException {
 
-		FoundFeature<T> tuple;
-		PatternIndexer featureIndexer;
-
-		public SearchTask(FoundFeature<T> tuple, PatternIndexer featureIndexer) {
-			this.tuple = tuple;
-			this.featureIndexer = featureIndexer;
-		}
-
-		@Override
-		public SearchResult<T> call() throws Exception {
-			final String patternFeature = tuple.getPattern();
-			return new SearchResult<>(tuple, featureIndexer.search(patternFeature, maxEntropy));
-		}
-	}
-
-	private List<Solution<Annotation>> computeMaximumLikelihood(List<SearchResult<Annotation>> searchResults) throws ExecutionException, InterruptedException {
-
-		List<Solution<Annotation>> solutions = Lists.newArrayList();
+		List<DetectedRelation<Annotation>> detectedRelations = Lists.newArrayList();
 
 		int edgecounter = 0;
-		for (SearchResult<Annotation> result : searchResults) {
+		for (PatternSearchResult<Annotation> result : patternSearchResults) {
 
 			final PatternIndexer.PatternSearchResult search = result.getPatternSearchResult();
 
@@ -147,7 +127,7 @@ public class DetectorService {
 
 				final FreebaseRelation types = freebaseTypeService.getTypes(topRelation.getRelation());
 
-				solutions.add(new Solution<>(
+				detectedRelations.add(new DetectedRelation<>(
 					result.getTuple().getEntity1(),
 					result.getTuple().getEntity2(),
 					new Edge(++edgecounter, topRelation.getRelation(), result.getTuple().getPattern(), types.getDomain(), types.getRange(), score, search.getEntropy(), search.getCounts(), score > 0.9)));
@@ -155,15 +135,15 @@ public class DetectorService {
 			}
 		}
 
-		return solutions;
+		return detectedRelations;
 
 	}
 
-	private List<Solution<Annotation>> solveConstraints(List<SearchResult<Annotation>> searchResults, PrintCollector printCollector) throws ExecutionException, InterruptedException {
+	private List<DetectedRelation<Annotation>> detectUsingConstraintSolving(List<PatternSearchResult<Annotation>> patternSearchResults, PrintCollector printCollector) throws ExecutionException, InterruptedException {
 
 		ConstraintSolver.ConstraintSolverBuilder<Annotation> solverBuilder = new ConstraintSolver.ConstraintSolverBuilder<>();
 
-		for (SearchResult<Annotation> result : searchResults) {
+		for (PatternSearchResult<Annotation> result : patternSearchResults) {
 
 			FoundFeature<Annotation> tuple = result.getTuple();
 			final PatternIndexer.PatternSearchResult search = result.getPatternSearchResult();
@@ -284,12 +264,12 @@ public class DetectorService {
 		return "/" + StringUtils.lowerCase(StringUtils.substringAfterLast(namedEntity.getClass().getName(), "."), Locale.ENGLISH);
 	}
 
-	public Answer<Annotation> detectRelations(String text,
-											  AbstractShortestPathFeatureExtractor detector,
-											  boolean resolveConstraints) throws IOException, SAXException, InterruptedException, ExecutionException {
+	public RelationDetectionResults<Annotation> detectRelations(String text,
+																AbstractShortestPathFeatureExtractor detector,
+																boolean resolveConstraints) throws IOException, SAXException, InterruptedException, ExecutionException {
 
 		Stopwatch stopwatch = new Stopwatch().start();
-		final JCas jCas = detectorPipeline.exec(Lists.newArrayList(text, "id"));
+		final JCas jCas = annotationPipeline.exec(Lists.newArrayList(text, "id"));
 		LOG.info("Parsed Text in {}", stopwatch.stop().toString());
 
 		final Map<String, AnnovisTransformerWriter.Annovis> annovisMap = AnnovisTransformerWriter.generateFormat(jCas);
@@ -315,8 +295,8 @@ public class DetectorService {
 
 		// search in parallel
 
-		List<SearchResult<Annotation>> candidates = tuples.parallelStream()
-			.map(foundFeature -> new SearchResult<>(foundFeature, featureIndexer.search(foundFeature.getPattern(), maxEntropy)))
+		List<PatternSearchResult<Annotation>> candidates = tuples.parallelStream()
+			.map(foundFeature -> new PatternSearchResult<>(foundFeature, featureIndexer.search(foundFeature.getPattern(), maxEntropy)))
 			.filter(input -> input != null && input.getPatternSearchResult() != null && input.getPatternSearchResult().getCounts() > 0)
 			.collect(Collectors.toList());
 
@@ -324,33 +304,33 @@ public class DetectorService {
 		// [X] be [Y] [1-attr-2,1-nsubj-0] .. this indicated a missing link ?
 
 		// we now have for each entity pair a list of potential pattern
-		List<Solution<Annotation>> solutionList;
+		List<DetectedRelation<Annotation>> detectedRelationList;
 		if (resolveConstraints) {
 			LOG.info("Solving constraints ...");
-			List<Solution<Annotation>> solutions = solveConstraints(candidates, printCollector);
-			solutionList = consistencyCheck(solutions);
+			List<DetectedRelation<Annotation>> detectedRelations = detectUsingConstraintSolving(candidates, printCollector);
+			detectedRelationList = consistencyCheck(detectedRelations);
 		} else {
-			LOG.info("Take maximum likelihood approach ...");
-			List<Solution<Annotation>> solutions = computeMaximumLikelihood(candidates);
-			solutionList = consistencyCheck(solutions);
+			LOG.info("Using maximum likelihood approach ...");
+			List<DetectedRelation<Annotation>> detectedRelations = detectUsingMaximumLikelihood(candidates);
+			detectedRelationList = consistencyCheck(detectedRelations);
 		}
 
 		// add solution to annovis
 		final AnnovisTransformerWriter.Annovis entities = new AnnovisTransformerWriter.Annovis(AnnovisTransformerWriter.AnnovisType.span);
 		final AnnovisTransformerWriter.Annovis relations = new AnnovisTransformerWriter.Annovis(AnnovisTransformerWriter.AnnovisType.link);
 		Map<Integer, AnnovisTransformerWriter.AnnovisValue> annotations = Maps.newHashMap();
-		for (Solution<Annotation> solution : solutionList) {
+		for (DetectedRelation<Annotation> detectedRelation : detectedRelationList) {
 			// add annotations to the list - avoiding any duplicates
-			final Annotation left = solution.getLeft();
-			final Annotation right = solution.getRight();
+			final Annotation left = detectedRelation.getLeft();
+			final Annotation right = detectedRelation.getRight();
 
-			final String domain = StringUtils.capitalize(StringUtils.substringAfterLast(solution.getEdge().getDomain(), "/"));
-			final String range = StringUtils.capitalize(StringUtils.substringAfterLast(solution.getEdge().getRange(), "/"));
+			final String domain = StringUtils.capitalize(StringUtils.substringAfterLast(detectedRelation.getEdge().getDomain(), "/"));
+			final String range = StringUtils.capitalize(StringUtils.substringAfterLast(detectedRelation.getEdge().getRange(), "/"));
 
 			annotations.put(left.hashCode(), new AnnovisTransformerWriter.AnnovisValue(left.hashCode(), domain, Lists.newArrayList(left.getBegin(), left.getEnd())));
 			annotations.put(right.hashCode(), new AnnovisTransformerWriter.AnnovisValue(right.hashCode(), range, Lists.newArrayList(right.getBegin(), right.getEnd())));
 
-			final String relation = StringUtils.substringAfterLast(solution.getEdge().getRelation(), ".");
+			final String relation = StringUtils.substringAfterLast(detectedRelation.getEdge().getRelation(), ".");
 
 			relations.getValues().add(new AnnovisTransformerWriter.AnnovisValue(null, relation, Lists.newArrayList(left.hashCode(), right.hashCode())));
 
@@ -359,10 +339,10 @@ public class DetectorService {
 		annovisMap.put("layer-1", entities);
 		annovisMap.put("layer-2", relations);
 
-		return new Answer<>(candidates, solutionList, detector.getName(), Graph.transform(solutionList), printCollector.getOutput(), annovisMap);
+		return new RelationDetectionResults<>(candidates, detectedRelationList, detector.getName(), Graph.transform(detectedRelationList), printCollector.getOutput(), annovisMap);
 	}
 
-	public Answer<Annotation> detectRelations(String text, DetectorType detectorType, boolean resolveConstraints) throws IOException, SAXException, InterruptedException, ExecutionException {
+	public RelationDetectionResults<Annotation> detectRelations(String text, DetectorType detectorType, boolean resolveConstraints) throws IOException, SAXException, InterruptedException, ExecutionException {
 
 		AbstractShortestPathFeatureExtractor detector;
 
@@ -397,9 +377,9 @@ public class DetectorService {
 	 * <li>followed by the hashcode
 	 * </ul>
 	 */
-	private Ordering<Solution<Annotation>> edgeByScoreOrdering = Ordering.from(new Comparator<Solution<Annotation>>() {
+	private Ordering<DetectedRelation<Annotation>> edgeByScoreOrdering = Ordering.from(new Comparator<DetectedRelation<Annotation>>() {
 		@Override
-		public int compare(Solution<Annotation> o1, Solution<Annotation> o2) {
+		public int compare(DetectedRelation<Annotation> o1, DetectedRelation<Annotation> o2) {
 			return ComparisonChain.
 				start()
 				.compare(o1.getEdge().getScore(), o2.getEdge().getScore()) // first score on edge score
@@ -408,19 +388,19 @@ public class DetectorService {
 		}
 	}).reverse();
 
-	private List<Solution<Annotation>> consistencyCheck(List<Solution<Annotation>> bestSolution) {
-		if (bestSolution == null) return null;
+	private List<DetectedRelation<Annotation>> consistencyCheck(List<DetectedRelation<Annotation>> bestDetectedRelation) {
+		if (bestDetectedRelation == null) return null;
 
-		Table<Annotation, String, Multiset<Solution<Annotation>>> table = HashBasedTable.create();
+		Table<Annotation, String, Multiset<DetectedRelation<Annotation>>> table = HashBasedTable.create();
 
-		for (Solution<Annotation> annotationSolution : bestSolution) {
+		for (DetectedRelation<Annotation> annotationDetectedRelation : bestDetectedRelation) {
 			// relation is scoped per entity
-			Multiset<Solution<Annotation>> solutions = table.get(annotationSolution.getLeft(), annotationSolution.getEdge().getRelation());
-			if (solutions == null) {
-				solutions = TreeMultiset.create(edgeByScoreOrdering);
-				table.put(annotationSolution.getLeft(), annotationSolution.getEdge().getRelation(), solutions);
+			Multiset<DetectedRelation<Annotation>> detectedRelations = table.get(annotationDetectedRelation.getLeft(), annotationDetectedRelation.getEdge().getRelation());
+			if (detectedRelations == null) {
+				detectedRelations = TreeMultiset.create(edgeByScoreOrdering);
+				table.put(annotationDetectedRelation.getLeft(), annotationDetectedRelation.getEdge().getRelation(), detectedRelations);
 			}
-			solutions.add(annotationSolution);
+			detectedRelations.add(annotationDetectedRelation);
 		}
 		// make sure that we only have 1 link of type
 		// ns:people.person.place_of_birth
@@ -435,32 +415,32 @@ public class DetectorService {
 			// iterate over all rows
 			for (Annotation row : table.rowKeySet()) {
 
-				Multiset<Solution<Annotation>> solutions = table.get(row, singletonRelation);
+				Multiset<DetectedRelation<Annotation>> detectedRelations = table.get(row, singletonRelation);
 
-				if (solutions != null && solutions.size() > 1) {
+				if (detectedRelations != null && detectedRelations.size() > 1) {
 					// remove the ones with the least confidence .. all after the first as already sorted
 					// Now also check if this maybe indicates that two things are joined
-					Solution<Annotation> remains = Iterables.getFirst(solutions, null);
-					Iterable<Solution<Annotation>> toDelete = Iterables.skip(solutions, 1);
-					for (Solution<Annotation> annotationSolution : toDelete) {
+					DetectedRelation<Annotation> remains = Iterables.getFirst(detectedRelations, null);
+					Iterable<DetectedRelation<Annotation>> toDelete = Iterables.skip(detectedRelations, 1);
+					for (DetectedRelation<Annotation> annotationDetectedRelation : toDelete) {
 
 						// check if we need to fold that into the left
 						List<Token> tokens = JCasUtil.selectFollowing(Token.class, remains.getRight(), 2);
 						if (tokens != null && tokens.size() == 2) {
 							Token tokenAfterComma = tokens.get(1);
-							Annotation right = annotationSolution.getRight();
+							Annotation right = annotationDetectedRelation.getRight();
 							if (tokens.get(0).getCoveredText().equals(",") && right.getBegin() == tokenAfterComma.getBegin() && right.getEnd() == tokenAfterComma.getEnd()) {
 								// fold remains
 								remains.getRight().setEnd(right.getEnd());
 							}
 						}
-						bestSolution.remove(annotationSolution);
+						bestDetectedRelation.remove(annotationDetectedRelation);
 					}
 				}
 
 			}
 		}
-		return bestSolution;
+		return bestDetectedRelation;
 
 	}
 

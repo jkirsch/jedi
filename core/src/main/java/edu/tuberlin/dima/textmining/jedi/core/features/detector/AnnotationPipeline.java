@@ -13,7 +13,7 @@ import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDesc
 
 /**
  */
-public class DetectorPipeline extends AbstractPipeline {
+public class AnnotationPipeline extends AbstractPipeline {
 
 	@Parameter(names = {"-lang"}, description = "Language of input data", required = false)
 	private String language = "en";
@@ -31,11 +31,22 @@ public class DetectorPipeline extends AbstractPipeline {
 		description = "annotateNER using Stanford", required = false)
 	private boolean annotateNER = false;
 
-	public DetectorPipeline() throws Throwable {
+	public AnnotationPipeline() throws Throwable {
 		this(""); // no options
 	}
 
-	public DetectorPipeline(String options) throws Throwable {
+	/**
+	 * Static initializer.
+	 *
+	 * @param options options string
+	 * @return an initialized instance
+	 * @throws Throwable in case of errors
+	 */
+	public static AnnotationPipeline withOptions(String options) throws Throwable {
+		return new AnnotationPipeline(options);
+	}
+
+	public AnnotationPipeline(String options) throws Throwable {
 		JCommander jCommander = new JCommander(this);
 		try {
 			// parse options
@@ -57,33 +68,33 @@ public class DetectorPipeline extends AbstractPipeline {
 		try {
 
 			AnalysisEngineDescription parser;
-					parser = createEngineDescription(
-						createEngineDescription(ClearNlpDependencyParser.class,
-							ClearNlpDependencyParser.PARAM_VARIANT, null,
-							ClearNlpDependencyParser.PARAM_PRINT_TAGSET, true),
-						createEngineDescription(StanfordParser.class,
-							StanfordParser.PARAM_MODE, StanfordParser.DependenciesMode.NON_COLLAPSED,
-							StanfordParser.PARAM_WRITE_CONSTITUENT, true,
-							StanfordParser.PARAM_WRITE_DEPENDENCY, false,
-							StanfordParser.PARAM_WRITE_PENN_TREE, false,
-							StanfordParser.PARAM_WRITE_POS, false));
+			parser = createEngineDescription(
+				createEngineDescription(ClearNlpDependencyParser.class,
+					ClearNlpDependencyParser.PARAM_VARIANT, null,
+					ClearNlpDependencyParser.PARAM_PRINT_TAGSET, true),
+				createEngineDescription(StanfordParser.class,
+					StanfordParser.PARAM_MODE, StanfordParser.DependenciesMode.NON_COLLAPSED,
+					StanfordParser.PARAM_WRITE_CONSTITUENT, true,
+					StanfordParser.PARAM_WRITE_DEPENDENCY, false,
+					StanfordParser.PARAM_WRITE_PENN_TREE, false,
+					StanfordParser.PARAM_WRITE_POS, false));
 
 			AnalysisEngineDescription ner;
-			if(language.equals("en")){
+			if (language.equals("en")) {
 
-				ner=createEngineDescription(
+				ner = createEngineDescription(
 					StanfordNamedEntityRecognizer.class,
 					StanfordNamedEntityRecognizer.PARAM_PRINT_TAGSET, false,
 					StanfordNamedEntityRecognizer.PARAM_VARIANT, "muc.7class.distsim.crf");
-			}else{
+			} else {
 
-				ner=createEngineDescription(
+				ner = createEngineDescription(
 					StanfordNamedEntityRecognizer.class,
 					StanfordNamedEntityRecognizer.PARAM_PRINT_TAGSET, false);
 			}
 
 			AnalysisEngineDescription aggregate;
-			if(annotateNER) {
+			if (annotateNER) {
 				aggregate = createEngineDescription(
 					createEngineDescription(StanfordSegmenter.class),
 //                                createEngineDescription(MatePosTagger.class),
@@ -113,7 +124,6 @@ public class DetectorPipeline extends AbstractPipeline {
 				);
 
 			}
-
 
 
 			init(

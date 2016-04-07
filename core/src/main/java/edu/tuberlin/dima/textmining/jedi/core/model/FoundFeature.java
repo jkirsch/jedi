@@ -1,4 +1,4 @@
-package edu.tuberlin.dima.textmining.jedi.core.features.detector;
+package edu.tuberlin.dima.textmining.jedi.core.model;
 
 import org.apache.uima.jcas.tcas.Annotation;
 
@@ -31,15 +31,27 @@ public class FoundFeature<T> {
         return entity1;
     }
 
-    public T getEntity2() {
+	public void setEntity1(T entity1) {
+		this.entity1 = entity1;
+	}
+
+	public T getEntity2() {
         return entity2;
     }
 
-    public String getPattern() {
+	public void setEntity2(T entity2) {
+		this.entity2 = entity2;
+	}
+
+	public String getPattern() {
         return pattern;
     }
 
-    @Override
+	public void setPattern(String pattern) {
+		this.pattern = pattern;
+	}
+
+	@Override
     public String toString() {
         return "FoundFeature{" +
                 "entity1=" + transformToString(entity1) +
@@ -49,7 +61,7 @@ public class FoundFeature<T> {
                 '}';
     }
 
-    private static final <T> String transformToString(T input) {
+    private static <T> String transformToString(T input) {
         if(input instanceof Annotation) {
             return ((Annotation) input).getCoveredText();
         } else {

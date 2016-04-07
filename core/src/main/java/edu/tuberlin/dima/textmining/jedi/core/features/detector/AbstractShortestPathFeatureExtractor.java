@@ -11,6 +11,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.O;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import edu.tuberlin.dima.textmining.jedi.core.model.FoundFeature;
 import edu.tuberlin.dima.textmining.jedi.core.util.JCommanderClassConverter;
 import org.apache.uima.UIMAException;
 import org.apache.uima.fit.util.JCasUtil;
@@ -266,7 +267,7 @@ public abstract class AbstractShortestPathFeatureExtractor {
             }
 
             if(renamer.matcher(pattern).find()) {
-                annotationFoundFeature.pattern = "[X] die in [Y] [1-nsubj-0,1-prep-2,2-pobj-3]";
+                annotationFoundFeature.setPattern("[X] die in [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
                 continue;
             }
             if(pattern.equals("[X] die on [Y] [1-nsubj-0,1-prep-2,2-pobj-3]")) {
@@ -279,34 +280,35 @@ public abstract class AbstractShortestPathFeatureExtractor {
 
             final Matcher conjunctionAtTheEnd = this.conjunctionAtTheEnd.matcher(pattern);
             if (conjunctionAtTheEnd.find()) {
-                pattern = annotationFoundFeature.pattern = conjunctionAtTheEnd.replaceFirst("[X]$1 [Y] [$3]");
+				pattern = conjunctionAtTheEnd.replaceFirst("[X]$1 [Y] [$3]");
+				annotationFoundFeature.setPattern(pattern);
             }
 
-            if(dateMatcher.matcher(annotationFoundFeature.entity1.getCoveredText()).find()
+            if(dateMatcher.matcher(annotationFoundFeature.getEntity1().getCoveredText()).find()
                     ||
-                    dateMatcher.matcher(annotationFoundFeature.entity2.getCoveredText()).find()) {
+                    dateMatcher.matcher(annotationFoundFeature.getEntity2().getCoveredText()).find()) {
                 postProcessor.remove();
                 continue;
             }
 
             Matcher deathMatcher = deathMatcherPattern.matcher(pattern);
             if(deathMatcher.find()) {
-                annotationFoundFeature.pattern = deathMatcher.replaceFirst("[X] die $3 [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
+                annotationFoundFeature.setPattern(deathMatcher.replaceFirst("[X] die $3 [Y] [1-nsubj-0,1-prep-2,2-pobj-3]"));
                 continue;
             }
 
             final Matcher matcher = birthMatcher.matcher(pattern);
             if(matcher.find()) {
                 // [1-nsubjpass-0,1-prep-2,2-pobj-3]
-                annotationFoundFeature.pattern = matcher.replaceFirst("[X] bear $3 [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]");
+                annotationFoundFeature.setPattern(matcher.replaceFirst("[X] bear $3 [Y] [1-nsubjpass-0,1-prep-2,2-pobj-3]"));
                 continue;
             }
 
             // check if right next to Token is a bracket (parataxis) (problem in parsing)
-            final Token nextToFirst = Iterables.getFirst(JCasUtil.selectFollowing(Token.class, annotationFoundFeature.entity1, 1), null);
+            final Token nextToFirst = Iterables.getFirst(JCasUtil.selectFollowing(Token.class, annotationFoundFeature.getEntity1(), 1), null);
 
             if(nextToFirst != null && nextToFirst.getPos().getClass().equals(O.class)) {
-                final Token namedEntityHead = getNamedEntityHead(annotationFoundFeature.entity1, graph);
+                final Token namedEntityHead = getNamedEntityHead(annotationFoundFeature.getEntity1(), graph);
                 if(namedEntityHead == null) {
                     continue;
                 }
@@ -329,7 +331,7 @@ public abstract class AbstractShortestPathFeatureExtractor {
                     final Matcher parataxisCheck1 = parataxisCheckPattern.matcher(pattern);
                     if(parataxisCheck1.find()) {
                         String to = isLemmatize() ? dependencyEdge.get().getTo().getLemma().getValue():dependencyEdge.get().getTo().getCoveredText();
-                        annotationFoundFeature.pattern = parataxisCheck1.replaceFirst("[X] "+ to +" $2 [Y] [1-nsubj-0,1-prep-2,2-pobj-3]");
+                        annotationFoundFeature.setPattern(parataxisCheck1.replaceFirst("[X] "+ to +" $2 [Y] [1-nsubj-0,1-prep-2,2-pobj-3]"));
                         continue;
                     }
                     Matcher parataxisCheck2 = parataxisCheckPattern2.matcher(pattern);
@@ -341,7 +343,7 @@ public abstract class AbstractShortestPathFeatureExtractor {
                         //int pos = "parataxis".equals(dependencyEdge.get().dependency) ? 1 : 1;
                         Token afterBracket = following.get(1);
                         String to = isLemmatize() ? afterBracket.getLemma().getValue():afterBracket.getCoveredText();
-                        annotationFoundFeature.pattern = "[X] "+ to +" in [Y] [1-npadvmod-0,1-prep-2,2-pobj-3]";
+                        annotationFoundFeature.setPattern("[X] "+ to +" in [Y] [1-npadvmod-0,1-prep-2,2-pobj-3]");
                         continue;
                     }
                 }

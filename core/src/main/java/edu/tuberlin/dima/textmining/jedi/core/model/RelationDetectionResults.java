@@ -1,10 +1,6 @@
-package edu.tuberlin.dima.textmining.jedi.core.features.detector.model;
+package edu.tuberlin.dima.textmining.jedi.core.model;
 
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.FoundFeature;
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.SearchResult;
 import edu.tuberlin.dima.textmining.jedi.core.freebase.FreebaseHelper;
-import edu.tuberlin.dima.textmining.jedi.core.model.Graph;
-import edu.tuberlin.dima.textmining.jedi.core.model.Solution;
 import edu.tuberlin.dima.textmining.jedi.core.util.AnnovisTransformerWriter;
 import edu.tuberlin.dima.textmining.jedi.core.util.TableBuilder;
 import org.apache.uima.jcas.tcas.Annotation;
@@ -13,8 +9,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Answer<T> {
-    List<Solution<T>> solutions;
+/**
+ * The class hold the result of the releation detection.
+ *
+ * @param <T> the UIMA type annotation of the entities.
+ */
+public class RelationDetectionResults<T> {
+
+    List<DetectedRelation<T>> detectedRelations;
     List<FoundFeature<T>> foundFeatures;
 
     Graph graph;
@@ -25,19 +27,19 @@ public class Answer<T> {
 
     Map<String, AnnovisTransformerWriter.Annovis> annovis;
 
-    public Answer(List<SearchResult<T>> searchResults, List<Solution<T>> solutions, String detectorType, Graph graph, String stdout, Map<String, AnnovisTransformerWriter.Annovis> annovis) {
+    public RelationDetectionResults(List<PatternSearchResult<T>> patternSearchResults, List<DetectedRelation<T>> detectedRelations, String detectorType, Graph graph, String stdout, Map<String, AnnovisTransformerWriter.Annovis> annovis) {
 
-        this.foundFeatures = searchResults.stream().map(SearchResult::getTuple).collect(Collectors.toList());
+        this.foundFeatures = patternSearchResults.stream().map(PatternSearchResult::getTuple).collect(Collectors.toList());
 
-        this.solutions = solutions;
+        this.detectedRelations = detectedRelations;
         this.graph = graph;
         this.stdout = stdout;
         this.annovis = annovis;
         this.detectorType = detectorType;
     }
 
-    public List<Solution<T>> getSolutions() {
-        return solutions;
+    public List<DetectedRelation<T>> getDetectedRelations() {
+        return detectedRelations;
     }
 
     public Graph getGraph() {
@@ -70,35 +72,35 @@ public class Answer<T> {
 	 * @param <T> the type of the annotations
      * @return answer with string representations
      */
-    public <T> Answer<String> generateStringVersion() {
+    public <T> RelationDetectionResults<String> generateStringVersion() {
 
-		List<Solution<String>> transform = solutions.stream().map(solution -> new Solution<>(
+		List<DetectedRelation<String>> transform = detectedRelations.stream().map(solution -> new DetectedRelation<>(
 			transformToString(solution.getLeft()),
 			transformToString(solution.getRight()),
 			solution.getEdge())).collect(Collectors.toList());
 
-		List<SearchResult<String>> transformedFeatures = foundFeatures.stream().map(feature -> new SearchResult<>(
+		List<PatternSearchResult<String>> transformedFeatures = foundFeatures.stream().map(feature -> new PatternSearchResult<>(
 			new FoundFeature<>(
 				transformToString(feature.getEntity1()),
 				transformToString(feature.getEntity2()),
 				feature.getPattern()), null)).collect(Collectors.toList());;
 
-        return new Answer<>(transformedFeatures, transform, detectorType, graph, stdout, annovis);
+        return new RelationDetectionResults<>(transformedFeatures, transform, detectorType, graph, stdout, annovis);
 
     }
 
 	public String generateReadableTableString(){
 		TableBuilder tb = new TableBuilder();
 
-		Answer<String> stringVersion = generateStringVersion();
+		RelationDetectionResults<String> stringVersion = generateStringVersion();
 
 		tb.addRow("Object", "Relation", "Subject", "Pattern");
 		tb.addRow("------", "--------", "-------", "-------");
 
-		for (Solution<String> solution : stringVersion.getSolutions()) {
+		for (DetectedRelation<String> detectedRelation : stringVersion.getDetectedRelations()) {
 
-			String relation = FreebaseHelper.transformOldToNewId(solution.getEdge().getRelation());
-			tb.addRow(solution.getLeft(), relation, solution.getRight(), solution.getEdge().getPattern());
+			String relation = FreebaseHelper.transformOldToNewId(detectedRelation.getEdge().getRelation());
+			tb.addRow(detectedRelation.getLeft(), relation, detectedRelation.getRight(), detectedRelation.getEdge().getPattern());
 		}
 
 		return tb.toString();

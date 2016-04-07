@@ -12,6 +12,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.O;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import edu.tuberlin.dima.textmining.jedi.core.model.FoundFeature;
 import org.apache.commons.lang.StringUtils;
 import org.apache.uima.UIMAException;
 import org.apache.uima.fit.util.JCasUtil;
@@ -366,58 +367,14 @@ public class AllPairsShortestPathFeatureExtractor extends AbstractShortestPathFe
             }
 
             dataBag.add(new FoundFeature<>(ent1, ent2, pattern));
-            //appositionCheck.put(ent1, ent2, true);
         }
 
-        // here check if any of the Entities are an apposition of each other .. that is not adding new value
-/*        for (Map.Entry<Annotation, Map<Annotation, Boolean>> mapEntry : appositionCheck.rowMap().entrySet()) {
-            if(mapEntry.getValue().size() > 1) {
-                // here check if any of the KEYs are an apposition of each other
-                List<Annotation> toCheck = Lists.newArrayList(mapEntry.getValue().keySet());
-                for (int i = 0; i < toCheck.size(); i++) {
-                    for (int j = i + 1; j < toCheck.size(); j++) {
-                        // compare i - j
-                        Annotation annotation1 = toCheck.get(i);
-                        Annotation annotation2 = toCheck.get(j);
-
-                        Token namedEntityHead1 = getNamedEntityHead(annotation1, graph);
-                        Token namedEntityHead2 = getNamedEntityHead(annotation2, graph);
-
-                        DependencyEdge edge = graph.getEdge(namedEntityHead1, namedEntityHead2);
-                        Token nextToken = Iterables.getFirst(JCasUtil.selectFollowing(Token.class, namedEntityHead1, 1), null);
-
-                        if(edge != null && edge.getDependency().equals("appos")) {
-
-                            if(nextToken != null && nextToken.getPos().getClass().equals(O.class)) {
-                                continue;
-                            }
-
-                            // check the order now (from -> to)
-                            Annotation toCompare = edge.getFrom().equals(namedEntityHead1) ? annotation1 : annotation2;
-
-                            // remove from DATABAG
-                            // mapEntry.getKEY -> toCompare
-                            Iterator<FoundFeature<Annotation>> featureIterator = dataBag.iterator();
-                            while (featureIterator.hasNext()) {
-                                FoundFeature<Annotation> feature = featureIterator.next();
-                                if(feature.getEntity1().equals(mapEntry.getKey()) && feature.getEntity2().equals(toCompare)) {
-                                   // featureIterator.remove();
-                                }
-                            }
-
-                        }
-
-                    }
-                }
-            }
-        }
-*/
         return dataBag;
     }
 
     private static final Set<String> skips = ImmutableSet.of("partmod", "det", "rcmod", "appos", "nsubj", "conj", "cc");
     private static final Set<String> allowed = ImmutableSet.of("of", "at");
-    private static final Set<String> pronouns = ImmutableSet.of("he", "her", "his", "their");
+    private static final Set<String> pronouns = ImmutableSet.of("he", "her", "his","hers","their");
 
     /**
      * Find the subtree for an annotation.

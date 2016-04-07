@@ -6,8 +6,8 @@ import com.google.common.base.Predicate;
 import com.google.common.base.Strings;
 import com.google.common.collect.*;
 import com.google.common.primitives.Doubles;
+import edu.tuberlin.dima.textmining.jedi.core.model.DetectedRelation;
 import edu.tuberlin.dima.textmining.jedi.core.model.Edge;
-import edu.tuberlin.dima.textmining.jedi.core.model.Solution;
 import edu.tuberlin.dima.textmining.jedi.core.util.PrintCollector;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.uima.jcas.tcas.Annotation;
@@ -141,31 +141,31 @@ public class ConstraintSolver<T> {
     }
 
     /**
-     * Computes a score for the found solution
+     * Computes a score for the found detectedRelation
      *
-     * @param solution the current solution
+     * @param detectedRelation the current detectedRelation
      * @return the score
      */
-    private float score(List<Solution<T>> solution) {
+    private float score(List<DetectedRelation<T>> detectedRelation) {
         float sums = 0;
-        for (Solution<T> s : solution) {
+        for (DetectedRelation<T> s : detectedRelation) {
             sums += s.edge.score;//+ graph.degreeOf(s.getLeft()) + graph.degreeOf(s.getRight());
         }
         // prevent divide by 0
-        if (solution.size() > 0) {
-            sums = sums / (float) (solution.size());
+        if (detectedRelation.size() > 0) {
+            sums = sums / (float) (detectedRelation.size());
         }
 
         ConnectivityInspector<T, Edge> connectivityInspector = new ConnectivityInspector<>(graph);
 
         List<Set<T>> connectedComponents = connectivityInspector.connectedSets();
 
-        return sums + solution.size()/ (float) connectedComponents.size();
+        return sums + detectedRelation.size()/ (float) connectedComponents.size();
     }
 
-    private final Comparator<List<Solution<T>>> solutionComparator = (o1, o2) -> {
+    private final Comparator<List<DetectedRelation<T>>> solutionComparator = (o1, o2) -> {
 
-        // compare size of solution chain as well
+        // compare size of detectedRelation chain as well
         return ComparisonChain.start()/*.compare(o1.size(), o2.size())*/.compare(score(o1), score(o2)).result();
     };
 
@@ -291,9 +291,9 @@ public class ConstraintSolver<T> {
         graph.removeAllEdges(pruneEdges);
     }
 
-    public List<Solution<T>> solve(PrintCollector printCollector) {
+    public List<DetectedRelation<T>> solve(PrintCollector printCollector) {
 
-        List<Solution<T>> solutions = Lists.newArrayList();
+        List<DetectedRelation<T>> detectedRelations = Lists.newArrayList();
 
         // prune graph
         pruneGraph(printCollector);
@@ -327,17 +327,17 @@ public class ConstraintSolver<T> {
             HashSet<T> difference = Sets.newHashSet(Sets.difference(graph.vertexSet(), connectedComponent));
             graph.removeAllVertices(difference);
 
-            solutions.addAll(solveConnectedComponent(printCollector, connectedComponent));
+            detectedRelations.addAll(solveConnectedComponent(printCollector, connectedComponent));
 
             // restore graph
             Graphs.addGraph(graph, restored);
         }
 
-        return solutions;
+        return detectedRelations;
     }
 
 
-    private List<Solution<T>> solveConnectedComponent(PrintCollector printCollector, Set<T> connectedComponents) {
+    private List<DetectedRelation<T>> solveConnectedComponent(PrintCollector printCollector, Set<T> connectedComponents) {
 
 
         // save the current state of the graph to revert
@@ -408,7 +408,7 @@ public class ConstraintSolver<T> {
         final int size = graph.vertexSet().size();
 
 
-        List<Solution<T>> bestSolution = Lists.newArrayList();
+        List<DetectedRelation<T>> bestDetectedRelation = Lists.newArrayList();
         float bestScore = 0;
         // make sure we check at least 1,2 and 3 layers down
         int layersSuccess = 0;
@@ -445,7 +445,7 @@ public class ConstraintSolver<T> {
 
                 //printCollector.print(Strings.repeat("-",50));
 
-                // also if no complete solution has been found in the complete layer remove unspecific edges  - start with a small number
+                // also if no complete detectedRelation has been found in the complete layer remove unspecific edges  - start with a small number
 /*                if (i > 1) {
                     ImmutableSet<Edge> edgeCopy = ImmutableSet.copyOf(graph.edgeSet());
                     for (Edge edge : edgeCopy) {
@@ -513,23 +513,23 @@ public class ConstraintSolver<T> {
                     graph.removeAllVertices(orphanedVertices);
                 }
                 final InternalSolveResult<T> internalSolveResult = internalSolve(printCollector, false);
-                List<Solution<T>> candidateSolution = internalSolveResult.solution;
+                List<DetectedRelation<T>> candidateDetectedRelation = internalSolveResult.detectedRelation;
                 if (internalSolveResult.solverReachedLimit) {
                     solverReachedLimit++;
                 }
 
-                if (candidateSolution != null && candidateSolution.size() > 0) {
-                    // is candidate better than bestSolution ?
+                if (candidateDetectedRelation != null && candidateDetectedRelation.size() > 0) {
+                    // is candidate better than bestDetectedRelation ?
 
-                    float score = score(candidateSolution);
+                    float score = score(candidateDetectedRelation);
                     if (score > bestScore) {
                         bestScore = score;
-                        bestSolution = candidateSolution;
+                        bestDetectedRelation = candidateDetectedRelation;
                         thisLayerSuccess = true;
                     }
 
-/*                    final int compare = Ordering.from(solutionComparator).reverse().compare(bestSolution, candidateSolution);
-                    bestSolution = compare < 0 ? bestSolution : candidateSolution;
+/*                    final int compare = Ordering.withOptions(solutionComparator).reverse().compare(bestDetectedRelation, candidateDetectedRelation);
+                    bestDetectedRelation = compare < 0 ? bestDetectedRelation : candidateDetectedRelation;
                     thisLayerSuccess = true;*/
                     // shortcut if limit reached .. don't look further
                     // if the solver hit the search limit more than x times ..
@@ -552,28 +552,28 @@ public class ConstraintSolver<T> {
             //layersSuccess = thisLayerSuccess;//?1:0;
         }
 
-        if (bestSolution.size() == 0) {
-            printCollector.print("No solution found");
+        if (bestDetectedRelation.size() == 0) {
+            printCollector.print("No detectedRelation found");
         }
-        // the best solution
-        return bestSolution;
+        // the best detectedRelation
+        return bestDetectedRelation;
     }
 
 
     private static final class InternalSolveResult<T> {
-        List<Solution<T>> solution;
+        List<DetectedRelation<T>> detectedRelation;
         boolean solverReachedLimit;
 
-        private InternalSolveResult(List<Solution<T>> solution, boolean solverReachedLimit) {
-            this.solution = solution;
+        private InternalSolveResult(List<DetectedRelation<T>> detectedRelation, boolean solverReachedLimit) {
+            this.detectedRelation = detectedRelation;
             this.solverReachedLimit = solverReachedLimit;
         }
     }
 
     /**
-     * Empty Solution list
+     * Empty DetectedRelation list
      */
-    private final List<Solution<T>> emptyList = Lists.<Solution<T>>newArrayList();
+    private final List<DetectedRelation<T>> emptyList = Lists.<DetectedRelation<T>>newArrayList();
 
     private InternalSolveResult<T> internalSolve(final PrintCollector printCollector, final boolean initial) {
 
@@ -688,20 +688,20 @@ public class ConstraintSolver<T> {
         }
 
 
-        final List<List<Solution<T>>> solutions = Lists.newArrayList();
+        final List<List<DetectedRelation<T>>> solutions = Lists.newArrayList();
 
         solver.plugMonitor(new IMonitorSolution() {
             @Override
             public void onSolution() {
                 if (!solver.hasReachedLimit()) {
-                    List<Solution<T>> generateSolution = generateSolution(typeMapping, encoding);
-                    solutions.add(generateSolution);
+                    List<DetectedRelation<T>> generateDetectedRelation = generateSolution(typeMapping, encoding);
+                    solutions.add(generateDetectedRelation);
                 }
             }
         });
 
 
-        // find the first 50 solution
+        // find the first 50 detectedRelation
         solver.findSolution();
         int counter = 0;
 
@@ -710,7 +710,7 @@ public class ConstraintSolver<T> {
         }
 
         if (solver.isFeasible().equals(ESat.FALSE)) {
-            // no solution
+            // no detectedRelation
             new InternalSolveResult<T>(emptyList, solver.hasReachedLimit());
         }
 
@@ -718,14 +718,14 @@ public class ConstraintSolver<T> {
 
         Collections.sort(solutions, Ordering.from(solutionComparator).reverse());
 
-        final List<Solution<T>> solution = Iterables.getFirst(solutions, null);
+        final List<DetectedRelation<T>> detectedRelation = Iterables.getFirst(solutions, null);
 
-        return new InternalSolveResult<>(solution, solver.hasReachedLimit());
+        return new InternalSolveResult<>(detectedRelation, solver.hasReachedLimit());
     }
 
-    private List<Solution<T>> generateSolution(final BiMap<Integer, String> typeMapping, Map<T, IntVar> encoding) {
+    private List<DetectedRelation<T>> generateSolution(final BiMap<Integer, String> typeMapping, Map<T, IntVar> encoding) {
 
-        List<Solution<T>> solutions = Lists.newArrayList();
+        List<DetectedRelation<T>> detectedRelations = Lists.newArrayList();
 
         Set<T> sources = graph.vertexSet();
         HashSet<T> targets = Sets.newHashSet(graph.vertexSet());
@@ -762,12 +762,12 @@ public class ConstraintSolver<T> {
                 if (qualifying != null) {
                     // check if we need to flip the edge
                     final boolean isSourceOrdering = graph.getEdgeSource(qualifying).equals(source);
-                    solutions.add(new Solution<>(isSourceOrdering ? source : target, isSourceOrdering ? target : source, qualifying));
+                    detectedRelations.add(new DetectedRelation<>(isSourceOrdering ? source : target, isSourceOrdering ? target : source, qualifying));
                 }
             }
         }
 
-        return solutions;
+        return detectedRelations;
     }
 
     private final static class EdgeComparator implements Comparator<Edge> {

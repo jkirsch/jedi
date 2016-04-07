@@ -7,6 +7,7 @@ import com.google.common.collect.Lists;
 import com.google.common.io.Resources;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.N;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PR;
+import edu.tuberlin.dima.textmining.jedi.core.model.FoundFeature;
 import edu.tuberlin.dima.textmining.jedi.core.util.UIMAXMLConverterHelper;
 import org.apache.uima.fit.factory.JCasFactory;
 import org.apache.uima.jcas.JCas;
@@ -23,7 +24,7 @@ import static org.hamcrest.core.Is.is;
 
 public class FindShortestPathFeatureExtractorTest {
 
-	static DetectorPipeline detectorPipeline;
+	static AnnotationPipeline annotationPipeline;
 	private static FindShortestPathFeatureExtractor featureExtractor;
 	private static UIMAXMLConverterHelper uimaxmlConverterHelper;
 
@@ -31,7 +32,7 @@ public class FindShortestPathFeatureExtractorTest {
 
 	@BeforeClass
 	public static void setUp() throws Throwable {
-		detectorPipeline = new DetectorPipeline("-lang en -testMode");
+		annotationPipeline = new AnnotationPipeline("-lang en");
 		featureExtractor = new FindShortestPathFeatureExtractor(
 										"-lemmatize -resolveCoreferences -pickupSimilar -selectionType " + N.class.getName() + " -additionalSelectionType " + PR.class.getName()
 										, DetectorType.ALLPairs);
@@ -68,7 +69,7 @@ public class FindShortestPathFeatureExtractorTest {
 	}
 
 	private List<FoundFeature<Annotation>> parse(String text) throws Exception {
-		JCas cas = detectorPipeline.exec(Lists.newArrayList(text, "id"));
+		JCas cas = annotationPipeline.exec(Lists.newArrayList(text, "id"));
 		return detect(cas);
 	}
 

@@ -1,12 +1,17 @@
-package edu.tuberlin.dima.textmining.jedi.core.features.detector;
+package edu.tuberlin.dima.textmining.jedi.core.model;
 
 import edu.tuberlin.dima.textmining.jedi.core.index.PatternIndexer;
 
-public class SearchResult<T> {
+/**
+ * Result withOptions querying the pattern index.
+ *
+ * @param <T>
+ */
+public class PatternSearchResult<T> {
         FoundFeature<T> tuple;
         PatternIndexer.PatternSearchResult patternSearchResult;
 
-        public SearchResult(FoundFeature<T> tuple, PatternIndexer.PatternSearchResult patternSearchResult) {
+        public PatternSearchResult(FoundFeature<T> tuple, PatternIndexer.PatternSearchResult patternSearchResult) {
             this.tuple = tuple;
             this.patternSearchResult = patternSearchResult;
         }

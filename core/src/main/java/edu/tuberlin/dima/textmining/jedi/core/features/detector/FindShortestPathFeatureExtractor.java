@@ -11,6 +11,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.*;
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import edu.tuberlin.dima.textmining.jedi.core.model.FoundFeature;
 import edu.tuberlin.dima.textmining.jedi.core.util.StringComparision;
 import org.apache.commons.lang.StringUtils;
 import org.apache.uima.UIMAException;
@@ -560,7 +561,7 @@ public class FindShortestPathFeatureExtractor extends AbstractShortestPathFeatur
 					final Annotation right = namedEntities.get(j);
 
 					if (StringComparision.determineSimilar(left.getCoveredText(), right.getCoveredText())) {
-						// add a co-ref link from right -> left
+						// add a co-ref link withOptions right -> left
 						coref.addVertex(left);
 						coref.addVertex(right);
 						coref.addEdge(left, right);
@@ -741,19 +742,19 @@ public class FindShortestPathFeatureExtractor extends AbstractShortestPathFeatur
 		final Optional<FoundFeature<Annotation>> potentialEquivalence = Iterables.tryFind(dataBag, new Predicate<FoundFeature<Annotation>>() {
 			@Override
 			public boolean apply(@Nullable FoundFeature<Annotation> input) {
-				return "[X] be [Y] [1-attr-2,1-nsubj-0]".equals(input.getPattern()) && !pronouns.contains(input.entity1.getCoveredText());
+				return "[X] be [Y] [1-attr-2,1-nsubj-0]".equals(input.getPattern()) && !pronouns.contains(input.getEntity1().getCoveredText());
 			}
 		});
 		if (potentialEquivalence.isPresent()) {
 			final FoundFeature<Annotation> equivalenceClass = potentialEquivalence.get();
-			Annotation first = equivalenceClass.entity1.getBegin() < equivalenceClass.getEntity2().getBegin() ? equivalenceClass.entity1 : equivalenceClass.entity2;
-			Annotation second = equivalenceClass.entity1.getBegin() < equivalenceClass.getEntity2().getBegin() ? equivalenceClass.entity2 : equivalenceClass.entity1;
+			Annotation first = equivalenceClass.getEntity1().getBegin() < equivalenceClass.getEntity2().getBegin() ? equivalenceClass.getEntity1() : equivalenceClass.getEntity2();
+			Annotation second = equivalenceClass.getEntity1().getBegin() < equivalenceClass.getEntity2().getBegin() ? equivalenceClass.getEntity2() : equivalenceClass.getEntity1();
 			dataBag.remove(equivalenceClass);
 
 			for (FoundFeature<Annotation> foundFeature : dataBag) {
 				// now replace X or Y with the equivalence
-				if (foundFeature.entity1.equals(second)) {
-					foundFeature.entity1 = first;
+				if (foundFeature.getEntity1().equals(second)) {
+					foundFeature.setEntity1(first);
 				}
 			}
 		}

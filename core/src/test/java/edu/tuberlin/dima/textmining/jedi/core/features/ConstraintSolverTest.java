@@ -3,9 +3,9 @@ package edu.tuberlin.dima.textmining.jedi.core.features;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ComparisonChain;
 import com.google.common.primitives.Doubles;
+import edu.tuberlin.dima.textmining.jedi.core.model.DetectedRelation;
 import edu.tuberlin.dima.textmining.jedi.core.model.Edge;
 import edu.tuberlin.dima.textmining.jedi.core.model.Graph;
-import edu.tuberlin.dima.textmining.jedi.core.model.Solution;
 import edu.tuberlin.dima.textmining.jedi.core.util.PrintCollector;
 import org.junit.Assert;
 import org.junit.Test;
@@ -39,7 +39,7 @@ public class ConstraintSolverTest {
         solverBuilder.add("E3", "E4", "x -> y", "5", "B", "C", 1, 1, 1);
         PrintCollector printCollector = new PrintCollector(true);
 
-        final List<Solution<String>> solve = solverBuilder.build().solve(printCollector);
+        final List<DetectedRelation<String>> solve = solverBuilder.build().solve(printCollector);
 
         assertNotNull(solve);
         assertThat(solve.size(), is(4));
@@ -457,9 +457,9 @@ public class ConstraintSolverTest {
             builder.add(objects[0], objects[1], objects[3],objects[2], objects[4],objects[5], Doubles.tryParse(objects[6]), 1, 1);
         }
 
-        List<Solution<String>> solutions = builder.build().solve(new PrintCollector(true));
+        List<DetectedRelation<String>> detectedRelations = builder.build().solve(new PrintCollector(true));
 
-        for (Solution<String> entry : solutions) {
+        for (DetectedRelation<String> entry : detectedRelations) {
             System.out.println(entry.getLeft() + " -> " + entry.getRight() + "  " + entry.getEdge());
         }
 
@@ -507,12 +507,12 @@ public class ConstraintSolverTest {
             builder.add(objects[0], objects[1], objects[3],objects[2], objects[4],objects[5], Doubles.tryParse(objects[6]), 1, 1);
         }
 
-        List<Solution<String>> solutions = builder.build().solve(new PrintCollector(true));
+        List<DetectedRelation<String>> detectedRelations = builder.build().solve(new PrintCollector(true));
 
         // sort
-        Collections.sort(solutions, new Comparator<Solution<String>>() {
+        Collections.sort(detectedRelations, new Comparator<DetectedRelation<String>>() {
             @Override
-            public int compare(Solution<String> o1, Solution<String> o2) {
+            public int compare(DetectedRelation<String> o1, DetectedRelation<String> o2) {
                 return ComparisonChain.start()
                         .compare(o1.getLeft(), o2.getLeft())
                         .compare(o1.getRight(), o2.getRight())
@@ -521,14 +521,14 @@ public class ConstraintSolverTest {
             }
         });
 
-        for (Solution<String> entry : solutions) {
+        for (DetectedRelation<String> entry : detectedRelations) {
             LOG.info(entry.getLeft() + " -> " + entry.getRight() + "  " + entry.getEdge());
         }
 
-        Assert.assertThat(solutions.size(), is(3));
-        Assert.assertThat(solutions.get(0).getLeft(), is("Harry"));
-        Assert.assertThat(solutions.get(0).getRight(), is("Mary"));
-        Assert.assertThat(solutions.get(0).getEdge().getRelation(), is("ns:people.person.spouse_s..people.marriage.spouse"));
+        Assert.assertThat(detectedRelations.size(), is(3));
+        Assert.assertThat(detectedRelations.get(0).getLeft(), is("Harry"));
+        Assert.assertThat(detectedRelations.get(0).getRight(), is("Mary"));
+        Assert.assertThat(detectedRelations.get(0).getEdge().getRelation(), is("ns:people.person.spouse_s..people.marriage.spouse"));
 
     }
 

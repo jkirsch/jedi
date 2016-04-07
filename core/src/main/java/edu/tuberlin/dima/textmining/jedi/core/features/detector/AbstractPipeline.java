@@ -24,6 +24,10 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Pipeline to annotate text.
+ *
+ */
 public class AbstractPipeline {
 	private static final Log LOG = LogFactory
 		.getLog(AbstractPipeline.class);
@@ -43,8 +47,8 @@ public class AbstractPipeline {
 	private boolean enableReporting = false;
 
 	@Parameter(names = {"-testMode"},
-		description = "If enabled, frontend checking is disabled", required = false)
-	private boolean testMode = false;
+		description = "If enabled, we initialize the processing (disable in hadoop environments)", required = false)
+	private boolean testMode = true;
 
 	@Parameter(names = {"-warmup"},
 		description = "Parses a small sentence, to load the resources", required = false)

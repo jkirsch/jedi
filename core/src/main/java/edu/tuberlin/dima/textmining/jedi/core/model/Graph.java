@@ -112,15 +112,15 @@ public class Graph {
         }
     }
 
-    public static <T> Graph transform(List<Solution<T>> solutions) {
+    public static <T> Graph transform(List<DetectedRelation<T>> detectedRelations) {
         // build up the nodes array
 
         List<GraphNode> nodes = Lists.newArrayList();
         List<GraphEdge> edges = Lists.newArrayList();
 
-        for (Solution<T> solution : solutions) {
-            GraphNode left = new GraphNode(transformToString(solution.getLeft()), solution.getEdge().getDomain());
-            GraphNode right = new GraphNode(transformToString(solution.getRight()), solution.getEdge().getRange());
+        for (DetectedRelation<T> detectedRelation : detectedRelations) {
+            GraphNode left = new GraphNode(transformToString(detectedRelation.getLeft()), detectedRelation.getEdge().getDomain());
+            GraphNode right = new GraphNode(transformToString(detectedRelation.getRight()), detectedRelation.getEdge().getRange());
 
             if (!nodes.contains(left)) {
                 nodes.add(left);
@@ -131,7 +131,7 @@ public class Graph {
             }
 
             // add test edges
-            edges.add(new GraphEdge(nodes.indexOf(left), nodes.indexOf(right), solution.getEdge()));
+            edges.add(new GraphEdge(nodes.indexOf(left), nodes.indexOf(right), detectedRelation.getEdge()));
         }
 
 

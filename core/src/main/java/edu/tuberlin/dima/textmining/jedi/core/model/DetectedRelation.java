@@ -1,16 +1,16 @@
 package edu.tuberlin.dima.textmining.jedi.core.model;
 
 /**
- * A solution holds a detected relation between two entities.
+ * This holds information about the detected relation between two entities.
  *
  * @param <T> type of the entities
  */
-public class Solution<T> {
+public class DetectedRelation<T> {
     T left;
     T right;
     public Edge edge;
 
-    public Solution(T left, T right, Edge edge) {
+    public DetectedRelation(T left, T right, Edge edge) {
         this.left = left;
         this.right = right;
         this.edge = edge;
@@ -30,7 +30,7 @@ public class Solution<T> {
 
     @Override
     public String toString() {
-        return "Solution{" +
+        return "DetectedRelation{" +
                 "left=" + left +
                 ", right=" + right +
                 ", edge=" + edge +

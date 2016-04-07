@@ -2,6 +2,9 @@ package edu.tuberlin.dima.textmining.jedi.core.features.detector;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 
+/**
+ * Class used to link token in the dependency resolution graph.
+ */
 public class DependencyEdge {
 
         protected Token from;
