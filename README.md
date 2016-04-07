@@ -59,12 +59,12 @@ And add the following dependency, which uses the latest master version.
     </dependency>
 
 
-Sample Code
+Sample Code for embedding JEDI
 
 ```java
 // text parsing pipeline
 AnnotationPipeline annotationPipeline =
-    AnnotationPipeline.withOptions("-lang en");
+    AnnotationPipeline.withOptions("-annotateCoreferences -lang en");
 
 // feature extractor
 AbstractShortestPathFeatureExtractor featureExtractor

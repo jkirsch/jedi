@@ -27,9 +27,9 @@ public class AnnotationPipeline extends AbstractPipeline {
 	@Parameter(names = {"-reportCSV"}, description = "Experimental reporting using CSV files", required = false)
 	private String reportCSV = null;
 
-	@Parameter(names = {"-annotateNER"},
-		description = "annotateNER using Stanford", required = false)
-	private boolean annotateNER = false;
+	@Parameter(names = {"-annotateCoreferences"},
+		description = "annotateCoreferences using Stanford", required = false)
+	private boolean annotateCoreferences = false;
 
 	public AnnotationPipeline() throws Throwable {
 		this(""); // no options
@@ -94,7 +94,7 @@ public class AnnotationPipeline extends AbstractPipeline {
 			}
 
 			AnalysisEngineDescription aggregate;
-			if (annotateNER) {
+			if (annotateCoreferences) {
 				aggregate = createEngineDescription(
 					createEngineDescription(StanfordSegmenter.class),
 //                                createEngineDescription(MatePosTagger.class),

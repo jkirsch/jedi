@@ -17,7 +17,7 @@ public class JediSampleApplication {
 	public static void main(String[] args) throws Throwable {
 
 		AnnotationPipeline annotationPipeline =
-			AnnotationPipeline.withOptions("-lang en");
+			AnnotationPipeline.withOptions("-annotateCoreferences -lang en");
 
 		AbstractShortestPathFeatureExtractor featureExtractor
 			= new AllPairsShortestPathFeatureExtractor(
