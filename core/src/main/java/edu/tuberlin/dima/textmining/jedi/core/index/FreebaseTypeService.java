@@ -27,7 +27,7 @@ public class FreebaseTypeService {
 	private final Map<String, List<String>> typeHierarchy;
 
 	/**
-	 * FROM -> TO.
+	 * FROM -&gt; TO.
 	 */
 	private final BiMap<String, String> inverseRelation;
 
@@ -53,6 +53,7 @@ public class FreebaseTypeService {
 
 	/**
 	 * Init with defaults
+	 * @throws IOException in case of loading error
 	 */
 	public FreebaseTypeService() throws IOException {
 

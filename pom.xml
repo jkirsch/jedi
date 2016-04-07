@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>edu.tuberlin.dima.textmining.jedi</groupId>
-	<artifactId>jedi</artifactId>
+	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0-SNAPSHOT</version>
 
@@ -15,7 +15,10 @@
 		<module>sample</module>
 	</modules>
 
-	<name>Joint Entity and Relation Detection</name>
+	<name>JEDI - Joint Entity and Relation Detection</name>
+
+	<description>JEDI is an automated system to jointly extract typed named entities and Freebase relations using dependency pattern from text.
+	</description>
 
 	<licenses>
 		<license>
@@ -23,6 +26,11 @@
 			<url>http://www.gnu.org/licenses/gpl.txt</url>
 		</license>
 	</licenses>
+
+	<ciManagement>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/jkirsch/jedi</url>
+	</ciManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -366,32 +374,9 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
 					<links>
-						<link>http://java.sun.com/javase/7/docs/api/</link>
+						<link>http://java.sun.com/javase/8/docs/api/</link>
 					</links>
 					<detectOfflineLinks/>
-					<doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
-					<docletArtifact>
-						<groupId>org.umlgraph</groupId>
-						<artifactId>umlgraph</artifactId>
-						<version>5.6.6</version>
-					</docletArtifact>
-					<additionalparam>-all</additionalparam>
-					<additionalparam>-qualify</additionalparam>
-					<additionalparam>-types</additionalparam>
-					<additionalparam>-visibility</additionalparam>
-					<additionalparam>-collpackages</additionalparam>
-					<additionalparam>-views</additionalparam>
-					<additionalparam>-inferdep</additionalparam>
-					<additionalparam>-inferdepinpackage</additionalparam>
-					<additionalparam>-inferrel</additionalparam>
-					<additionalparam>-inferreltype</additionalparam>
-					<additionalparam>-useimports</additionalparam>
-					<additionalparam>-operations</additionalparam>
-					<additionalparam>-constructors</additionalparam>
-					<additionalparam>-postfixpackage</additionalparam>
-					<additionalparam>-attributes</additionalparam>
-					<additionalparam>-enumerations</additionalparam>
-					<additionalparam>-enumconstants</additionalparam>
 					<show>private</show>
 				</configuration>
 			</plugin>

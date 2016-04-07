@@ -380,6 +380,8 @@ public class AllPairsShortestPathFeatureExtractor extends AbstractShortestPathFe
      * Find the subtree for an annotation.
      *
      * @param annotation the candidate
+	 * @param graph the dependency graph graph
+	 * @return List of tokens making up the subtree
      */
     public List<Token> getSubTree(Annotation annotation, UndirectedGraph<Token, DependencyEdge> graph) {
         // get all tokens
@@ -403,7 +405,7 @@ public class AllPairsShortestPathFeatureExtractor extends AbstractShortestPathFe
             for (DependencyEdge edge : edges) {
 
                 if(edge.getFrom().equals(token) && !skips.contains(edge.getDependency()))  {
-                    if(edge.getDependency().equals("prep") && !allowed.contains(edge.getTo().getLemma().getValue()) && !edge.getFrom().equals("degree")) {
+                    if(edge.getDependency().equals("prep") && !allowed.contains(edge.getTo().getLemma().getValue()) && !edge.getFrom().getCoveredText().equals("degree")) {
                         continue;
                     }
                     if(edge.getDependency().equals("poss") && pronouns.contains(edge.getTo().getCoveredText())) {

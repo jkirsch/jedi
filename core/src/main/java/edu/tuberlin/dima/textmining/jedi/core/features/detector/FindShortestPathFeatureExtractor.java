@@ -71,8 +71,8 @@ public class FindShortestPathFeatureExtractor extends AbstractShortestPathFeatur
 	 * Extract the shortest paths along the dependency parse
 	 * between every two named entities recognized.
 	 *
-	 * @param graph
-	 * @return DataBag dataBag     a data bag of ( entity_pair, pattern ) tuples
+	 * @param graph the dependency graph
+	 * @return list of found features with entity_pair and pattern
 	 * with the shortest path as pattern
 	 */
 	@Override

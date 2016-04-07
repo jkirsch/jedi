@@ -29,6 +29,7 @@ import solver.variables.VariableFactory;
 import util.ESat;
 
 import javax.annotation.Nullable;
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -770,7 +771,7 @@ public class ConstraintSolver<T> {
         return detectedRelations;
     }
 
-    private final static class EdgeComparator implements Comparator<Edge> {
+    private final static class EdgeComparator implements Comparator<Edge>, Serializable {
 
         @Override
         public int compare(Edge o1, Edge o2) {

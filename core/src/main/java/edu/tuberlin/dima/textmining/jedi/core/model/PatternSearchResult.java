@@ -3,9 +3,9 @@ package edu.tuberlin.dima.textmining.jedi.core.model;
 import edu.tuberlin.dima.textmining.jedi.core.index.PatternIndexer;
 
 /**
- * Result withOptions querying the pattern index.
+ * Result for querying the pattern index.
  *
- * @param <T>
+ * @param <T> the type paramter of the entities
  */
 public class PatternSearchResult<T> {
         FoundFeature<T> tuple;

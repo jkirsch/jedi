@@ -402,7 +402,7 @@ public class PatternIndexer {
 			// This is a shortcut ... if we have one dominating pattern, trim the list down
 			if (results.size() > 0 && results.get(0).count / (float) patternSearchResult.getCounts() >= 0.4) {
 				// dominating pattern
-				float confidence = results.get(0).count / (float) patternSearchResult.getCounts();
+				// float confidence = results.get(0).count / (float) patternSearchResult.getCounts();
 				// we just just the top one (sorted)
 				patternSearchResult.relationCount = Lists.newArrayList(Iterables.limit(results, 3));
 

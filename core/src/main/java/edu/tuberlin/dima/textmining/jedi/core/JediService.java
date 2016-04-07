@@ -29,6 +29,7 @@ public class JediService {
 	 *
 	 * @param annotationPipeline the parser to use
 	 * @param extractor          the feature extractor to use
+	 * @throws Exception in case of error
 	 */
 	public JediService(TextAnnotationPipeline annotationPipeline, AbstractShortestPathFeatureExtractor extractor) throws Exception {
 

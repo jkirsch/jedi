@@ -81,7 +81,7 @@ public class FreebaseHelper {
 
 	/**
 	 * ns:business.employer.employees..business.employment_tenure.person
-	 * ->  /business/employer/employees./business/employment_tenure/person
+	 * -&gt;  /business/employer/employees./business/employment_tenure/person
 	 *
 	 * @param old name
 	 * @return new name
@@ -102,8 +102,10 @@ public class FreebaseHelper {
 	}
 
 	/**
+	 * /business/employer/employees./business/employment_tenure/person
+	 * -&gt;
 	 * ns:business.employer.employees..business.employment_tenure.person
-	 * ->
+	 *
 	 *
 	 * @param newId the id
 	 * @return the old form
@@ -314,7 +316,8 @@ public class FreebaseHelper {
 	 *
 	 * @param relation the input relation
 	 * @return inverse relation
-	 */
+	 * @throws IOException in case of error
+     */
 	private String getInverseRelation(String relation) throws IOException {
 		String trimmedID = transformOldToNewId(relation);
 		if (!trimmedID.startsWith("/")) {
