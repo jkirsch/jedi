@@ -32,8 +32,8 @@ public class JediConfig {
 	public boolean warmup;
 
 	@Bean
-	public AnnotationPipeline createDetectorPipeline() throws Throwable {
-		return new AnnotationPipeline("-annotateCoreferences -skipWrongLanguage false -lang en" + (warmup ? " -warmup" : ""));
+	public TextAnnotationPipeline createDetectorPipeline() throws Throwable {
+		return new TextAnnotationPipeline("-annotateCoreferences -lang en" + (warmup ? " -warmup" : ""));
 	}
 
 	@Bean(name = "NamedEntityFeatureDetector")

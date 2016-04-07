@@ -67,11 +67,11 @@ And add the following dependency, which uses the latest master version.
 Sample Code for embedding JEDI
 
 ```java
-// text parsing pipeline
-AnnotationPipeline annotationPipeline =
-    AnnotationPipeline.withOptions("-annotateCoreferences -lang en");
+// initialize text annotation pipeline
+TextAnnotationPipeline annotationPipeline =
+    TextAnnotationPipeline.withOptions("-annotateCoreferences");
 
-// feature extractor
+// create pattern feature extractor
 AbstractShortestPathFeatureExtractor featureExtractor
     = new AllPairsShortestPathFeatureExtractor(
         " -lemmatize " +

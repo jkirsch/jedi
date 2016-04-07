@@ -5,7 +5,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.N;
 import edu.tuberlin.dima.textmining.jedi.core.JediService;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.AbstractShortestPathFeatureExtractor;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.AllPairsShortestPathFeatureExtractor;
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.AnnotationPipeline;
+import edu.tuberlin.dima.textmining.jedi.core.features.detector.TextAnnotationPipeline;
 import edu.tuberlin.dima.textmining.jedi.core.model.RelationDetectionResults;
 import org.apache.uima.jcas.tcas.Annotation;
 
@@ -16,9 +16,11 @@ public class JediSampleApplication {
 
 	public static void main(String[] args) throws Throwable {
 
-		AnnotationPipeline annotationPipeline =
-			AnnotationPipeline.withOptions("-annotateCoreferences -lang en");
+		// initialize text annotation pipeline
+		TextAnnotationPipeline textAnnotationPipeline =
+			TextAnnotationPipeline.withOptions("-annotateCoreferences");
 
+		// create pattern feature extractor
 		AbstractShortestPathFeatureExtractor featureExtractor
 			= new AllPairsShortestPathFeatureExtractor(
 				" -lemmatize " +
@@ -29,14 +31,14 @@ public class JediSampleApplication {
 
 
 		// initialize detection service with defaults
-		JediService jediService = new JediService(annotationPipeline, featureExtractor);
+		JediService jediService = new JediService(textAnnotationPipeline, featureExtractor);
 
 		String sentence = "Bill Gothard received his B.A. in Biblical Studies from Wheaton College in 1957.";
 
 		// execute relation detection
 		RelationDetectionResults<Annotation> relations = jediService.detectRelations(sentence);
 
-		System.out.println("\n ------------ Input Sentence     ------------ \n");
+		System.out.println("\n ------------   Input Sentence   ------------ \n");
 		System.out.println(sentence);
 		System.out.println("\n ------------ Detected Relations ------------ \n");
 

@@ -24,7 +24,7 @@ import static org.hamcrest.core.Is.is;
 
 public class FindShortestPathFeatureExtractorTest {
 
-	static AnnotationPipeline annotationPipeline;
+	static TextAnnotationPipeline annotationPipeline;
 	private static FindShortestPathFeatureExtractor featureExtractor;
 	private static UIMAXMLConverterHelper uimaxmlConverterHelper;
 
@@ -32,7 +32,7 @@ public class FindShortestPathFeatureExtractorTest {
 
 	@BeforeClass
 	public static void setUp() throws Throwable {
-		annotationPipeline = new AnnotationPipeline("-lang en");
+		annotationPipeline = new TextAnnotationPipeline("-lang en");
 		featureExtractor = new FindShortestPathFeatureExtractor(
 										"-lemmatize -resolveCoreferences -pickupSimilar -selectionType " + N.class.getName() + " -additionalSelectionType " + PR.class.getName()
 										, DetectorType.ALLPairs);

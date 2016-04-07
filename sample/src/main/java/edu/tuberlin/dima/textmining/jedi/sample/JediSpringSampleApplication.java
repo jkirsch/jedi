@@ -31,7 +31,7 @@ public class JediSpringSampleApplication implements CommandLineRunner {
 
 		final RelationDetectionResults<Annotation> relations = detectorService.detectRelations(sentence, DetectorType.ALLPairs, true);
 
-		System.out.println("\n ------------ Input Sentence     ------------ \n");
+		System.out.println("\n ------------   Input Sentence   ------------ \n");
 		System.out.println(sentence);
 		System.out.println("\n ------------ Detected Relations ------------ \n");
 

@@ -26,7 +26,6 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Pipeline to annotate text.
- *
  */
 public class AbstractPipeline {
 	private static final Log LOG = LogFactory
@@ -53,14 +52,6 @@ public class AbstractPipeline {
 	@Parameter(names = {"-warmup"},
 		description = "Parses a small sentence, to load the resources", required = false)
 	private boolean warmup = false;
-
-	enum Counters {
-		TOKENS,
-		SENTENCES,
-		DOCUMENTS,
-		WRONG_LANGUAGE,
-		ERRORS
-	}
 
 	Collection<Token> tokens;
 	Collection<Sentence> sentences;
@@ -100,6 +91,13 @@ public class AbstractPipeline {
 		}
 	}
 
+	/**
+	 * Execute the pipeline.
+	 *
+	 * @param input 2 tuple, first the string, second an id, which can be null
+	 * @return the parsed JCas object
+	 * @throws IOException in case of error
+	 */
 	public JCas exec(
 		List<String> input) throws IOException {
 		tokens = null;
@@ -173,8 +171,8 @@ public class AbstractPipeline {
 				break;
 			default:
 				sampleText = "This is a not so super important sample warmup text to trigger the loading";
-
 		}
+
 
 		jCas.setDocumentText(sampleText);
 		jCas.setDocumentLanguage(defaultLanguage);

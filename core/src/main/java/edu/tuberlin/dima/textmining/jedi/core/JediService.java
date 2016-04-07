@@ -2,7 +2,7 @@ package edu.tuberlin.dima.textmining.jedi.core;
 
 import edu.tuberlin.dima.textmining.jedi.core.config.DetectorService;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.AbstractShortestPathFeatureExtractor;
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.AnnotationPipeline;
+import edu.tuberlin.dima.textmining.jedi.core.features.detector.TextAnnotationPipeline;
 import edu.tuberlin.dima.textmining.jedi.core.index.FreebaseTypeService;
 import edu.tuberlin.dima.textmining.jedi.core.index.PatternIndexer;
 import edu.tuberlin.dima.textmining.jedi.core.model.RelationDetectionResults;
@@ -30,7 +30,7 @@ public class JediService {
 	 * @param annotationPipeline the parser to use
 	 * @param extractor          the feature extractor to use
 	 */
-	public JediService(AnnotationPipeline annotationPipeline, AbstractShortestPathFeatureExtractor extractor) throws Exception {
+	public JediService(TextAnnotationPipeline annotationPipeline, AbstractShortestPathFeatureExtractor extractor) throws Exception {
 
 		LOG.info("Initializing JEDI using defaults");
 

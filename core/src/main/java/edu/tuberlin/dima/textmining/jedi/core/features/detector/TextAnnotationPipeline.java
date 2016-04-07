@@ -12,14 +12,12 @@ import org.apache.uima.resource.ResourceInitializationException;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 
 /**
+ * Text annotation UIMA pipeline.
  */
-public class AnnotationPipeline extends AbstractPipeline {
+public class TextAnnotationPipeline extends AbstractPipeline {
 
 	@Parameter(names = {"-lang"}, description = "Language of input data", required = false)
 	private String language = "en";
-
-	@Parameter(names = {"-skipWrongLanguage"}, description = "If the text is not equal to '-lang' should it be skipped?", required = false, arity = 1)
-	private Boolean skipWrongLanguage = true;
 
 	@Parameter(names = {"-reporting"}, description = "Output performance statistics to STDOUT", required = false)
 	private boolean enableReporting = false;
@@ -31,7 +29,7 @@ public class AnnotationPipeline extends AbstractPipeline {
 		description = "annotateCoreferences using Stanford", required = false)
 	private boolean annotateCoreferences = false;
 
-	public AnnotationPipeline() throws Throwable {
+	public TextAnnotationPipeline() throws Throwable {
 		this(""); // no options
 	}
 
@@ -42,11 +40,11 @@ public class AnnotationPipeline extends AbstractPipeline {
 	 * @return an initialized instance
 	 * @throws Throwable in case of errors
 	 */
-	public static AnnotationPipeline withOptions(String options) throws Throwable {
-		return new AnnotationPipeline(options);
+	public static TextAnnotationPipeline withOptions(String options) throws Throwable {
+		return new TextAnnotationPipeline(options);
 	}
 
-	public AnnotationPipeline(String options) throws Throwable {
+	public TextAnnotationPipeline(String options) throws Throwable {
 		JCommander jCommander = new JCommander(this);
 		try {
 			// parse options

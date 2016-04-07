@@ -10,8 +10,8 @@ import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import edu.tuberlin.dima.textmining.jedi.core.features.ConstraintSolver;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.AbstractShortestPathFeatureExtractor;
-import edu.tuberlin.dima.textmining.jedi.core.features.detector.AnnotationPipeline;
 import edu.tuberlin.dima.textmining.jedi.core.features.detector.DetectorType;
+import edu.tuberlin.dima.textmining.jedi.core.features.detector.TextAnnotationPipeline;
 import edu.tuberlin.dima.textmining.jedi.core.index.FreebaseTypeService;
 import edu.tuberlin.dima.textmining.jedi.core.index.PatternIndexer;
 import edu.tuberlin.dima.textmining.jedi.core.model.*;
@@ -38,6 +38,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
 /**
+ * The Relation detection service.
  */
 @Service
 public class DetectorService {
@@ -62,7 +63,7 @@ public class DetectorService {
 	@Qualifier("AllPairsFeatureDetector")
 	AbstractShortestPathFeatureExtractor allPairsFeatureDetector;
 
-	AnnotationPipeline annotationPipeline;
+	TextAnnotationPipeline annotationPipeline;
 
 	PatternIndexer featureIndexer;
 
@@ -79,7 +80,7 @@ public class DetectorService {
 	private static final Logger LOG = LoggerFactory.getLogger(DetectorService.class);
 
 	@Autowired
-	public DetectorService(AnnotationPipeline annotationPipeline,
+	public DetectorService(TextAnnotationPipeline annotationPipeline,
 						   FreebaseTypeService freebaseTypeService,
 						   PatternIndexer featureIndexer) throws Exception {
 
